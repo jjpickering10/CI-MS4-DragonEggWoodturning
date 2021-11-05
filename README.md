@@ -47,11 +47,34 @@ Link to website: []()
 
 # Wireframes
 
+[Home Page inc. mobile](/docs/wireframes/homepage.png)
+
+[About Page inc. mobile](/docs/wireframes/aboutpage.png)
+
+[Contact Page inc. mobile](/docs/wireframes/contactpage.png)
+
+[Blog Page inc. mobile](/docs/wireframes/blogpage.png)
+
+[Products Page inc. mobile](/docs/wireframes/productspage.png)
+
+[Products Category Page inc. mobile](/docs/wireframes/productcategorypage.png)
+
+[Individual Product Page inc. mobile](/docs/wireframes/productindividualpage.png)
+
+[Checkout Page inc. mobile](/docs/wireframes/checkoutpage.png)
+
+[Shopping Cart Page inc. mobile](/docs/wireframes/shoppingcartpage.png)
+
+[Profile Page inc. mobile](/docs/wireframes/profilepage.png)
+
+[Admin Page inc. mobile](/docs/wireframes/adminpage.png)
+
+
 ### **Surface**
 
 Colour scheme:
 
-![Color Palette]()
+![Color Palette](/docs/img/colourpalete.png)
 
 Images:
 
