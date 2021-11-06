@@ -17,5 +17,23 @@
 body {
     background: var(--secondary-brown);
     font-family: 'Poppins', sans-serif;
+    display: flex;
     min-height: 100vh;
+    flex-direction: column;
+
+    main {
+        flex: 1 0 auto;
+    }
+}
+
+// Navbar
+
+nav {
+    background: var(--primary-brown);
+}
+
+// Footer
+
+.page-footer {
+    background: var(--primary-brown);
 }
