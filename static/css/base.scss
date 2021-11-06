@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --primary-brown: #361C15;
+    --secondary-brown: #D2B48C;
+    --primary-orange: #E66C4E;
+    --primary-cream: #FFF5EF;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--secondary-brown);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
