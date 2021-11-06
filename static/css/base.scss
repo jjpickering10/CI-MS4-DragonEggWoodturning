@@ -23,6 +23,56 @@ body {
 
     main {
         flex: 1 0 auto;
+
+        .home-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+
+            section {
+                min-height: 100vh;
+            }
+
+            #home-landing {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+                .home-landing-section {
+                    border: 1px solid black;
+                }
+            }
+            #home-about {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+                .home-about-section {
+                    border: 1px solid black;
+                }
+            }
+            #home-blog {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+                .home-blog-posts {
+                    border: 1px solid black;
+                }
+            }
+            #home-products {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+                .home-products-section {
+                    border: 1px solid black;
+                }
+            }
+            #home-woodtype {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+                .home-woodtype-section {
+                    border: 1px solid black;
+                }
+            }
+        }
     }
 }
 

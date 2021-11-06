@@ -22,6 +22,48 @@ body {
 body main {
   flex: 1 0 auto;
 }
+body main .home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+}
+body main .home-container section {
+  min-height: 100vh;
+}
+body main .home-container #home-landing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+body main .home-container #home-landing .home-landing-section {
+  border: 1px solid black;
+}
+body main .home-container #home-about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+body main .home-container #home-about .home-about-section {
+  border: 1px solid black;
+}
+body main .home-container #home-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+body main .home-container #home-blog .home-blog-posts {
+  border: 1px solid black;
+}
+body main .home-container #home-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+body main .home-container #home-products .home-products-section {
+  border: 1px solid black;
+}
+body main .home-container #home-woodtype {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+body main .home-container #home-woodtype .home-woodtype-section {
+  border: 1px solid black;
+}
 
 nav {
   background: var(--primary-brown);
