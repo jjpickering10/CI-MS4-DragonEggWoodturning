@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="category-container">
+    {% for product in products %}
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+            {% if product.image %}
+                <img class="activator" src="{{ product.image.url }}">
+            {% else %}
+                <img class="activator" src="{{ MEDIA_URL }}noimage.png">
+            {% endif %}
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{ product.name }}</span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="fas fa-times right"></i></span>
+          <p>{{ product.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

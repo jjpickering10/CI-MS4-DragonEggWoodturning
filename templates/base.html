@@ -29,12 +29,12 @@
       <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <a href="{% url 'home' %}" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="sass.html">About</a></li>
               <li><a href="badges.html">Blog</a></li>
-              <li><a href="collapsible.html">Products</a></li>
+              <li><a href="{% url 'all_products' %}">Products</a></li>
               <li><a href="{% url 'all_categories' %}">Categories</a></li>
               <li><a href="collapsible.html">Login</a></li>
               <li><a href="collapsible.html">Cart</a></li>
@@ -46,7 +46,7 @@
       <ul class="sidenav" id="mobile-demo">
         <li><a href="sass.html">About</a></li>
         <li><a href="badges.html">Blog</a></li>
-        <li><a href="collapsible.html">Products</a></li>
+        <li><a href="{% url 'all_products' %}">Products</a></li>
         <li><a href="{% url 'all_categories' %}">Categories</a></li>
         <li><a href="collapsible.html">Login</a></li>
         <li><a href="collapsible.html">Cart</a></li>
