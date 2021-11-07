@@ -14,12 +14,22 @@
             {% endif %}
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{ product.name }}</span>
-          <p><a href="#">This is a link</a></p>
+          <span class="card-title grey-text text-darken-4">{{ product.name }}</span>
+          <p class="activator">Read More</p>
+          <p>£ {{ product.price }}</p>
+          <p>{{ product.category.friendly_name }}</p>
+          {% if product.rating %}
+                <p>{{ product.rating }}</p>
+            {% else %}
+                <p>No ratings yet.</p>
+            {% endif %}
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Card Title<i class="fas fa-times right"></i></span>
           <p>{{ product.description }}</p>
+          {% for woodtype in product.wood_type.all %}
+            <p>{{ woodtype.friendly_name }}</p>
+          {% endfor %}
         </div>
       </div>
     {% endfor %}
