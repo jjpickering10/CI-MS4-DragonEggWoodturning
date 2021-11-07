@@ -69,6 +69,16 @@ nav {
   background: var(--primary-brown);
 }
 
+.category-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 10px;
+}
+.category-container .category-type-section {
+  border: 1px solid black;
+}
+
 .page-footer {
   background: var(--primary-brown);
 }/*# sourceMappingURL=base.css.map */

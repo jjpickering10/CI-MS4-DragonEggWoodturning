@@ -82,6 +82,19 @@ nav {
     background: var(--primary-brown);
 }
 
+// Categories Page
+
+.category-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 10px;
+
+    .category-type-section {
+        border: 1px solid black;
+    }
+}
+
 // Footer
 
 .page-footer {
