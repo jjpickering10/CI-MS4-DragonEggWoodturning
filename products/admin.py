@@ -5,7 +5,6 @@ from .models import Product, Category, WoodType
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'category',
-        'wood_type',
         'sku',
         'name',
         'price',
