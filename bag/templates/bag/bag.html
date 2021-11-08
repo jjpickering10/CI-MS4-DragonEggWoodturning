@@ -14,8 +14,12 @@
         <div class="card-content">
         {% for item in bag_items %}
           <p>Name: {{ item.product.name }}</p>
-          <p>Price: £{{ item.product.price }}</p>
+          <p>Price per item: £{{ item.product.price }}</p>
           <p>Quantity: {{ item.quantity }}</p>
+          <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Remove">
+        </form>
         {% endfor %}
         </div>
         <div class="card-action">

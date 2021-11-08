@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 
 def view_bag(request):
@@ -28,3 +28,17 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
 
     return redirect(redirect_url)
+
+
+def remove_from_bag(request, item_id):
+    """
+    Remove items in the bag
+    """
+    bag = request.session.get('bag', {})
+    
+    if str(item_id) in list(bag.keys()):
+        bag.pop(str(item_id))
+
+    request.session['bag'] = bag
+
+    return redirect(reverse('view_bag'))
