@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="category-container">
-    {% for product in products %}
+    
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
             {% if product.image %}
@@ -23,7 +23,6 @@
             {% else %}
                 <p>No ratings yet.</p>
             {% endif %}
-            <p><a href="{% url 'product_detail' product.id %}">View Product</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Card Title<i class="fas fa-times right"></i></span>
@@ -33,6 +32,6 @@
           {% endfor %}
         </div>
       </div>
-    {% endfor %}
+    
 </div>
 {% endblock %}
