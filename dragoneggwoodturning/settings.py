@@ -162,7 +162,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Delivery
 
-FREE_DELIVERY_THRESHOLD = 50
+FREE_DELIVERY_THRESHOLD = 5000
 STANDARD_DELIVERY_PERCENTAGE = 10
 
 # Default primary key field type

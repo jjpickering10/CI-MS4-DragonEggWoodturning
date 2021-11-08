@@ -4,7 +4,6 @@
 {% block content %}
 
 {% if bag_items %}
-{{ bag_items }}
 <div class="col s12 m7">
     <h2 class="header">Horizontal Card</h2>
     <div class="card horizontal">
@@ -13,10 +12,21 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        {% for item in bag_items %}
+          <p>Name: {{ item.product.name }}</p>
+          <p>Price: £{{ item.product.price }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+        {% endfor %}
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+            <p>Total: {{ total|floatformat:2 }}</p>
+            <p>Delivery: {{ delivery|floatformat:2 }}</p>
+            <p>Grand Total: {{ grand_total|floatformat:2 }}</p>
+            {% if free_delivery_delta > 0 %}
+            <p>For free delivery, spend £{{ free_delivery_delta }} extra!</p>
+            {% endif %}
+          <a href="#">Keep Shopping</a>
+          <a href="#">Secure Checkout</a>
         </div>
       </div>
     </div>
