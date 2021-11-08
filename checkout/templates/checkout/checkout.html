@@ -3,7 +3,38 @@
 
 {% block content %}
 
-{% if bag_items %}
+<div class="col s12 m7">
+    <h2 class="header">Horizontal Card</h2>
+    {{ bag_items }}
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <form action="{% url 'checkout' %}" method="POST">
+            {% csrf_token %}
+            {{ order_form }}
+            <fieldset>
+              <!-- Stripe -->
+              <div id="card-element"></div>
+              <div id="card-errors" role="alert"></div>
+            </fieldset>
+            <div>
+              <button type="submit">
+                Submit
+              </button>
+              <a href="{% url 'view_bag' %}">View Bag</a>
+            </div>
+          </form>
+        </div>
+        <div class="card-action">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if bag_items %}
 <div class="col s12 m7">
     <h2 class="header">Horizontal Card</h2>
     <div class="card horizontal">
@@ -30,7 +61,7 @@
             <p>For free delivery, spend £{{ free_delivery_delta }} extra!</p>
             {% endif %}
           <a href="#">Keep Shopping</a>
-          <a href="{% url 'checkout' %}">Secure Checkout</a>
+          <a href="#">Secure Checkout</a>
         </div>
       </div>
     </div>
