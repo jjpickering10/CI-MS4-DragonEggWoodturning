@@ -12,7 +12,7 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <form action="{% url 'checkout' %}" method="POST">
+          <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
             {{ order_form }}
             <fieldset>
@@ -21,7 +21,7 @@
               <div id="card-errors" role="alert"></div>
             </fieldset>
             <div>
-              <button type="submit">
+              <button id="submit-button" type="submit">
                 Submit
               </button>
               <a href="{% url 'view_bag' %}">View Bag</a>
