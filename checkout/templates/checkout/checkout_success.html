@@ -2,5 +2,28 @@
 {% load static %}
 
 {% block content %}
-    <h1>checkout success</h1>
+<div class="col s12 m7">
+    <h2 class="header">Horizontal Card</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+            <p>Order confirmation sent to: {{ order.email }}</p>
+        {% for item in order.lineitems.all %}
+          <p>Name: {{ item.product.name }}</p>
+          <p>Price per item: £{{ item.product.price }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+        {% endfor %}
+        </div>
+        <div class="card-action">
+            <p>Total: {{ order.order_total|floatformat:2 }}</p>
+            <p>Delivery: {{ order.delivery_cost|floatformat:2 }}</p>
+            <p>Grand Total: {{ order.grand_total|floatformat:2 }}</p>
+          <a href="{% url 'home' %}">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

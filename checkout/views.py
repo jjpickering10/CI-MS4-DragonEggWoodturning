@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from .forms import OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from products.models import Product
 from bag.contexts import bag_contents
 import stripe
@@ -77,8 +77,16 @@ def checkout_success(request, order_number):
     A view to checkout success page
     """
 
+    order = get_object_or_404(Order, order_number=order_number)
+    print(order.full_name)
+
+    if 'bag' in request.session:
+        del request.session['bag']
+
     template = 'checkout/checkout_success.html'
 
-    context = {}
+    context = {
+        'order': order
+    }
 
     return render(request, template, context)
