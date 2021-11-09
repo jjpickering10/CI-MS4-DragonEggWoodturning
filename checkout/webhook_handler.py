@@ -21,7 +21,7 @@ class StripeWH_Handler:
 
     def handle_payment_intent_succeeded(self, event):
         """
-        Handle payement intent succeeded webhook event
+        Handle payment intent succeeded webhook event
         """
 
         return HttpResponse(
@@ -31,7 +31,7 @@ class StripeWH_Handler:
 
     def handle_payment_intent_failed(self, event):
         """
-        Handle payement intent succeeded webhook event
+        Handle payment intent succeeded webhook event
         """
 
         return HttpResponse(

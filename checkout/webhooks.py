@@ -37,5 +37,26 @@ def webhook(request):
     except Exception as e:
         return HttpResponse(content=e, status=400)
 
-    print('Success')
-    return HttpResponse(status=200)
+    # Set up webhook
+
+    handler = StripeWH_Handler(request)
+
+    # Map events to handler functions
+
+    event_map = {
+        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
+        'payment_intent.payment_failed': handler.handle_payment_intent_failed,
+    }
+
+    # Get type from stripe
+
+    event_type = event['type']
+
+    # Get handler from event map otherwise use generic handler
+
+    event_handler = event_map.get(event_type, handler.handle_event)
+
+    # Call handler
+
+    response = event_handler(event)
+    return response
