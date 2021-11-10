@@ -35,7 +35,7 @@ class StripeWH_Handler:
 
         billing = intent.charges.data[0].billing_details
         shipping = intent.shipping
-        grand_total = round(intent.data.charges[0].amount/100, 2)
+        grand_total = round(intent.charges.data[0].amount/100, 2)
 
         for field, value in shipping.address.items():
             if value == '':
@@ -54,8 +54,10 @@ class StripeWH_Handler:
                     town_or_city__iexact=shipping.address.city,
                     street_address1__iexact=shipping.address.line1,
                     street_address2__iexact=shipping.address.line2,
-                    county__iexact=shipping.state,
+                    county__iexact=shipping.address.state,
                     grand_total=grand_total,
+                    original_bag=bag,
+                    stripe_payment_id=payment_id,
                 )
                 order_exists = True
                 break
@@ -78,8 +80,10 @@ class StripeWH_Handler:
                     town_or_city=shipping.address.city,
                     street_address1=shipping.address.line1,
                     street_address2=shipping.address.line2,
-                    county=shipping.state,
+                    county=shipping.address.state,
                     grand_total=grand_total,
+                    original_bag=bag,
+                    stripe_payment_id=payment_id,
                 )
                 for item_id, item_quantity in json.loads(bag).items():
                     order_line_item = OrderLineItem(
