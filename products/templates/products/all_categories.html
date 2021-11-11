@@ -6,7 +6,11 @@
     {% for category in categories %}
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="">
+          {% if category.image %}
+              <img class="activator" src="{{ category.image.url }}" alt="">
+          {% else %}
+              <img class="activator" src="{{ MEDIA_URL }}noimage.png">
+          {% endif %}
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{ category.friendly_name }}</span>
