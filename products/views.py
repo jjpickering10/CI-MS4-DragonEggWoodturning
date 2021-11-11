@@ -9,9 +9,6 @@ def all_products(request):
     products = Product.objects.all()
     images = Image.objects.all()
 
-    for product in products:
-        print(product.image_set.first())
-
     context = {
         'products': products,
         'images': images,

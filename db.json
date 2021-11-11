@@ -1,0 +1,1315 @@
+[
+{
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+        "name": "walking_sticks",
+        "friendly_name": "Walking Sticks",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "walking-sticks-image.jpeg"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+        "name": "bottle_openers",
+        "friendly_name": "Bottle Openers",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "bottle-openers-image.jpeg"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "name": "bowls",
+        "friendly_name": "Bowls",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "bowls-image.jpeg"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "name": "candlesticks_and_stands",
+        "friendly_name": "Candlesticks and Stands",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "candlestick-stands-image.jpeg"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+        "name": "hagstone_sculptures",
+        "friendly_name": "Hagstone Sculptures",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "hagstone-sculptures-image.jpeg"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+        "name": "unusual_gifts",
+        "friendly_name": "Unusual Gifts",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "unusual-gifts-image.jpeg"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+        "name": "wooden_flowers",
+        "friendly_name": "Wooden Flowers",
+        "description": "Sorry, no description currently",
+        "image_url": null,
+        "image": "wooden-flowers-image.jpeg"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 1,
+    "fields": {
+        "name": "african_blackwood",
+        "friendly_name": "African Blackwood"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 2,
+    "fields": {
+        "name": "mahogany",
+        "friendly_name": "Mahogany"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 3,
+    "fields": {
+        "name": "purpleheart",
+        "friendly_name": "Purpleheart"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 4,
+    "fields": {
+        "name": "chamfuta",
+        "friendly_name": "Chamfuta"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 5,
+    "fields": {
+        "name": "beech",
+        "friendly_name": "Beech"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 6,
+    "fields": {
+        "name": "afrormosia",
+        "friendly_name": "Afrormosia"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 7,
+    "fields": {
+        "name": "elm",
+        "friendly_name": "Elm"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 9,
+    "fields": {
+        "name": "american_walnut",
+        "friendly_name": "American Walnut"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 10,
+    "fields": {
+        "name": "australian_blackwood",
+        "friendly_name": "Australian Blackwood"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 11,
+    "fields": {
+        "name": "ropala_lacewood",
+        "friendly_name": "Ropala Lacewood"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 12,
+    "fields": {
+        "name": "teak",
+        "friendly_name": "Teak"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 13,
+    "fields": {
+        "name": "amazique",
+        "friendly_name": "Amazique"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 14,
+    "fields": {
+        "name": "sapele",
+        "friendly_name": "Sapele"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 15,
+    "fields": {
+        "name": "pau_rosa",
+        "friendly_name": "Pau Rosa"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 16,
+    "fields": {
+        "name": "black_palmira",
+        "friendly_name": "Black Palmira"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 17,
+    "fields": {
+        "name": "padauk",
+        "friendly_name": "Padauk"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 18,
+    "fields": {
+        "name": "yew",
+        "friendly_name": "Yew"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 19,
+    "fields": {
+        "name": "zebrano",
+        "friendly_name": "Zebrano"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 20,
+    "fields": {
+        "name": "ash",
+        "friendly_name": "Ash"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 21,
+    "fields": {
+        "name": "walnut",
+        "friendly_name": "Walnut"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 22,
+    "fields": {
+        "name": "cocobolo",
+        "friendly_name": "Cocobolo"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 23,
+    "fields": {
+        "name": "kingwood",
+        "friendly_name": "Kingwood"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 24,
+    "fields": {
+        "name": "maple",
+        "friendly_name": "Maple"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 25,
+    "fields": {
+        "name": "bloodwood",
+        "friendly_name": "Bloodwood"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 26,
+    "fields": {
+        "name": "wenge",
+        "friendly_name": "Wenge"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 27,
+    "fields": {
+        "name": "hawthorn",
+        "friendly_name": "Hawthorn"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 28,
+    "fields": {
+        "name": "anjan",
+        "friendly_name": "Anjan"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 29,
+    "fields": {
+        "name": "brazilian_walnut",
+        "friendly_name": "Brazilian Walnut"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 30,
+    "fields": {
+        "name": "oak",
+        "friendly_name": "Oak"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 31,
+    "fields": {
+        "name": "cherry",
+        "friendly_name": "Cherry"
+    }
+},
+{
+    "model": "products.woodtype",
+    "pk": 32,
+    "fields": {
+        "name": "knob_thorn",
+        "friendly_name": "Knob Thorn"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "category": 2,
+        "sku": "23212BC8EEC0411C88AD7004CD916D3D",
+        "name": "African Blackwood bottle opener",
+        "description": "Chrome-plated bottle opener with a waxed African Blackwood handle",
+        "price": "21.00",
+        "rating": null,
+        "wood_type": [
+            1
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "sku": "A9E251CBC8674A358D5366A0D46DAA2C",
+        "name": "Mahogany bottle opener",
+        "description": "Chrome-plated bottle opener with a waxed Mahogany handle",
+        "price": "17.00",
+        "rating": null,
+        "wood_type": [
+            2
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "category": 2,
+        "sku": "52B6F7BD8BCB4935B286610BDDA2AF53",
+        "name": "Purpleheart bottle opener",
+        "description": "Chrome-plated bottle opener with a waxed handle made of Purpleheart - also known as Amaranth, but usually called Purpleheart for obvious reasons!",
+        "price": "17.00",
+        "rating": null,
+        "wood_type": [
+            3
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "category": 3,
+        "sku": "0CD1F27DC62C495D8D019B335DC9B652",
+        "name": "American Walnut bowl",
+        "description": "This is a small round bowl made from American, or Black, Walnut. It has a lovely grain pattern.",
+        "price": "17.00",
+        "rating": null,
+        "wood_type": [
+            9
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "category": 3,
+        "sku": "850C72379C40403A8FAA454BCBB72CDE",
+        "name": "Australian Blackwood bowl",
+        "description": "This is a shallow ring or trinket bowl made from a piece of rippled Australian Blackwood. The timber is nearly always very bland and uninteresting but occasionally it forms the distinctive grain pattern shown in this piece. The amount of ripple varies considerably and the piece that this bowl is made from is particularly impressive. I have only been able to buy a couple of small pieces so the number of things I will be able to make will be limited. Despite its name the timber is golden brown.",
+        "price": "16.00",
+        "rating": null,
+        "wood_type": [
+            10
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "category": 3,
+        "sku": "3D864CD70DF54AC0BD149D9A63ABB51D",
+        "name": "Elm Burr bowl",
+        "description": "This small bowl has been made from a burr that formed on the trunk of an Elm tree. Wood burrs are always difficult to turn and there are some small fissures that are inherent in this timber. It is a very pretty piece of wood.",
+        "price": "17.00",
+        "rating": null,
+        "wood_type": [
+            7
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "category": 3,
+        "sku": "D1683AB1AD834136B9F8423D3D3806E2",
+        "name": "Beech Burr bowl",
+        "description": "This is a really striking “nut bowl” made from a beech burr. The burr grows as a knobbly bit on the trunk of the tree. It has been carefully hollowed to form a bowl. There were two small holes that inevitably opened wider during the hollowing process which add an additional bit of character to the piece.",
+        "price": "48.00",
+        "rating": null,
+        "wood_type": [
+            5
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "category": 3,
+        "sku": "64256C4C8800439EBA951152ED3FF7C3",
+        "name": "Ropala Lacewood bowl",
+        "description": "This bowl is 130mm in diameter and 45mm high. This is a nicely figured bowl with a distinctive grain pattern reminiscent of delicate lace.",
+        "price": "22.00",
+        "rating": null,
+        "wood_type": [
+            11
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "category": 3,
+        "sku": "B799FDBA44F44273BA17BE04DF8D2A48",
+        "name": "Afrormosia bowl",
+        "description": "A nice chunky bowl with a \"roll over\" rim. Grandma would love to keep her mints in this! The delicate grain pattern of Afrormosia and the rich colour make this a lovely item.",
+        "price": "20.00",
+        "rating": null,
+        "wood_type": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "category": 3,
+        "sku": "6C6682F985DF4523A780A751BDED1116",
+        "name": "Chamfuta bowl",
+        "description": "This is a small well figured bowl made from Chamfuta which is also known as Pod Mahogany. It displays a nice grain pattern and interesting colouration.",
+        "price": "16.00",
+        "rating": null,
+        "wood_type": [
+            4
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "category": 4,
+        "sku": "5C248EAD4F4E494380B38F8DCC28E3D7",
+        "name": "Afrormosia and Teak candle stand",
+        "description": "This candlestick has been hollow-formed out of Afrormosia to create a heart-shaped centre pattern. It has been fitted with a thin metal rod to hold a candle securely in place. The base is made from Teak.",
+        "price": "21.00",
+        "rating": null,
+        "wood_type": [
+            6,
+            12
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "category": 4,
+        "sku": "118B955BAA0749B1BD791C67D960B5C5",
+        "name": "Pair of Pau Rosa candlesticks",
+        "description": "These two pretty little candle holders are made from Pau Rosa with Padauk and Rosewood bases. They have each been fitted with a thin metal rod to secure the candle in place.",
+        "price": "22.00",
+        "rating": null,
+        "wood_type": [
+            15
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "category": 4,
+        "sku": "CB2408F8440A4764A1BED58769F111D4",
+        "name": "Mahogany and Sapele candlestick",
+        "description": "This small candlestick has been hollow-formed with a see-through heart shape in the Mahogany stem. The top and base are Sapele and it has been fitted with a thin metal rod to secure the candle in place.",
+        "price": "17.00",
+        "rating": null,
+        "wood_type": [
+            2,
+            14
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+        "category": 4,
+        "sku": "6ECCAE8EC0EE40ACB734F1D9F986497C",
+        "name": "Amazique and Sapele candlestick",
+        "description": "This small candlestick has been hollow-formed with a see-through heart shape in the Amazique stem, which has a lovely stripy grain. It has a round base and a larger overhanging square top that has been fitted with a thin metal rod to secure the candle in place.",
+        "price": "19.00",
+        "rating": null,
+        "wood_type": [
+            13,
+            14
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+        "category": 5,
+        "sku": "AA394095653148A48580744FED5F491A",
+        "name": "Wenge hag stone sculpture",
+        "description": "Stones with naturally formed holes through them have been used as good luck charms for centuries. They have been hung on fruit trees and placed around fields to improve the crops.\r\n\r\nThey are also kept in people’s homes, often by the front door, to ward off the unwanted attention of witches, hence the name 'hagstone'.\r\n\r\nI have had a hag stone with me, on my key ring, for over forty years and I have never been troubled by a witch, so I can vouch for their efficiency.\r\n\r\nThis piece of art - inspired by the beach and folklore - has seven hag stones collected from the beach at Hythe in Kent. Each stone has been changed by the elements over millions of years, ending up on the beach having travelled hundreds or even thousands of miles.\r\n\r\nWhy seven stones?\r\n\r\nSeven is chosen by more people as their lucky number than any other. Consider the number of continents, colours of the rainbow, days of the week, notes on a musical scale, the ages of man, David Beckham's shirt and dwarfs.\r\n\r\nThis sculpture has a base made from Wenge, which is pronounced  \"wengy\" as in dendrogeomorphology, or wenggy as in Twiggy.  But not \"henge\" as in stone!",
+        "price": "53.00",
+        "rating": null,
+        "wood_type": [
+            26
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+        "category": 5,
+        "sku": "D0CB9F0CCC12445BAFFC936334BE3EED",
+        "name": "Black Palmira hag stone sculpture",
+        "description": "Stones with naturally formed holes through them have been used as good luck charms for centuries. They have been hung on fruit trees and placed around fields to improve the crops.\r\n\r\nThey are also kept in people’s homes, often by the front door, to ward off the unwanted attention of witches, hence the name 'hagstone'.\r\n\r\nI have had a hag stone with me, on my key ring, for over forty years and I have never been troubled by a witch, so I can vouch for their efficiency.\r\n\r\nThis piece of art - inspired by the beach and folklore - has seven hag stones collected from the beach at Hythe in Kent. Each stone has been changed by the elements over millions of years, ending up on a beach having travelled hundreds or even thousands of miles.\r\n\r\nWhy seven stones?\r\n\r\nSeven is chosen by more people as their lucky number than any other. Consider the number of continents, colours of the rainbow, days of the week, notes on a scale, the ages of man, David Beckham's shirt and dwarfs.\r\n\r\nThis sculpture has a Black Palmira base which is not actually a wood, but a palm. It is in the same family as bamboo, grass and bananas.",
+        "price": "51.00",
+        "rating": null,
+        "wood_type": [
+            16
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+        "category": 6,
+        "sku": "5A1997BA3A4D43A7AAAE922E039544CE",
+        "name": "Padauk and Mahogany executive desk tidy",
+        "description": "This unusual and striking executive desk tidy has been constructed from a “square ball” made from Padauk and a Mahogany tray.\r\n\r\nPens, pencils and other long thin things can be inserted through the holes in the “square ball” and the tray used to keep paper clips, treasury tags and pencil sharpeners etc.\r\n\r\n(Pens and all other accessories shown are for illustration purposes only.)",
+        "price": "39.00",
+        "rating": null,
+        "wood_type": [
+            2,
+            17
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+        "category": 6,
+        "sku": "ABB6FAB3CC4F443B86B4CB912DA66824",
+        "name": "American Walnut display stand for wired fresh flowers",
+        "description": "This is a flower stand made out of American Walnut that will accommodate real flowers with wired stems such as gerbera, or with very firm stems such as roses. The flowers can be watered via a small plastic bowl that is fitted into the underside of the stand.\r\n\r\nIt can also be used for artificial flowers to make an attractive permanent display, as shown in the photograph.",
+        "price": "25.00",
+        "rating": null,
+        "wood_type": [
+            9
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+        "category": 7,
+        "sku": "BD7D2BF247904D458C79FCEAD00B2007",
+        "name": "Yew and Zebrano flower art display",
+        "description": "The base of this artificial flower display is made of English Yew, one of the most decorative indigenous timbers we have.\r\n\r\nThe three flowers are made from Zebrano, also known as Zebra Wood for obvious reasons.\r\n\r\nThe twisted stems are made from brass wire.",
+        "price": "24.00",
+        "rating": null,
+        "wood_type": [
+            18,
+            19
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+        "category": 7,
+        "sku": "C3AB263F20254F0E821D955AFEC02AA1",
+        "name": "Yew flower art display",
+        "description": "The base of this artificial flower display is made of English Yew, one of the most decorative indigenous timbers we have. The three flowers are made from Yew branch wood, showing both the light sapwood and darker heartwood.\r\n\r\nThe twisted stems are made from brass wire.",
+        "price": "25.00",
+        "rating": null,
+        "wood_type": [
+            18
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+        "category": 1,
+        "sku": "AC295148803F4D0C821758B2B2C3C1C4",
+        "name": "Maple and Padauk walking/hiking stick with 'thumb-through' handle",
+        "description": "This walking stick is made from Maple with a 'thumb-through' handle from heart and sapwood of the Padauk tree.\r\nIt is 43\"/109cm long and weighs 500g. It is fitted with a rubber ferrule.\r\nThe Maple has been stained to a very dark brown but allowing some lighter colour to show through. \r\n\r\nThis stick has a rich deep red and warm white Padauk “thumb through” handle. This been made from heart and sapwood, meaning that while it is two colours it is the same piece of timber.\r\n\r\nIt has been finished with high gloss varnish on the shaft and shellac sealer and wax on the handle.",
+        "price": "95.00",
+        "rating": null,
+        "wood_type": [
+            17,
+            24
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+        "category": 1,
+        "sku": "46AD81D5ECF648F9BFB7BEBE798042EB",
+        "name": "Sapele and Hawthorn thumb-stick",
+        "description": "This walking stick/thumb-stick is made from Sapele and Hawthorn. \r\nIt is 47\"/120cm long and weighs 740g. It is fitted with a rubber ferrule.\r\nI have combined African and English hardwoods and a decorative brass spacer in making this stunning and slightly heavier than normal walking stick.\r\n\r\nHawthorn is not commonly used by woodturners but is a surprisingly nice timber to work with, and quite hard. It turns and carves well and looks lovely when finished with a high gloss.  I have used it to make the \"thumb stick\" handle. The Hawthorn is from a driftwood trunk I found washed up on Thorness Bay beach on the Isle of Wight.\r\n\r\nI have used a brass spacer between the handle and stick shaft to add decoration. \r\n\r\nThe Sapele used in the shaft is a lovely deep brown colour with lots of grain showing under the gloss varnish.",
+        "price": "98.00",
+        "rating": null,
+        "wood_type": [
+            14,
+            27
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+        "category": 1,
+        "sku": "683CA62079A04669BF7AD98A4098E753",
+        "name": "Cherry and Anjan walking stick",
+        "description": "This is a super strong Cherry walking stick with a Derby style handle made out of an Indian hardwood called Anjan.\r\n\r\nThis very hard wood has been fixed to the shaft with a stainless steel spigot and brass collar.It is 32\"/82cm long and weighs 520g. It is fitted with a rubber ferrule.\r\n\r\nAnjan is not commonly used anywhere, I am told that it was once used to make croquet mallets.\r\n\r\nThe unique Dragon Egg wobble on this stick has been based on the Fibonacci sequence of 1:1.6\r\n\r\nThis is a very interesting mathematical rule that is worth exploring if you are not aware of it.",
+        "price": "82.00",
+        "rating": null,
+        "wood_type": [
+            28,
+            31
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+        "category": 1,
+        "sku": "373494483D7A4151ADBD88442E33C7E9",
+        "name": "English Yew and Brazilian Walnut Thumbstick",
+        "description": "This walking stick is made from English Yew and Brazilian Walnut.\r\n\r\nIt is 50\"/127cm long and is fitted with a rubber ferrule.",
+        "price": "85.00",
+        "rating": null,
+        "wood_type": [
+            18,
+            29
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 25,
+    "fields": {
+        "category": 1,
+        "sku": "44ACADD8374A4CD3803BB0668233FD1C",
+        "name": "Maple and Padauk hiking stick with 'thumb-through' handle",
+        "description": "This stick is made from Maple with a thumb-through hole handle made of heart and sapwood from the Padauk tree.\r\nIt is 44\"/112cm long and weighs 510g. It is fitted with a rubber ferrule.\r\nThis stick has been made to give a really rustic feel. The shaft has the appearance of a dimpled finish, however it is actually completely smooth with a hard-wearing satin finish. The handle really shows off the natural open grain of Padauk.",
+        "price": "78.00",
+        "rating": null,
+        "wood_type": [
+            17,
+            24
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 26,
+    "fields": {
+        "category": 1,
+        "sku": "D8464B08642848D09DC276D9EDCF43A0",
+        "name": "Maple and Bloodwood \"knob kerrie\" style stick",
+        "description": "This is a walking or hiking stick made of Maple and Bloodwood, crafted in the style of a \"knob kerrie\".\r\nIt is 43\"/110cm long and weighs 390g. It is fitted with a rubber ferrule.\r\nThis stick has been made in such a way that it is slightly wider, which emphasises the unique 'dragon egg' wobble and makes a stunning walking stick. The rich, deep colours of the Bloodwood incorporating a small amount of sapwood, make a striking contrast with the lovely pale maple.",
+        "price": "72.00",
+        "rating": null,
+        "wood_type": [
+            24,
+            25
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 27,
+    "fields": {
+        "category": 1,
+        "sku": "610646311EBD4D10A6A3CED9538E9F46",
+        "name": "Ash, Walnut and Cocobolo Rosewood T-handle walking stick",
+        "description": "This is an Ash, Walnut and Cocobolo Rosewood walking stick with a traditional T-handle. \r\nIt is 41\"/104cm long and weighs 375g. It is fitted with a rubber ferrule.\r\nThe Ash and Walnut contrast really well together with the lighter Ash and the warm dark American Walnut making the striking alternate colouring. The sturdy handle is made from Cocobolo Rosewood.",
+        "price": "82.00",
+        "rating": null,
+        "wood_type": [
+            20,
+            21,
+            22
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 28,
+    "fields": {
+        "category": 1,
+        "sku": "2A4501391A2642AC923E86D1D505BF22",
+        "name": "Ash, Walnut and Knob Thorn stick - \"knob kerrie\" style (longer)",
+        "description": "This is an ash, Walnut and Knob Thorn stick for walking or hiking, crafted in the style of a \"knob kerrie\". \r\nIt is 42\"/107cm long and weighs 310g. It is fitted with a rubber ferrule.\r\nThis particular stick has been made with another which is similar in design, they would make ideal \"His and Hers\" gifts. This is the longer of the two; you can **view the shorter one here**. I think it would be nice for them to stay together - but of course they can be bought separately! I have included photos of the two sticks together, for illustration only.\r\n\r\nThis is a lovely slim stick made from Ash and American Walnut with a Knob Thorn handle. Knob thorn is a tree that produces fruits eaten by giraffes; I am told only they can reach the fruit and deal with the thorns. \r\n\r\nThe lighter and darker woods make a striking alternate coloured shaft.",
+        "price": "70.00",
+        "rating": null,
+        "wood_type": [
+            20,
+            21,
+            32
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 29,
+    "fields": {
+        "category": 1,
+        "sku": "24F047A52D424853A192915D15C3F5A5",
+        "name": "Ash, Walnut and Knob Thorn stick - \"knob kerrie\" style (shorter)",
+        "description": "This is an ash, Walnut and Knob Thorn stick for walking or hiking, crafted in the style of a \"knob kerrie\". \r\nIt is 41\"/104cm long and weighs 290g. It is fitted with a rubber ferrule.\r\nThis particular walking stick has been made with another which is similar in design, and they would make a good \"his and hers\" pairing. This is the slightly shorter one of the pair - the longer one can be viewed here. I think it would be nice for them to stay together - but of course they can be bought separately!  I have included photos of the two sticks together, for illustration only.\r\n\r\nThis is a lovely slim stick with a Knob Thorn handle. Knob Thorn is a tree that grows in Africa and is extremely hard. Giraffes eat the fruits from the top of the tree, as they are the only animals that can reach them and deal with the thorns. \r\n\r\nThe ash and walnut contrast really well together with the lighter Ash and the warm dark American Walnut making the striking alternate colouring.",
+        "price": "70.00",
+        "rating": null,
+        "wood_type": [
+            20,
+            21,
+            32
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 30,
+    "fields": {
+        "category": 1,
+        "sku": "023DC49BA2BC4EB298707E1488EE8425",
+        "name": "Brazilian Mahogany and Kingwood hiking stick",
+        "description": "This is a Brazilian Mahogany stick with a finger-grip handle made of Kingwood, ideal for walking or hiking.\r\nIt is 46\"/118cm long and weighs 475g. It is fitted with a rubber ferrule.\r\nThe warm deep colour of the Brazilian Mahogany blends well with the grain of the slightly darker Kingwood handle which has been turned with finger grips for extra stability when walking over rough ground.\r\n\r\nThis is a longer stick than I usually make, due to the longer length grip handle. It has been finished with a high gloss varnish and wax polish.",
+        "price": "95.00",
+        "rating": null,
+        "wood_type": [
+            2,
+            23
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 31,
+    "fields": {
+        "category": 1,
+        "sku": "A9E44C50A9DB4A2993BA841EF5575F71",
+        "name": "Maple and Oak thumb-stick - blue/black",
+        "description": "This walking stick/thumb-stick is made from Maple and Oak. \r\nIt is 45.5\"/116cm long and weighs 500g. It is fitted with a rubber ferrule.\r\nThe bottom two thirds of the shaft has been rounded while the top part is square with rounded edges and incorporates the unique Dragon Egg Woodturning 'wobble' effect.\r\n\r\nThe shaft has been stained a rich blue running into the black-stained Oak thumb-stick handle that has been inlaid with small decorative brass discs. This stick has been finished with three coats of high gloss varnish.",
+        "price": "98.00",
+        "rating": null,
+        "wood_type": [
+            24,
+            30
+        ]
+    }
+},
+{
+    "model": "products.image",
+    "pk": 1,
+    "fields": {
+        "product": 1,
+        "image_url": null,
+        "image": "african-blackwood-bottle-opener.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 2,
+    "fields": {
+        "product": 2,
+        "image_url": null,
+        "image": "mahogany-bottle-opener.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 3,
+    "fields": {
+        "product": 3,
+        "image_url": null,
+        "image": "purpleheart-bottle-opener.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 4,
+    "fields": {
+        "product": 4,
+        "image_url": null,
+        "image": "american-walnut-bowl.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 5,
+    "fields": {
+        "product": 4,
+        "image_url": null,
+        "image": "american-walnut-bowl-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 6,
+    "fields": {
+        "product": 5,
+        "image_url": null,
+        "image": "australian-blackwood-ring-bowl.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 7,
+    "fields": {
+        "product": 5,
+        "image_url": null,
+        "image": "australian-blackwood-ring-bowl-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 8,
+    "fields": {
+        "product": 5,
+        "image_url": null,
+        "image": "australian-blackwood-ring-bowl-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 9,
+    "fields": {
+        "product": 7,
+        "image_url": null,
+        "image": "beech-burr-bowl.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 10,
+    "fields": {
+        "product": 7,
+        "image_url": null,
+        "image": "beech-burr-bowl-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 11,
+    "fields": {
+        "product": 10,
+        "image_url": null,
+        "image": "chamfuta-bowl.jpg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 12,
+    "fields": {
+        "product": 10,
+        "image_url": null,
+        "image": "chamfuta-bowl-2.jpg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 13,
+    "fields": {
+        "product": 6,
+        "image_url": null,
+        "image": "elm-burr-bowl.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 14,
+    "fields": {
+        "product": 6,
+        "image_url": null,
+        "image": "elm-burr-bowl-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 15,
+    "fields": {
+        "product": 6,
+        "image_url": null,
+        "image": "elm-burr-bowl-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 16,
+    "fields": {
+        "product": 8,
+        "image_url": null,
+        "image": "ropala-lacewood-bowl.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 17,
+    "fields": {
+        "product": 8,
+        "image_url": null,
+        "image": "ropala-lacewood-bowl-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 18,
+    "fields": {
+        "product": 9,
+        "image_url": null,
+        "image": "afrormosia-bowl.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 19,
+    "fields": {
+        "product": 9,
+        "image_url": null,
+        "image": "afrormosia-bowl-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 20,
+    "fields": {
+        "product": 12,
+        "image_url": null,
+        "image": "pair-of-pau-rosa-candlesticks.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 21,
+    "fields": {
+        "product": 12,
+        "image_url": null,
+        "image": "pair-of-pau-rosa-candlesticks-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 22,
+    "fields": {
+        "product": 12,
+        "image_url": null,
+        "image": "pair-of-pau-rosa-candlesticks-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 23,
+    "fields": {
+        "product": 13,
+        "image_url": null,
+        "image": "mahogany-sapele-candlestand.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 24,
+    "fields": {
+        "product": 13,
+        "image_url": null,
+        "image": "mahogany-sapele-candlestand-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 25,
+    "fields": {
+        "product": 14,
+        "image_url": null,
+        "image": "amazique-sapele-candlestand.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 26,
+    "fields": {
+        "product": 14,
+        "image_url": null,
+        "image": "amazique-sapele-candlestand-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 27,
+    "fields": {
+        "product": 14,
+        "image_url": null,
+        "image": "amazique-sapele-candlestand-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 28,
+    "fields": {
+        "product": 11,
+        "image_url": null,
+        "image": "afrormosia-teak-candlestick.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 29,
+    "fields": {
+        "product": 11,
+        "image_url": null,
+        "image": "afrormosia-teak-candlestick-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 30,
+    "fields": {
+        "product": 16,
+        "image_url": null,
+        "image": "black-palmira-hagstone-sculpture.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 31,
+    "fields": {
+        "product": 16,
+        "image_url": null,
+        "image": "black-palmira-hagstone-sculpture-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 32,
+    "fields": {
+        "product": 16,
+        "image_url": null,
+        "image": "black-palmira-hagstone-sculpture-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 33,
+    "fields": {
+        "product": 15,
+        "image_url": null,
+        "image": "wenge-hagstone-sculpture.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 34,
+    "fields": {
+        "product": 15,
+        "image_url": null,
+        "image": "wenge-hagstone-sculpture-2.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 35,
+    "fields": {
+        "product": 15,
+        "image_url": null,
+        "image": "wenge-hagstone-sculpture-3.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 36,
+    "fields": {
+        "product": 18,
+        "image_url": null,
+        "image": "american-walnut-wired-flower-stand.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 37,
+    "fields": {
+        "product": 18,
+        "image_url": null,
+        "image": "american-walnut-wired-flower-stand-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 38,
+    "fields": {
+        "product": 18,
+        "image_url": null,
+        "image": "american-walnut-wired-flower-stand-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 39,
+    "fields": {
+        "product": 17,
+        "image_url": null,
+        "image": "padauk-mahogany-pencil-holder.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 40,
+    "fields": {
+        "product": 17,
+        "image_url": null,
+        "image": "padauk-mahogany-pencil-holder-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 41,
+    "fields": {
+        "product": 17,
+        "image_url": null,
+        "image": "padauk-mahogany-pencil-holder-3.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 42,
+    "fields": {
+        "product": 20,
+        "image_url": null,
+        "image": "yew-wooden-flowers.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 43,
+    "fields": {
+        "product": 20,
+        "image_url": null,
+        "image": "yew-wooden-flowers-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 44,
+    "fields": {
+        "product": 19,
+        "image_url": null,
+        "image": "yew-zebrano-wooden-flowers.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 45,
+    "fields": {
+        "product": 19,
+        "image_url": null,
+        "image": "yew-zebrano-wooden-flowers-2.JPG"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 46,
+    "fields": {
+        "product": 31,
+        "image_url": null,
+        "image": "maple-oak-thumb-stick-blue-black.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 47,
+    "fields": {
+        "product": 30,
+        "image_url": null,
+        "image": "brazilian-mahogany-kingwood-stick.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 48,
+    "fields": {
+        "product": 29,
+        "image_url": null,
+        "image": "ash-walnut-knob-thorn-knob-kerrie-stick-short.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 49,
+    "fields": {
+        "product": 28,
+        "image_url": null,
+        "image": "ash-walnut-knob-thorn-knob-kerrie-stick-long.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 50,
+    "fields": {
+        "product": 27,
+        "image_url": null,
+        "image": "ash-walnut-cocobolo-stick.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 51,
+    "fields": {
+        "product": 26,
+        "image_url": null,
+        "image": "maple-bloodwood-knob-kerrie-stick.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 52,
+    "fields": {
+        "product": 24,
+        "image_url": null,
+        "image": "yew-brazilian-walnut-thumb-stick.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 53,
+    "fields": {
+        "product": 23,
+        "image_url": null,
+        "image": "cherry-anjan-stick.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 54,
+    "fields": {
+        "product": 22,
+        "image_url": null,
+        "image": "sapele-hawthorn-thumb.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 55,
+    "fields": {
+        "product": 25,
+        "image_url": null,
+        "image": "maple-padauk-hiking-thumb-through-stick.jpeg"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 56,
+    "fields": {
+        "product": 21,
+        "image_url": null,
+        "image": "maple-padauk-thumb-through.jpeg"
+    }
+}
+]
