@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product
+from .models import Category, Product, Image
 
 
 def all_products(request):
@@ -7,12 +7,14 @@ def all_products(request):
     A view to show all products
     """
     products = Product.objects.all()
+    images = Image.objects.all()
 
     for product in products:
-        print(type(product.sku))
+        print(product.image_set.first())
 
     context = {
         'products': products,
+        'images': images,
     }
 
     return render(request, 'products/all_products.html', context)

@@ -7,10 +7,13 @@
     {% for product in products %}
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-            {% if product.image %}
-                <img class="activator" src="{{ product.image.url }}">
+            {% if product.image_set.all|length > 0 %}
+              <img src="{{ product.image_set.first.image.url }}" alt="">
+              {% for image in product.image_set.all %}
+              <img class="activator" src="{{ image.image.url }}">
+              {% endfor %}
             {% else %}
-                <img class="activator" src="{{ MEDIA_URL }}noimage.png">
+              <img class="activator" src="{{ MEDIA_URL }}noimage.png">
             {% endif %}
         </div>
         <div class="card-content">
