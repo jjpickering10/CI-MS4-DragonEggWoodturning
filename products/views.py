@@ -8,6 +8,9 @@ def all_products(request):
     """
     products = Product.objects.all()
 
+    for product in products:
+        print(type(product.sku))
+
     context = {
         'products': products,
     }
