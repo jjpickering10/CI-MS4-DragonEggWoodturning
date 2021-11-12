@@ -15,6 +15,10 @@
   </form>
 </section>
 
+{% for wood in wood_types %}
+<p><a href="{% url 'all_products' %}?wood={{ wood.id }}">View all {{ wood.friendly_name }} here</a></p>
+{% endfor %}
+
 <div class="category-container">
     {% for product in products %}
     <div class="card">

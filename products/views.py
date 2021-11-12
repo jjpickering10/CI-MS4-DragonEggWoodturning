@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
-from .models import Category, Product, Image
+from .models import Category, Product, Image, WoodType
 
 
 def all_products(request):
@@ -9,17 +9,24 @@ def all_products(request):
     """
     products = Product.objects.all()
     images = Image.objects.all()
+    wood_types = WoodType.objects.all()
     query = None
     categories = None
+    wood_search = None
 
     if request.GET:
+        if 'wood' in request.GET:
+            wood_search = request.GET['wood']
+            print(wood_search)
+            # products = products.filter(wood_type__id__in=wood_search)
+            products = Product.objects.filter(wood_type__id=wood_search)
+            wood_results = WoodType.objects.filter(id__in=wood_search)
+
         if 'category' in request.GET:
             categories = request.GET['category']
-            print(categories)
-            products = products.filter(category__id__in=categories)
+            # products = products.filter(category__id__in=categories)
+            products = Product.objects.filter(category=categories)
             categories = Category.objects.filter(id__in=categories)
-            for product in products:
-                print(product.name)
 
         if 'query' in request.GET:
             query = request.GET['query']
@@ -34,6 +41,7 @@ def all_products(request):
         'images': images,
         'search_term': query,
         'current_categories': categories,
+        'wood_types': wood_types,
     }
 
     return render(request, 'products/all_products.html', context)
