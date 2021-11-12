@@ -32,11 +32,17 @@
             <a href="{% url 'home' %}" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="sass.html">About</a></li>
-              <li><a href="badges.html">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
               <li><a href="{% url 'all_products' %}">Products</a></li>
               <li><a href="{% url 'all_categories' %}">Categories</a></li>
-              <li><a href="collapsible.html">Login</a></li>
+              {% if request.user.is_authenticated %}
+                <li><a href="{% url 'profile' %}" >My Profile</a></li>
+                <li><a href="{% url 'account_logout' %}">Logout</a></li>
+              {% else %}
+                <li><a href="{% url 'account_login' %}">Login</a></li>
+                <li><a href="{% url 'account_signup' %}">Register</a></li>
+              {% endif %}
               <li><a href="{% url 'view_bag' %}"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
           </div>
@@ -44,11 +50,17 @@
       </div>
       <!-- Mobile Nav -->
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">About</a></li>
-        <li><a href="badges.html">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
         <li><a href="{% url 'all_products' %}">Products</a></li>
         <li><a href="{% url 'all_categories' %}">Categories</a></li>
-        <li><a href="collapsible.html">Login</a></li>
+        {% if request.user.is_authenticated %}
+          <li><a href="{% url 'profile' %}" >My Profile</a></li>
+          <li><a href="{% url 'account_logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'account_login' %}">Login</a></li>
+          <li><a href="{% url 'account_signup' %}">Register</a></li>
+        {% endif %}
         <li><a href="{% url 'view_bag' %}"><i class="fas fa-shopping-cart"></i></a></li>
       </ul>
     </header>
