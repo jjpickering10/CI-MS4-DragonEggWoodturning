@@ -10,8 +10,17 @@ def all_products(request):
     products = Product.objects.all()
     images = Image.objects.all()
     query = None
+    categories = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category']
+            print(categories)
+            products = products.filter(category__id__in=categories)
+            categories = Category.objects.filter(id__in=categories)
+            for product in products:
+                print(product.name)
+
         if 'query' in request.GET:
             query = request.GET['query']
             if not query:
@@ -24,6 +33,7 @@ def all_products(request):
         'products': products,
         'images': images,
         'search_term': query,
+        'current_categories': categories,
     }
 
     return render(request, 'products/all_products.html', context)
