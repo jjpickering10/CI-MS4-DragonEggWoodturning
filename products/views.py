@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.db.models import Q
 from .models import Category, Product, Image
 
 
@@ -8,10 +9,21 @@ def all_products(request):
     """
     products = Product.objects.all()
     images = Image.objects.all()
+    query = None
+
+    if request.GET:
+        if 'query' in request.GET:
+            query = request.GET['query']
+            if not query:
+                return redirect(reverse('all_products'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
         'images': images,
+        'search_term': query,
     }
 
     return render(request, 'products/all_products.html', context)

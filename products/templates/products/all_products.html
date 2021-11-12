@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block content %}
+<!-- Search functionality -->
+<section>
+  <form method="GET" action="{% url 'all_products' %}">
+    <div class="input-field">
+      <input id="search" type="search" name="query" placeholder="Search..." required>
+      <i class="material-icons fas fa-times"></i>
+      <button type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </form>
+</section>
 
 <div class="category-container">
     {% for product in products %}
