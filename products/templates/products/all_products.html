@@ -19,7 +19,15 @@
 <p><a href="{% url 'all_products' %}?wood={{ wood.id }}">View all {{ wood.friendly_name }} here</a></p>
 {% endfor %}
 
+{% for category in current_categories %}
+<p>{{ category.name }}</p>
+{% endfor %}
+{% for wood in wood_results %}
+<p>{{ wood.name }}</p>
+{% endfor %}
+
 <div class="category-container">
+    <p>{{ products|length }}</p>
     {% for product in products %}
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">

@@ -13,6 +13,7 @@
           {% endif %}
         </div>
         <div class="card-content">
+          <p>{{ category.product_set.all|length}}</p>
           <span class="card-title activator grey-text text-darken-4">{{ category.friendly_name }}</span>
           <p><a href="{% url 'all_products' %}?category={{ category.id }}">View all {{ category.friendly_name }} here</a></p>
         </div>

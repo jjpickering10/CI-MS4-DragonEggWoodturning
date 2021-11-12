@@ -12,7 +12,9 @@ def all_products(request):
     wood_types = WoodType.objects.all()
     query = None
     categories = None
+    current_categories = None
     wood_search = None
+    wood_results = None
 
     if request.GET:
         if 'wood' in request.GET:
@@ -20,13 +22,13 @@ def all_products(request):
             print(wood_search)
             # products = products.filter(wood_type__id__in=wood_search)
             products = Product.objects.filter(wood_type__id=wood_search)
-            wood_results = WoodType.objects.filter(id__in=wood_search)
+            wood_results = WoodType.objects.filter(id=wood_search)
 
         if 'category' in request.GET:
             categories = request.GET['category']
             # products = products.filter(category__id__in=categories)
             products = Product.objects.filter(category=categories)
-            categories = Category.objects.filter(id__in=categories)
+            categories = Category.objects.filter(id=categories)
 
         if 'query' in request.GET:
             query = request.GET['query']
@@ -42,6 +44,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'wood_types': wood_types,
+        'wood_results': wood_results,
     }
 
     return render(request, 'products/all_products.html', context)
