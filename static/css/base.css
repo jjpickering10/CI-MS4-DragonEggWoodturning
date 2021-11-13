@@ -19,7 +19,6 @@ button {
 
 .global-button {
   padding: 1rem 1.5rem;
-  border-radius: 2rem;
   background: var(--primary-orange);
   color: var(--white);
   cursor: pointer;
@@ -32,7 +31,7 @@ button {
 .global-button:hover, .global-button:focus {
   transition: 0.5s;
   background: var(--secondary-brown);
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 .hide {
@@ -49,46 +48,97 @@ body {
 body main {
   flex: 1 0 auto;
 }
-body main .home-container {
+
+.home-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
 }
-body main .home-container section {
+.home-container section {
   min-height: 100vh;
 }
-body main .home-container #home-landing {
+.home-container #home-landing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+}
+.home-container #home-landing .home-landing-title {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75%;
+  padding: 5em;
+}
+.home-container #home-landing .home-landing-title h1 {
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: calc(3rem + 2vw);
+  margin-bottom: 0;
+  color: var(--primary-brown);
+}
+.home-container #home-landing .home-landing-title h4 {
+  font-weight: 100;
+  color: var(--primary-brown);
+}
+.home-container #home-landing .home-landing-title .landing-buttons {
+  display: flex;
+}
+.home-container #home-landing .home-landing-title .landing-buttons a {
+  font-style: 1.7em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border: 1px solid var(--primary-brown);
+  border-radius: 0;
+  margin: 0;
+  text-align: center;
+  width: 15em;
+}
+.home-container #home-landing .home-landing-title .landing-buttons a + a {
+  margin-left: 1em;
+  background: none;
+  color: var(--primary-orange);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+}
+.home-container #home-landing .home-landing-title .landing-buttons a + a:hover, .home-container #home-landing .home-landing-title .landing-buttons a + a :focus {
+  box-shadow: none;
+  transition: 0.5s;
+}
+.home-container #home-landing .home-landing-image {
+  height: 75%;
+  display: flex;
+  align-items: center;
+}
+.home-container #home-landing .home-landing-image img {
+  padding: 3em;
+  width: 75%;
+  box-shadow: -20px 20px 20px 0px var(--primary-brown);
+}
+.home-container #home-about {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
-body main .home-container #home-landing .home-landing-section {
+.home-container #home-about .home-about-section {
   border: 1px solid black;
 }
-body main .home-container #home-about {
+.home-container #home-blog {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
-body main .home-container #home-about .home-about-section {
+.home-container #home-blog .home-blog-posts {
   border: 1px solid black;
 }
-body main .home-container #home-blog {
+.home-container #home-products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
-body main .home-container #home-blog .home-blog-posts {
+.home-container #home-products .home-products-section {
   border: 1px solid black;
 }
-body main .home-container #home-products {
+.home-container #home-woodtype {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
-body main .home-container #home-products .home-products-section {
-  border: 1px solid black;
-}
-body main .home-container #home-woodtype {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-}
-body main .home-container #home-woodtype .home-woodtype-section {
+.home-container #home-woodtype .home-woodtype-section {
   border: 1px solid black;
 }
 

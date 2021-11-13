@@ -22,7 +22,7 @@ button {
 
 .global-button {
     padding: 1rem 1.5rem;
-    border-radius: 2rem;
+    // border-radius: 2rem;
     background: var(--primary-orange);
     color: var(--white);
     cursor: pointer;
@@ -35,7 +35,7 @@ button {
     &:hover, &:focus {
         transition: 0.5s;
         background: var(--secondary-brown);
-        transform: translateY(-2px);
+        transform: scale(1.1);
     }
 }
 
@@ -52,55 +52,113 @@ body {
 
     main {
         flex: 1 0 auto;
+    }
+}
 
-        .home-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+.home-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
 
-            section {
-                min-height: 100vh;
+    section {
+        min-height: 100vh;
+    }
+
+    #home-landing {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+
+        .home-landing-title {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 75%;
+            padding: 5em;
+
+            h1 {
+                font-weight: 600;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                font-size: calc(3rem + 2vw);
+                margin-bottom: 0;
+                color: var(--primary-brown);
             }
 
-            #home-landing {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            h4 {
+                font-weight: 100;
+                color: var(--primary-brown);
+            }
 
-                .home-landing-section {
-                    border: 1px solid black;
+            .landing-buttons {
+                display: flex;
+
+                a {
+                    font-style: 1.7em;
+                    padding: 0.5em 1em;
+                    cursor: pointer;
+                    border: 1px solid var(--primary-brown);
+                    border-radius: 0;
+                    margin: 0;
+                    text-align: center;
+                    width: 15em;
+
+                    + a {
+                        margin-left: 1em;
+                        background: none;
+                        color: var(--primary-orange);
+                        box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+
+                        &:hover, :focus {
+                            box-shadow: none;
+                            transition: 0.5s;
+                        }
+                    }
                 }
             }
-            #home-about {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        }
 
-                .home-about-section {
-                    border: 1px solid black;
-                }
-            }
-            #home-blog {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        .home-landing-image {
+            height: 75%;
+            display: flex;
+            align-items: center;
 
-                .home-blog-posts {
-                    border: 1px solid black;
-                }
+            img {
+                padding: 3em;
+                width: 75%;
+                box-shadow: -20px 20px 20px 0px var(--primary-brown);
             }
-            #home-products {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        }
+    }
+    #home-about {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 
-                .home-products-section {
-                    border: 1px solid black;
-                }
-            }
-            #home-woodtype {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        .home-about-section {
+            border: 1px solid black;
+        }
+    }
+    #home-blog {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 
-                .home-woodtype-section {
-                    border: 1px solid black;
-                }
-            }
+        .home-blog-posts {
+            border: 1px solid black;
+        }
+    }
+    #home-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+        .home-products-section {
+            border: 1px solid black;
+        }
+    }
+    #home-woodtype {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+        .home-woodtype-section {
+            border: 1px solid black;
         }
     }
 }
