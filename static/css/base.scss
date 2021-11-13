@@ -163,6 +163,20 @@ nav {
     }
 }
 
+.products-amount {
+    width: 100%;
+    text-align: center;
+    margin-top: 5rem;
+
+    p {
+        font-weight: 300;
+    }
+
+    .product-label {
+        font-weight: 500;
+    }
+}
+
 .product-container {
 
     display: flex;
@@ -183,7 +197,6 @@ nav {
     
         .product-card {
             width: 100%;
-            background: var(--secondary-brown);
             display: flex;
             flex-direction: column;
             justify-content: space-between;

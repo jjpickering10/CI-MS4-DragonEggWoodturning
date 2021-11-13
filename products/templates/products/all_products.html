@@ -31,13 +31,24 @@
   </div>
 </section>
 
-{% for category in current_categories %}
-<p>{{ category.name }}</p>
-{% endfor %}
-{% for wood in wood_results %}
-<p>{{ wood.name }}</p>
-{% endfor %}
-<p>{{ products|length }}</p>
+<div class="products-amount">
+  {% if products|length == all_products|length %}
+  <p>{{ products|length }} products | <span class="product-label">All Products</span></p>
+  {% else %}
+  <p>{{ products|length }} products |
+    {% for category in current_categories %}
+    <span class="product-label">{{ category.friendly_name }}</span>
+  {% endfor %}
+  {% for wood in wood_results %}
+    <span class="product-label">{{ wood.friendly_name }}</span>
+  {% endfor %}  
+  {% if search_term %}
+    <span class="product-label"> Found with search "{{ search_term }}"</span>
+  {% endif %}  
+  </p>
+  {% endif %}
+</div>
+
 
 <div class="product-container">
   <div class="product-category-container">

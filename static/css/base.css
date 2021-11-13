@@ -132,6 +132,18 @@ nav {
   transition: 0.2s;
 }
 
+.products-amount {
+  width: 100%;
+  text-align: center;
+  margin-top: 5rem;
+}
+.products-amount p {
+  font-weight: 300;
+}
+.products-amount .product-label {
+  font-weight: 500;
+}
+
 .product-container {
   display: flex;
   flex-wrap: wrap;
@@ -150,7 +162,6 @@ nav {
 }
 .product-container .product-item-container .product-card {
   width: 100%;
-  background: var(--secondary-brown);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
