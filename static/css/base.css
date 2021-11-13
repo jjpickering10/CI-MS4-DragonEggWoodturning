@@ -167,14 +167,26 @@ nav {
 .products-amount p {
   font-weight: 300;
 }
-.products-amount .product-label {
+.products-amount .product-label, .products-amount .product-label-search {
   font-weight: 500;
 }
 
 .product-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 5rem;
+  overflow: hidden;
+}
+.product-container .watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 500px;
+  transform: translateY(-10%);
+  z-index: -10000;
+  opacity: 0.5;
+  color: var(--white);
 }
 .product-container > *:nth-child(1) {
   flex: 1 1 30%;
@@ -185,6 +197,7 @@ nav {
 .product-container .product-category-container h2 {
   font-weight: 100;
   text-transform: uppercase;
+  position: relative;
 }
 .product-container .product-category-container p {
   margin: 1rem 0;

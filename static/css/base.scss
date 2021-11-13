@@ -6,7 +6,6 @@
     --primary-orange: #E66C4E;
     --primary-cream: #FFF5EF;
     --white: #fff;
-
 }
 
 * {
@@ -202,16 +201,29 @@ nav {
         font-weight: 300;
     }
 
-    .product-label {
+    .product-label, .product-label-search {
         font-weight: 500;
     }
 }
 
 .product-container {
 
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     padding: 5rem;
+    overflow: hidden;
+
+    .watermark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 500px;
+        transform: translateY(-10%);
+        z-index: -10000;
+        opacity: 0.5;
+        color: var(--white);
+    }
 
     > *:nth-child(1) {
         flex: 1 1 30%;
@@ -225,6 +237,7 @@ nav {
         h2 {
             font-weight: 100;
             text-transform: uppercase;
+            position: relative;
         }
 
         p {

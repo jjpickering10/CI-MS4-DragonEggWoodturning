@@ -43,7 +43,7 @@
     <span class="product-label">{{ wood.friendly_name }}</span>
   {% endfor %}  
   {% if search_term %}
-    <span class="product-label"> Found with search "{{ search_term }}"</span>
+    <span class="product-label-search"> Found with search "{{ search_term }}"</span>
   {% endif %}  
   </p>
   {% endif %}
@@ -55,7 +55,6 @@
     <h2> Category</h2>
     {% for category in all_categories %}
     <p class="category-names"><a href="{% url 'all_products' %}?category={{ category.id }}"><i class="far fa-square"></i><i class="fas fa-check hide"></i>{{ category.friendly_name }}</a></p>
-    <!-- <hr> -->
     {% endfor %}
   </div>
     <div class="product-item-container">
@@ -98,13 +97,23 @@
 <script>
  const categories = document.querySelectorAll('.category-names')
  const label = document.querySelectorAll('.product-label')
+ const productContainer = document.querySelector('.product-container')
+
+ function addWatermark() {
+    const watermark = document.createElement('p')
+    const text = document.createTextNode(label[0].textContent)
+    watermark.append(text)
+    watermark.classList.add('watermark')
+    productContainer.append(watermark)
+ }
 
  categories.forEach(category => {
    if (label[0].textContent === category.textContent) {
-     currentSearch = category.textContent.toString()
      category.children[0].children[1].classList.remove('hide')
-     category.style.fontWeight = 500
+     category.style.fontWeight = 500 
    }
  })
+
+ addWatermark()
 </script>
 {% endblock %}
