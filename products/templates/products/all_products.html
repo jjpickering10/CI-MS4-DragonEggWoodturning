@@ -37,9 +37,16 @@
 {% for wood in wood_results %}
 <p>{{ wood.name }}</p>
 {% endfor %}
+<p>{{ products|length }}</p>
 
-<div class="category-container">
-    <p>{{ products|length }}</p>
+<div class="product-container">
+  <div class="product-category-container">
+    <h2> Category</h2>
+    {% for category in all_categories %}
+    <p><a href="{% url 'all_products' %}?category={{ category.id }}">{{ category.friendly_name }}</a></p>
+    <hr>
+    {% endfor %}
+  </div>
     <div class="product-item-container">
     {% for product in products %}
     <div class="product-card">

@@ -17,7 +17,7 @@ button {
 }
 
 body {
-  background: var(--secondary-brown);
+  background: var(--primary-cream);
   font-family: "Poppins", sans-serif;
   display: flex;
   min-height: 100vh;
@@ -132,42 +132,56 @@ nav {
   transition: 0.2s;
 }
 
-.product-item-container {
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem;
+}
+.product-container > *:nth-child(1) {
+  flex: 1 1 30%;
+}
+.product-container > *:nth-child(2) {
+  flex: 1 1 70%;
+}
+.product-container .product-item-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
 }
-.product-item-container .product-card {
+.product-container .product-item-container .product-card {
   width: 100%;
-  background: var(--primary-cream);
+  background: var(--secondary-brown);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.product-item-container .product-card .product-card-image {
-  position: relative;
+.product-container .product-item-container .product-card .product-card-image img {
+  height: 300px;
   width: 100%;
-  height: 250px;
-}
-.product-item-container .product-card .product-card-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  display: block;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.product-item-container .product-card .product-card-content {
+.product-container .product-item-container .product-card .product-card-content {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+  justify-content: space-between;
 }
-.product-item-container .product-card .product-card-content .product-card-title h3 {
+.product-container .product-item-container .product-card .product-card-content .product-card-title h3 {
   font-size: 1.5rem;
   color: var(--primary-brown);
 }
-.product-item-container .product-card .product-card-content .product-price {
+.product-container .product-item-container .product-card .product-card-content .product-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.product-container .product-item-container .product-card .product-card-content .product-price h2 {
+  font-size: 1rem;
+}
+.product-container .product-item-container .product-card .product-card-content .product-price .product-rating h4 {
+  font-size: 0.8rem;
 }
 
 .page-footer {

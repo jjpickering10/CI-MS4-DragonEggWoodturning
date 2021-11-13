@@ -10,6 +10,7 @@ def all_products(request):
     products = Product.objects.all()
     images = Image.objects.all()
     wood_types = WoodType.objects.all()
+    all_categories = Category.objects.all()
     query = None
     categories = None
     current_categories = None
@@ -45,6 +46,7 @@ def all_products(request):
         'current_categories': categories,
         'wood_types': wood_types,
         'wood_results': wood_results,
+        'all_categories': all_categories
     }
 
     return render(request, 'products/all_products.html', context)

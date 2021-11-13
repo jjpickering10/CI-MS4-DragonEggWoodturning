@@ -19,7 +19,7 @@ button {
 }
 
 body {
-    background: var(--secondary-brown);
+    background: var(--primary-cream);
     font-family: 'Poppins', sans-serif;
     display: flex;
     min-height: 100vh;
@@ -163,47 +163,79 @@ nav {
     }
 }
 
-.product-item-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
+.product-container {
 
-    .product-card {
-        width: 100%;
-        background: var(--primary-cream);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem;
 
-        .product-card-image {
-            position: relative;
+    > *:nth-child(1) {
+        flex: 1 1 30%;
+    }
+    > *:nth-child(2) {
+        flex: 1 1 70%;
+    }
+
+    .product-item-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+    
+        .product-card {
             width: 100%;
-            height: 250px;
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: contain;
-            }
-        }
-
-        .product-card-content {
+            background: var(--secondary-brown);
             display: flex;
             flex-direction: column;
-            flex: 1 0 auto;
-
-            .product-card-title {
-                
-                h3 {
-                    font-size: 1.5rem;
-                    color: var(--primary-brown);
+            justify-content: space-between;
+    
+            .product-card-image {
+                // position: relative;
+                // width: 100%;
+                // height: 250px;
+    
+                img {
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
+                    // height: 100%;
+                    height: 300px;
+                    width: 100%;
+                    display: block;
+                    // aspect-ratio: 16/9;
+                    object-fit: contain;
                 }
             }
-
-            .product-price {
+    
+            .product-card-content {
                 display: flex;
+                flex-direction: column;
+                flex: 1 0 auto;
                 justify-content: space-between;
-                align-items: center;
+    
+                .product-card-title {
+                    
+                    h3 {
+                        font-size: 1.5rem;
+                        color: var(--primary-brown);
+                    }
+                }
+    
+                .product-price {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+    
+                    h2 {
+                        font-size: 1rem;
+                    }
+    
+                    .product-rating {
+    
+                        h4 {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
             }
         }
     }
