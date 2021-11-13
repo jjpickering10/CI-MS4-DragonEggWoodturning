@@ -5,6 +5,7 @@
     --secondary-brown: #D2B48C;
     --primary-orange: #E66C4E;
     --primary-cream: #FFF5EF;
+    --white: #fff;
 
 }
 
@@ -14,8 +15,33 @@
     box-sizing: border-box;
 }
 
+// Global classes
+
 button {
     font-family: 'Roboto', sans-serif;
+}
+
+.global-button {
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    background: var(--primary-orange);
+    color: var(--white);
+    cursor: pointer;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    font-weight: 500;
+    transition: 0.5s;
+
+    &:hover, &:focus {
+        transition: 0.5s;
+        background: var(--secondary-brown);
+        transform: translateY(-2px);
+    }
+}
+
+.hide {
+    display: none;
 }
 
 body {
@@ -124,7 +150,7 @@ nav {
 #wood-filter-side-filter {
 
     .sidenav {
-        background-color: var(--secondary-brown);
+        background-color: var(--primary-cream);
     }
 
     img {
@@ -135,15 +161,19 @@ nav {
         text-transform: uppercase;
         text-align: center;
         margin: 1.5rem 0;
+        font-weight: 100;
     }
 
     .wood-type-link {
         padding: 0.5rem;
         transition: 0.4s;
+        letter-spacing: 2px;
+        font-weight: 300;
 
         &:hover {
             transition: 0.4s;
             transform: translateX(1rem);
+            font-weight: 500;
         }
 
         a {
@@ -190,6 +220,45 @@ nav {
         flex: 1 1 70%;
     }
 
+    .product-category-container {
+
+        h2 {
+            font-weight: 100;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 200;
+            letter-spacing: 2px;
+
+            &:hover, &:focus {
+                font-weight: 500;
+            }
+
+            a {
+                position: relative;
+                color: var(--primary-brown);
+
+                .fa-square {
+                    margin-right: 0.5rem;
+                }
+
+                .fa-check {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: scale(1.5);
+                }
+            }
+        }
+
+        hr {
+            width: 50%;
+        }
+    }
+
     .product-item-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -204,18 +273,29 @@ nav {
             .product-card-image {
                 // position: relative;
                 // width: 100%;
-                // height: 250px;
+                height: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
     
                 img {
                     // position: absolute;
                     // top: 0;
                     // left: 0;
                     // height: 100%;
-                    height: 300px;
-                    width: 100%;
+                    height: 250px;
+                    // width: 100%;
                     display: block;
                     // aspect-ratio: 16/9;
                     object-fit: contain;
+                    transform: scale(0.75);
+                    transition: 0.5s;
+                    box-shadow: 0px 20px 50px 0px var(--primary-brown);
+
+                    &:hover {
+                        transform: scale(0.9);
+                        transition: 0.3s;
+                    }
                 }
             }
     
@@ -224,22 +304,29 @@ nav {
                 flex-direction: column;
                 flex: 1 0 auto;
                 justify-content: space-between;
+                align-items: center;
     
                 .product-card-title {
                     
                     h3 {
-                        font-size: 1.5rem;
+                        font-size: 1rem;
+                        font-weight: 600;
                         color: var(--primary-brown);
+                        margin-top: 0;
+                        text-align: center;
                     }
                 }
     
                 .product-price {
                     display: flex;
+                    flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
     
                     h2 {
-                        font-size: 1rem;
+                        font-size: 1.5rem;
+                        margin: 0;
+                        font-weight: 200;
                     }
     
                     .product-rating {
@@ -248,6 +335,17 @@ nav {
                             font-size: 0.8rem;
                         }
                     }
+                }
+
+                .individual-category, .individual-woodtype {
+                    font-size: 0.8rem;
+                }
+
+                .global-button {
+                    padding: 0.5rem 1rem;
+                    margin-top: 1rem;
+                    box-shadow: 0px 2px 2px 0px var(--primary-brown);
+                    text-transform: lowercase;
                 }
             }
         }

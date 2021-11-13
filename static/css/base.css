@@ -4,6 +4,7 @@
   --secondary-brown: #D2B48C;
   --primary-orange: #E66C4E;
   --primary-cream: #FFF5EF;
+  --white: #fff;
 }
 
 * {
@@ -14,6 +15,28 @@
 
 button {
   font-family: "Roboto", sans-serif;
+}
+
+.global-button {
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  background: var(--primary-orange);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.global-button:hover, .global-button:focus {
+  transition: 0.5s;
+  background: var(--secondary-brown);
+  transform: translateY(-2px);
+}
+
+.hide {
+  display: none;
 }
 
 body {
@@ -102,7 +125,7 @@ nav {
 }
 
 #wood-filter-side-filter .sidenav {
-  background-color: var(--secondary-brown);
+  background-color: var(--primary-cream);
 }
 #wood-filter-side-filter img {
   width: 100%;
@@ -111,14 +134,18 @@ nav {
   text-transform: uppercase;
   text-align: center;
   margin: 1.5rem 0;
+  font-weight: 100;
 }
 #wood-filter-side-filter .wood-type-link {
   padding: 0.5rem;
   transition: 0.4s;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
 #wood-filter-side-filter .wood-type-link:hover {
   transition: 0.4s;
   transform: translateX(1rem);
+  font-weight: 500;
 }
 #wood-filter-side-filter .wood-type-link a {
   color: var(--primary-brown);
@@ -155,6 +182,35 @@ nav {
 .product-container > *:nth-child(2) {
   flex: 1 1 70%;
 }
+.product-container .product-category-container h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.product-container .product-category-container p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.product-container .product-category-container p:hover, .product-container .product-category-container p:focus {
+  font-weight: 500;
+}
+.product-container .product-category-container p a {
+  position: relative;
+  color: var(--primary-brown);
+}
+.product-container .product-category-container p a .fa-square {
+  margin-right: 0.5rem;
+}
+.product-container .product-category-container p a .fa-check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(1.5);
+}
+.product-container .product-category-container hr {
+  width: 50%;
+}
 .product-container .product-item-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -166,33 +222,61 @@ nav {
   flex-direction: column;
   justify-content: space-between;
 }
+.product-container .product-item-container .product-card .product-card-image {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .product-container .product-item-container .product-card .product-card-image img {
-  height: 300px;
-  width: 100%;
+  height: 250px;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
+  transform: scale(0.75);
+  transition: 0.5s;
+  box-shadow: 0px 20px 50px 0px var(--primary-brown);
+}
+.product-container .product-item-container .product-card .product-card-image img:hover {
+  transform: scale(0.9);
+  transition: 0.3s;
 }
 .product-container .product-item-container .product-card .product-card-content {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: space-between;
+  align-items: center;
 }
 .product-container .product-item-container .product-card .product-card-content .product-card-title h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--primary-brown);
+  margin-top: 0;
+  text-align: center;
 }
 .product-container .product-item-container .product-card .product-card-content .product-price {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 .product-container .product-item-container .product-card .product-card-content .product-price h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 200;
 }
 .product-container .product-item-container .product-card .product-card-content .product-price .product-rating h4 {
   font-size: 0.8rem;
+}
+.product-container .product-item-container .product-card .product-card-content .individual-category, .product-container .product-item-container .product-card .product-card-content .individual-woodtype {
+  font-size: 0.8rem;
+}
+.product-container .product-item-container .product-card .product-card-content .global-button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  box-shadow: 0px 2px 2px 0px var(--primary-brown);
+  text-transform: lowercase;
 }
 
 .page-footer {

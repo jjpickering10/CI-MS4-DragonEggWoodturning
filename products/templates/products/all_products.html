@@ -54,8 +54,8 @@
   <div class="product-category-container">
     <h2> Category</h2>
     {% for category in all_categories %}
-    <p><a href="{% url 'all_products' %}?category={{ category.id }}">{{ category.friendly_name }}</a></p>
-    <hr>
+    <p class="category-names"><a href="{% url 'all_products' %}?category={{ category.id }}"><i class="far fa-square"></i><i class="fas fa-check hide"></i>{{ category.friendly_name }}</a></p>
+    <!-- <hr> -->
     {% endfor %}
   </div>
     <div class="product-item-container">
@@ -82,14 +82,29 @@
               {% endif %}
             </div>
           </div>
-          <p>{{ product.category.friendly_name }}</p>
+          <p class="individual-category"><i class="fas fa-sort"></i> | {{ product.category.friendly_name }}</p>
           {% for woodtype in product.wood_type.all %}
-            <p>{{ woodtype.friendly_name }}</p>
+            <p class="individual-woodtype"><i class="fas fa-tag"></i> | {{ woodtype.friendly_name }}</p>
           {% endfor %}
-          <p><a href="{% url 'product_detail' product.id %}">View Product</a></p>
+          <a class="global-button" href="{% url 'product_detail' product.id %}">View Product</a>
         </div>
       </div>
     {% endfor %}
   </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+ const categories = document.querySelectorAll('.category-names')
+ const label = document.querySelectorAll('.product-label')
+
+ categories.forEach(category => {
+   if (label[0].textContent === category.textContent) {
+     currentSearch = category.textContent.toString()
+     category.children[0].children[1].classList.remove('hide')
+     category.style.fontWeight = 500
+   }
+ })
+</script>
 {% endblock %}
