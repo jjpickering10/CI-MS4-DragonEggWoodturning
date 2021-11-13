@@ -40,39 +40,38 @@
 
 <div class="category-container">
     <p>{{ products|length }}</p>
+    <div class="product-item-container">
     {% for product in products %}
-    <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
+    <div class="product-card">
+        <div class="product-card-image">
             {% if product.image_set.all|length > 0 %}
               <img src="{{ product.image_set.first.image.url }}" alt="">
-              {% for image in product.image_set.all %}
-              <img class="activator" src="{{ image.image.url }}">
-              {% endfor %}
             {% else %}
-              <img class="activator" src="{{ MEDIA_URL }}noimage.png">
+              <img src="{{ MEDIA_URL }}noimage.png">
             {% endif %}
         </div>
-        <div class="card-content">
-          <span class="card-title grey-text text-darken-4">{{ product.name }}</span>
-          <p class="activator">Read More</p>
-          <p>£ {{ product.price }}</p>
-          <p>£ {{ product.sku }}</p>
+        <div class="product-card-content">
+          <div class="product-card-title">
+            <h3>{{ product.name }}</h3>
+          </div>
+          <div class="product-price">
+            <h2>£ {{ product.price }}</h2>
+            <div class="product-rating">
+              {% if product.rating %}
+              <h4>{{ product.rating }}</h4>
+              {% else %}
+              <h4>No ratings yet.</h4>
+              {% endif %}
+            </div>
+          </div>
           <p>{{ product.category.friendly_name }}</p>
-          {% if product.rating %}
-                <p>{{ product.rating }}</p>
-            {% else %}
-                <p>No ratings yet.</p>
-            {% endif %}
-            <p><a href="{% url 'product_detail' product.id %}">View Product</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="fas fa-times right"></i></span>
-          <p>{{ product.description }}</p>
           {% for woodtype in product.wood_type.all %}
             <p>{{ woodtype.friendly_name }}</p>
           {% endfor %}
+          <p><a href="{% url 'product_detail' product.id %}">View Product</a></p>
         </div>
       </div>
     {% endfor %}
+  </div>
 </div>
 {% endblock %}

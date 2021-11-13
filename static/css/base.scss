@@ -163,6 +163,52 @@ nav {
     }
 }
 
+.product-item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+
+    .product-card {
+        width: 100%;
+        background: var(--primary-cream);
+
+        .product-card-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .product-card-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
+
+            .product-card-title {
+                
+                h3 {
+                    font-size: 1.5rem;
+                    color: var(--primary-brown);
+                }
+            }
+
+            .product-price {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}
+
 // Footer
 
 .page-footer {
