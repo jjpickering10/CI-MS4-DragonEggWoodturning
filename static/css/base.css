@@ -101,6 +101,37 @@ nav {
   background: var(--secondary-brown);
 }
 
+#wood-filter-side-filter .sidenav {
+  background-color: var(--secondary-brown);
+}
+#wood-filter-side-filter img {
+  width: 100%;
+}
+#wood-filter-side-filter h4 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+#wood-filter-side-filter .wood-type-link {
+  padding: 0.5rem;
+  transition: 0.4s;
+}
+#wood-filter-side-filter .wood-type-link:hover {
+  transition: 0.4s;
+  transform: translateX(1rem);
+}
+#wood-filter-side-filter .wood-type-link a {
+  color: var(--primary-brown);
+}
+#wood-filter-side-filter .wood-type-link a i {
+  margin-right: 0.5rem;
+}
+#wood-filter-side-filter .wood-type-link a i:hover {
+  background: var(--primary-brown);
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
 .page-footer {
   background: var(--primary-brown);
 }/*# sourceMappingURL=base.css.map */

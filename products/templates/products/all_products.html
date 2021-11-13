@@ -17,23 +17,18 @@
 
 <button data-target="slide-out" class="sidenav-trigger filter-wood"><i class="fas fa-filter"></i>Filter by Wood Type</button>
 
-<section>
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
+<section id="wood-filter-side-filter">
+  <div id="slide-out" class="sidenav">
       <div class="background">
-        <img src="images/office.jpg">
+        <img src="{{ MEDIA_URL }}wood-type-1.PNG">
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    {% for wood in wood_types %}
-    <p><a href="{% url 'all_products' %}?wood={{ wood.id }}">View all {{ wood.friendly_name }} here</a></p>
-    {% endfor %}
+      <div>
+        <h4>Wood Type</h4>
+        {% for wood in wood_types %}
+        <p class="wood-type-link"><a href="{% url 'all_products' %}?wood={{ wood.id }}"><i class="far fa-square"></i>{{ wood.friendly_name }}</p></a>
+        {% endfor %}
+      </div>
+  </div>
 </section>
 
 {% for category in current_categories %}

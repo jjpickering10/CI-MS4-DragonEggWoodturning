@@ -121,6 +121,48 @@ nav {
     }
 }
 
+#wood-filter-side-filter {
+
+    .sidenav {
+        background-color: var(--secondary-brown);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+
+    .wood-type-link {
+        padding: 0.5rem;
+        transition: 0.4s;
+
+        &:hover {
+            transition: 0.4s;
+            transform: translateX(1rem);
+        }
+
+        a {
+            color: var(--primary-brown);
+
+            i {
+                margin-right: 0.5rem;
+    
+                &:hover {
+                    background: var(--primary-brown);
+                    transform: scale(1.2);
+                    transition: 0.2s;
+                }
+            }
+        }
+        
+    }
+}
+
 // Footer
 
 .page-footer {
