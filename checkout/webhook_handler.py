@@ -3,6 +3,7 @@ import time
 from django.http import HttpResponse
 
 from products.models import Product
+from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
@@ -41,6 +42,12 @@ class StripeWH_Handler:
             if value == '':
                 shipping.address[field] = None
 
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            print(profile)
+
         order_exists = False
         attempts = 1
         while attempts <= 5:
@@ -73,6 +80,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping.name,
+                    user_profile=profile,
                     email=billing.email,
                     phone_number=shipping.phone,
                     country=shipping.address.country,
