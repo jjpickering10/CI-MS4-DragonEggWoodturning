@@ -39,4 +39,59 @@
   <p>Your bag is empty</p>
   {% endif %}
 
+<div class="bag-container">
+  <div class="bag-table">
+    {% if bag_items %}
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+  
+        {% for item in bag_items %}
+        <tbody>
+          <tr>
+            <td class="product-td">{{ item.product.name }}
+              {% if item.product.image_set.all|length > 0 %}
+              <img src="{{ item.product.image_set.first.image.url }}" alt="">
+            {% else %}
+              <img src="{{ MEDIA_URL }}noimage.png">
+            {% endif %}
+            </td>
+            <td>£{{ item.product.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        <thead>
+          <tr>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ grand_total|floatformat:2 }}</td>
+          </tr>
+        </tbody>
+        
+      </table>
+      <div class="bag-subtotal">
+        <div>
+          <h5>Subtotal: <span>£{{ grand_total|floatformat:2 }}</span></h5>
+          <p>Delivery: <span>£{{ delivery|floatformat:2 }}</span></p>
+        </div>
+        <div class="bag-buttons">
+          <a class="global-button" href="#">Keep Shopping</a>
+          <a class="global-button" href="{% url 'checkout' %}">Secure Checkout</a>
+        </div>
+      </div>
+      {% endif %}
+  </div>
+</div>
+
   {% endblock %}
