@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
+from django.db.models.functions import Lower
 from .models import Category, Product, Image, WoodType
 
 
@@ -17,18 +18,17 @@ def all_products(request):
     current_categories = None
     wood_search = None
     wood_results = None
+    sort = None
+    direction = None
 
     if request.GET:
         if 'wood' in request.GET:
             wood_search = request.GET['wood']
-            print(wood_search)
-            # products = products.filter(wood_type__id__in=wood_search)
             products = Product.objects.filter(wood_type__id=wood_search)
             wood_results = WoodType.objects.filter(id=wood_search)
 
         if 'category' in request.GET:
             categories = request.GET['category']
-            # products = products.filter(category__id__in=categories)
             products = Product.objects.filter(category=categories)
             categories = Category.objects.filter(id=categories)
 
@@ -39,7 +39,23 @@ def all_products(request):
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
-            print(query)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
@@ -49,7 +65,8 @@ def all_products(request):
         'wood_types': wood_types,
         'wood_results': wood_results,
         'all_categories': all_categories,
-        'all_products': all_products
+        'all_products': all_products,
+        'current_sorting': current_sorting
     }
 
     return render(request, 'products/all_products.html', context)
