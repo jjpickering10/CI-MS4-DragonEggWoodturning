@@ -4,6 +4,7 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import OrderLineItem, Order
 from products.models import Product
+from profiles.models import UserProfile
 from bag.contexts import bag_contents
 import stripe
 import json
@@ -100,6 +101,11 @@ def checkout_success(request, order_number):
     """
 
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
 
     if 'bag' in request.session:
         del request.session['bag']
