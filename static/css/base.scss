@@ -634,11 +634,35 @@ nav {
     }
 
     .bag-table {
-        padding: 1rem;
+        margin-top: 5rem;
+        padding: 2rem;
+        box-shadow: 20px 20px 20px 0 var(--primary-brown);
+        background: var(--white);
+        .free-delivery {
+            font-weight: 100;
+            font-style: italic;
+            margin-bottom: 1rem;
+            span {
+                font-weight: 500;
+                color: red;
+            }
+
+            .delivery-threshold {
+                text-decoration: underline;
+            }
+        }
         table {
 
             tr {
                 border: none;
+            }
+
+            thead {
+                background: var(--secondary-brown);
+            }
+
+            th {
+                border-radius: 0;
             }
             .product-td {
                 display: flex;
@@ -655,7 +679,6 @@ nav {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-bottom: 3rem;
 
         .bag-buttons {
 
@@ -673,6 +696,20 @@ nav {
                     transition: 0.5s;
                 }
             }
+        }
+    }
+
+    .empty-bag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-size: 3rem;
+            font-weight: 200;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
         }
     }
 }

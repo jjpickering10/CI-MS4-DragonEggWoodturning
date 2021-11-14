@@ -4,45 +4,12 @@
 
 {% block content %}
 
-{% if bag_items %}
-<div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="https://lorempixel.com/100/190/nature/6">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-        {% for item in bag_items %}
-          <p>Name: {{ item.product.name }}</p>
-          <p>Price per item: £{{ item.product.price }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
-          <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
-            {% csrf_token %}
-            <input type="submit" value="Remove">
-        </form>
-        {% endfor %}
-        </div>
-        <div class="card-action">
-            <p>Total: {{ total|floatformat:2 }}</p>
-            <p>Delivery: {{ delivery|floatformat:2 }}</p>
-            <p>Grand Total: {{ grand_total|floatformat:2 }}</p>
-            {% if free_delivery_delta > 0 %}
-            <p>For free delivery, spend £{{ free_delivery_delta }} extra!</p>
-            {% endif %}
-          <a href="#">Keep Shopping</a>
-          <a href="{% url 'checkout' %}">Secure Checkout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% else %}
-  <p>Your bag is empty</p>
-  {% endif %}
-
 <div class="bag-container">
   <div class="bag-table">
     {% if bag_items %}
+        {% if free_delivery_delta > 0 %}
+        <p class="free-delivery"><i class="fas fa-exclamation"></i> For <span>free</span> delivery, spend <span class="delivery-threshold">£{{ free_delivery_delta }}</span> extra!</p>
+        {% endif %}
       <table>
         <thead>
           <tr>
@@ -64,7 +31,12 @@
             {% endif %}
             </td>
             <td>£{{ item.product.price }}</td>
-            <td>{{ item.quantity }}</td>
+            <td>{{ item.quantity }}
+                <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
+                  {% csrf_token %}
+                  <input type="submit" value="Remove">
+              </form>
+            </td>
             <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
           </tr>
         </tbody>
@@ -77,9 +49,14 @@
           <p>Delivery: <span>£{{ delivery|floatformat:2 }}</span></p>
         </div>
         <div class="bag-buttons">
-          <a class="global-button" href="#">Keep Shopping</a>
+          <a class="global-button" href="{% url 'all_products' %}">Keep Shopping</a>
           <a class="global-button" href="{% url 'checkout' %}">Secure Checkout</a>
         </div>
+      </div>
+      {% else %}
+      <div class="empty-bag">
+        <p>Your bag is empty</p>
+        <a class="global-button" href="{% url 'all_products' %}">Keep Shopping</a>
       </div>
       {% endif %}
   </div>

@@ -525,10 +525,31 @@ nav {
      object-fit: contain;
 }
 .bag-container .bag-table {
-  padding: 1rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  box-shadow: 20px 20px 20px 0 var(--primary-brown);
+  background: var(--white);
+}
+.bag-container .bag-table .free-delivery {
+  font-weight: 100;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.bag-container .bag-table .free-delivery span {
+  font-weight: 500;
+  color: red;
+}
+.bag-container .bag-table .free-delivery .delivery-threshold {
+  text-decoration: underline;
 }
 .bag-container .bag-table table tr {
   border: none;
+}
+.bag-container .bag-table table thead {
+  background: var(--secondary-brown);
+}
+.bag-container .bag-table table th {
+  border-radius: 0;
 }
 .bag-container .bag-table table .product-td {
   display: flex;
@@ -542,7 +563,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 3rem;
 }
 .bag-container .bag-subtotal .bag-buttons {
   display: flex;
@@ -557,6 +577,18 @@ nav {
 .bag-container .bag-subtotal .bag-buttons a + a:hover, .bag-container .bag-subtotal .bag-buttons a + a :focus {
   box-shadow: none;
   transition: 0.5s;
+}
+.bag-container .empty-bag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bag-container .empty-bag p {
+  font-size: 3rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 .page-footer {
