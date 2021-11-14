@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 
@@ -64,20 +65,10 @@
             </td>
             <td>£{{ item.product.price }}</td>
             <td>{{ item.quantity }}</td>
-            <td></td>
+            <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
           </tr>
         </tbody>
         {% endfor %}
-        <thead>
-          <tr>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ grand_total|floatformat:2 }}</td>
-          </tr>
-        </tbody>
         
       </table>
       <div class="bag-subtotal">
