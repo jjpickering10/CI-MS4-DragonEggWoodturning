@@ -188,6 +188,7 @@ nav {
 
         a {
             width: 100%;
+            color: var(--primary-brown);
 
             .category-card-image {
                 height: 200px;
@@ -207,7 +208,7 @@ nav {
                    object-fit: cover;
                    transition: 0.5s;
                    
-                   &:hover {
+                   &:hover, &:focus {
                     transform: scale(1.5);
                     transition: 0.5s;
                    }
@@ -219,6 +220,21 @@ nav {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                margin-top: 1rem;
+
+                .category-title {
+                    font-weight: 500;
+                    transition: 0.3s;
+
+                    &:hover, &:focus {
+                        transform: scale(1.1);
+                        transition: 0.3s;
+                    }
+                }
+
+                p {
+                    font-weight: 200;
+                }
             }
         }
     }
