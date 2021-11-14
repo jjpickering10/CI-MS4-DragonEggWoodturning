@@ -646,16 +646,31 @@ nav {
   min-height: 50vh;
 }
 .profile-container > .profile-nav {
-  flex: 1 1 30%;
-  background: red;
+  flex: 1 1 40%;
+  padding: 3rem;
 }
-.profile-container > .profile-nav ul {
-  display: flex;
-  flex-direction: column;
+.profile-container > .profile-nav h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+  position: relative;
+}
+.profile-container > .profile-nav li {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  color: var(--primary-brown);
+}
+.profile-container > .profile-nav li:hover, .profile-container > .profile-nav li:focus {
+  font-weight: 500;
+}
+.profile-container > .profile-nav li .fas {
+  margin-right: 0.5rem;
 }
 .profile-container > .profile-section {
-  flex: 1 1 70%;
-  background: green;
+  flex: 1 1 60%;
 }
 
 .page-footer {

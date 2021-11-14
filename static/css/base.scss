@@ -780,17 +780,35 @@ nav {
     min-height: 50vh;
 
     > .profile-nav {
-        flex: 1 1 30%;
-        background: red;
+        flex: 1 1 40%;
+        padding: 3rem;
+        h2 {
+            font-weight: 100;
+            text-transform: uppercase;
+            position: relative;
+        }
 
-        ul {
-            display: flex;
-            flex-direction: column;
+        li {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 200;
+            letter-spacing: 2px;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                font-weight: 500;
+            }
+            position: relative;
+            color: var(--primary-brown);
+
+            .fas {
+                margin-right: 0.5rem;
+            }
+            
         }
     }
     > .profile-section {
-        flex: 1 1 70%;
-        background: green;
+        flex: 1 1 60%;
     }
 }
 

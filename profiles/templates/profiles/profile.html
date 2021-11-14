@@ -5,20 +5,47 @@
 
 <div class="profile-container">
     <div class="profile-nav">
-      <h2>
-        {{ profile.user }}
-      </h2>
-      <ul>
-        <li><i class="fas fa-user"></i>Account Info</li>
-        <li><i class="fas fa-credit-card"></i>Orders</li>
-        <li><i class="fas fa-star"></i>Reviews</li>
-      </ul>
+
+        <h2> {{ profile.user }}</h2>
+        <ul>
+          <li><i class="fas fa-user"></i>Account Info</li>
+          <li><i class="fas fa-credit-card"></i>Orders</li>
+          <li><i class="fas fa-star"></i>Reviews</li>
+        </ul>
+
     </div>
     <div class="profile-section">
       <div>
-        {% for order in orders %}
-        {{ order }}
-        {% endfor %}
+        <div class="bag-container">
+          <div class="bag-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order No.</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+          
+                {% for order in orders %}
+                <tbody>
+                  <tr>
+                    <td class="product-td">{{ order.order_number|truncatechars:5 }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>
+                      {% for item in order.lineitems.all %}
+                      <p>{{ item.product.name}} x {{ item.quantity }}</p>
+                      {% endfor %}
+                    </td>
+                    <td>£{{ order.grand_total }}</td>
+                  </tr>
+                </tbody>
+                {% endfor %}
+                
+              </table>
+          </div>
+        </div>
       </div>
       <div></div>
       <div></div>
