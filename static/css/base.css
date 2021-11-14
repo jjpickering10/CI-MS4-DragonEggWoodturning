@@ -22,7 +22,7 @@ button {
   background: var(--primary-orange);
   color: var(--white);
   cursor: pointer;
-  border: none;
+  border: 1px solid var(--primary-brown);
   display: block;
   margin: 0 auto;
   font-weight: 500;
@@ -75,6 +75,7 @@ body main {
   font-size: calc(3rem + 2vw);
   margin-bottom: 0;
   color: var(--primary-brown);
+  position: relative;
 }
 .home-container #home-landing .home-landing-title h4 {
   font-weight: 100;
@@ -87,7 +88,6 @@ body main {
   font-style: 1.7em;
   padding: 0.5em 1em;
   cursor: pointer;
-  border: 1px solid var(--primary-brown);
   border-radius: 0;
   margin: 0;
   text-align: center;
@@ -340,6 +340,126 @@ nav {
   margin-top: 1rem;
   box-shadow: 0px 2px 2px 0px var(--primary-brown);
   text-transform: lowercase;
+}
+
+.product-card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-card-description form p {
+  height: 100px;
+}
+.product-card-description form p input[type=range] {
+  height: 60px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+.product-card-description form p input[type=range]:focus {
+  outline: none;
+}
+.product-card-description form p input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #361C15;
+  background: #361C15;
+  border-radius: 0px;
+  border: 0px solid #361C15;
+}
+.product-card-description form p input[type=range]::-webkit-slider-thumb {
+  box-shadow: 2px 2px 0px #361C15;
+  border: 2px solid #361C15;
+  height: 50px;
+  width: 50px;
+  border-radius: 0px;
+  background: #E66C4E;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -23.5px;
+}
+.product-card-description form p input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #361C15;
+}
+.product-card-description form p input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #361C15;
+  background: #361C15;
+  border-radius: 0px;
+  border: 0px solid #361C15;
+}
+.product-card-description form p input[type=range]::-moz-range-thumb {
+  box-shadow: 2px 2px 0px #361C15;
+  border: 2px solid #361C15;
+  height: 50px;
+  width: 50px;
+  border-radius: 0px;
+  background: #E66C4E;
+  cursor: pointer;
+}
+.product-card-description form p input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.product-card-description form p input[type=range]::-ms-fill-lower {
+  background: #361C15;
+  border: 0px solid #361C15;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #361C15;
+}
+.product-card-description form p input[type=range]::-ms-fill-upper {
+  background: #361C15;
+  border: 0px solid #361C15;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #361C15;
+}
+.product-card-description form p input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 2px 2px 0px #361C15;
+  border: 2px solid #361C15;
+  height: 50px;
+  width: 50px;
+  border-radius: 0px;
+  background: #E66C4E;
+  cursor: pointer;
+}
+.product-card-description form p input[type=range]:focus::-ms-fill-lower {
+  background: #361C15;
+}
+.product-card-description form p input[type=range]:focus::-ms-fill-upper {
+  background: #361C15;
+}
+.product-card-description form p input[type=range] + .thumb {
+  display: none;
+}
+.product-card-description form p input[type=range] {
+  border: none;
+}
+.product-card-description form .add-to-bag-buttons {
+  display: flex;
+}
+.product-card-description form .add-to-bag-buttons a, .product-card-description form .add-to-bag-buttons input {
+  margin: 0;
+}
+.product-card-description form .add-to-bag-buttons a + input {
+  margin-left: 1rem;
+  background: none;
+  color: var(--primary-orange);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+}
+.product-card-description form .add-to-bag-buttons a + input:hover, .product-card-description form .add-to-bag-buttons a + input :focus {
+  box-shadow: none;
+  transition: 0.5s;
 }
 
 .page-footer {
