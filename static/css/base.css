@@ -194,6 +194,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
 }
 .category-container .category-card {
   width: 200px;
@@ -636,6 +638,24 @@ nav {
   font-weight: 200;
   text-transform: uppercase;
   margin-bottom: 2rem;
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 50vh;
+}
+.profile-container > .profile-nav {
+  flex: 1 1 30%;
+  background: red;
+}
+.profile-container > .profile-nav ul {
+  display: flex;
+  flex-direction: column;
+}
+.profile-container > .profile-section {
+  flex: 1 1 70%;
+  background: green;
 }
 
 .page-footer {

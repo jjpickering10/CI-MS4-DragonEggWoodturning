@@ -3,22 +3,25 @@
 
 {% block content %}
 
-<div class="category-container">
-    
-    <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-            {{ profile }}
-        </div>
-        <div class="card-content">
-          <span class="card-title grey-text text-darken-4"></span>
-          <p class="activator">Read More</p>
-          
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="fas fa-times right"></i></span>
-          
-        </div>
+<div class="profile-container">
+    <div class="profile-nav">
+      <h2>
+        {{ profile.user }}
+      </h2>
+      <ul>
+        <li><i class="fas fa-user"></i>Account Info</li>
+        <li><i class="fas fa-credit-card"></i>Orders</li>
+        <li><i class="fas fa-star"></i>Reviews</li>
+      </ul>
+    </div>
+    <div class="profile-section">
+      <div>
+        {% for order in orders %}
+        {{ order }}
+        {% endfor %}
       </div>
-    
+      <div></div>
+      <div></div>
+    </div>
 </div>
 {% endblock %}

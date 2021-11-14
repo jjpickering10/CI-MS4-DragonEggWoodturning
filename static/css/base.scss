@@ -232,6 +232,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
 
 
     .category-card {
@@ -769,6 +771,29 @@ nav {
         }
     }
 }
+
+// Profile page
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 50vh;
+
+    > .profile-nav {
+        flex: 1 1 30%;
+        background: red;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    > .profile-section {
+        flex: 1 1 70%;
+        background: green;
+    }
+}
+
 
 // Footer
 

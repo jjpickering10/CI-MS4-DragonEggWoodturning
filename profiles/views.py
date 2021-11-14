@@ -9,13 +9,14 @@ def profile(request):
     """
     Display profile of user
     """
-
-    profile = get_object_or_404(UserProfile, user=request.user)
+    profile = UserProfile.objects.get(user=request.user)
+    orders = profile.order_set.all()
 
     template = 'profiles/profile.html'
 
     context = {
-        'profile': profile
+        'profile': profile,
+        'orders': orders,
     }
 
     return render(request, template, context)
