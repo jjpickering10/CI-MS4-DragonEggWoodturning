@@ -16,6 +16,25 @@
                 <img src="{{ MEDIA_URL }}landing-page-image.PNG" alt="">
             </div>
         </section>
+        <section id="home-products">
+            <div class="category-container">
+                {% for category in categories %}
+                <div class="category-card"><a href="{% url 'all_products' %}?category={{ category.id }}">
+                    <div class="category-card-image">
+                      {% if category.image %}
+                          <img class="responsive-img" src="{{ category.image.url }}" alt="">
+                      {% else %}
+                          <img class="responsive-img" src="{{ MEDIA_URL }}noimage.png">
+                      {% endif %}
+                    </div>
+                    <div class="category-content">
+                      <span class="category-title">{{ category.friendly_name }}</span>
+                      <p>{{ category.product_set.all|length}} products</p>
+                    </div></a>
+                  </div>
+                {% endfor %}
+            </div>
+        </section>
         <section id="home-about">
             <div class="home-about-section"></div>
             <div class="home-about-section"></div>
@@ -24,11 +43,6 @@
             <div class="home-blog-posts"></div>
             <div class="home-blog-posts"></div>
             <div class="home-blog-posts"></div>
-        </section>
-        <section id="home-products">
-            <div class="home-products-section"></div>
-            <div class="home-products-section"></div>
-            <div class="home-products-section"></div>
         </section>
         <section id="home-woodtype">
             <div class="home-woodtype-section"></div>

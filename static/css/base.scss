@@ -59,9 +59,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
 
-    section {
-        min-height: 100vh;
-    }
+    // section {
+    //     min-height: 100vh;
+    // }
 
     #home-landing {
         display: grid;

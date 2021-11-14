@@ -53,9 +53,6 @@ body main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
 }
-.home-container section {
-  min-height: 100vh;
-}
 .home-container #home-landing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
