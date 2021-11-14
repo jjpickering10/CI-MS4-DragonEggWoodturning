@@ -47,6 +47,19 @@
   {% endif %}  
   </p>
   {% endif %}
+  <div class="sort-box">
+    <select id="sort-key" class="browser-default">
+      <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+      <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+      <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+      <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+      <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+      <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+      <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+      <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+      <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+  </select>
+  </div>
 </div>
 
 
@@ -99,6 +112,7 @@
  const label = document.querySelectorAll('.product-label')
  const productContainer = document.querySelector('.product-container')
 
+// Add dynamic watermark
  function addWatermark() {
     const watermark = document.createElement('p')
     const text = document.createTextNode(label[0].textContent)
@@ -106,7 +120,8 @@
     watermark.classList.add('watermark')
     productContainer.append(watermark)
  }
-
+ addWatermark()
+// Display check for current category
  categories.forEach(category => {
    if (label[0].textContent === category.textContent) {
      category.children[0].children[1].classList.remove('hide')
@@ -114,6 +129,28 @@
    }
  })
 
- addWatermark()
+ //  Sorting
+    const sortKey = document.getElementById('sort-key')
+    const url = new URL(window.location.href)
+
+    sortKey.addEventListener('change', (e) => {
+    const selected = e.srcElement.value
+    console.log(selected);
+    if (selected != 'reset') {
+      const sort = selected.split("_")[0]
+      const direction = selected.split("_")[1]
+
+      url.searchParams.set('sort', sort)
+      url.searchParams.set('direction', direction)
+      console.log(url);
+
+      window.location.replace(url)
+    } else {
+        url.searchParams.delete("sort")
+        url.searchParams.delete("direction")
+
+        window.location.replace(url)
+    }
+   })
 </script>
 {% endblock %}
