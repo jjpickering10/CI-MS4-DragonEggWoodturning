@@ -43,7 +43,12 @@
                 <li><a href="{% url 'account_login' %}">Login</a></li>
                 <li><a href="{% url 'account_signup' %}">Register</a></li>
               {% endif %}
-              <li><a href="{% url 'view_bag' %}"><i class="fas fa-shopping-cart"></i></a></li>
+              <li class="shopping-cart-link">
+                <a href="{% url 'view_bag' %}"><i class="fas fa-shopping-cart"></i></a>
+                {% if grand_total %}
+                  <div class="shopping-cart-icon">{{ product_count }}</div>
+                {% endif %}
+              </li>
             </ul>
           </div>
         </nav>

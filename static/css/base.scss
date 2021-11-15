@@ -290,7 +290,60 @@ body {
 // Navbar
 
 nav {
-    background: var(--primary-brown);
+    background: var(--primary-cream);
+    box-shadow: none;
+
+    .brand-logo {
+        color: var(--primary-brown);
+    }
+
+    .sidenav-trigger {
+        color: var(--primary-brown);
+    }
+
+    i {
+        font-size: inherit;
+        position: relative;
+    }
+
+    .shopping-cart-link {
+        position: relative;
+
+        .shopping-cart-icon {
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            color: var(--white);
+            width: 100px;
+            height: 100px;
+            background: var(--primary-orange);
+            text-align: center;
+            border-radius: 50%;
+            transform: scale(0.2);
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+    }
+
+    .right {
+        margin-right: 5rem;
+    }
+
+    ul {
+        a {
+            color: var(--primary-brown);
+            text-transform: lowercase;
+            font-weight: 300;
+            letter-spacing: 1px;
+
+            &:hover, &:focus {
+                background: var(--secondary-brown);
+            }
+        }
+    }
 }
 
 // Categories Page
