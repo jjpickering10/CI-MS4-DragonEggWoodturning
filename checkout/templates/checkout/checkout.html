@@ -1,56 +1,100 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 
 <div class="checkout-container">
-  <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-    {% csrf_token %}
-    <!-- Used help to get for attribute after Django removed it after adding fieldsets in -  https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template -->
-    <fieldset>
-      <legend>Details</legend>
-      <label for="{{ order_form.full_name.id_for_label }}">{{ order_form.full_name.label }}</label>
-      {{ order_form.full_name }}
-      <label for="{{ order_form.email.id_for_label }}">{{ order_form.email.label }}</label>
-      {{ order_form.email }}
-    </fieldset>
-    <fieldset>
-      <legend>Delivery</legend>
-      <label for="{{ order_form.phone_number.id_for_label }}">{{ order_form.phone_number.label }}</label>
-      {{ order_form.phone_number }}
-      <label for="{{ order_form.street_address1.id_for_label }}">{{ order_form.street_address1.label }}</label>
-      {{ order_form.street_address1 }}
-      <label for="{{ order_form.street_address2.id_for_label }}">{{ order_form.street_address2.label }}</label>
-      {{ order_form.street_address2 }}
-      <label for="{{ order_form.town_or_city.id_for_label }}">{{ order_form.town_or_city.label }}</label>
-      {{ order_form.town_or_city }}
-      <label for="{{ order_form.postcode.id_for_label }}">{{ order_form.postcode.label }}</label>
-      {{ order_form.postcode }}
-      <label for="{{ order_form.county.id_for_label }}">{{ order_form.county.label }}</label>
-      {{ order_form.county }}
-      <label for="{{ order_form.country.id_for_label }}">{{ order_form.country.label }}</label>
-      {{ order_form.country }}
-    </fieldset>
-    <fieldset>
-      <legend>Payment</legend>
-      <!-- Stripe -->
-      <div id="card-element"></div>
-      <div id="card-errors" role="alert"></div>
-      <input type="hidden" name="client_secret" value="{{ client_secret }}">
-    </fieldset>
-    <div>
-      <button class="global-button" id="submit-button" type="submit">
-        Submit
-      </button>
-      <a href="{% url 'view_bag' %}">View Bag</a>
-    </div>
-  </form>
-  <div>
+  <div class="checkout-section">
+    <h5>Checkout</h5>
+    <p>Please fill in the form to complete your order</p>
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+      {% csrf_token %}
+      <!-- Used help to get for attribute after Django removed it after adding fieldsets in -  https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template -->
+      <fieldset>
+        <legend>Details</legend>
+        <label for="{{ order_form.full_name.id_for_label }}">{{ order_form.full_name.label }}</label>
+        {{ order_form.full_name }}
+        <label for="{{ order_form.email.id_for_label }}">{{ order_form.email.label }}</label>
+        {{ order_form.email }}
+      </fieldset>
+      <fieldset>
+        <legend>Delivery</legend>
+        <label for="{{ order_form.phone_number.id_for_label }}">{{ order_form.phone_number.label }}</label>
+        {{ order_form.phone_number }}
+        <label for="{{ order_form.street_address1.id_for_label }}">{{ order_form.street_address1.label }}</label>
+        {{ order_form.street_address1 }}
+        <label for="{{ order_form.street_address2.id_for_label }}">{{ order_form.street_address2.label }}</label>
+        {{ order_form.street_address2 }}
+        <label for="{{ order_form.town_or_city.id_for_label }}">{{ order_form.town_or_city.label }}</label>
+        {{ order_form.town_or_city }}
+        <label for="{{ order_form.postcode.id_for_label }}">{{ order_form.postcode.label }}</label>
+        {{ order_form.postcode }}
+        <label for="{{ order_form.county.id_for_label }}">{{ order_form.county.label }}</label>
+        {{ order_form.county }}
+        <label for="{{ order_form.country.id_for_label }}">{{ order_form.country.label }}</label>
+        {{ order_form.country }}
+      </fieldset>
+      <fieldset>
+        <legend>Payment</legend>
+        <!-- Stripe -->
+        <div id="card-element"></div>
+        <div id="card-errors" role="alert"></div>
+        <input type="hidden" name="client_secret" value="{{ client_secret }}">
+      </fieldset>
+      <div>
+        <button class="global-button" id="submit-button" type="submit">
+          Pay £{{ grand_total | floatformat:2 }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="checkout-section">
     <h5>Order Summary</h5>
+    <p>Here is your order for {{ product_count }} item/s</p>
+    <div class="bag-container">
+      <div class="bag-table">
+            {% if free_delivery_delta > 0 %}
+            <p class="free-delivery"><i class="fas fa-exclamation"></i> For <span>free</span> delivery, spend <span class="delivery-threshold">£{{ free_delivery_delta }}</span> extra!</p>
+            {% endif %}
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+      
+            {% for item in bag_items %}
+            <tbody>
+              <tr>
+                <td class="product-td">{{ item.product.name }}
+                  {% if item.product.image_set.all|length > 0 %}
+                  <img src="{{ item.product.image_set.first.image.url }}" alt="">
+                {% else %}
+                  <img src="{{ MEDIA_URL }}noimage.png">
+                {% endif %}
+                </td>
+                <td>£{{ item.product.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+            
+          </table>
+          <div class="bag-subtotal">
+            <div>
+              <h5>Subtotal: <span>£{{ grand_total|floatformat:2 }}</span></h5>
+              <p>Delivery: <span>£{{ delivery|floatformat:2 }}</span></p>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
-
-{{ order_form }}
 
   {% endblock %}
 

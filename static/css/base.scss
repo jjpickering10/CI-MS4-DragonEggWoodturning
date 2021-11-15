@@ -857,15 +857,27 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     margin: 5rem auto;
 
+    .checkout-section {
+         > h5, > p {
+            text-align: center;
+            font-weight: 200;
+            letter-spacing: 2px;
+        }
+         > p {
+            margin-bottom: 2rem;
+        }
+    }
+
 
     form {
         width: 400px;
         margin: 0 auto;
+
         fieldset {
             border: none;
         }
         legend {
-            font-weight: 100;
+            font-weight: 500;
             letter-spacing: 2px;
         }
         label {
