@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--primary-brown);
 }
 
 button {
@@ -691,6 +692,51 @@ nav {
 .checkout-container form #card-element {
   padding: 1.5rem;
   width: 375px;
+}
+
+.checkout-nav {
+  width: 50%;
+  margin: 2rem auto;
+  display: flex;
+}
+.checkout-nav a {
+  width: 300px;
+  text-align: center;
+}
+.checkout-nav a + a {
+  margin-left: 1em;
+  background: none;
+  color: var(--primary-orange);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+}
+.checkout-nav a + a:hover, .checkout-nav a + a :focus {
+  box-shadow: none;
+  transition: 0.5s;
+}
+
+.checkout-success-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  width: 80%;
+  background: var(--white);
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 var(--primary-brown);
+}
+.checkout-success-container h3 {
+  text-transform: uppercase;
+}
+.checkout-success-container h5 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+.checkout-success-container p {
+  font-weight: 200;
+  padding: 0.5em;
+}
+.checkout-success-container .order-title {
+  font-weight: 500;
 }
 
 .profile-container {

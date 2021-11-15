@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--primary-brown);
 }
 
 // Global classes
@@ -898,6 +899,60 @@ nav {
             padding: 1.5rem;
             width: 375px;
         }
+    }
+}
+
+// Checkout success page
+
+.checkout-nav {
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+
+    a {
+        width: 300px;
+        text-align: center;
+
+        + a {
+            margin-left: 1em;
+            background: none;
+            color: var(--primary-orange);
+            box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+
+            &:hover, :focus {
+                box-shadow: none;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+.checkout-success-container {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    width: 80%;
+    background: var(--white);
+    padding: 1rem;
+    box-shadow: 0 0 10px 0 var(--primary-brown);
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    h5 {
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-decoration: underline;
+    }
+
+    p {
+        font-weight: 200;
+        padding: 0.5em;
+    }
+
+    .order-title {
+        font-weight: 500;
     }
 }
 

@@ -2,28 +2,53 @@
 {% load static %}
 
 {% block content %}
-<div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="https://lorempixel.com/100/190/nature/6">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-            <p>Order confirmation sent to: {{ order.email }}</p>
-        {% for item in order.lineitems.all %}
-          <p>Name: {{ item.product.name }}</p>
-          <p>Price per item: £{{ item.product.price }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
-        {% endfor %}
-        </div>
-        <div class="card-action">
-            <p>Total: {{ order.order_total|floatformat:2 }}</p>
-            <p>Delivery: {{ order.delivery_cost|floatformat:2 }}</p>
-            <p>Grand Total: {{ order.grand_total|floatformat:2 }}</p>
-          <a href="{% url 'home' %}">Home</a>
-        </div>
-      </div>
-    </div>
+<div class="checkout-nav">
+  <a class="global-button" href="{% url 'home' %}">Home</a>
+  <a class="global-button" href="{% url 'all_products' %}">Keep Shopping</a>
+</div>
+<div class="checkout-success-container">
+  <h3>Order Summary</h3>
+  <div>
+    <h5>Order Information:</h5>
+    <p class="order-title">Order No:</p>
+    <p>{{ order.order_number }}</p>
+    <p class="order-title">Order Date:</p>
+    <p>{{ order.date }}</p>
   </div>
+  <div>
+    <h5>Order Billing:</h5>
+    <p class="order-title">Total:</p>
+    <p>£{{ order.grand_total }}</p>
+    <p class="order-title">Delivery:</p>
+    <p>£{{ order.delivery_cost }}</p>
+  </div>
+  <div>
+    <h5>Order Details:</h5>
+    <p class="order-title">Items:</p>
+    {% for item in order.lineitems.all %}
+    <p>{{ item.product.name }}</p>
+    <p>{{ item.quantity }} item/s | £{{ item.product.price }} each</p>
+    {% endfor %}
+  </div>
+  <div>
+    <h5>Order Delivery:</h5>
+    <p class="order-title">Full Name:</p>
+    <p>{{ order.full_name }}</p>
+    <p class="order-title">Phone No.:</p>
+    <p>{{ order.phone_number }}</p>
+    <p class="order-title">Street Address 1:</p>
+    <p>{{ order.street_address1 }}</p>
+    <p class="order-title">Street Address 2:</p>
+    <p>{{ order.street_address2 }}</p>
+    <p class="order-title">Town/City:</p>
+    <p>{{ order.town_or_city }}</p>
+    <p class="order-title">Postcode:</p>
+    <p>{{ order.postcode }}</p>
+    <p class="order-title">County:</p>
+    <p>{{ order.county }}</p>
+    <p class="order-title">Country:</p>
+    <p>{{ order.country }}</p>
+  </div>
+  <div></div>
+</div>
 {% endblock %}
