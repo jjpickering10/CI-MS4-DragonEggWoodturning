@@ -3,12 +3,11 @@
 
 {% block content %}
 <!-- Search functionality -->
-<section>
+<section id="search-products-section">
   <form method="GET" action="{% url 'all_products' %}">
     <div class="input-field">
       <input id="search" type="search" name="query" placeholder="Search..." required>
-      <i class="material-icons fas fa-times"></i>
-      <button type="submit">
+      <button class="global-button" type="submit">
         <i class="fas fa-search"></i>
       </button>
     </div>

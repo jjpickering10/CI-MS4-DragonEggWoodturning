@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--primary-brown);
+    // color: var(--primary-brown);
 }
 
 // Global classes
@@ -371,6 +371,30 @@ nav {
 }
 
 // Products Page
+
+#search-products-section {
+    width: 300px;
+    margin: 0 auto;
+
+    form {
+        background: var(--secondary-brown);
+
+        .input-field {
+            display: flex;
+
+            input[type=search] {
+                border: none;
+                padding: 0 1rem;
+                margin: 0;
+            }
+
+            input[type=search]:focus:not(.browser-default) {
+                background: var(--secondary-brown);
+                color: var(--primary-brown);
+            }
+        }
+    }
+}
 
 .filter-wood {
     padding: 1rem 1.5rem;
