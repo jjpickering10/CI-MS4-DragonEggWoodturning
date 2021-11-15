@@ -3,73 +3,54 @@
 
 {% block content %}
 
-<div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
-    {{ bag_items }}
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="https://lorempixel.com/100/190/nature/6">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-            {% csrf_token %}
-            {{ order_form }}
-            <fieldset>
-              <!-- Stripe -->
-              <div id="card-element"></div>
-              <div id="card-errors" role="alert"></div>
-              <input type="hidden" name="client_secret" value="{{ client_secret }}">
-            </fieldset>
-            <div>
-              <button id="submit-button" type="submit">
-                Submit
-              </button>
-              <a href="{% url 'view_bag' %}">View Bag</a>
-            </div>
-          </form>
-        </div>
-        <div class="card-action">
-        </div>
-      </div>
+<div class="checkout-container">
+  <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+    {% csrf_token %}
+    <!-- Used help to get for attribute after Django removed it after adding fieldsets in -  https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template -->
+    <fieldset>
+      <legend>Details</legend>
+      <label for="{{ order_form.full_name.id_for_label }}">{{ order_form.full_name.label }}</label>
+      {{ order_form.full_name }}
+      <label for="{{ order_form.email.id_for_label }}">{{ order_form.email.label }}</label>
+      {{ order_form.email }}
+    </fieldset>
+    <fieldset>
+      <legend>Delivery</legend>
+      <label for="{{ order_form.phone_number.id_for_label }}">{{ order_form.phone_number.label }}</label>
+      {{ order_form.phone_number }}
+      <label for="{{ order_form.street_address1.id_for_label }}">{{ order_form.street_address1.label }}</label>
+      {{ order_form.street_address1 }}
+      <label for="{{ order_form.street_address2.id_for_label }}">{{ order_form.street_address2.label }}</label>
+      {{ order_form.street_address2 }}
+      <label for="{{ order_form.town_or_city.id_for_label }}">{{ order_form.town_or_city.label }}</label>
+      {{ order_form.town_or_city }}
+      <label for="{{ order_form.post_code.id_for_label }}">{{ order_form.post_code.label }}</label>
+      {{ order_form.post_code }}
+      <label for="{{ order_form.county.id_for_label }}">{{ order_form.county.label }}</label>
+      {{ order_form.county }}
+      <label for="{{ order_form.country.id_for_label }}">{{ order_form.country.label }}</label>
+      {{ order_form.country }}
+    </fieldset>
+    <fieldset>
+      <legend>Payment</legend>
+      <!-- Stripe -->
+      <div id="card-element"></div>
+      <div id="card-errors" role="alert"></div>
+      <input type="hidden" name="client_secret" value="{{ client_secret }}">
+    </fieldset>
+    <div>
+      <button class="global-button" id="submit-button" type="submit">
+        Submit
+      </button>
+      <a href="{% url 'view_bag' %}">View Bag</a>
     </div>
+  </form>
+  <div>
+    <h5>Order Summary</h5>
   </div>
+</div>
 
-  {% if bag_items %}
-<div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="https://lorempixel.com/100/190/nature/6">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-        {% for item in bag_items %}
-          <p>Name: {{ item.product.name }}</p>
-          <p>Price per item: £{{ item.product.price }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
-          <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
-            {% csrf_token %}
-            <input type="submit" value="Remove">
-        </form>
-        {% endfor %}
-        </div>
-        <div class="card-action">
-            <p>Total: {{ total|floatformat:2 }}</p>
-            <p>Delivery: {{ delivery|floatformat:2 }}</p>
-            <p>Grand Total: {{ grand_total|floatformat:2 }}</p>
-            {% if free_delivery_delta > 0 %}
-            <p>For free delivery, spend £{{ free_delivery_delta }} extra!</p>
-            {% endif %}
-          <a href="#">Keep Shopping</a>
-          <a href="#">Secure Checkout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% else %}
-  <p>Your bag is empty</p>
-  {% endif %}
+{{ order_form }}
 
   {% endblock %}
 

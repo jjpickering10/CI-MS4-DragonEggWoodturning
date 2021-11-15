@@ -312,7 +312,17 @@ nav {
 .products-amount {
   width: 100%;
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 5rem auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem;
+}
+.products-amount a {
+  color: var(--primary-brown);
+}
+.products-amount a:hover, .products-amount a:focus {
+  font-weight: 500;
 }
 .products-amount p {
   font-weight: 300;
@@ -639,6 +649,35 @@ nav {
   font-weight: 200;
   text-transform: uppercase;
   margin-bottom: 2rem;
+}
+
+.checkout-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin: 5rem auto;
+}
+.checkout-container form {
+  width: 375px;
+  margin: 0 auto;
+}
+.checkout-container form fieldset {
+  border: none;
+}
+.checkout-container form legend {
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+.checkout-container form label {
+  font-size: 0.7em;
+  color: var(--primary-brown);
+  font-weight: 300;
+}
+.checkout-container form input[type=text]:not(.browser-default), .checkout-container form input[type=email]:not(.browser-default) {
+  padding: 0 0.5rem;
+  border: none;
+  background: #ded3cc;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px 0px var(--primary-brown);
 }
 
 .profile-container {

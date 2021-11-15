@@ -32,6 +32,7 @@
 </section>
 
 <div class="products-amount">
+  <p><a href="{% url 'all_products' %}"><i class="fas fa-store"></i> All Products</a></p>
   {% if products|length == all_products|length %}
   <p>{{ products|length }} products | <span class="product-label">All Products</span></p>
   {% else %}

@@ -13,7 +13,14 @@ class OrderForm(forms.ModelForm):
             'street_address1',
             'street_address2',
             'town_or_city',
+            'county',
             'postcode',
             'country',
-            'county',
         )
+
+    def __init__(self, *args, **kwargs):
+
+        super().__init__(*args, **kwargs)
+
+        self.fields['full_name'].widget.attrs['autofocus'] = True
+                
