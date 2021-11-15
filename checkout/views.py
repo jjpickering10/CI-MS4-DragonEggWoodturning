@@ -18,6 +18,7 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(payment_id, metadata={
             'username': request.user,
             'bag': json.dumps(request.session.get('bag')),
+            'save_info': request.POST.get('save_info')
         })
 
         return HttpResponse(status=200)
@@ -63,7 +64,8 @@ def checkout(request):
                     quantity=item_quantity
                 )
                 order_line_item.save()
-        
+
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
 
     else:
@@ -99,13 +101,26 @@ def checkout_success(request, order_number):
     """
     A view to checkout success page
     """
-
+    
+    save_info = request.session.get('save_info')
+    # print(save_info)
+    # print(type(save_info))
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
         order.save()
+
+        if save_info:
+            profile.phone_number = order.phone_number
+            profile.country = order.country
+            profile.postcode = order.postcode
+            profile.town_or_city = order.town_or_city
+            profile.street_address1 = order.street_address1
+            profile.street_address2 = order.street_address2
+            profile.county = order.county
+            profile.save()
 
     if 'bag' in request.session:
         del request.session['bag']

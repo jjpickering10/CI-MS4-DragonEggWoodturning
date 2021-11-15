@@ -61,10 +61,11 @@ form.addEventListener('submit', function(ev) {
   // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
 
   var csrfToken = form.csrfmiddlewaretoken.value
-
+  var saveInfo = document.getElementById('id-save-info').checked
   var postData = {
     'csrfmiddlewaretoken': csrfToken,
     'client_secret': clientSecret,
+    'save_info': saveInfo.toString(),
   }
 
   var url = '/checkout/cache_checkout_data/'

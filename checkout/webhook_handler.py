@@ -33,6 +33,9 @@ class StripeWH_Handler:
         intent = event.data.object
         payment_id = intent.id
         bag = intent.metadata.bag
+        save_info = intent.metadata.save_info
+        print(save_info)
+        print(type(save_info))
 
         billing = intent.charges.data[0].billing_details
         shipping = intent.shipping
