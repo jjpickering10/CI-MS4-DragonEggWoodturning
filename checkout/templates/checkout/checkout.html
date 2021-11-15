@@ -42,7 +42,13 @@
         <div id="card-errors" role="alert"></div>
         <input type="hidden" name="client_secret" value="{{ client_secret }}">
       </fieldset>
-      <div>
+      <div class="checkout-pay-section">
+        {% if user.is_authenticated %}
+            <label for="id-save-info">
+              <input class="filled-in" type="checkbox" name="save-info" id="id-save-info" checked>
+              <span>Save this delivery information to my profile</span>
+            </label>
+        {% endif %}
         <button class="global-button" id="submit-button" type="submit">
           Pay £{{ grand_total | floatformat:2 }}
         </button>

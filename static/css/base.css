@@ -741,6 +741,19 @@ nav ul a:hover, nav ul a:focus {
 .checkout-container .checkout-section > p {
   margin-bottom: 2rem;
 }
+.checkout-container .checkout-section .checkout-pay-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkout-container .checkout-section .checkout-pay-section input[type=checkbox] + span:not(.lever) {
+  font-size: 0.75rem;
+}
+.checkout-container .checkout-section .checkout-pay-section input[type=checkbox].filled-in:checked + span:not(.lever):after {
+  border: none;
+  background-color: var(--primary-orange);
+}
 .checkout-container form {
   width: 400px;
   margin: 0 auto;

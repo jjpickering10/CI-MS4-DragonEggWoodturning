@@ -958,6 +958,22 @@ nav {
          > p {
             margin-bottom: 2rem;
         }
+
+        .checkout-pay-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            input[type=checkbox] + span:not(.lever) {
+                font-size: 0.75rem;
+            }
+
+            input[type=checkbox].filled-in:checked+span:not(.lever):after {
+                border: none;
+                background-color: var(--primary-orange);
+            }
+        }
     }
 
 
