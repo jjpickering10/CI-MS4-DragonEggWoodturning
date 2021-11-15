@@ -859,7 +859,7 @@ nav {
 
 
     form {
-        width: 375px;
+        width: 400px;
         margin: 0 auto;
         fieldset {
             border: none;
@@ -873,12 +873,18 @@ nav {
             color: var(--primary-brown);
             font-weight: 300;
         }
-        input[type=text]:not(.browser-default), input[type=email]:not(.browser-default) {
+        input[type=text]:not(.browser-default), input[type=email]:not(.browser-default), #card-element, #card-errors {
             padding: 0 0.5rem;
+            width: 360px;
             border: none;
             background: #ded3cc;
             border-radius: 2px;
             box-shadow: 0px 2px 2px 0px var(--primary-brown);
+        }
+
+        #card-element {
+            padding: 1.5rem;
+            width: 375px;
         }
     }
 }

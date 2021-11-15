@@ -8,20 +8,21 @@ const card = elements.create('card', {
       base: {
         iconColor: '#000',
         color: '#000',
-        fontWeight: '500',
+        fontWeight: '700',
         fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
-        fontSize: '16px',
+        fontSize: '12px',
         fontSmoothing: 'antialiased',
         ':-webkit-autofill': {
           color: '#fce883',
         },
         '::placeholder': {
-          color: '#87BBFD',
+          color: '#361C15',
+          fontWeight: '200',
         },
       },
       invalid: {
-        iconColor: '#FFC7EE',
-        color: '#FFC7EE',
+        iconColor: '#FFF',
+        color: '#FFF',
       },
     },
   })
