@@ -31,12 +31,16 @@
                 {% if post.comment_set.all|length > 0 %}
                     {% for comment in post.comment_set.all %}
                     <div>
-                    <h2>By: {{ comment.user }}</h2>
-                    <div >
-                        <h4>{{ comment.date }}</h4>
+                        <h2>By: {{ comment.user }}</h2>
+                        <div >
+                            <h4>{{ comment.date }}</h4>
+                        </div>
+                        <p>{{ comment.body }}</p>
+                        {% if request.user == comment.user %}
+                            <a href="{% url 'edit_comment' comment.id %}">Edit</a>
+                            <a href="">Delete</a>
+                        {% endif %}
                     </div>
-                    </div>
-                    <p>{{ comment.body }}</p>
                     {% endfor %}
                 {% else %}
                     <p>No comments yet...</p>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <p>{{ comment.user }}</p>
+    <p>{{ comment.date }}</p>
+    <p>{{ comment.post }}</p>
+    <form action="{% url 'edit_comment' comment.id %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form }}
+        <button type="submit">Edit Comment</button>
+    </form>
+</div>
+{% endblock %}

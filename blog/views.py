@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 
 def blog(request):
@@ -41,6 +41,23 @@ def blog_post(request, blog_id):
 
     context = {
         'post': post,
+        'comment_form': comment_form
+    }
+
+    return render(request, template, context)
+
+
+def edit_comment(request, comment_id):
+    """
+    Display a single blog post
+    """
+    comment = Comment.objects.get(id=comment_id)
+
+    comment_form = CommentForm(instance=comment)
+    template = 'blog/edit_comment.html'
+
+    context = {
+        'comment': comment,
         'comment_form': comment_form
     }
 
