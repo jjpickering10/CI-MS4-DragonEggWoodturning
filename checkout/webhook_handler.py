@@ -50,6 +50,16 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
 
+            if save_info == 'true':
+                profile.phone_number = shipping.phone
+                profile.country = shipping.address.country
+                profile.postcode = shipping.address.postal_code
+                profile.town_or_city = shipping.address.city
+                profile.street_address1 = shipping.address.line1
+                profile.street_address2 = shipping.address.line2
+                profile.county = shipping.address.state
+                profile.save()
+
         order_exists = False
         attempts = 1
         while attempts <= 5:
