@@ -13,7 +13,12 @@ def profile(request):
     profile = UserProfile.objects.get(user=request.user)
     orders = profile.order_set.all()
 
-    form = UserProfileForm(instance=profile)
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserProfileForm(instance=profile)
 
     template = 'profiles/profile.html'
 

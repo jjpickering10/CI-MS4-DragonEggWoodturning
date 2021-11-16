@@ -48,7 +48,40 @@
         </div>
       </div>
       <div>
-        {{ form }}
+        <form action="{% url 'profile' %}" method="POST" id="profile-form">
+          {% csrf_token %}
+          <!-- Used help to get for attribute after Django removed it after adding fieldsets in -  https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template -->
+          <fieldset>
+            <legend>Details</legend>
+            <label for="{{ form.full_name.id_for_label }}">{{ form.full_name.label }}</label>
+            {{ form.full_name }}
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email }}
+          </fieldset>
+          <fieldset>
+            <legend>Delivery</legend>
+            <label for="{{ form.phone_number.id_for_label }}">{{ form.phone_number.label }}</label>
+            {{ form.phone_number }}
+            <label for="{{ form.street_address1.id_for_label }}">{{ form.street_address1.label }}</label>
+            {{ form.street_address1 }}
+            <label for="{{ form.street_address2.id_for_label }}">{{ form.street_address2.label }}</label>
+            {{ form.street_address2 }}
+            <label for="{{ form.town_or_city.id_for_label }}">{{ form.town_or_city.label }}</label>
+            {{ form.town_or_city }}
+            <label for="{{ form.postcode.id_for_label }}">{{ form.postcode.label }}</label>
+            {{ form.postcode }}
+            <label for="{{ form.county.id_for_label }}">{{ form.county.label }}</label>
+            {{ form.county }}
+            <label for="{{ form.country.id_for_label }}">{{ form.country.label }}</label>
+            {{ form.country }}
+          </fieldset>
+
+          <div class="checkout-pay-section">
+            <button class="global-button" id="submit-button" type="submit">
+              Update Profile
+            </button>
+          </div>
+        </form>
       </div>
       <div></div>
     </div>
