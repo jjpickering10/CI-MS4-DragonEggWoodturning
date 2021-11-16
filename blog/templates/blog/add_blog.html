@@ -3,6 +3,10 @@
 {% block content %}
 
 <div>
-    <h1>add blog</h1>
+    <form action="{% url 'add_blog' %}" method="POST">
+        {% csrf_token %}
+        {{ blog_form }}
+        <button type="submit">Add Blog</button>
+    </form>
 </div>
 {% endblock %}

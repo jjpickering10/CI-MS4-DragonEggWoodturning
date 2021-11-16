@@ -1,5 +1,12 @@
 from django import forms
-from .models import Comment
+from .models import Comment, Post
+
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = '__all__'
+        exclude = ('image_url', 'author')
 
 
 class CommentForm(forms.ModelForm):

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, BlogForm
 
 def blog(request):
     """
@@ -48,14 +48,29 @@ def blog_post(request, blog_id):
     return render(request, template, context)
 
 
+@login_required
 def add_blog(request):
     """
     Add blog page
     """
+
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        blog_form = BlogForm(request.POST)
+        if blog_form.is_valid():
+            new_blog = blog_form.save(commit=False)
+            new_blog.author = request.user
+            new_blog.save()
+            return redirect(reverse('blog'))
+    else:
+        blog_form = BlogForm()
+
     template = 'blog/add_blog.html'
 
     context = {
-        
+        'blog_form': blog_form,
     }
 
     return render(request, template, context)
