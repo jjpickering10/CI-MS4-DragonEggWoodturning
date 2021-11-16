@@ -33,4 +33,4 @@ class Comment(models.Model):
         ordering = ['-date']
 
     def __str__(self):
-        return self.post + ' - ' + self.user
+        return 'Comment on {} by {}'.format(self.post, self.user)

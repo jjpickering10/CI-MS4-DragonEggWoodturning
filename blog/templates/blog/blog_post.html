@@ -24,6 +24,24 @@
                 </div>
                 <p class="blog-body">{{ post.body }}</p>
             </div>
+            <div>
+                <div>
+                <h3>Comments</h3>
+                </div>
+                {% if post.comment_set.all|length > 0 %}
+                    {% for comment in post.comment_set.all %}
+                    <div>
+                    <h2>By: {{ comment.user }}</h2>
+                    <div >
+                        <h4>{{ comment.date }}</h4>
+                    </div>
+                    </div>
+                    <p>{{ comment.body }}</p>
+                    {% endfor %}
+                {% else %}
+                <p>No comments yet...</p>
+                {% endif %}
+            </div>
             </div>
     {% endif %}
 </div>

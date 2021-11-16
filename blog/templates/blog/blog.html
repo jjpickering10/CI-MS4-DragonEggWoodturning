@@ -16,6 +16,7 @@
             <div class="blog-content">
                 <div class="blog-title">
                 <h3>{{ post.title }}</h3>
+                <p>{{ post.comment_set.all|length }} comment/s</p>
                 </div>
                 <div class="blog-author">
                 <h2>By: {{ post.author }}</h2>

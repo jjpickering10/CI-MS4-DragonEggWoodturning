@@ -6,6 +6,8 @@ def blog(request):
     Display blog page
     """
     posts = Post.objects.all()
+    for post in posts:
+        print(post.comment_set.all())
     template = 'blog/blog.html'
 
     context = {
