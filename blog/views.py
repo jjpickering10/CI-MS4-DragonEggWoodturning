@@ -49,7 +49,7 @@ def blog_post(request, blog_id):
 
 def edit_comment(request, comment_id):
     """
-    Display a single blog post
+    Edit a comment
     """
     comment = Comment.objects.get(id=comment_id)
 
@@ -69,3 +69,13 @@ def edit_comment(request, comment_id):
     }
 
     return render(request, template, context)
+
+
+def delete_comment(request, comment_id):
+    """
+    Delete a comment
+    """
+    comment = Comment.objects.get(id=comment_id)
+    comment.delete()
+
+    return redirect(reverse('blog_post', args=[comment.post.id]))

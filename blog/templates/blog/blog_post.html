@@ -38,7 +38,7 @@
                         <p>{{ comment.body }}</p>
                         {% if request.user == comment.user %}
                             <a href="{% url 'edit_comment' comment.id %}">Edit</a>
-                            <a href="">Delete</a>
+                            <a href="{% url 'delete_comment' comment.id %}">Delete</a>
                         {% endif %}
                     </div>
                     {% endfor %}
