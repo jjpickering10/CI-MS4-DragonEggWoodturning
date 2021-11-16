@@ -3,7 +3,30 @@
 {% block content %}
 
 <div class="blog-container">
-    <h1>blog</h1>
-    
+    {% for post in posts %}
+    <a href="">
+        <div class="blog-card">
+            <div class="blog-image">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="">
+                {% else %}
+                    <img src="{{ MEDIA_URL }}noimage.png">
+                {% endif %}
+            </div>
+            <div class="blog-content">
+                <div class="blog-title">
+                <h3>{{ post.title }}</h3>
+                </div>
+                <div class="blog-author">
+                <h2>By: {{ post.author }}</h2>
+                <div class="blog-date">
+                    <h4>{{ post.date }}</h4>
+                </div>
+                </div>
+                <p class="blog-body">{{ post.body|truncatewords:10 }}</p>
+            </div>
+            </div>
+    </a>
+    {% endfor %}
 </div>
 {% endblock %}
