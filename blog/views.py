@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from .forms import CommentForm
 
@@ -47,6 +48,7 @@ def blog_post(request, blog_id):
     return render(request, template, context)
 
 
+@login_required
 def edit_comment(request, comment_id):
     """
     Edit a comment
@@ -71,6 +73,7 @@ def edit_comment(request, comment_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_comment(request, comment_id):
     """
     Delete a comment
