@@ -39,8 +39,15 @@
                     <p>{{ comment.body }}</p>
                     {% endfor %}
                 {% else %}
-                <p>No comments yet...</p>
+                    <p>No comments yet...</p>
                 {% endif %}
+                <div>
+                    <form action="{% url 'blog_post' post.id %}" method="POST">
+                        {% csrf_token %}
+                        {{ comment_form }}
+                        <button type="submit">Post Comment</button>
+                    </form>
+                </div>
             </div>
             </div>
     {% endif %}
