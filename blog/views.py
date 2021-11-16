@@ -53,7 +53,14 @@ def edit_comment(request, comment_id):
     """
     comment = Comment.objects.get(id=comment_id)
 
-    comment_form = CommentForm(instance=comment)
+    if request.method == 'POST':
+        edited_comment = CommentForm(request.POST, instance=comment)
+        if edited_comment.is_valid():
+            edited_comment.save()
+            return redirect(reverse('blog_post', args=[comment.post.id]))
+    else:
+        comment_form = CommentForm(instance=comment)
+
     template = 'blog/edit_comment.html'
 
     context = {
