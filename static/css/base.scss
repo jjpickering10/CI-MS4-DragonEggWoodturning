@@ -1115,6 +1115,13 @@ nav {
 
     a {
         color: var(--primary-brown);
+        transition: 0.5s;
+
+        &:hover, &:focus {
+
+            transform: translateY(-20px);
+            transition: 0.5s;
+        }
     }
 
     .blog-card {
@@ -1139,13 +1146,7 @@ nav {
                 display: block;
                 object-fit: contain;
                 transform: scale(0.75);
-                transition: 0.5s;
                 box-shadow: 0px 20px 50px 0px var(--primary-brown);
-
-                &:hover {
-                    transform: scale(0.9);
-                    transition: 0.3s;
-                }
             }
         }
 

@@ -871,6 +871,11 @@ nav ul a:hover, nav ul a:focus {
 }
 .blog-container a {
   color: var(--primary-brown);
+  transition: 0.5s;
+}
+.blog-container a:hover, .blog-container a:focus {
+  transform: translateY(-20px);
+  transition: 0.5s;
 }
 .blog-container .blog-card {
   width: 300px;
@@ -893,12 +898,7 @@ nav ul a:hover, nav ul a:focus {
   -o-object-fit: contain;
      object-fit: contain;
   transform: scale(0.75);
-  transition: 0.5s;
   box-shadow: 0px 20px 50px 0px var(--primary-brown);
-}
-.blog-container .blog-card .blog-image img:hover {
-  transform: scale(0.9);
-  transition: 0.3s;
 }
 .blog-container .blog-card .blog-content {
   display: flex;

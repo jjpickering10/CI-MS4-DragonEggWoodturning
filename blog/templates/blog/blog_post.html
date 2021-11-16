@@ -3,8 +3,7 @@
 {% block content %}
 
 <div class="blog-container">
-    {% for post in posts %}
-    <a href="{% url 'blog_post' post.id %}">
+    {% if post %}
         <div class="blog-card">
             <div class="blog-image">
                 {% if post.image %}
@@ -23,10 +22,9 @@
                     <h4>{{ post.date }}</h4>
                 </div>
                 </div>
-                <p class="blog-body">{{ post.body|truncatewords:10 }}</p>
+                <p class="blog-body">{{ post.body }}</p>
             </div>
             </div>
-    </a>
-    {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}

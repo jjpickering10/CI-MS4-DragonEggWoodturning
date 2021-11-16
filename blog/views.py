@@ -13,3 +13,18 @@ def blog(request):
     }
 
     return render(request, template, context)
+
+
+def blog_post(request, blog_id):
+    """
+    Display a single blog post
+    """
+    post = Post.objects.get(id=blog_id)
+    print(post)
+    template = 'blog/blog_post.html'
+
+    context = {
+        'post': post
+    }
+
+    return render(request, template, context)
