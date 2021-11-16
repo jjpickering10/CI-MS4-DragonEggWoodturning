@@ -77,6 +77,31 @@ def add_blog(request):
 
 
 @login_required
+def edit_blog(request, blog_id):
+    """
+    Edit a blog
+    """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    blog = Post.objects.get(id=blog_id)
+
+    if request.method == 'POST':
+        blog_form = BlogForm(instance=blog)
+    else:
+        blog_form = BlogForm(instance=blog)
+
+    template = 'blog/edit_blog.html'
+
+    context = {
+        'blog': blog,
+        'blog_form': blog_form
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def edit_comment(request, comment_id):
     """
     Edit a comment
