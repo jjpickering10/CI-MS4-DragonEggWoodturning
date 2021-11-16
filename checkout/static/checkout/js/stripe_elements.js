@@ -61,7 +61,14 @@ form.addEventListener('submit', function(ev) {
   // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
 
   var csrfToken = form.csrfmiddlewaretoken.value
-  var saveInfo = document.getElementById('id-save-info').checked
+  let loggedIn = document.getElementById('id-save-info')
+  let saveInfo
+  if (loggedIn != null) {
+    saveInfo = loggedIn.checked
+  } else {
+    saveInfo = 'not logged in'
+  }
+
   var postData = {
     'csrfmiddlewaretoken': csrfToken,
     'client_secret': clientSecret,
@@ -123,7 +130,7 @@ form.addEventListener('submit', function(ev) {
           // execution. Set up a webhook or plugin to listen for the
           // payment_intent.succeeded event that handles any business critical
           // post-payment actions.
-          form.submit()
+          // form.submit()
         }
       }
     });
