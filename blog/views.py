@@ -48,6 +48,19 @@ def blog_post(request, blog_id):
     return render(request, template, context)
 
 
+def add_blog(request):
+    """
+    Add blog page
+    """
+    template = 'blog/add_blog.html'
+
+    context = {
+        
+    }
+
+    return render(request, template, context)
+
+
 @login_required
 def edit_comment(request, comment_id):
     """
