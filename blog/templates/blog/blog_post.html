@@ -7,7 +7,7 @@
         <div class="blog-card">
             {% if request.user.is_superuser %}
                 <a href="{% url 'edit_blog' post.id %}">Edit</a>
-                <a href="">Delete</a>
+                <a href="{% url 'delete_blog' post.id %}">Delete</a>
             {% endif %}
             <div class="blog-image">
                 {% if post.image %}

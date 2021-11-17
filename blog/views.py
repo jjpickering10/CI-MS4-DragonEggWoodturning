@@ -105,6 +105,20 @@ def edit_blog(request, blog_id):
 
 
 @login_required
+def delete_blog(request, blog_id):
+    """
+    Delete a blog post
+    """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+        
+    post = Post.objects.get(id=blog_id)
+    post.delete()
+
+    return redirect(reverse('blog'))
+
+
+@login_required
 def edit_comment(request, comment_id):
     """
     Edit a comment
