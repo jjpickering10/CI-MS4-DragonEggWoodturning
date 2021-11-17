@@ -11,6 +11,11 @@
                 <a href="{% url 'delete_blog' post.id %}">Delete</a>
             {% endif %}
             {% if request.user.is_authenticated %}
+                {% if liked %}
+                <p>You liked this</p>
+                {% else %}
+                <p>You have NOT liked this</p>
+                {% endif %}
                 <a href="{% url 'like_post' post.id %}">Like</a>
             {% endif %}
             <div class="blog-image">

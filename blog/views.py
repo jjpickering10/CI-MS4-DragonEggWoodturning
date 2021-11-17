@@ -24,6 +24,10 @@ def blog_post(request, blog_id):
     Display a single blog post
     """
     post = Post.objects.get(id=blog_id)
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        liked = True
+
     print(post)
 
     if request.method == 'POST':
@@ -42,7 +46,8 @@ def blog_post(request, blog_id):
 
     context = {
         'post': post,
-        'comment_form': comment_form
+        'comment_form': comment_form,
+        'liked': liked
     }
 
     return render(request, template, context)
