@@ -1,5 +1,7 @@
 import uuid
 from django.db import models
+from django.db.models import Avg
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -49,6 +51,10 @@ class Product(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
+    def update_rating(self):
+        self.rating = self.review_set.aggregate(Avg('rating'))['rating__avg'] or 0
+        self.save()
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the sku
@@ -67,6 +73,26 @@ class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.product.name
+
+
+class Review(models.Model):
+
+    RATINGS_CHOICES = (
+        (1, '1 Star'),
+        (2, '2 Stars'),
+        (3, '3 Stars'),
+        (4, '4 Stars'),
+        (5, '5 Stars'),
+    )
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    body = models.TextField()
+    rating = models.IntegerField(choices=RATINGS_CHOICES, default=0)
+    date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.product.name
