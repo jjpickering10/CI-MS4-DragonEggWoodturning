@@ -88,10 +88,11 @@
             <h2>£ {{ product.price }}</h2>
             <div class="product-rating">
               {% if product.rating %}
-              <h4>{{ product.rating }}</h4>
+              <h4>{{ product.rating }} <i class="fas fa-star"></i></h4>
               {% else %}
               <h4>No ratings yet.</h4>
               {% endif %}
+              <p>{{ product.review_set.all|length }} reviews</p>
             </div>
           </div>
           <p class="individual-category"><i class="fas fa-sort"></i> | {{ product.category.friendly_name }}</p>
