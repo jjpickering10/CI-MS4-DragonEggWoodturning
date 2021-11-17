@@ -84,17 +84,20 @@ def edit_blog(request, blog_id):
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
-    blog = Post.objects.get(id=blog_id)
+    post = Post.objects.get(id=blog_id)
 
     if request.method == 'POST':
-        blog_form = BlogForm(instance=blog)
+        edited_post = BlogForm(request.POST, instance=post)
+        if edited_post.is_valid():
+            edited_post.save()
+            return redirect(reverse('blog_post', args=[post.id]))
     else:
-        blog_form = BlogForm(instance=blog)
+        blog_form = BlogForm(instance=post)
 
     template = 'blog/edit_blog.html'
 
     context = {
-        'blog': blog,
+        'post': post,
         'blog_form': blog_form
     }
 

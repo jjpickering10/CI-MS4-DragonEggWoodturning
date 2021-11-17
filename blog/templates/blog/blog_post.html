@@ -5,6 +5,10 @@
 <div class="blog-container">
     {% if post %}
         <div class="blog-card">
+            {% if request.user.is_superuser %}
+                <a href="{% url 'edit_blog' post.id %}">Edit</a>
+                <a href="">Delete</a>
+            {% endif %}
             <div class="blog-image">
                 {% if post.image %}
                     <img src="{{ post.image.url }}" alt="">
