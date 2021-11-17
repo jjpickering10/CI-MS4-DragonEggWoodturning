@@ -152,3 +152,25 @@ def delete_comment(request, comment_id):
     comment.delete()
 
     return redirect(reverse('blog_post', args=[comment.post.id]))
+
+
+@login_required
+def like_post(request, blog_id):
+    """
+    View for liking and unliking a post
+    """
+    if not request.user.is_authenticated:
+        return redirect(reverse('blog_post', args=[blog_id]))
+    
+    post = Post.objects.get(id=blog_id)
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        post.like_count -=1
+        post.save()
+
+    else:
+        post.likes.add(request.user)
+        post.like_count +=1
+        post.save()
+    
+    return redirect(reverse('blog_post', args=[blog_id]))

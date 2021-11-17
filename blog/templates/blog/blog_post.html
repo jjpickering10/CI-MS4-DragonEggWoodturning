@@ -5,9 +5,13 @@
 <div class="blog-container">
     {% if post %}
         <div class="blog-card">
+            <p>{{ post.like_count }} likes</p>
             {% if request.user.is_superuser %}
                 <a href="{% url 'edit_blog' post.id %}">Edit</a>
                 <a href="{% url 'delete_blog' post.id %}">Delete</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'like_post' post.id %}">Like</a>
             {% endif %}
             <div class="blog-image">
                 {% if post.image %}
