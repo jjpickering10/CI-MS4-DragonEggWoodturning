@@ -48,3 +48,12 @@ class Subscribers(models.Model):
         if not self.unsubscribe:
             self.unsubscribe = self._generate_unsubscribe()
         super().save(*args, **kwargs)
+
+
+class Newsletter(models.Model):
+    title = models.CharField(max_length=100, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(null=True)
+
+    def __str__(self):
+        return self.title

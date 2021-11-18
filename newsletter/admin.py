@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subscribers
+from .models import Subscribers, Newsletter
 
 
 class SubscribersAdmin(admin.ModelAdmin):
@@ -14,5 +14,18 @@ class SubscribersAdmin(admin.ModelAdmin):
         '-date',
     )
 
+
+class NewsletterAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'title',
+        'date',
+    )
+
+    ordering = (
+        '-date',
+    )
+
 admin.site.register(Subscribers, SubscribersAdmin)
+admin.site.register(Newsletter, NewsletterAdmin)
 
