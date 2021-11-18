@@ -94,7 +94,12 @@
     </section>
     <section id="home-newsletter">
       <div>image</div>
-      <div>{{ subscribers_form }}</div>
+      <div>
+        <form action="{% url 'subscribe' %}" method="POST">
+          {% csrf_token %}
+          {{ subscribers_form }}
+        </form>
+      </div>
     </section>
     </main>
 

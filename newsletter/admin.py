@@ -4,9 +4,10 @@ from .models import Subscribers
 
 class SubscribersAdmin(admin.ModelAdmin):
 
-    fields = (
+    list_display = (
         'email',
-        'unsubscribe'
+        'date',
+        'unsubscribe',
     )
 
     ordering = (
