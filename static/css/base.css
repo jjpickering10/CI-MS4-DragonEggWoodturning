@@ -105,6 +105,15 @@ body main {
      object-fit: cover;
 }
 
+#home-newsletter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  min-height: 50vh;
+}
+#home-newsletter div {
+  background: red;
+}
+
 .home-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));

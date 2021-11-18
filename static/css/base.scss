@@ -123,6 +123,16 @@ body {
 
 }
 
+#home-newsletter {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    min-height: 50vh;
+
+    div {
+        background: red;
+    }
+}
+
 .home-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
