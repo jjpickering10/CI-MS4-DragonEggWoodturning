@@ -78,7 +78,19 @@ def product_detail(request, product_id):
     A view to show an individual product
     """
     product = get_object_or_404(Product, pk=product_id)
-    review_form = ReviewForm()
+
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            new_review = review_form.save(commit=False)
+            new_review.user = request.user
+            new_review.product = product
+            new_review.save()
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        review_form = ReviewForm()
 
     context = {
         'product': product,

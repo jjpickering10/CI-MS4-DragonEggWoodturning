@@ -46,7 +46,11 @@
           <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </div>
       </form>
-      {{ review_form }}
+      <form action="{% url 'product_detail' product.id %}" method="POST">
+        {% csrf_token %}
+        {{ review_form }}
+        <button type="submit">Post Review</button>
+      </form>
     </div>
     
 </div>
