@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Category, Product, Image, WoodType
+from .forms import ReviewForm
 
 
 def all_products(request):
@@ -77,9 +78,11 @@ def product_detail(request, product_id):
     A view to show an individual product
     """
     product = get_object_or_404(Product, pk=product_id)
+    review_form = ReviewForm()
 
     context = {
         'product': product,
+        'review_form': review_form,
     }
 
     return render(request, 'products/product_detail.html', context)
