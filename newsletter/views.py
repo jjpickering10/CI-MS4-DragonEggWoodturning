@@ -47,6 +47,9 @@ def unsubscribe(request, unsubscribe_id):
 
 
 def send_newsletter(request):
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         newsletter_form = NewsletterForm(request.POST)
         if newsletter_form.is_valid():

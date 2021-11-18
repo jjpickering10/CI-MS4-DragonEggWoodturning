@@ -57,3 +57,33 @@ class Newsletter(models.Model):
 
     def __str__(self):
         return self.title
+
+    def send_newsletter(self):
+        """
+        Send newsletter email
+        """
+        emails = Subscribers.objects.all()
+
+        title = self.title
+        message = self.message
+
+        for email in emails:
+            subscriber_email = email.email
+            unsubscribe_id = email.unsubscribe
+            
+            subject = render_to_string(
+                'newsletter/newsletter_emails/newsletter_subject.txt', {
+                    'title': title
+                    }
+                )
+            body = render_to_string(
+                'newsletter/newsletter_emails/newsletter_body.txt', {
+                    'unsubscribe_url': settings.UNSUBSCRIBE_URL,
+                    'unsubscribe_id': unsubscribe_id,
+                    'contact_email': settings.DEFAULT_FROM_EMAIL,
+                    'message': message,
+                    'subscriber_email': subscriber_email
+                    }
+                )
+
+            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [subscriber_email], fail_silently=False)
