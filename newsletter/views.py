@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from .models import Subscribers
-from .forms import SubscribersForm
+from .forms import SubscribersForm, NewsletterForm
 
 
 def subscribe(request):
@@ -44,3 +44,10 @@ def unsubscribe(request, unsubscribe_id):
     }
 
     return render(request, template, context)
+
+
+def send_newsletter(request):
+    if request.method == 'POST':
+        newsletter_form = NewsletterForm(request.POST)
+        newsletter_form.save()
+        return redirect(reverse('profile'))

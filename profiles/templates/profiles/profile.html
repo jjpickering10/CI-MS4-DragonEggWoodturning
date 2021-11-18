@@ -91,7 +91,11 @@
         {% endfor %}
       </div>
       {% if request.user.is_superuser %}
-        {{ newsletter_form }}
+        <form action="{% url 'send_newsletter' %}" method="POST">
+          {% csrf_token%}
+          {{ newsletter_form }}
+          <button type="submit">Send newsletter</button>
+        </form>
       {% endif %}
       <div></div>
     </div>

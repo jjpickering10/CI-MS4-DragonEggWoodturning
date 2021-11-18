@@ -25,10 +25,8 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     if request.user.is_superuser:
-        print('superuser')
         newsletter_form = NewsletterForm()
     else:
-        print('not-super-user')
         newsletter_form = None
 
     template = 'profiles/profile.html'
