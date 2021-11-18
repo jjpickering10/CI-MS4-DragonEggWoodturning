@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from products.models import Review
+
 
 @login_required
 def profile(request):
@@ -12,6 +14,7 @@ def profile(request):
     """
     profile = UserProfile.objects.get(user=request.user)
     orders = profile.order_set.all()
+    reviews = Review.objects.filter(user=request.user)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -25,6 +28,7 @@ def profile(request):
     context = {
         'profile': profile,
         'orders': orders,
+        'reviews': reviews,
         'form': form,
     }
 

@@ -83,7 +83,13 @@
           </div>
         </form>
       </div>
-      <div></div>
+      <div>
+        {% for review in reviews %}
+        <p>{{ review.product}}</p>
+        <p>{{ review.body}}</p>
+        <p>{{ review.rating}}</p>
+        {% endfor %}
+      </div>
     </div>
 </div>
 {% endblock %}
