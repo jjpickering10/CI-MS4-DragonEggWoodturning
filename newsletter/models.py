@@ -1,4 +1,8 @@
 import uuid
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+
 from django.db import models
 
 
@@ -15,6 +19,24 @@ class Subscribers(models.Model):
         Generate a random, unique identifier using UUID
         """
         return uuid.uuid4().hex.upper()
+
+    def send_welcome_newsletter(self):
+        """
+        Send welcome newsletter email
+        """
+        subscriber_email = self.email
+        subject = render_to_string(
+            'newsletter/newsletter_emails/welcome_newsletter_subject.txt', {
+                'subscriber_email': subscriber_email
+                }
+            )
+        body = render_to_string(
+            'newsletter/newsletter_emails/welcome_newsletter_body.txt', {
+                'contact_email': settings.DEFAULT_FROM_EMAIL
+                }
+            )
+
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [subscriber_email])
 
     def save(self, *args, **kwargs):
         """

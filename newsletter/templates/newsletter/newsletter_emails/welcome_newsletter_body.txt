@@ -1,0 +1,5 @@
+Thank you for signing up to our newsletter
+
+Any questions, contact us at {{ contact_email }}
+
+Dragon Egg Woodturning
