@@ -25,6 +25,7 @@ class Subscribers(models.Model):
         Send welcome newsletter email
         """
         subscriber_email = self.email
+        unsubscribe_id = self.unsubscribe
         subject = render_to_string(
             'newsletter/newsletter_emails/welcome_newsletter_subject.txt', {
                 'subscriber_email': subscriber_email
@@ -32,6 +33,8 @@ class Subscribers(models.Model):
             )
         body = render_to_string(
             'newsletter/newsletter_emails/welcome_newsletter_body.txt', {
+                'unsubscribe_url': settings.UNSUBSCRIBE_URL,
+                'unsubscribe_id': unsubscribe_id,
                 'contact_email': settings.DEFAULT_FROM_EMAIL
                 }
             )

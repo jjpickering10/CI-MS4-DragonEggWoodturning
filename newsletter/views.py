@@ -25,3 +25,22 @@ def subscribe(request):
                 return redirect(reverse('home'))
 
     return redirect(reverse('home'))
+
+
+def unsubscribe(request, unsubscribe_id):
+    """
+    Unsubscribe to newsletter
+    """
+    subscribers = Subscribers.objects.all()
+    current_subscriber = None
+    if subscribers.filter(unsubscribe=unsubscribe_id).exists():
+        current_subscriber = Subscribers.objects.get(unsubscribe=unsubscribe_id)
+        current_subscriber.delete()
+
+    template = 'newsletter/unsubscribe.html'
+
+    context = {
+        'current_subscriber': current_subscriber,
+    }
+
+    return render(request, template, context)

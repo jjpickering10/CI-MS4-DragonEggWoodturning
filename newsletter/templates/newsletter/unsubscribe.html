@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="profile-container">
+    <div class="profile-nav">
+        {% if current_subscriber %}
+            <p>Your email {{ current_subscriber }} has been unsubscribed from our newsletter.</p>
+            <p>We're sorry to see you go</p>
+        {% else %}
+        <p>No email exists in our newsletter</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

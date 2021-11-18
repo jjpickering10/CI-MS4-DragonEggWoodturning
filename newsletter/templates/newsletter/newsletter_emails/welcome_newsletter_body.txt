@@ -2,4 +2,6 @@ Thank you for signing up to our newsletter
 
 Any questions, contact us at {{ contact_email }}
 
+You can unsubscribe from our newsletter here {{ unsubscribe_url }}/newsletter/unsubscribe/{{ unsubscribe_id }}/
+
 Dragon Egg Woodturning
