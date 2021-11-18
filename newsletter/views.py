@@ -49,5 +49,6 @@ def unsubscribe(request, unsubscribe_id):
 def send_newsletter(request):
     if request.method == 'POST':
         newsletter_form = NewsletterForm(request.POST)
-        newsletter_form.save()
-        return redirect(reverse('profile'))
+        if newsletter_form.is_valid():
+            newsletter_form.save()
+            return redirect(reverse('profile'))
