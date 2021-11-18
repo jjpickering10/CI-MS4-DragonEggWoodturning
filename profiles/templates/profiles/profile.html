@@ -90,6 +90,10 @@
         <p>{{ review.rating}}</p>
         {% endfor %}
       </div>
+      {% if request.user.is_superuser %}
+        {{ newsletter_form }}
+      {% endif %}
+      <div></div>
     </div>
 </div>
 {% endblock %}

@@ -5,6 +5,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 from products.models import Review
+from newsletter.forms import NewsletterForm
 
 
 @login_required
@@ -23,6 +24,13 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
+    if request.user.is_superuser:
+        print('superuser')
+        newsletter_form = NewsletterForm()
+    else:
+        print('not-super-user')
+        newsletter_form = None
+
     template = 'profiles/profile.html'
 
     context = {
@@ -30,6 +38,7 @@ def profile(request):
         'orders': orders,
         'reviews': reviews,
         'form': form,
+        'newsletter_form': newsletter_form
     }
 
     return render(request, template, context)
