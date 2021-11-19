@@ -45,7 +45,8 @@ button {
 }
 
 body {
-    background: var(--primary-cream);
+    // background: var(--primary-cream);
+    background: var(--white);
     font-family: 'Poppins', sans-serif;
     display: flex;
     min-height: 100vh;
@@ -145,32 +146,65 @@ body {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
         min-height: 100vh;
+        background: linear-gradient(180deg, var(--white) 85%, var(--primary-cream) 85%);
+        // margin-top: 2rem;
 
         .home-landing-title {
+            position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
             height: 75%;
             padding: 5em;
+            background: linear-gradient(0deg, var(--white) 50%, var(--primary-cream) 50%);
+
+            // &::after {
+            //     content: '';
+            //     position: absolute;
+            //     left: 0;
+            //     top: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     background: url('/media/walking-sticks-image.jpeg') no-repeat center center fixed;
+            //     z-index: -10000;
+            //     opacity: 0.2;
+            // }
 
             h1 {
-                font-weight: 600;
-                letter-spacing: 5px;
-                text-transform: uppercase;
-                font-size: calc(3rem + 2vw);
+                font-weight: 200;
+                // letter-spacing: 5px;
+                text-transform: lowercase;
+                font-size: calc(2.5rem + 2vw);
                 margin-bottom: 0;
                 color: var(--primary-brown);
                 position: relative;
+                // border-left: 10px solid var(--primary-orange);
+                box-shadow: -10px -10px 10px 0 var(--primary-brown);
+                // border: none;
+                line-height: 1.2;
+                padding: 2rem 2rem 1rem 2rem;
+
+                span {
+                    color: var(--primary-orange);
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    font-size: 110%;
+                }
             }
 
-            h4 {
+            p {
                 font-weight: 100;
                 color: var(--primary-brown);
+                font-size: 1.2rem;
+                line-height: 2;
+                padding: 0 2rem;
+                text-transform: lowercase;
             }
 
             .landing-buttons {
                 display: flex;
+                padding: 2rem;
 
                 a {
                     font-style: 1.7em;
@@ -200,11 +234,13 @@ body {
             height: 75%;
             display: flex;
             align-items: center;
+            justify-content: center;
 
             img {
                 padding: 3em;
-                width: 75%;
-                box-shadow: -20px 20px 20px 0px var(--primary-brown);
+                width: 90%;
+                box-shadow: 10px 10px 10px 0px var(--primary-brown);
+
             }
         }
     }
@@ -579,7 +615,7 @@ nav {
         transform: translateY(-10%);
         z-index: -10000;
         opacity: 0.5;
-        color: var(--white);
+        color: #361c1512;
     }
 
     > *:nth-child(1) {

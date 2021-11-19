@@ -26,11 +26,13 @@
         {% else %}
             <h2>£ {{ product.price }}</h2>
         {% endif %}
+        {% if request.user.is_superuser %}
         <form action="{% url 'add_discount' product.id %}" method="POST">
           {% csrf_token %}
           {{ discount_form }}
           <button type="submit">Add discount</button>
         </form>
+        {% endif %}
         <div class="product-rating">
           {% if product.rating %}
           <h4>{{ product.rating }}</h4>
