@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Category, Product, Image, WoodType
-from .forms import ReviewForm
+from .forms import ReviewForm, DiscountForm
 
 
 def all_products(request):
@@ -92,12 +92,32 @@ def product_detail(request, product_id):
     else:
         review_form = ReviewForm()
 
+    if request.user.is_superuser:
+        discount_form = DiscountForm()
+    else:
+        discount_form = None
+
     context = {
         'product': product,
         'review_form': review_form,
+        'discount_form': discount_form,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_discount(request, product_id):
+    """
+    A view to add discount
+    """
+
+    product = Product.objects.get(id=product_id)
+
+    if request.method == 'POST':
+        discount_form = DiscountForm(request.POST, instance=product)
+        if discount_form.is_valid():
+            discount_form.save()
+            return redirect(reverse('product_detail', args=[product_id]))
 
 
 def all_categories(request):

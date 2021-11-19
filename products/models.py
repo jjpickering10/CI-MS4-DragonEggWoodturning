@@ -73,8 +73,12 @@ class Product(models.Model):
 
     def generate_final_price(self):
         if self.discounted:
-            discount_amount = self.price / self.discount_choices
+            print(self.discount_choices)
+            print(self.price)
+            discount_amount = (self.price / 100) * self.discount_choices
+            print(discount_amount)
             final_amount = self.price - discount_amount
+            print(final_amount)
             self.final_price = round(final_amount, 2)
         else:
             self.final_price = self.price

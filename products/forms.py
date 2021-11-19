@@ -1,5 +1,5 @@
 from django import forms
-from .models import Review
+from .models import Review, Product
 
 
 class ReviewForm(forms.ModelForm):
@@ -17,3 +17,9 @@ class ReviewForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         self.fields['body'].widget.attrs['autofocus'] = True
+
+
+class DiscountForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['discount_choices']
