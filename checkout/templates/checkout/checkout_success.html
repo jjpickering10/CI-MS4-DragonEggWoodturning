@@ -27,7 +27,15 @@
     <p class="order-title">Items:</p>
     {% for item in order.lineitems.all %}
     <p>{{ item.product.name }}</p>
+    {% if item.product.final_price %}
+        {% if item.product.discounted %}
+        <p>{{ item.quantity }} item/s | £<span style="text-decoration: line-through;">{{ item.product.price }}</span> {{ item.product.final_price }} each</p>
+        {% else %}
+        <p>{{ item.quantity }} item/s | £{{ item.product.final_price }} each</p>
+          {% endif %}
+    {% else %}
     <p>{{ item.quantity }} item/s | £{{ item.product.price }} each</p>
+    {% endif %}
     {% endfor %}
   </div>
   <div>

@@ -83,9 +83,21 @@
                   <img src="{{ MEDIA_URL }}noimage.png">
                 {% endif %}
                 </td>
-                <td>£{{ item.product.price }}</td>
+                {% if item.product.final_price %}
+                  {% if item.product.discounted %}
+                    <td>£<span style="text-decoration: line-through;">{{ item.product.price}}</span> {{ item.product.final_price }}</td>
+                    {% else %}
+                    <td>£{{ item.product.final_price }}</td>
+                    {% endif %}
+                {% else %}
+                    <td>£ {{ item.product.price }}</td>
+                {% endif %}
                 <td>{{ item.quantity }}</td>
-                <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                {% if item.product.final_price %}
+                  <td>£{{ item.product.final_price | calc_subtotal:item.quantity }}</td>
+                {% else %}
+                  <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                {% endif %}
               </tr>
             </tbody>
             {% endfor %}

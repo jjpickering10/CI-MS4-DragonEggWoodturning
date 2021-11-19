@@ -17,7 +17,15 @@
         <h3>{{ product.name }}</h3>
       </div>
       <div class="product-price">
-        <h2>£ {{ product.price }}</h2>
+        {% if product.final_price %}
+          {% if product.discounted %}
+            <h2>£<span style="text-decoration: line-through;">{{ product.price}}</span> {{ product.final_price }}</h2>
+            {% else %}
+            <h2>£{{ product.final_price }}</h2>
+            {% endif %}
+        {% else %}
+            <h2>£ {{ product.price }}</h2>
+        {% endif %}
         <form action="{% url 'add_discount' product.id %}" method="POST">
           {% csrf_token %}
           {{ discount_form }}
