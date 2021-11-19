@@ -86,5 +86,8 @@ class OrderLineItem(models.Model):
         """
         Set the lineitem total
         """
-        self.lineitem_total = self.product.price * self.quantity
+        if self.product.final_price:
+            self.lineitem_total = self.product.final_price * self.quantity
+        else:
+            self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
