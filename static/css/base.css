@@ -708,7 +708,16 @@ nav ul a:hover, nav ul a:focus {
 .product-card-description {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--primary-cream);
+  padding: 5rem;
+}
+.product-card-description form {
+  padding: 2rem;
+  background: var(--white);
+  margin: 2rem;
+  box-shadow: 10px 10px 0 0 var(--primary-brown);
 }
 .product-card-description form p input[type=range] {
   height: 60px;
@@ -804,6 +813,32 @@ nav ul a:hover, nav ul a:focus {
 }
 .product-card-description form p input[type=range] {
   border: none;
+}
+.product-card-description form .range-slider {
+  display: none;
+}
+.product-card-description form .quantity-slider {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin: 1rem auto 2rem auto;
+}
+.product-card-description form .quantity-slider span {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+.product-card-description form .quantity-slider i {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.product-card-description form .quantity-slider i:hover, .product-card-description form .quantity-slider i:focus {
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 .product-card-description form .add-to-bag-buttons {
   display: flex;

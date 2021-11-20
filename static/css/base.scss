@@ -965,9 +965,16 @@ nav {
 .product-card-description {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--primary-cream);
+    padding: 5rem;
 
     form {
+        padding: 2rem;
+        background: var(--white);
+        margin: 2rem;
+        box-shadow: 10px 10px 0 0 var(--primary-brown);
 
         p {
             // height: 100px;
@@ -1068,8 +1075,39 @@ nav {
 
               input[type=range] {
                 border: none;
-              }
-                
+              }     
+        }
+
+        .range-slider {
+            display: none;
+        }
+
+        .quantity-slider {
+            width: 220px;
+            // background: grey;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin: 1rem auto 2rem auto;
+
+            span {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            i {
+                padding: 1rem;
+                font-size: 1rem;
+                border: 1px solid black;
+                transition: 0.2s;
+                cursor: pointer;
+
+                &:hover, &:focus {
+                    transform: scale(1.1);
+                    transition: 0.2s;
+                }
+            }
         }
 
         .add-to-bag-buttons {
