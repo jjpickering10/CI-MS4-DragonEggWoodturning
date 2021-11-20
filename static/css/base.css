@@ -632,6 +632,7 @@ nav ul a:hover, nav ul a:focus {
 
 .product-detail-container {
   flex-direction: column;
+  background: linear-gradient(180deg, var(--primary-cream) 50%, var(--white) 50%);
 }
 .product-detail-container .product-item-container .product-card {
   background: var(--white);
@@ -710,8 +711,22 @@ nav ul a:hover, nav ul a:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: var(--primary-cream);
   padding: 5rem;
+}
+.product-card-description .product-information {
+  font-size: 1.1rem;
+  font-weight: 200;
+  line-height: 1.8;
+  padding: 2rem;
+  background: var(--white);
+  box-shadow: 5px 5px 20px 0 var(--primary-brown);
+}
+.product-card-description .product-information i {
+  font-size: 3rem;
+  padding: 0 1rem;
+}
+.product-card-description .product-information i::before {
+  color: var(--primary-orange);
 }
 .product-card-description form {
   padding: 2rem;

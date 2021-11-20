@@ -868,6 +868,7 @@ nav {
 
 .product-detail-container {
     flex-direction: column;
+    background: linear-gradient(180deg, var(--primary-cream)50%, var(--white)50%);
     .product-item-container {
         .product-card {
             background: var(--white);
@@ -967,8 +968,26 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: var(--primary-cream);
+    // background: var(--primary-cream);
     padding: 5rem;
+
+    .product-information {
+        font-size: 1.1rem;
+        font-weight: 200;
+        line-height: 1.8;
+        padding: 2rem;
+        background: var(--white);
+        box-shadow: 5px 5px 20px 0 var(--primary-brown);
+
+        i {
+            font-size: 3rem;
+            padding: 0 1rem;
+
+            &::before {
+                color: var(--primary-orange);
+            }
+        }
+    }
 
     form {
         padding: 2rem;
@@ -977,7 +996,6 @@ nav {
         box-shadow: 10px 10px 0 0 var(--primary-brown);
 
         p {
-            // height: 100px;
             // https://www.cssportal.com/style-input-range/ used for range slider css
             input[type=range] {
                 height: 60px;

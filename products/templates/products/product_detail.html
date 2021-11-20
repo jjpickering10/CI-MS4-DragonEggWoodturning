@@ -49,7 +49,7 @@
       </div>
     </div>
       <div class="product-card-description">
-        <p>{{ product.description }}</p>
+        <p class="product-information"><i class="fas fa-info-circle"></i>{{ product.description }}</p>
         <form action="{% url 'add_to_bag' product.id %}" method="POST">
           {% csrf_token %}
           <p class="range-slider">
