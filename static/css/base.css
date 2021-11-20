@@ -633,6 +633,15 @@ nav ul a:hover, nav ul a:focus {
 .product-detail-container {
   flex-direction: column;
 }
+.product-detail-container .product-item-container .product-card {
+  background: var(--white);
+}
+.product-detail-container .product-item-container .product-card .product-card-image {
+  height: 500px;
+}
+.product-detail-container .product-item-container .product-card .product-card-image img {
+  height: 500px;
+}
 .product-detail-container .product-review-container {
   display: flex;
   flex-wrap: wrap;
@@ -699,10 +708,7 @@ nav ul a:hover, nav ul a:focus {
 .product-card-description {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.product-card-description form p {
-  height: 100px;
+  justify-content: center;
 }
 .product-card-description form p input[type=range] {
   height: 60px;

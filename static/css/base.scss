@@ -868,6 +868,17 @@ nav {
 
 .product-detail-container {
     flex-direction: column;
+    .product-item-container {
+        .product-card {
+            background: var(--white);
+            .product-card-image {
+                height: 500px;
+                img {
+                    height: 500px;
+                }
+            }
+        }
+    }
 
     .product-review-container {
         display: flex;
@@ -954,12 +965,12 @@ nav {
 .product-card-description {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     form {
 
         p {
-            height: 100px;
+            // height: 100px;
             // https://www.cssportal.com/style-input-range/ used for range slider css
             input[type=range] {
                 height: 60px;
