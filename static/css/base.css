@@ -197,9 +197,6 @@ body main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
-.home-container #home-blog .home-blog-posts {
-  border: 1px solid black;
-}
 .home-container #home-products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -208,9 +205,6 @@ body main {
 .home-container #home-woodtype {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-}
-.home-container #home-woodtype .home-woodtype-section {
-  border: 1px solid black;
 }
 
 nav {
@@ -278,15 +272,16 @@ nav ul a:hover, nav ul a:focus {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
 }
 .category-container .category-card {
   width: 200px;
-  margin: 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--primary-cream);
+  box-shadow: 2px 2px 2px 0 var(--primary-brown);
 }
 .category-container .category-card a {
   width: 100%;
@@ -298,8 +293,6 @@ nav ul a:hover, nav ul a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-clip-path: circle(50% at 50% 50%);
-          clip-path: circle(50% at 50% 50%);
   overflow: hidden;
 }
 .category-container .category-card a .category-card-image img {
@@ -308,8 +301,6 @@ nav ul a:hover, nav ul a:focus {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-clip-path: circle(50% at 50% 50%);
-          clip-path: circle(50% at 50% 50%);
   -o-object-fit: cover;
      object-fit: cover;
   transition: 0.5s;
@@ -323,11 +314,12 @@ nav ul a:hover, nav ul a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  padding: 1rem 0;
 }
 .category-container .category-card a .category-content .category-title {
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.3s;
+  font-size: 90%;
 }
 .category-container .category-card a .category-content .category-title:hover, .category-container .category-card a .category-content .category-title:focus {
   transform: scale(1.1);
@@ -335,9 +327,7 @@ nav ul a:hover, nav ul a:focus {
 }
 .category-container .category-card a .category-content p {
   font-weight: 200;
-}
-.category-container .category-type-section {
-  border: 1px solid black;
+  font-size: 75%;
 }
 
 #search-products-section {

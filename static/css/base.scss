@@ -313,10 +313,6 @@ body {
     #home-blog {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-
-        .home-blog-posts {
-            border: 1px solid black;
-        }
     }
     #home-products {
         display: grid;
@@ -326,10 +322,6 @@ body {
     #home-woodtype {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-
-        .home-woodtype-section {
-            border: 1px solid black;
-        }
     }
 }
 
@@ -413,16 +405,18 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    width: 90%;
+    width: 50%;
     margin: 0 auto;
 
 
     .category-card {
         width: 200px;
-        margin: 1rem auto;
+        // margin: 1rem auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        background: var(--primary-cream);
+        box-shadow: 2px 2px 2px 0 var(--primary-brown);
         
 
         a {
@@ -435,7 +429,7 @@ nav {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                clip-path: circle(50% at 50% 50%);
+                // clip-path: circle(50% at 50% 50%);
                 overflow: hidden;
                img {
                    width: 200px;
@@ -443,7 +437,7 @@ nav {
                    position: absolute;
                    top: 0;
                    left: 0;
-                   clip-path: circle(50% at 50% 50%);
+                //    clip-path: circle(50% at 50% 50%);
                    object-fit: cover;
                    transition: 0.5s;
                    
@@ -459,11 +453,13 @@ nav {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin-top: 1rem;
+                // margin-top: 1rem;
+                padding: 1rem 0;
 
                 .category-title {
-                    font-weight: 500;
+                    font-weight: 400;
                     transition: 0.3s;
+                    font-size: 90%;
 
                     &:hover, &:focus {
                         transform: scale(1.1);
@@ -473,13 +469,10 @@ nav {
 
                 p {
                     font-weight: 200;
+                    font-size: 75%;
                 }
             }
         }
-    }
-
-    .category-type-section {
-        border: 1px solid black;
     }
 }
 
