@@ -528,7 +528,7 @@ nav {
 
 #search-products-section {
     width: 300px;
-    margin: 0 auto;
+    margin: 3rem auto;
 
     form {
         background: var(--secondary-brown);
@@ -622,14 +622,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem;
+    padding: 0 5rem;
 
-    a {
-        color: var(--primary-brown);
-        &:hover, &:focus {
-            font-weight: 500;
-        }
-    }
+    // a {
+    //     color: var(--primary-brown);
+    //     &:hover, &:focus {
+    //         font-weight: 500;
+    //     }
+    // }
 
     p {
         font-weight: 300;
@@ -645,7 +645,7 @@ nav {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem;
+    padding: 2rem 5rem;
     overflow: hidden;
 
     .watermark {
@@ -676,7 +676,7 @@ nav {
 
         p {
             margin: 1rem 0;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 200;
             letter-spacing: 2px;
 
@@ -687,6 +687,10 @@ nav {
             a {
                 position: relative;
                 color: var(--primary-brown);
+                border: 1px solid var(--primary-brown);
+                border-left: none;
+                box-shadow: 2px 2px 0 0 var(--primary-brown);
+                padding: 0.25rem;
 
                 .fa-square {
                     margin-right: 0.5rem;
@@ -697,6 +701,7 @@ nav {
                     top: 0;
                     left: 0;
                     transform: scale(1.5);
+                    padding: 0.25rem;
                 }
             }
         }

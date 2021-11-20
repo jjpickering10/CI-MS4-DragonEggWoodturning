@@ -374,7 +374,7 @@ nav ul a:hover, nav ul a:focus {
 
 #search-products-section {
   width: 300px;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 #search-products-section form {
   background: var(--secondary-brown);
@@ -450,13 +450,7 @@ nav ul a:hover, nav ul a:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem;
-}
-.products-amount a {
-  color: var(--primary-brown);
-}
-.products-amount a:hover, .products-amount a:focus {
-  font-weight: 500;
+  padding: 0 5rem;
 }
 .products-amount p {
   font-weight: 300;
@@ -469,7 +463,7 @@ nav ul a:hover, nav ul a:focus {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding: 5rem;
+  padding: 2rem 5rem;
   overflow: hidden;
 }
 .product-container .watermark {
@@ -495,7 +489,7 @@ nav ul a:hover, nav ul a:focus {
 }
 .product-container .product-category-container p {
   margin: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 200;
   letter-spacing: 2px;
 }
@@ -505,6 +499,10 @@ nav ul a:hover, nav ul a:focus {
 .product-container .product-category-container p a {
   position: relative;
   color: var(--primary-brown);
+  border: 1px solid var(--primary-brown);
+  border-left: none;
+  box-shadow: 2px 2px 0 0 var(--primary-brown);
+  padding: 0.25rem;
 }
 .product-container .product-category-container p a .fa-square {
   margin-right: 0.5rem;
@@ -514,6 +512,7 @@ nav ul a:hover, nav ul a:focus {
   top: 0;
   left: 0;
   transform: scale(1.5);
+  padding: 0.25rem;
 }
 .product-container .product-category-container hr {
   width: 50%;
