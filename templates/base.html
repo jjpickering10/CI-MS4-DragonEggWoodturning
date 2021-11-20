@@ -93,11 +93,16 @@
       </div>
     </section>
     <section id="home-newsletter">
-      <div>image</div>
-      <div>
+      <div class="newsletter-image">
+        <img src="{{ MEDIA_URL }}wood-type-1.PNG" alt="">
+      </div>
+      <div class="newsletter-form">
+        <h4>Stay Updated</h4>
+        <p>Sign up to our newsletter to receive updates</p>
         <form action="{% url 'subscribe' %}" method="POST">
           {% csrf_token %}
           {{ subscribers_form }}
+          <button class="global-button" type="submit">Join</button>
         </form>
       </div>
     </section>
