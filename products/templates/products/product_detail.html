@@ -2,74 +2,82 @@
 {% load static %}
 
 {% block content %}
-<div class="product-container">
-<div class="product-item-container">
-  <div class="product-card">
-    <div class="product-card-image">
-        {% if product.image_set.all|length > 0 %}
-          <img src="{{ product.image_set.first.image.url }}" alt="">
-        {% else %}
-          <img src="{{ MEDIA_URL }}noimage.png">
-        {% endif %}
-    </div>
-    <div class="product-card-content">
-      <div class="product-card-title">
-        <h3>{{ product.name }}</h3>
-      </div>
-      <div class="product-price">
-        <div class="product-rating">
-          {% if product.rating %}
-          <h4>{{ product.rating }} <i class="fas fa-star"></i></h4>
+<div class="product-container product-detail-container">
+  <div class="product-item-container">
+    <div class="product-card">
+      <div class="product-card-image">
+          {% if product.image_set.all|length > 0 %}
+            <img src="{{ product.image_set.first.image.url }}" alt="">
           {% else %}
-          <h4>No ratings yet</h4>
+            <img src="{{ MEDIA_URL }}noimage.png">
           {% endif %}
-          <p>| {{ product.review_set.all|length }} review/s</p>
-        </div>
-        {% if product.final_price %}
-          {% if product.discounted %}
-            <h2>£<span style="text-decoration: line-through;">{{ product.price}}</span> {{ product.final_price }}</h2>
-            {% else %}
-            <h2>£{{ product.final_price }}</h2>
-            {% endif %}
-        {% else %}
-            <h2>£ {{ product.price }}</h2>
-        {% endif %}
-        {% if request.user.is_superuser %}
-        <form action="{% url 'add_discount' product.id %}" method="POST">
-          {% csrf_token %}
-          {{ discount_form }}
-          <button class="global-button" type="submit">Add discount</button>
-        </form>
-        {% endif %}
       </div>
-      <p class="individual-category"><i class="fas fa-sort"></i> | {{ product.category.friendly_name }}</p>
-      {% for woodtype in product.wood_type.all %}
-        <p class="individual-woodtype"><i class="fas fa-tag"></i> | {{ woodtype.friendly_name }}</p>
-      {% endfor %}
-    </div>
-  </div>
-    <div class="product-card-description">
-      <p>{{ product.description }}</p>
-      <form action="{% url 'add_to_bag' product.id %}" method="POST">
-        {% csrf_token %}
-        <p>
-          <input type="range" id="product-range" name="quantity" value ="1" min="1" max="10" data-item_id="{{ product.id }}" />
-          <p>Quantity: <span id="product-value"></span></p>
-        </p>
-        <div class="add-to-bag-buttons">
-          <a class="global-button" href="{% url 'all_products' %}"> Keep Shopping</a>
-          <input class="global-button" type="submit" value="Add to Bag">
-          <input type="hidden" name="redirect_url" value="{{ request.path }}">
+      <div class="product-card-content">
+        <div class="product-card-title">
+          <h3>{{ product.name }}</h3>
         </div>
-      </form>
+        <div class="product-price">
+          <div class="product-rating">
+            {% if product.rating %}
+            <h4>{{ product.rating }} <i class="fas fa-star"></i></h4>
+            {% else %}
+            <h4>No ratings yet</h4>
+            {% endif %}
+            <p>| {{ product.review_set.all|length }} review/s</p>
+          </div>
+          {% if product.final_price %}
+            {% if product.discounted %}
+              <h2>£<span style="text-decoration: line-through;">{{ product.price}}</span> {{ product.final_price }}</h2>
+              {% else %}
+              <h2>£{{ product.final_price }}</h2>
+              {% endif %}
+          {% else %}
+              <h2>£ {{ product.price }}</h2>
+          {% endif %}
+          {% if request.user.is_superuser %}
+          <form action="{% url 'add_discount' product.id %}" method="POST">
+            {% csrf_token %}
+            {{ discount_form }}
+            <button class="global-button" type="submit">Add discount</button>
+          </form>
+          {% endif %}
+        </div>
+        <p class="individual-category"><i class="fas fa-sort"></i> | {{ product.category.friendly_name }}</p>
+        {% for woodtype in product.wood_type.all %}
+          <p class="individual-woodtype"><i class="fas fa-tag"></i> | {{ woodtype.friendly_name }}</p>
+        {% endfor %}
+      </div>
+    </div>
+      <div class="product-card-description">
+        <p>{{ product.description }}</p>
+        <form action="{% url 'add_to_bag' product.id %}" method="POST">
+          {% csrf_token %}
+          <p>
+            <input type="range" id="product-range" name="quantity" value ="1" min="1" max="10" data-item_id="{{ product.id }}" />
+            <p>Quantity: <span id="product-value"></span></p>
+          </p>
+          <div class="add-to-bag-buttons">
+            <a class="global-button" href="{% url 'all_products' %}"> Keep Shopping</a>
+            <input class="global-button" type="submit" value="Add to Bag">
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+          </div>
+        </form>
+      </div>
+      
+  </div>
+  <div class="product-review-container">
+    <div>
+      <h3>Post a review</h3>
       <form action="{% url 'product_detail' product.id %}" method="POST">
         {% csrf_token %}
         {{ review_form }}
-        <button type="submit">Post Review</button>
+        <button class="global-button" type="submit">Post Review</button>
       </form>
     </div>
-    
-</div>
+    <div>
+      <h3>Reviews</h3>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
