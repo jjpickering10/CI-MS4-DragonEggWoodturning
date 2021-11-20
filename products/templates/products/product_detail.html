@@ -17,6 +17,14 @@
         <h3>{{ product.name }}</h3>
       </div>
       <div class="product-price">
+        <div class="product-rating">
+          {% if product.rating %}
+          <h4>{{ product.rating }} <i class="fas fa-star"></i></h4>
+          {% else %}
+          <h4>No ratings yet</h4>
+          {% endif %}
+          <p>| {{ product.review_set.all|length }} review/s</p>
+        </div>
         {% if product.final_price %}
           {% if product.discounted %}
             <h2>£<span style="text-decoration: line-through;">{{ product.price}}</span> {{ product.final_price }}</h2>
@@ -30,16 +38,9 @@
         <form action="{% url 'add_discount' product.id %}" method="POST">
           {% csrf_token %}
           {{ discount_form }}
-          <button type="submit">Add discount</button>
+          <button class="global-button" type="submit">Add discount</button>
         </form>
         {% endif %}
-        <div class="product-rating">
-          {% if product.rating %}
-          <h4>{{ product.rating }}</h4>
-          {% else %}
-          <h4>No ratings yet.</h4>
-          {% endif %}
-        </div>
       </div>
       <p class="individual-category"><i class="fas fa-sort"></i> | {{ product.category.friendly_name }}</p>
       {% for woodtype in product.wood_type.all %}
