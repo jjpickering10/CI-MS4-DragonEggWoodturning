@@ -78,6 +78,7 @@ def product_detail(request, product_id):
     A view to show an individual product
     """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.review_set.all()
 
     if request.method == 'POST':
         review_form = ReviewForm(request.POST)
@@ -99,6 +100,7 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
+        'reviews': reviews,
         'review_form': review_form,
         'discount_form': discount_form,
     }

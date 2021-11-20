@@ -634,26 +634,66 @@ nav ul a:hover, nav ul a:focus {
   flex-direction: column;
 }
 .product-detail-container .product-review-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-detail-container .product-review-container > *:nth-child(1) {
+  flex: 1 1 50%;
+}
+.product-detail-container .product-review-container > *:nth-child(2) {
+  flex: 1 1 50%;
 }
 .product-detail-container .product-review-container h3 {
   font-weight: 100;
   text-transform: uppercase;
 }
-.product-detail-container .product-review-container div form {
-  width: 75%;
+.product-detail-container .product-review-container .review-form form {
+  min-width: 300px;
+  padding-right: 5rem;
 }
-.product-detail-container .product-review-container div form textarea {
+.product-detail-container .product-review-container .review-form form textarea {
   border: 1px solid var(--primary-brown);
   padding: 2rem;
   height: auto;
 }
-.product-detail-container .product-review-container div form .select-wrapper {
+.product-detail-container .product-review-container .review-form form .select-wrapper {
   width: 25%;
 }
-.product-detail-container .product-review-container div form .global-button {
+.product-detail-container .product-review-container .review-form form .global-button {
   margin: 1rem 0;
+}
+.product-detail-container .product-review-container .review-section .review-content {
+  padding: 1rem;
+  background: var(--primary-cream);
+}
+.product-detail-container .product-review-container .review-section .review-content .review-rating {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+.product-detail-container .product-review-container .review-section .review-content .review-rating i {
+  margin: 0 0.25rem 0 0;
+  color: var(--primary-orange);
+}
+.product-detail-container .product-review-container .review-section .review-content .review-rating span {
+  font-size: 0.5rem;
+  margin-left: 0.25rem;
+}
+.product-detail-container .product-review-container .review-section .review-content p {
+  font-weight: 100;
+  font-size: 1rem;
+  padding: 1rem 0 0;
+  display: flex;
+}
+.product-detail-container .product-review-container .review-section .review-content p i {
+  font-size: 1rem;
+}
+.product-detail-container .product-review-container .review-section .review-content p span {
+  margin: 0 0.25rem;
+}
+.product-detail-container .product-review-container .review-section .review-content .review-date {
+  font-size: 0.65rem;
+  font-weight: 400;
 }
 
 .product-card-description {

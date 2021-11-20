@@ -870,18 +870,25 @@ nav {
     flex-direction: column;
 
     .product-review-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+
+        > *:nth-child(1) {
+            flex: 1 1 50%;
+        }
+        > *:nth-child(2) {
+            flex: 1 1 50%;
+        }
 
         h3 {
             font-weight: 100;
             text-transform: uppercase;
         }
 
-        div {
+        .review-form {
             form {
-                width: 75%;
-
+                min-width: 300px;
+                padding-right: 5rem;
                 textarea {
                     border: 1px solid var(--primary-brown);
                     padding: 2rem;
@@ -894,6 +901,49 @@ nav {
                 
                 .global-button {
                     margin: 1rem 0;
+                }
+            }
+        }
+
+        .review-section {
+            // padding: 0 0 0 5rem;
+            .review-content {
+                padding: 1rem;
+                background: var(--primary-cream);
+                .review-rating {
+                    font-size: 2rem;
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        margin: 0 0.25rem 0 0;
+                        color: var(--primary-orange);
+                    }
+
+                    span {
+                        font-size: 0.5rem;
+                        margin-left: 0.25rem;
+                    }
+                }
+
+                p {
+                    font-weight: 100;
+                    font-size: 1rem;
+                    padding: 1rem 0 0;
+                    display: flex;
+
+                    i {
+                        font-size: 1rem;
+                    }
+
+                    span {
+                        margin: 0 0.25rem;
+                    }
+                }
+
+                .review-date {
+                    font-size: .65rem;
+                    font-weight: 400;
                 }
             }
         }
