@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+  Unique gifts for every occasion
+{% endblock %}
+
+{% block page_header_paragraph %}
+  <span class="product-heading-title"></span>
+{% endblock %}
+
 {% block content %}
 <!-- Search functionality -->
 <section id="search-products-section">
@@ -123,6 +131,7 @@
  const categories = document.querySelectorAll('.category-names')
  const label = document.querySelectorAll('.product-label')
  const productContainer = document.querySelector('.product-container')
+ const productHeadingTitle = document.querySelector('.product-heading-title')
 
 // Add dynamic watermark
  function addWatermark() {
@@ -137,7 +146,8 @@
  categories.forEach(category => {
    if (label[0].textContent === category.textContent) {
      category.children[0].children[1].classList.remove('hide')
-     category.style.fontWeight = 500 
+     category.style.fontWeight = 500
+     productHeadingTitle.textContent = category.textContent
    }
  })
 

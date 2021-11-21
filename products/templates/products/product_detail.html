@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block page_header_paragraph %}
-  All Products <i class="fas fa-caret-right"></i> {{ product.category.friendly_name }} <i class="fas fa-caret-right"></i> <span>{{ product.name|truncatechars:10 }}</span>
+  {{ product.category.friendly_name }} <i class="fas fa-caret-right"></i> <span>{{ product.name|truncatechars:20 }}</span>
 {% endblock %}
 
 {% block content %}
