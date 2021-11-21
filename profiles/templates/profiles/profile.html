@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+  All wood used is sustainable and ethically sourced
+{% endblock %}
+
+{% block page_header_paragraph %}
+  <span>{{ profile.user }}</span>
+{% endblock %}
+
 {% block content %}
 
 <div class="profile-container">

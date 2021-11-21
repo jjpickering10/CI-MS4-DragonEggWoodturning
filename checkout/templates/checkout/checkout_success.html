@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+  Gifts for every occasion  
+{% endblock %}
+
+{% block page_header_paragraph %}
+  Checkout <i class="fas fa-caret-right"></i> <span>Order Summary</span>
+{% endblock %}
+
 {% block content %}
 <div class="checkout-nav">
   <a class="global-button" href="{% url 'home' %}">Home</a>
