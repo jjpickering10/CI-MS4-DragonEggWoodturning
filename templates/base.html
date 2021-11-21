@@ -76,12 +76,20 @@
     <div class="message-container"></div>
     {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
+    <div class="header-about-section">
+      <div class="opaque-overlay">&nbsp;</div>
+      <div class="header-about-info">
+        <h3>{% block page_header %}{% endblock %}</h3>
+        <p>Home <i class="fas fa-caret-right"></i> {% block page_header_paragraph %}{% endblock %}</p>
+      </div>
+      
+      <img src="{{ MEDIA_URL }}background-image-2.jpeg" alt="">
+  </div>
+
     <main>
     {% block content %}
     {% endblock %}
-    <section id="home-about">
+    <section class="home-about">
       <div class="home-about-section">
           <div class="opaque-overlay">&nbsp;</div>
           <div class="home-about-info">

@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+  All wood used is sustainable and ethically sourced
+{% endblock %}
+
+{% block page_header_paragraph %}
+  All Products <i class="fas fa-caret-right"></i> {{ product.category.friendly_name }} <i class="fas fa-caret-right"></i> <span>{{ product.name|truncatechars:10 }}</span>
+{% endblock %}
+
 {% block content %}
 <div class="product-container product-detail-container">
   <div class="product-item-container">
