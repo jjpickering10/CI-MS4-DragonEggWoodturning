@@ -1476,12 +1476,29 @@ nav {
 
 // Blog page
 
+.blog-page-title {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 200;
+    text-align: center;
+    text-transform: lowercase;
+
+    i {
+        font-size: 2rem;
+        margin: 0 1rem;
+
+        &::before {
+            color: var(--primary-orange);
+        }
+    }
+}
+
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
     min-height: 50vh;
-    margin: 3rem auto;
+    margin: 5rem auto;
     width: 80%;
 
     a {
@@ -1501,7 +1518,7 @@ nav {
         flex-direction: column;
         justify-content: space-between;
         background: var(--white);
-        box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
+        box-shadow: 0px 0px 5px 0 var(--primary-brown-shadow);
         margin: 0 auto;
 
         .blog-image {
@@ -1510,14 +1527,14 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
-
+            
             img {
                 
                 height: 250px;
                 display: block;
                 object-fit: contain;
                 transform: scale(0.75);
-                box-shadow: 0px 20px 50px 0px var(--primary-brown-shadow);
+                box-shadow: 0px 0px 10px 0px var(--primary-brown-shadow);
             }
         }
 
@@ -1529,7 +1546,7 @@ nav {
             align-items: center;
             padding: 1rem;
             background: var(--secondary-brown);
-            margin-top: 1rem;
+            // margin-top: 1rem;
 
             .blog-title {
                 padding-top: 1rem;
@@ -1538,8 +1555,20 @@ nav {
                     font-size: 1.5rem;
                     font-weight: 600;
                     color: var(--primary-brown);
-                    margin-top: 0;
+                    margin: 0 0 1rem 0;
                     text-align: center;
+                }
+
+                p {
+                    font-size: 0.7rem;
+                    text-align: center;
+                    margin: 0.25rem 0;
+
+                    i {
+                        &::before {
+                            color: var(--primary-orange);
+                        }
+                    }
                 }
             }
 
@@ -1566,6 +1595,7 @@ nav {
             .blog-body {
                 text-align: center;
                 padding: 0 1rem 1rem 1rem;
+                font-weight: 100;
             }
         }
     }
@@ -1587,13 +1617,17 @@ nav {
             padding: 0 2rem;
             margin: 0 0 1rem 0;
             h2 {
-                font-size: 3.5rem;
-                font-weight: 400;
+                font-size: 3rem;
+                font-weight: 200;
                 color: var(--primary-brown);
                 margin: 0;
+                text-decoration: underline;
+                text-decoration-color: var(--secondary-brown);
             }
             p {
-                font-weight: 500;
+                font-weight: 200;
+                font-size: 1.5rem;
+                color: var(--primary-brown);
                 i {
                     &::before {
                         color: var(--primary-orange);

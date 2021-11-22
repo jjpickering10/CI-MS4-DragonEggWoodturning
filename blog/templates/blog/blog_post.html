@@ -14,7 +14,6 @@
     {% if post %}
     <div class="blog-post-content">
         <div class="blog-post-title">
-            <h2>{{ post.title }}</h3>
             <p>
                 <a href="{% url 'like_post' post.id %}">
                     {% if request.user.is_authenticated %}
@@ -29,6 +28,8 @@
                 </a> 
                 {{ post.like_count }}
             </p>
+            <h2>{{ post.title }}</h2>
+            
         </div>
         <div class="blog-post-author">
             <h5>{{ post.date }} <span>by {{ post.author }}</span></h5>

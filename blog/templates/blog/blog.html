@@ -10,6 +10,8 @@
 
 {% block content %}
 
+<h2 class="blog-page-title"><i class="fas fa-blog"></i>Our Latest Blog Posts</h2>
+
 <div class="blog-container">
     {% for post in posts %}
     <a href="{% url 'blog_post' post.id %}">
@@ -23,9 +25,9 @@
             </div>
             <div class="blog-content">
                 <div class="blog-title">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.comment_set.all|length }} comment/s</p>
-                <p>{{ post.like_count }} likes</p>
+                    <h3>{{ post.title|truncatechars:15 }}</h3>
+                    <p>{{ post.comment_set.all|length }} comment/s</p>
+                    <p><i class="fas fa-thumbs-up"></i> {{ post.like_count }}</p>
                 </div>
                 <div class="blog-author">
                 <h2>By: {{ post.author }}</h2>
