@@ -2,6 +2,7 @@
 
 :root {
     --primary-brown: #361C15;
+    --primary-brown-shadow: rgba(54, 28, 21, 0.25);
     --secondary-brown: #D2B48C;
     --primary-orange: #E66C4E;
     --primary-cream: #FFF5EF;
@@ -208,7 +209,7 @@ body {
             object-fit: cover;
             width: 75%;
             height: 75%;
-            box-shadow: 10px 10px 10px 0 var(--primary-brown);
+            box-shadow: 10px 10px 10px 0 var(--primary-brown-shadow);
         }
     }
 
@@ -235,7 +236,7 @@ body {
             align-items: center;
             background: var(--secondary-brown);
             padding: 1rem;
-            box-shadow: 10px 10px 0 0 var(--primary-brown);
+            box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
 
             label {
                 color: var(--primary-brown);
@@ -297,7 +298,7 @@ body {
                 color: var(--primary-brown);
                 position: relative;
                 // border-left: 10px solid var(--primary-orange);
-                box-shadow: -10px -10px 10px 0 var(--primary-brown);
+                box-shadow: -10px -10px 10px 0 var(--primary-brown-shadow);
                 // border: none;
                 line-height: 1.2;
                 padding: 2rem 2rem 1rem 2rem;
@@ -336,7 +337,7 @@ body {
                         margin-left: 1em;
                         background: none;
                         color: var(--primary-orange);
-                        box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+                        box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
 
                         &:hover, :focus {
                             box-shadow: none;
@@ -356,7 +357,7 @@ body {
             img {
                 padding: 3em;
                 width: 90%;
-                box-shadow: 10px 10px 10px 0px var(--primary-brown);
+                box-shadow: 10px 10px 10px 0px var(--primary-brown-shadow);
 
             }
         }
@@ -461,7 +462,7 @@ nav {
         justify-content: center;
         align-items: center;
         background: var(--white);
-        box-shadow: 10px 10px 0 0 var(--primary-brown);
+        box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
         border-right: 10px solid var(--secondary-brown);
         border-bottom: 10px solid var(--primary-orange);
     }
@@ -546,7 +547,7 @@ nav {
             justify-content: center;
             align-items: center;
             background: var(--primary-cream);
-            box-shadow: 2px 2px 2px 0 var(--primary-brown);
+            box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
             margin: 0 auto;
 
             a {
@@ -773,7 +774,7 @@ nav {
                 color: var(--primary-brown);
                 border: 1px solid var(--primary-brown);
                 border-left: none;
-                box-shadow: 2px 2px 0 0 var(--primary-brown);
+                box-shadow: 2px 2px 0 0 var(--primary-brown-shadow);
                 padding: 0.25rem;
 
                 .fa-square {
@@ -827,7 +828,7 @@ nav {
                     object-fit: contain;
                     transform: scale(0.75);
                     transition: 0.3s;
-                    box-shadow: 10px 10px 10px 0px var(--primary-brown);
+                    box-shadow: 10px 10px 10px 0px var(--primary-brown-shadow);
 
                     &:hover {
                         transform: scale(0.85);
@@ -1043,7 +1044,7 @@ nav {
         line-height: 1.8;
         padding: 2rem;
         background: var(--white);
-        box-shadow: 5px 5px 20px 0 var(--primary-brown);
+        box-shadow: 5px 5px 20px 0 var(--primary-brown-shadow);
 
         i {
             font-size: 3rem;
@@ -1059,7 +1060,7 @@ nav {
         padding: 2rem;
         background: var(--white);
         margin: 2rem;
-        box-shadow: 10px 10px 0 0 var(--primary-brown);
+        box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
 
         p {
             // https://www.cssportal.com/style-input-range/ used for range slider css
@@ -1206,7 +1207,7 @@ nav {
                 margin-left: 1rem;
                 background: none;
                 color: var(--primary-orange);
-                box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+                box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
 
                 &:hover, :focus {
                     box-shadow: none;
@@ -1234,7 +1235,7 @@ nav {
     .bag-table {
         margin-top: 5rem;
         padding: 2rem;
-        box-shadow: 20px 20px 20px 0 var(--primary-brown);
+        box-shadow: 20px 20px 20px 0 var(--primary-brown-shadow);
         background: var(--white);
         .free-delivery {
             font-weight: 100;
@@ -1287,7 +1288,7 @@ nav {
                 height: 50%;
                 background: none;
                 color: var(--primary-orange);
-                box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+                box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
 
                 &:hover, :focus {
                     box-shadow: none;
@@ -1369,7 +1370,7 @@ nav {
             border: none;
             background: #ded3cc;
             border-radius: 2px;
-            box-shadow: 0px 2px 2px 0px var(--primary-brown);
+            box-shadow: 0px 2px 2px 0px var(--primary-brown-shadow);
         }
 
         #card-element {
@@ -1394,7 +1395,7 @@ nav {
             margin-left: 1em;
             background: none;
             color: var(--primary-orange);
-            box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown);
+            box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
 
             &:hover, :focus {
                 box-shadow: none;
@@ -1411,7 +1412,7 @@ nav {
     width: 80%;
     background: var(--white);
     padding: 1rem;
-    box-shadow: 0 0 10px 0 var(--primary-brown);
+    box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
 
     h3 {
         text-transform: uppercase;
@@ -1500,7 +1501,7 @@ nav {
         flex-direction: column;
         justify-content: space-between;
         background: var(--white);
-        box-shadow: 10px 10px 0 0 var(--primary-brown);
+        box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
         margin: 0 auto;
 
         .blog-image {
@@ -1516,7 +1517,7 @@ nav {
                 display: block;
                 object-fit: contain;
                 transform: scale(0.75);
-                box-shadow: 0px 20px 50px 0px var(--primary-brown);
+                box-shadow: 0px 20px 50px 0px var(--primary-brown-shadow);
             }
         }
 
