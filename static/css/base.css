@@ -1116,7 +1116,7 @@ nav ul a:hover, nav ul a:focus {
   text-transform: uppercase;
   position: relative;
 }
-.profile-container > .profile-nav li {
+.profile-container > .profile-nav .profile-links {
   margin: 1rem 0;
   font-size: 1.5rem;
   font-weight: 200;
@@ -1125,10 +1125,13 @@ nav ul a:hover, nav ul a:focus {
   position: relative;
   color: var(--primary-brown);
 }
-.profile-container > .profile-nav li:hover, .profile-container > .profile-nav li:focus {
+.profile-container > .profile-nav .profile-links.active {
+  font-weight: 900;
+}
+.profile-container > .profile-nav .profile-links:hover, .profile-container > .profile-nav .profile-links:focus {
   font-weight: 500;
 }
-.profile-container > .profile-nav li .fas {
+.profile-container > .profile-nav .profile-links .fas {
   margin-right: 0.5rem;
 }
 .profile-container > .profile-section {

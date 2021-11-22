@@ -1450,12 +1450,16 @@ nav {
             position: relative;
         }
 
-        li {
+        .profile-links {
             margin: 1rem 0;
             font-size: 1.5rem;
             font-weight: 200;
             letter-spacing: 2px;
             cursor: pointer;
+
+            &.active {
+                font-weight: 900;
+            }
 
             &:hover, &:focus {
                 font-weight: 500;

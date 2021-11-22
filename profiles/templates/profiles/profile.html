@@ -16,46 +16,17 @@
 
         <h2> {{ profile.user }}</h2>
         <ul>
-          <li><i class="fas fa-user"></i>Account Info</li>
-          <li><i class="fas fa-credit-card"></i>Orders</li>
-          <li><i class="fas fa-star"></i>Reviews</li>
+          <li class="profile-links" data-link='account'><i class="fas fa-user"></i>Account Info</li>
+          <li class="profile-links" data-link='orders'><i class="fas fa-credit-card"></i>Orders</li>
+          <li class="profile-links" data-link='reviews'><i class="fas fa-star"></i>Reviews</li>
+          {% if request.user.is_superuser %}
+          <li class="profile-links" data-link='newsletter'><i class="fas fa-mail-bulk"></i>Newsletter</li>
+          {% endif %}
         </ul>
 
     </div>
     <div class="profile-section">
-      <div>
-        <div class="bag-container">
-          <div class="bag-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Order No.</th>
-                    <th>Date</th>
-                    <th>Items</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-          
-                {% for order in orders %}
-                <tbody>
-                  <tr>
-                    <td class="product-td">{{ order.order_number|truncatechars:5 }}</td>
-                    <td>{{ order.date }}</td>
-                    <td>
-                      {% for item in order.lineitems.all %}
-                      <p>{{ item.product.name}} x {{ item.quantity }}</p>
-                      {% endfor %}
-                    </td>
-                    <td>£{{ order.grand_total }}</td>
-                  </tr>
-                </tbody>
-                {% endfor %}
-                
-              </table>
-          </div>
-        </div>
-      </div>
-      <div>
+      <div data-link='account' class="profile-account-info-container profile-segment hide">
         <form action="{% url 'profile' %}" method="POST" id="profile-form">
           {% csrf_token %}
           <!-- Used help to get for attribute after Django removed it after adding fieldsets in -  https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template -->
@@ -91,7 +62,39 @@
           </div>
         </form>
       </div>
-      <div>
+      <div data-link='orders' class="profile-orders-container profile-segment hide">
+        <div class="bag-container">
+          <div class="bag-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order No.</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+          
+                {% for order in orders %}
+                <tbody>
+                  <tr>
+                    <td class="product-td">{{ order.order_number|truncatechars:5 }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>
+                      {% for item in order.lineitems.all %}
+                      <p>{{ item.product.name}} x {{ item.quantity }}</p>
+                      {% endfor %}
+                    </td>
+                    <td>£{{ order.grand_total }}</td>
+                  </tr>
+                </tbody>
+                {% endfor %}
+                
+              </table>
+          </div>
+        </div>
+      </div>
+      <div data-link='reviews' class="profile-review-container profile-segment hide">
         {% for review in reviews %}
         <p>{{ review.product}}</p>
         <p>{{ review.body}}</p>
@@ -99,13 +102,46 @@
         {% endfor %}
       </div>
       {% if request.user.is_superuser %}
+      <div data-link='newsletter' class="profile-admin-newsletter-container profile-segment hide">
         <form action="{% url 'send_newsletter' %}" method="POST">
           {% csrf_token%}
           {{ newsletter_form }}
           <button type="submit">Send newsletter</button>
         </form>
+      </div>
       {% endif %}
-      <div></div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+ const links = document.querySelectorAll('.profile-links')
+ const sections = document.querySelectorAll('.profile-segment')
+ let dataLink
+
+ function checkSections(dataLink) {
+   sections.forEach(section => {
+    section.classList.add('hide')
+    if (dataLink === section.dataset.link) {
+      section.classList.remove('hide')
+    }
+   })
+ }
+
+// Display check for current category
+ links.forEach(link => {
+  link.addEventListener('click', ()=> {
+    links.forEach(oldlink => {
+      oldlink.classList.remove('active')
+    })
+    link.classList.add('active')
+    dataLink = link.dataset.link
+    console.log(dataLink);
+    checkSections(dataLink)
+  })
+ })
+
+
+</script>
 {% endblock %}
