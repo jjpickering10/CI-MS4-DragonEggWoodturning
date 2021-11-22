@@ -120,6 +120,8 @@
  const sections = document.querySelectorAll('.profile-segment')
  let dataLink
 
+ // Display check for current section
+
  function checkSections(dataLink) {
    sections.forEach(section => {
     section.classList.add('hide')
@@ -129,7 +131,6 @@
    })
  }
 
-// Display check for current category
  links.forEach(link => {
   link.addEventListener('click', ()=> {
     links.forEach(oldlink => {
