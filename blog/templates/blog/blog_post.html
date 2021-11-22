@@ -10,71 +10,73 @@
 
 {% block content %}
 
-<div class="blog-container">
+<div class="blog-post-container">
     {% if post %}
-        <div class="blog-card">
-            <p>{{ post.like_count }} likes</p>
-            {% if request.user.is_superuser %}
+    <div class="blog-post-content">
+        <div class="blog-post-title">
+            <h2>{{ post.title }}</h3>
+            <p>
+                <a href="{% url 'like_post' post.id %}">
+                    {% if request.user.is_authenticated %}
+                        {% if liked %}
+                        <i class="fas fa-thumbs-up"></i>
+                        {% else %}
+                        <i class="far fa-thumbs-up"></i>
+                        {% endif %}
+                    {% else %}
+                    <i class="fas fa-thumbs-up"></i>
+                    {% endif %}
+                </a> 
+                {{ post.like_count }}
+            </p>
+        </div>
+        <div class="blog-post-author">
+            <h5>{{ post.date }} <span>by {{ post.author }}</span></h5>
+        </div>
+
+        <div class="blog-post-image">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="">
+            {% else %}
+                <img src="{{ MEDIA_URL }}noimage.png">
+            {% endif %}
+        </div>
+
+        <p class="blog-post-body">{{ post.body }}</p>
+        {% if request.user.is_superuser %}
+            <div class="blog-post-admin">
                 <a href="{% url 'edit_blog' post.id %}">Edit</a>
                 <a href="{% url 'delete_blog' post.id %}">Delete</a>
-            {% endif %}
-            {% if request.user.is_authenticated %}
-                {% if liked %}
-                <p>You liked this</p>
-                {% else %}
-                <p>You have NOT liked this</p>
-                {% endif %}
-                <a href="{% url 'like_post' post.id %}">Like</a>
-            {% endif %}
-            <div class="blog-image">
-                {% if post.image %}
-                    <img src="{{ post.image.url }}" alt="">
-                {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.png">
-                {% endif %}
             </div>
-            <div class="blog-content">
-                <div class="blog-title">
-                <h3>{{ post.title }}</h3>
-                </div>
-                <div class="blog-author">
-                <h2>By: {{ post.author }}</h2>
-                <div class="blog-date">
-                    <h4>{{ post.date }}</h4>
-                </div>
-                </div>
-                <p class="blog-body">{{ post.body }}</p>
-            </div>
-            <div>
-                <div>
-                <h3>Comments</h3>
-                </div>
-                {% if post.comment_set.all|length > 0 %}
-                    {% for comment in post.comment_set.all %}
-                    <div>
-                        <h2>By: {{ comment.user }}</h2>
-                        <div >
-                            <h4>{{ comment.date }}</h4>
-                        </div>
-                        <p>{{ comment.body }}</p>
-                        {% if request.user == comment.user %}
-                            <a href="{% url 'edit_comment' comment.id %}">Edit</a>
-                            <a href="{% url 'delete_comment' comment.id %}">Delete</a>
-                        {% endif %}
+        {% endif %}
+    </div>
+    <div class="blog-post-comments-form">
+        <form action="{% url 'blog_post' post.id %}" method="POST">
+            {% csrf_token %}
+            {{ comment_form }}
+            <button class="global-button" type="submit">Post Comment</button>
+        </form>
+    </div>
+
+    <div class="blog-post-comments">
+        {% if post.comment_set.all|length > 0 %}
+            {% for comment in post.comment_set.all %}
+            <div class="blog-comment-section">
+                <h2><i class="fas fa-user"></i> {{ comment.user }} <span>posted on: {{ comment.date }}</span></h2>
+                <p>{{ comment.body }}</p>
+                {% if request.user == comment.user %}
+                    <div class="blog-post-comment-edit">
+                        <a href="{% url 'edit_comment' comment.id %}">Edit</a>
+                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
                     </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No comments yet...</p>
                 {% endif %}
-                <div>
-                    <form action="{% url 'blog_post' post.id %}" method="POST">
-                        {% csrf_token %}
-                        {{ comment_form }}
-                        <button type="submit">Post Comment</button>
-                    </form>
-                </div>
             </div>
-            </div>
+            {% endfor %}
+        {% else %}
+            <p>No comments yet...</p>
+        {% endif %}
+
+    </div>
     {% endif %}
 </div>
 {% endblock %}
