@@ -1574,7 +1574,8 @@ nav {
     display: flex;
     flex-wrap: wrap;
     min-height: 50vh;
-    background: linear-gradient(135deg, var(--primary-cream)20%, var(--white)0%);
+    background: linear-gradient(-135deg, var(--primary-cream)50%, var(--white)0%);
+    margin-bottom: 5rem;
 
     > .profile-nav {
         flex: 1 1 40%;
@@ -1631,6 +1632,40 @@ nav {
 
         > * {
             padding: 3rem;
+        }
+
+        .profile-home-container {
+            position: relative;
+            h2 {
+                font-weight: 200;
+                // background: var(--primary-cream);
+                // padding: 1rem;
+                position: relative;
+                margin: 0 0 2rem 0;
+                span {
+                    font-weight: 400;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1rem;
+                    left: 0;
+                    height: 5%;
+                    width: 50%;
+                    background: linear-gradient(45deg, var(--primary-orange), var(--white));
+
+                }
+            }
+            p {
+                font-size: 0.85rem;
+                margin: 0.5rem 0;
+                i {
+                    &::before {
+                        color: var(--primary-orange);
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
         }
 
         .profile-account-info-container {

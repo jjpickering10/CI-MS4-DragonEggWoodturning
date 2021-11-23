@@ -1212,7 +1212,8 @@ nav ul a:hover, nav ul a:focus {
   display: flex;
   flex-wrap: wrap;
   min-height: 50vh;
-  background: linear-gradient(135deg, var(--primary-cream) 20%, var(--white) 0%);
+  background: linear-gradient(-135deg, var(--primary-cream) 50%, var(--white) 0%);
+  margin-bottom: 5rem;
 }
 .profile-container > .profile-nav {
   flex: 1 1 40%;
@@ -1260,6 +1261,34 @@ nav ul a:hover, nav ul a:focus {
 }
 .profile-container > .profile-section > * {
   padding: 3rem;
+}
+.profile-container > .profile-section .profile-home-container {
+  position: relative;
+}
+.profile-container > .profile-section .profile-home-container h2 {
+  font-weight: 200;
+  position: relative;
+  margin: 0 0 2rem 0;
+}
+.profile-container > .profile-section .profile-home-container h2 span {
+  font-weight: 400;
+}
+.profile-container > .profile-section .profile-home-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  height: 5%;
+  width: 50%;
+  background: linear-gradient(45deg, var(--primary-orange), var(--white));
+}
+.profile-container > .profile-section .profile-home-container p {
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+.profile-container > .profile-section .profile-home-container p i::before {
+  color: var(--primary-orange);
+  margin-right: 0.5rem;
 }
 .profile-container > .profile-section .profile-account-info-container {
   max-width: 600px;

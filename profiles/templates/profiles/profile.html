@@ -14,8 +14,9 @@
 <div class="profile-container">
     <div class="profile-nav">
 
-        <h2> {{ profile.user }}</h2>
+        <h2>Menu</h2>
         <ul>
+          <li class="profile-links active" data-link='home'><i class="fas fa-user"></i>Profile Home</li>
           <li class="profile-links" data-link='account'><i class="fas fa-user"></i>Account Info</li>
           <li class="profile-links" data-link='orders'><i class="fas fa-credit-card"></i>Orders</li>
           <li class="profile-links" data-link='reviews'><i class="fas fa-star"></i>Reviews</li>
@@ -26,6 +27,15 @@
 
     </div>
     <div class="profile-section">
+      <div data-link='home' class="profile-home-container profile-segment">
+        <h2>Hello, <span>{{ profile.user }}</span></h2>
+        {% if profile.user.date_joined %}
+        <p><i class="fas fa-calendar-check"></i> Member since {{ profile.user.date_joined }}</p>
+        {% endif %}
+        {% if profile.user.last_login %}
+        <p><i class="far fa-clock"></i> Last login {{ profile.user.last_login }}</p>
+        {% endif %}
+      </div>
       <div data-link='account' class="profile-account-info-container profile-segment hide">
         <form action="{% url 'profile' %}" method="POST" id="profile-form">
           {% csrf_token %}
