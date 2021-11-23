@@ -1,8 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+  All wood used is sustainable and ethically sourced
+{% endblock %}
+
+{% block page_header_paragraph %}
+  <span>About</span>
+{% endblock %}
+
 {% block content %}
-    <div class="about-container">
-        
+    <div class="about-page-container">
+        <section class="about-landing">
+            <div class="about-landing-title">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, ex rerum consectetur ducimus autem
+                    provident. Quod accusantium ad corporis laboriosam praesentium in? Quo vitae, quod placeat assumenda
+                    delectus perferendis laudantium harum alias ullam incidunt magnam. Voluptas neque iure repudiandae
+                    minus, dolorum debitis excepturi perferendis tempore, maxime voluptatibus possimus molestias
+                    placeat!</p>
+                <!-- <div class="landing-buttons">
+                    <a href="" class="global-button">Shop Now</a>
+                    <a href="" class="global-button">Read More</a>
+                </div> -->
+            </div>
+            <div class="about-landing-image">
+                <img src="{{ MEDIA_URL }}about-page-wood-image.PNG" alt="">
+            </div>
+        </section>
     </div>
 {% endblock %}
