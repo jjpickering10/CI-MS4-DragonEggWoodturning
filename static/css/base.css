@@ -1216,6 +1216,22 @@ nav ul a:hover, nav ul a:focus {
   font-size: 0.6rem;
   font-weight: 600;
 }
+.profile-container > .profile-section .profile-admin-newsletter-container {
+  box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+  background: var(--primary-cream);
+}
+.profile-container > .profile-section .profile-admin-newsletter-container input[type=text]:not(.browser-default) {
+  border: 1px solid var(--primary-brown);
+  padding: 1rem;
+  box-sizing: border-box;
+  background: var(--white);
+}
+.profile-container > .profile-section .profile-admin-newsletter-container textarea {
+  height: auto;
+  border: 1px solid var(--primary-brown);
+  padding: 1rem;
+  background: var(--white);
+}
 
 .blog-page-title {
   font-size: 1.5rem;

@@ -1569,6 +1569,24 @@ nav {
                 }
             }
         }
+        .profile-admin-newsletter-container {
+            box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+            background: var(--primary-cream);
+
+            input[type=text]:not(.browser-default) {
+                border: 1px solid var(--primary-brown);
+                padding: 1rem;
+                box-sizing: border-box;
+                background: var(--white);
+            }
+
+            textarea {
+                height: auto;
+                border: 1px solid var(--primary-brown);
+                padding: 1rem;
+                background: var(--white);
+            }
+        }
     }
 }
 
