@@ -78,7 +78,7 @@
                 {% for order in orders %}
                 <tbody>
                   <tr>
-                    <td class="product-td">{{ order.order_number|truncatechars:5 }}</td>
+                    <td class="product-td"><a href="{% url 'checkout_success' order.order_number %}">{{ order.order_number|truncatechars:5 }}</a></td>
                     <td>{{ order.date }}</td>
                     <td>
                       {% for item in order.lineitems.all %}

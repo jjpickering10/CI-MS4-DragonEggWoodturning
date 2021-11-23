@@ -1232,6 +1232,12 @@ nav ul a:hover, nav ul a:focus {
   padding: 1rem;
   background: var(--white);
 }
+.profile-container > .profile-section .profile-orders-container {
+  max-height: 100vh;
+  overflow-y: scroll;
+  box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+  background: var(--primary-brown-shadow);
+}
 
 .blog-page-title {
   font-size: 1.5rem;
