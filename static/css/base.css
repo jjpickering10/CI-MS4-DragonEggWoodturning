@@ -357,9 +357,12 @@ nav ul a:hover, nav ul a:focus {
   background: var(--secondary-brown);
 }
 
+.about-page-container {
+  margin-bottom: 5rem;
+}
 .about-page-container .about-landing {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   background: linear-gradient(90deg, var(--white) 50%, var(--primary-cream) 50%);
   padding: 5rem 0;
 }
@@ -392,10 +395,17 @@ nav ul a:hover, nav ul a:focus {
 .about-page-container .about-landing .about-landing-title p {
   font-weight: 100;
   color: var(--primary-brown);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 2;
   padding: 0 2rem;
   text-transform: lowercase;
+}
+.about-page-container .about-landing .about-landing-title p i {
+  font-size: 2rem;
+}
+.about-page-container .about-landing .about-landing-title p i::before {
+  color: var(--secondary-brown);
+  margin: 1rem;
 }
 .about-page-container .about-landing .about-landing-image {
   display: flex;
@@ -409,6 +419,48 @@ nav ul a:hover, nav ul a:focus {
   position: relative;
   width: 75%;
   box-shadow: 0px 0px 0px 2px var(--primary-brown-shadow), 0px 0px 0px 10px var(--white), 0px 0px 0px 12px var(--primary-brown-shadow), 0px 0px 0px 20px var(--white), 0px 0px 0px 22px var(--primary-brown-shadow);
+}
+.about-page-container .about-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  background: linear-gradient(270deg, var(--white) 50%, var(--primary-cream) 50%);
+  padding: 5rem 0;
+}
+.about-page-container .about-info .about-segments {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.about-page-container .about-info .about-segments h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 2rem;
+  box-shadow: 0 0 5px 0 var(--primary-brown-shadow);
+  padding: 1rem;
+}
+.about-page-container .about-info .about-segments p {
+  text-align: center;
+  padding: 0.5rem 0;
+  line-height: 2;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  width: 75%;
+}
+.about-page-container .about-info .about-segments .about-buttons {
+  display: flex;
+  margin-top: 1rem;
+}
+.about-page-container .about-info .about-segments .about-buttons a + a {
+  margin-left: 1em;
+  background: none;
+  color: var(--primary-orange);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
+}
+.about-page-container .about-info .about-segments .about-buttons a + a:hover, .about-page-container .about-info .about-segments .about-buttons a + a :focus {
+  box-shadow: none;
+  transition: 0.5s;
 }
 
 #home-products {

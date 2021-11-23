@@ -521,9 +521,10 @@ nav {
 // About page
 
 .about-page-container {
+    margin-bottom: 5rem;
     .about-landing {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         // min-height: 100vh;
         background: linear-gradient(90deg, var(--white) 50%, var(--primary-cream) 50%);
         padding: 5rem 0;
@@ -561,10 +562,19 @@ nav {
             p {
                 font-weight: 100;
                 color: var(--primary-brown);
-                font-size: 1.2rem;
+                font-size: 1.4rem;
                 line-height: 2;
                 padding: 0 2rem;
                 text-transform: lowercase;
+
+                i {
+                    font-size: 2rem;
+
+                    &::before {
+                        color: var(--secondary-brown);
+                        margin: 1rem;
+                    }
+                }
             }
         }
 
@@ -587,6 +597,54 @@ nav {
                             0px 0px 0px 22px var(--primary-brown-shadow);
             }
 
+        }
+    }
+    .about-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        // min-height: 100vh;
+        background: linear-gradient(270deg, var(--white) 50%, var(--primary-cream) 50%);
+        padding: 5rem 0;
+
+        .about-segments {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+
+            h3 {
+                font-weight: 100;
+                text-transform: uppercase;
+                font-size: 2rem;
+                box-shadow: 0 0 5px 0 var(--primary-brown-shadow);
+                padding: 1rem;
+            }
+
+            p {
+                text-align: center;
+                padding: 0.5rem 0;
+                line-height: 2;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+                font-weight: 300;
+                width: 75%;
+            }
+            .about-buttons {
+                display: flex;
+                margin-top: 1rem;
+
+                a + a {
+                    margin-left: 1em;
+                    background: none;
+                    color: var(--primary-orange);
+                    box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
+
+                    &:hover, :focus {
+                        box-shadow: none;
+                        transition: 0.5s;
+                    }
+                }
+            }
         }
     }
 }
