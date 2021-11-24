@@ -58,6 +58,54 @@ body {
     }
 }
 
+// Allauth
+
+.allauth-inner-content {
+    width: 300px;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 0 var(--primary-brown);
+    padding: 2rem;
+    background: var(--primary-brown-shadow);
+
+    input[type=text]:not(.browser-default),
+    input[type=password]:not(.browser-default),
+    input[type=email]:not(.browser-default) {
+        // border: 1px solid black;
+        border: none;
+        box-shadow: 0 0 2px 0 var(--primary-brown);
+        padding: 1rem;
+        box-sizing: border-box;
+        background: var(--white);
+    }
+
+    input[type=checkbox]:not(:checked), input[type=checkbox]:checked {
+        opacity: 1;
+    }
+
+    h1 {
+        font-weight: 300;
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin: 0.5rem 0;
+    }
+    p {
+        font-size: 0.9rem;
+        font-weight: 200;
+    }
+    label {
+        color: var(--primary-brown);
+    }
+    form {
+        margin: 1rem 0;
+
+        .global-button {
+            margin: 0.5rem 0;
+        }
+    }
+}
+
 // Page header section
 
 .header-about-section {

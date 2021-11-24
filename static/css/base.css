@@ -50,6 +50,47 @@ body main {
   flex: 1 0 auto;
 }
 
+.allauth-inner-content {
+  width: 300px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 0 var(--primary-brown);
+  padding: 2rem;
+  background: var(--primary-brown-shadow);
+}
+.allauth-inner-content input[type=text]:not(.browser-default),
+.allauth-inner-content input[type=password]:not(.browser-default),
+.allauth-inner-content input[type=email]:not(.browser-default) {
+  border: none;
+  box-shadow: 0 0 2px 0 var(--primary-brown);
+  padding: 1rem;
+  box-sizing: border-box;
+  background: var(--white);
+}
+.allauth-inner-content input[type=checkbox]:not(:checked), .allauth-inner-content input[type=checkbox]:checked {
+  opacity: 1;
+}
+.allauth-inner-content h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+.allauth-inner-content p {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.allauth-inner-content label {
+  color: var(--primary-brown);
+}
+.allauth-inner-content form {
+  margin: 1rem 0;
+}
+.allauth-inner-content form .global-button {
+  margin: 0.5rem 0;
+}
+
 .header-about-section {
   position: relative;
   height: 300px;
