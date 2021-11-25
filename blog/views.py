@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from .forms import CommentForm, BlogForm
 
+from django.contrib import messages
+
 def blog(request):
     """
     Display blog page
@@ -37,8 +39,10 @@ def blog_post(request, blog_id):
             new_comment.user = request.user
             new_comment.post = post
             new_comment.save()
+            messages.success(request, f'New comment added to {post.title}')
             return redirect(reverse('blog_post', args=[blog_id]))
         else:
+            messages.error(request, 'Error posting comment')
             return redirect(reverse('blog_post', args=[blog_id]))
 
     comment_form = CommentForm()
@@ -60,6 +64,7 @@ def add_blog(request):
     """
 
     if not request.user.is_superuser:
+        messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -68,6 +73,10 @@ def add_blog(request):
             new_blog = blog_form.save(commit=False)
             new_blog.author = request.user
             new_blog.save()
+            messages.success(request, 'New blog added')
+            return redirect(reverse('blog'))
+        else:
+            messages.error(request, 'Error posting blog')
             return redirect(reverse('blog'))
     else:
         blog_form = BlogForm()
@@ -87,6 +96,7 @@ def edit_blog(request, blog_id):
     Edit a blog
     """
     if not request.user.is_superuser:
+        messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))
 
     post = Post.objects.get(id=blog_id)
@@ -95,6 +105,10 @@ def edit_blog(request, blog_id):
         edited_post = BlogForm(request.POST, instance=post)
         if edited_post.is_valid():
             edited_post.save()
+            messages.success(request, f'Blog post {post.title} edited')
+            return redirect(reverse('blog_post', args=[post.id]))
+        else:
+            messages.error(request, f'Error editing post {post.title}')
             return redirect(reverse('blog_post', args=[post.id]))
     else:
         blog_form = BlogForm(instance=post)
@@ -115,10 +129,12 @@ def delete_blog(request, blog_id):
     Delete a blog post
     """
     if not request.user.is_superuser:
+        messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))
         
     post = Post.objects.get(id=blog_id)
     post.delete()
+    messages.success(request, f'Blog post {post.title} deleted')
 
     return redirect(reverse('blog'))
 
@@ -134,6 +150,10 @@ def edit_comment(request, comment_id):
         edited_comment = CommentForm(request.POST, instance=comment)
         if edited_comment.is_valid():
             edited_comment.save()
+            messages.success(request, f'Comment on post {comment.post.title} edited')
+            return redirect(reverse('blog_post', args=[comment.post.id]))
+        else:
+            messages.error(request, f'Error editing comment on post {comment.post.title}')
             return redirect(reverse('blog_post', args=[comment.post.id]))
     else:
         comment_form = CommentForm(instance=comment)
@@ -155,6 +175,7 @@ def delete_comment(request, comment_id):
     """
     comment = Comment.objects.get(id=comment_id)
     comment.delete()
+    messages.success(request, f'Comment on post {comment.post.title} deleted')
 
     return redirect(reverse('blog_post', args=[comment.post.id]))
 
@@ -165,6 +186,7 @@ def like_post(request, blog_id):
     View for liking and unliking a post
     """
     if not request.user.is_authenticated:
+        messages.info(request, 'Only registered users can like a post')
         return redirect(reverse('blog_post', args=[blog_id]))
     
     post = Post.objects.get(id=blog_id)
@@ -172,10 +194,11 @@ def like_post(request, blog_id):
         post.likes.remove(request.user)
         post.like_count -=1
         post.save()
-
+        messages.success(request, f'You unliked {post.title}')
     else:
         post.likes.add(request.user)
         post.like_count +=1
         post.save()
+        messages.success(request, f'You liked {post.title}')
     
     return redirect(reverse('blog_post', args=[blog_id]))
