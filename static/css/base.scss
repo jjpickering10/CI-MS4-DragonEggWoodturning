@@ -1920,12 +1920,46 @@ nav {
                 padding: 1rem;
                 background: var(--white);
             }
+            .global-button {
+                margin: 0;
+            }
         }
         .profile-orders-container {
             max-height: 100vh;
             overflow-y: scroll;
             box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
             background: var(--primary-brown-shadow);
+        }
+        .profile-admin-discount-container {
+            // box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+            // background: var(--white);
+            .category-content {
+                margin: 2rem 0;
+                box-shadow: -3px 0 0 0 var(--primary-brown-shadow);
+                padding: 1rem;
+                // background: var(--white);
+                h5 {
+                    margin: 0;
+                    font-weight: 300;
+
+                    span {
+                        font-weight: 600;
+                        color: var(--primary-orange);
+                    }
+                }
+            }
+            input[type=text]:not(.browser-default) {
+                border: 1px solid var(--primary-brown);
+                padding: 1rem;
+                box-sizing: border-box;
+                // background: var(--white);
+            }
+            .select-wrapper {
+                width: 50%;
+            }
+            .global-button {
+                margin: 0;
+            }
         }
     }
 }

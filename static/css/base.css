@@ -1506,11 +1506,38 @@ nav ul a:hover, nav ul a:focus {
   padding: 1rem;
   background: var(--white);
 }
+.profile-container > .profile-section .profile-admin-newsletter-container .global-button {
+  margin: 0;
+}
 .profile-container > .profile-section .profile-orders-container {
   max-height: 100vh;
   overflow-y: scroll;
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
   background: var(--primary-brown-shadow);
+}
+.profile-container > .profile-section .profile-admin-discount-container .category-content {
+  margin: 2rem 0;
+  box-shadow: -3px 0 0 0 var(--primary-brown-shadow);
+  padding: 1rem;
+}
+.profile-container > .profile-section .profile-admin-discount-container .category-content h5 {
+  margin: 0;
+  font-weight: 300;
+}
+.profile-container > .profile-section .profile-admin-discount-container .category-content h5 span {
+  font-weight: 600;
+  color: var(--primary-orange);
+}
+.profile-container > .profile-section .profile-admin-discount-container input[type=text]:not(.browser-default) {
+  border: 1px solid var(--primary-brown);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.profile-container > .profile-section .profile-admin-discount-container .select-wrapper {
+  width: 50%;
+}
+.profile-container > .profile-section .profile-admin-discount-container .global-button {
+  margin: 0;
 }
 
 .blog-page-title {

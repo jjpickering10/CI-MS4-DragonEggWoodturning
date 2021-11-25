@@ -172,18 +172,20 @@
           <button class="global-button" type="submit">Send newsletter</button>
         </form>
       </div>
-      <div data-link='discount' class="profile-admin-newsletter-container profile-segment hide">
+      <div data-link='discount' class="profile-admin-discount-container profile-segment hide">
         {% for category in categories %}
-          <h5>{{ category.friendly_name }}
-            {% if category.on_sale_amount %}
-            {{ category.on_sale_amount }}
-            {% endif %}
-          </h5>
-          <form action="{% url 'category_discount' category.id %}" method="POST">
-            {% csrf_token%}
-            {{ discount_form }}
-            <button class="global-button" type="submit">Add discounts</button>
-          </form>
+          <div class="category-content">
+            <h5>{{ category.friendly_name }}
+              {% if category.on_sale_amount %}
+              <span>*** ON SALE - {{ category.on_sale_amount }}% ***</span>
+              {% endif %}
+            </h5>
+            <form action="{% url 'category_discount' category.id %}" method="POST">
+              {% csrf_token %}
+              {{ discount_form }}
+              <button class="global-button" type="submit">Add discounts</button>
+            </form>
+          </div>
         {% endfor %}
       </div>
       {% endif %}
