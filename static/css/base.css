@@ -91,6 +91,36 @@ body main {
   margin: 0.5rem 0;
 }
 
+.toast {
+  background: var(--primary-brown);
+}
+
+.message-container {
+  padding: 0 1rem 0 0;
+}
+.message-container .toast-action {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  margin: 0;
+  cursor: pointer;
+}
+.message-container .message-success {
+  color: #00ff00;
+}
+.message-container .message-error {
+  color: #ff0000;
+}
+.message-container .message-warning {
+  color: var(--primary-orange);
+}
+.message-container .message-info {
+  color: var(--secondary-brown);
+}
+
 .header-about-section {
   position: relative;
   height: 300px;

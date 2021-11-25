@@ -108,13 +108,36 @@ body {
 }
 
 // Messages
+.toast {
+    background: var(--primary-brown);
+}
+.message-container {
+    padding: 0 1rem 0 0;
 
-// .message-container {
-//     position: fixed;
-//     z-index: 10000000;
-//     top: 64px;
-//     right: 64px;
-// }
+    .toast-action {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: transparent;
+        border: none;
+        color: var(--white);
+        margin: 0;
+        cursor: pointer;
+    }
+   .message-success {
+       color: #00ff00;
+   }
+   .message-error {
+       color: #ff0000;
+   }
+   .message-warning {
+       color: var(--primary-orange);
+   }
+   .message-info {
+       color: var(--secondary-brown);
+   }
+   
+}
 
 // Page header section
 
