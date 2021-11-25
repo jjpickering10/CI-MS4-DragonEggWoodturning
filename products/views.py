@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib import messages
+
 from .models import Category, Product, Image, WoodType
 from .forms import ReviewForm, DiscountForm
 
@@ -87,8 +89,10 @@ def product_detail(request, product_id):
             new_review.user = request.user
             new_review.product = product
             new_review.save()
+            messages.success(request, f'Review for {product.name} added')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
+            messages.error(request, f'Error posting review for {product.name}')
             return redirect(reverse('product_detail', args=[product.id]))
     else:
         review_form = ReviewForm()
@@ -119,6 +123,10 @@ def add_discount(request, product_id):
         discount_form = DiscountForm(request.POST, instance=product)
         if discount_form.is_valid():
             discount_form.save()
+            messages.success(request, f'Discount for {product.name} added')
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            messages.error(request, f'Error giving discount for {product.name}')
             return redirect(reverse('product_detail', args=[product_id]))
 
 
