@@ -609,22 +609,22 @@ nav ul a:hover, nav ul a:focus {
   font-size: 75%;
 }
 
-#search-products-section {
+.search-section {
   width: 300px;
   margin: 3rem auto;
 }
-#search-products-section form {
+.search-section form {
   background: var(--secondary-brown);
 }
-#search-products-section form .input-field {
+.search-section form .input-field {
   display: flex;
 }
-#search-products-section form .input-field input[type=search] {
+.search-section form .input-field input[type=search] {
   border: none;
   padding: 0 1rem;
   margin: 0;
 }
-#search-products-section form .input-field input[type=search]:focus:not(.browser-default) {
+.search-section form .input-field input[type=search]:focus:not(.browser-default) {
   background: var(--secondary-brown);
   color: var(--primary-brown);
 }
@@ -1498,6 +1498,15 @@ nav ul a:hover, nav ul a:focus {
 }
 .blog-page-title i::before {
   color: var(--primary-orange);
+}
+
+.blog-nav p {
+  text-align: center;
+}
+.blog-nav p a {
+  color: var(--primary-brown);
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .blog-container {

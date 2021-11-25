@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from .forms import CommentForm, BlogForm
@@ -12,10 +13,23 @@ def blog(request):
     posts = Post.objects.all()
     for post in posts:
         print(post.comment_set.all())
+
+    query = None
+
+    if request.GET:
+        if 'query' in request.GET:
+            query = request.GET['query']
+            if not query:
+                return redirect(reverse('blog'))
+
+            queries = Q(title__icontains=query) | Q(body__icontains=query)
+            posts = posts.filter(queries)
+
     template = 'blog/blog.html'
 
     context = {
-        'posts': posts
+        'posts': posts,
+        'search_term': query,
     }
 
     return render(request, template, context)

@@ -10,7 +10,26 @@
 
 {% block content %}
 
+<section class="search-section">
+    <form method="GET" action="{% url 'blog' %}">
+      <div class="input-field">
+        <input id="search" type="search" name="query" placeholder="Search blogs..." required>
+        <button class="global-button" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+  </section>
+
 <h2 class="blog-page-title"><i class="fas fa-blog"></i>Our Latest Blog Posts</h2>
+
+<div class="blog-nav">
+    <p><a href="{% url 'blog' %}"><span class="blog-label">All Blogs</span></a> | {{ posts|length }} blogs
+    {% if search_term %}
+      <span class="blog-label-search"> | Found with search "{{ search_term }}"</span>
+    {% endif %}
+    </p>
+  </div>
 
 <div class="blog-container">
     {% for post in posts %}
