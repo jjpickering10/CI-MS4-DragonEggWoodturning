@@ -46,10 +46,29 @@ def remove_from_bag(request, item_id):
     """
     Remove items in the bag
     """
+    product = Product.objects.get(id=item_id)
     bag = request.session.get('bag', {})
     
     if str(item_id) in list(bag.keys()):
         bag.pop(str(item_id))
+        messages.success(request, f'All {product.name} removed from your bag')
+
+    request.session['bag'] = bag
+
+    return redirect(reverse('view_bag'))
+
+
+def edit_bag(request, item_id):
+    """
+    Edit items in the bag
+    """
+    product = Product.objects.get(id=item_id)
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+    
+    if str(item_id) in list(bag.keys()):
+        bag[str(item_id)] = quantity
+        messages.success(request, f'Edited {product.name} to {quantity} items')
 
     request.session['bag'] = bag
 

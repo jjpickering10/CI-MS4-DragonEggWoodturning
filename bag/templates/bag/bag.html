@@ -47,11 +47,21 @@
             {% else %}
                 <td>£ {{ item.product.price }}</td>
             {% endif %}
-            <td>{{ item.quantity }}
-                <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
+            <td>
+              <div class="edit-bag-container">
+                <form class="update-bag-total" action="{% url 'edit_bag' item.item_id %}" method="POST">
                   {% csrf_token %}
-                  <input type="submit" value="Remove">
-              </form>
+                  <p class="range-slider">
+                    <input type="range" class="update-range" name="quantity" value ='{{ item.quantity }}' min="1" max="10" data-item_id="{{ item.product.name }}" />
+                  </p>
+                  <p class="quantity-slider"><i class="fas fa-plus"></i><span data-item_id="{{ item.product.name }}" class="update-value"></span><i class="fas fa-minus"></i></p>
+                    <input type="submit" value="Edit">
+                </form>
+                  <form class="remove-from-bag" action="{% url 'remove_from_bag' item.item_id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Remove All">
+                </form>
+              </div>
             </td>
             {% if item.product.final_price %}
             <td>£{{ item.product.final_price | calc_subtotal:item.quantity }}</td>
@@ -83,3 +93,45 @@
 </div>
 
   {% endblock %}
+
+  {% block extra_js %}
+<!-- Taken from https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
+<script>
+  const sliders = document.querySelectorAll(".update-range");
+  const outputs = document.querySelectorAll(".update-value");
+
+  sliders.forEach(slider => {
+    // console.log(slider.dataset.item_id)
+    outputs.forEach(output => {
+      // console.log(output.dataset.item_id)
+      if (slider.dataset.item_id === output.dataset.item_id) {
+        // console.log(slider)
+        console.log(output)
+        output.innerHTML = slider.value;
+        const plus = output.previousSibling
+        const minus = output.nextSibling
+
+        plus.addEventListener('click', () => {
+        slider.valueAsNumber +=1
+        console.log(slider.valueAsNumber);
+        slider.value = slider.valueAsNumber
+        output.innerHTML = slider.value;
+          })
+
+        minus.addEventListener('click', () => {
+          slider.valueAsNumber -=1
+          console.log(slider.valueAsNumber);
+          slider.value = slider.valueAsNumber
+          output.innerHTML = slider.value;
+        })
+      }
+    })
+  })
+
+  
+  // let inputValue = document.getElementById('product-range')
+  // console.log(inputValue.value);
+
+  
+  </script>
+{% endblock %}
