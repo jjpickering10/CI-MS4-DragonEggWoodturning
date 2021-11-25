@@ -5,7 +5,8 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
-from products.models import Review
+from products.models import Review, Category
+from products.forms import DiscountForm
 from newsletter.forms import NewsletterForm
 
 
@@ -17,6 +18,7 @@ def profile(request):
     profile = UserProfile.objects.get(user=request.user)
     orders = profile.order_set.all()
     reviews = Review.objects.filter(user=request.user)
+    categories = Category.objects.all()
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -31,8 +33,10 @@ def profile(request):
 
     if request.user.is_superuser:
         newsletter_form = NewsletterForm()
+        discount_form = DiscountForm()
     else:
         newsletter_form = None
+        discount_form = None
 
     template = 'profiles/profile.html'
 
@@ -41,7 +45,9 @@ def profile(request):
         'orders': orders,
         'reviews': reviews,
         'form': form,
-        'newsletter_form': newsletter_form
+        'newsletter_form': newsletter_form,
+        'categories': categories,
+        'discount_form': discount_form,
     }
 
     return render(request, template, context)

@@ -133,6 +133,35 @@ def add_discount(request, product_id):
             return redirect(reverse('product_detail', args=[product_id]))
 
 
+def category_discount(request, category_id):
+    """
+    A view to add discounts to all products in one category
+    """
+
+    products = Product.objects.filter(category=category_id)
+    category = Category.objects.get(id=category_id)
+    # print(products)
+
+    discount = request.POST.get('discount_choices')
+    print('discount', discount)
+
+    for product in products:
+        discount_form = DiscountForm(request.POST, instance=product)
+        if discount_form.is_valid():
+            discount_form.save()
+
+    if discount:
+        category.on_sale = True
+        category.on_sale_amount = int(discount)
+        messages.success(request, f'{discount} for all {category.name} products added')
+    else:
+        category.on_sale = False
+        category.on_sale_amount = None
+        messages.success(request, f'No discount for {category.name} products')
+    category.save()
+    return redirect(reverse('profile'))
+
+
 def all_categories(request):
     """
     A view to show all categories

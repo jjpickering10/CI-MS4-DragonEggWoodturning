@@ -15,6 +15,11 @@
         <div class="category-content">
           <span class="category-title">{{ category.friendly_name }}</span>
           <p>{{ category.product_set.all|length}} products</p>
+          {% if category.on_sale %}
+          <p>ON SALE {{ category.on_sale_amount }}</p>
+          {% else %}
+          <p>NOT! ON SALE</p>
+          {% endif %}
         </div></a>
       </div>
     {% endfor %}

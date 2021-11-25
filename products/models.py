@@ -14,6 +14,8 @@ class Category(models.Model):
     description = models.TextField(max_length=254, default='Sorry, no description currently')
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    on_sale = models.BooleanField(default=False)
+    on_sale_amount = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -73,12 +75,12 @@ class Product(models.Model):
 
     def generate_final_price(self):
         if self.discounted:
-            print(self.discount_choices)
-            print(self.price)
+            # print(self.discount_choices)
+            # print(self.price)
             discount_amount = (self.price / 100) * self.discount_choices
-            print(discount_amount)
+            # print(discount_amount)
             final_amount = self.price - discount_amount
-            print(final_amount)
+            # print(final_amount)
             self.final_price = round(final_amount, 2)
         else:
             self.final_price = self.price
