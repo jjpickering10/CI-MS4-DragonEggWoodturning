@@ -98,7 +98,10 @@ def product_detail(request, product_id):
         review_form = ReviewForm()
 
     if request.user.is_superuser:
-        discount_form = DiscountForm()
+        if product.discounted:
+            discount_form = DiscountForm(instance=product)
+        else:
+            discount_form = DiscountForm()
     else:
         discount_form = None
 

@@ -10,13 +10,13 @@ class ReviewForm(forms.ModelForm):
             'rating',
         )
 
-    def __init__(self, *args, **kwargs):
-        """
-        Set autofocus on first field
-        """
-        super().__init__(*args, **kwargs)
+    # def __init__(self, *args, **kwargs):
+    #     """
+    #     Set autofocus on first field
+    #     """
+    #     super().__init__(*args, **kwargs)
 
-        self.fields['body'].widget.attrs['autofocus'] = True
+    #     self.fields['body'].widget.attrs['autofocus'] = True
 
 
 class DiscountForm(forms.ModelForm):
