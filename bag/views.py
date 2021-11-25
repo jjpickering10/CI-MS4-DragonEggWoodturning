@@ -29,9 +29,13 @@ def add_to_bag(request, item_id):
         print(type(id))
     
     if str(item_id) in list(bag.keys()):
-        bag[str(item_id)] += quantity
-        messages.success(request, f'{quantity} more {product.name} added to your bag')
-        print('in bag')
+        if bag[str(item_id)] + quantity > 10:
+            messages.warning(request, 'Sorry, maximum 10 items of each')
+            return redirect(redirect_url)
+        else:
+            bag[str(item_id)] += quantity
+            messages.success(request, f'{quantity} more {product.name} added to your bag')
+            print('in bag')
     else:
         bag[item_id] = quantity
         messages.success(request, f'{quantity} {product.name} added to your bag')
