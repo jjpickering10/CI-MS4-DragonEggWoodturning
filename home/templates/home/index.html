@@ -23,6 +23,12 @@
             <div class="category-container">
                 {% for category in categories %}
                 <div class="category-card"><a href="{% url 'all_products' %}?category={{ category.id }}">
+                    {% if category.on_sale %}
+                    <div class="category-sale">
+                        <p class="category-sale-text">SALE!</p>
+                        <p class="category-sale-amount">{{ category.on_sale_amount }}% off</p>
+                    </div>
+                    {% endif %}
                     <div class="category-card-image">
                       {% if category.image %}
                           <img class="responsive-img" src="{{ category.image.url }}" alt="">
