@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 
+from products.models import Product
 
 def view_bag(request):
     """
@@ -19,14 +20,22 @@ def add_to_bag(request, item_id):
     """
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
+    product = Product.objects.get(id=item_id)
     bag = request.session.get('bag', {})
+    print(bag)
+
+    print(type(item_id))
+    for id in list(bag.keys()):
+        print(type(id))
     
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
-        messages.success(request, 'Added')
+    if str(item_id) in list(bag.keys()):
+        bag[str(item_id)] += quantity
+        messages.success(request, f'{quantity} more {product.name} added to your bag')
+        print('in bag')
     else:
         bag[item_id] = quantity
-        messages.success(request, 'Added')
+        messages.success(request, f'{quantity} {product.name} added to your bag')
+        print('NOT in bag')
 
     request.session['bag'] = bag
 
