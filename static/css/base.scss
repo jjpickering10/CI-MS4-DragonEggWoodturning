@@ -55,6 +55,7 @@ body {
 
     main {
         flex: 1 0 auto;
+        // background: linear-gradient(-90deg, var(--primary-cream)50%, var(--white)0%);
     }
 }
 
@@ -105,6 +106,15 @@ body {
         }
     }
 }
+
+// Messages
+
+// .message-container {
+//     position: fixed;
+//     z-index: 10000000;
+//     top: 64px;
+//     right: 64px;
+// }
 
 // Page header section
 
@@ -1415,7 +1425,7 @@ nav {
     }
 
     .bag-table {
-        margin-top: 5rem;
+        margin: 5rem 0;
         padding: 2rem;
         box-shadow: 0px 0px 5px 2px var(--primary-brown-shadow);
         background: var(--white);
@@ -1457,13 +1467,15 @@ nav {
     }
 
     .bag-subtotal {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: flex-end;
+        
 
         .bag-buttons {
 
             display: flex;
+            padding: 1rem;
 
             a + a {
                 margin-left: 1rem;

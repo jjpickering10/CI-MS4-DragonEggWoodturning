@@ -1083,7 +1083,7 @@ nav ul a:hover, nav ul a:focus {
      object-fit: contain;
 }
 .bag-container .bag-table {
-  margin-top: 5rem;
+  margin: 5rem 0;
   padding: 2rem;
   box-shadow: 0px 0px 5px 2px var(--primary-brown-shadow);
   background: var(--white);
@@ -1117,13 +1117,9 @@ nav ul a:hover, nav ul a:focus {
 .bag-container .bag-table table td {
   vertical-align: top;
 }
-.bag-container .bag-subtotal {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
 .bag-container .bag-subtotal .bag-buttons {
   display: flex;
+  padding: 1rem;
 }
 .bag-container .bag-subtotal .bag-buttons a + a {
   margin-left: 1rem;
