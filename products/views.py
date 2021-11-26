@@ -4,7 +4,7 @@ from django.db.models.functions import Lower
 from django.contrib import messages
 
 from .models import Category, Product, Image, WoodType
-from .forms import ReviewForm, DiscountForm
+from .forms import ReviewForm, DiscountForm, ProductForm, ImageForm
 
 
 def all_products(request):
@@ -12,7 +12,7 @@ def all_products(request):
     A view to show all products
     """
     products = Product.objects.all()
-    images = Image.objects.all()
+    # images = Image.objects.all()
     wood_types = WoodType.objects.all()
     all_categories = Category.objects.all()
     all_products = Product.objects.all()
@@ -62,7 +62,7 @@ def all_products(request):
 
     context = {
         'products': products,
-        'images': images,
+        # 'images': images,
         'search_term': query,
         'current_categories': categories,
         'wood_types': wood_types,
@@ -161,6 +161,40 @@ def category_discount(request, category_id):
         messages.success(request, f'No discount for {category.name} products')
     category.save()
     return redirect(reverse('profile'))
+
+
+def add_product(request):
+    """
+    A view to add products
+    """
+    if request.method == "POST":
+        product_form = ProductForm(request.POST)
+        images = request.FILES.getlist('image')
+        print(images)
+        if product_form.is_valid():
+            new_product = product_form.save()
+            product = Product.objects.get(id=new_product.id)
+            print(product)
+            for image in images:
+                image_form = ImageForm(image)
+                if image_form.is_valid():
+                    new_image = image_form.save(commit=False)
+                    new_image.product = product
+                    new_image.image = image
+                    new_image.save()
+                    print('valid')
+                    print(new_image)
+                else:
+                    print('invalid')
+                    # messages.error(request, 'Error adding product')
+            messages.success(request, 'Successfully added product')
+            return redirect(reverse('profile'))
+        else:
+            messages.error(request, 'Error adding product')
+            return redirect(reverse('profile'))
+    else:
+        return redirect(reverse('profile'))
+
 
 
 def all_categories(request):

@@ -30,6 +30,10 @@ class ImageForm(forms.ModelForm):
         model = Image
         fields = ['image']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['image'].widget.attrs['multiple'] = True
+
 
 class ProductForm(forms.ModelForm):
     class Meta:
