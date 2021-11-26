@@ -895,6 +895,7 @@ nav ul a:hover, nav ul a:focus {
 }
 .product-detail-container .product-item-container .product-card .product-card-image {
   height: 500px;
+  scroll-behavior: smooth;
 }
 .product-detail-container .product-item-container .product-card .product-card-image .product-image-slider {
   display: flex;
@@ -902,6 +903,12 @@ nav ul a:hover, nav ul a:focus {
 }
 .product-detail-container .product-item-container .product-card .product-card-image img {
   height: 500px;
+}
+.product-detail-container .product-item-container .product-card .product-card-image img:hover {
+  transform: scale(0.75);
+}
+.product-detail-container .product-item-container .product-card .product-card-image .materialboxed.active {
+  transition: 1s;
 }
 .product-detail-container .product-review-container {
   display: flex;

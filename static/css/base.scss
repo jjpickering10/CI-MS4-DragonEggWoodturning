@@ -1187,12 +1187,20 @@ nav {
             background: var(--white);
             .product-card-image {
                 height: 500px;
+                scroll-behavior: smooth;
                 .product-image-slider {
                     display: flex;
                     overflow: scroll;
                 }
                 img {
                     height: 500px;
+
+                    &:hover {
+                        transform: scale(0.75);
+                    }
+                }
+                .materialboxed.active {
+                    transition: 1s;
                 }
             }
         }

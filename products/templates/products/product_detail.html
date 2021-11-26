@@ -152,20 +152,17 @@
 {% endblock %}
 
 {% block extra_js %}
-<!-- Taken from https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
-<script>
+{{ block.super }}
+
+<script type="text/javascript">
+// Taken from https://www.w3schools.com/howto/howto_js_rangeslider.asp
+// Quantity input range functions
   const slider = document.getElementById("product-range");
   const output = document.getElementById("product-value");
   output.innerHTML = slider.value;
-  
-  // slider.onchange = function() {
-  //   output.innerHTML = this.value;
-  // }
 
   const plus = document.querySelector('.fa-plus')
   const minus = document.querySelector('.fa-minus')
-  // let inputValue = document.getElementById('product-range')
-  // console.log(inputValue.value);
 
   plus.addEventListener('click', () => {
     slider.valueAsNumber +=1
@@ -178,6 +175,15 @@
     console.log(slider.valueAsNumber);
     slider.value = slider.valueAsNumber
     output.innerHTML = slider.value;
+  })
+
+  // Image gallery slider
+
+  const productImageSlider = document.querySelector('.product-image-slider')
+
+  productImageSlider.addEventListener('wheel', (e) =>{
+  e.preventDefault()
+  productImageSlider.scrollLeft += e.deltaY * 0.5;
   })
   </script>
 {% endblock %}
