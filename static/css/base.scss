@@ -1187,6 +1187,10 @@ nav {
             background: var(--white);
             .product-card-image {
                 height: 500px;
+                .product-image-slider {
+                    display: flex;
+                    overflow: scroll;
+                }
                 img {
                     height: 500px;
                 }
@@ -1946,6 +1950,9 @@ nav {
                         font-weight: 600;
                         color: var(--primary-orange);
                     }
+                }
+                form {
+                    margin-top: 2rem;
                 }
             }
             input[type=text]:not(.browser-default) {

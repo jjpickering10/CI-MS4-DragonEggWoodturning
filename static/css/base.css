@@ -896,6 +896,10 @@ nav ul a:hover, nav ul a:focus {
 .product-detail-container .product-item-container .product-card .product-card-image {
   height: 500px;
 }
+.product-detail-container .product-item-container .product-card .product-card-image .product-image-slider {
+  display: flex;
+  overflow: scroll;
+}
 .product-detail-container .product-item-container .product-card .product-card-image img {
   height: 500px;
 }
@@ -1527,6 +1531,9 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section .profile-admin-discount-container .category-content h5 span {
   font-weight: 600;
   color: var(--primary-orange);
+}
+.profile-container > .profile-section .profile-admin-discount-container .category-content form {
+  margin-top: 2rem;
 }
 .profile-container > .profile-section .profile-admin-discount-container input[type=text]:not(.browser-default) {
   border: 1px solid var(--primary-brown);
