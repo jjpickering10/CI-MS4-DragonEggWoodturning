@@ -212,7 +212,7 @@
         <tbody>
           <tr>
             <td><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></td>
-            <td><a href="">Edit</a></td>
+            <td><a href="{% url 'edit_product' product.id %}">Edit</a></td>
             <td><a href="{% url 'delete_product' product.id %}">Delete</a></td>
           </tr>
         </tbody>
