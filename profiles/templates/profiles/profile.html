@@ -190,12 +190,36 @@
         {% endfor %}
       </div>
       <div data-link='products' class="profile-admin-discount-container profile-segment hide">
+        <h2>Add New Product</h2>
         <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {{ product_form }}
           {{ image_form }}
           <button type="submit">Add Product</button>
         </form>
+        <hr>
+        <h2>Current Products</h2>
+        {% for category in categories %}
+          <h3>{{ category.friendly_name }}({{ category.product_set.all|length }})</h3>
+        <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+          </tr>
+        </thead>
+  
+        {% for product in category.product_set.all %}
+        <tbody>
+          <tr>
+            <td><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></td>
+            <td><a href="">Edit</a></td>
+            <td><a href="">Delete</a></td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        
+        </table>
+        {% endfor %}
       </div>
       {% endif %}
     </div>
