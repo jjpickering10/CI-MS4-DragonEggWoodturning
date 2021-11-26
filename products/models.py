@@ -85,6 +85,12 @@ class Product(models.Model):
         else:
             self.final_price = self.price
 
+    def check_category_on_sale(self):
+        if self.category.on_sale:
+            self.discount_choices = self.category.on_sale_amount
+            print(self.discount_choices)
+            self.save()
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the sku

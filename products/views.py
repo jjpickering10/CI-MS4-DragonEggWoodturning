@@ -167,6 +167,10 @@ def add_product(request):
     """
     A view to add products
     """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only admin can do that')
+        return redirect(reverse('home'))
+
     if request.method == "POST":
         product_form = ProductForm(request.POST)
         images = request.FILES.getlist('image')
@@ -182,11 +186,10 @@ def add_product(request):
                     new_image.product = product
                     new_image.image = image
                     new_image.save()
-                    print('valid')
                     print(new_image)
                 else:
-                    print('invalid')
-                    # messages.error(request, 'Error adding product')
+                    messages.error(request, 'Error adding product')
+                    return redirect(reverse('profile'))
             messages.success(request, 'Successfully added product')
             return redirect(reverse('profile'))
         else:
