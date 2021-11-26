@@ -124,7 +124,7 @@ class Review(models.Model):
     body = models.TextField()
     rating = models.IntegerField(choices=RATINGS_CHOICES, default=0)
     date = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.product.name

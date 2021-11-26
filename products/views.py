@@ -86,7 +86,8 @@ def product_detail(request, product_id):
         review_form = ReviewForm(request.POST)
         if review_form.is_valid():
             new_review = review_form.save(commit=False)
-            new_review.user = request.user
+            if request.user.is_authenticated:
+                new_review.user = request.user
             new_review.product = product
             new_review.save()
             messages.success(request, f'Review for {product.name} added')

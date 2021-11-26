@@ -103,6 +103,11 @@
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
+            {% if review.user %}
+            -<span>{{ review.user }} <i class="fas fa-user"></i></span>
+            {% else %}
+            -<span>anonymous user <i class="fas fa-user"></i></span>
+            {% endif %}
           </div>
           {% endif %}
           {% if review.rating == 2 %}
@@ -113,6 +118,11 @@
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
+            {% if review.user %}
+            -<span>{{ review.user }} <i class="fas fa-user"></i></span>
+            {% else %}
+            -<span>anonymous user <i class="fas fa-user"></i></span>
+            {% endif %}
           </div>
           {% endif %}
           {% if review.rating == 3 %}
@@ -123,7 +133,11 @@
             <i class="fas fa-star"></i>
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
+            {% if review.user %}
             -<span>{{ review.user }} <i class="fas fa-user"></i></span>
+            {% else %}
+            -<span>anonymous user <i class="fas fa-user"></i></span>
+            {% endif %}
           </div>
           {% endif %}
           {% if review.rating == 4 %}
@@ -134,6 +148,11 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="far fa-star"></i>
+            {% if review.user %}
+            -<span>{{ review.user }} <i class="fas fa-user"></i></span>
+            {% else %}
+            -<span>anonymous user <i class="fas fa-user"></i></span>
+            {% endif %}
           </div>
           {% endif %}
           {% if review.rating == 5 %}
@@ -144,6 +163,11 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
+            {% if review.user %}
+            -<span>{{ review.user }} <i class="fas fa-user"></i></span>
+            {% else %}
+            -<span>anonymous user <i class="fas fa-user"></i></span>
+            {% endif %}
           </div>
           {% endif %}
           <p><i class="fas fa-quote-left"></i><span>{{ review.body }}</span><i class="fas fa-quote-right"></i></p>
