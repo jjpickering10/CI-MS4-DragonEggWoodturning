@@ -25,6 +25,10 @@
             <img src="{{ MEDIA_URL }}noimage.png">
           {% endif %}
       </div>
+      {% if product.image_set.all|length > 1 %}
+      <p class="progress-scroll-text">Scroll to view images</p>
+      <div class="progress-bar"></div>
+      {% endif %}
       <div class="product-card-content">
         <div class="product-card-title">
           <h3>{{ product.name }}</h3>
@@ -180,10 +184,19 @@
   // Image gallery slider
 
   const productImageSlider = document.querySelector('.product-image-slider')
+  const progressBar = document.querySelector('.progress-bar');
+
+  productImageSlider.addEventListener('scroll', () => {
+    progressBar.style.width  = `${scrollPercentage()}%`
+  })
 
   productImageSlider.addEventListener('wheel', (e) =>{
   e.preventDefault()
   productImageSlider.scrollLeft += e.deltaY * 0.5;
   })
+
+  function scrollPercentage() {
+   return ((productImageSlider.scrollLeft / (productImageSlider.scrollWidth - productImageSlider.clientWidth) ) * 100);
+  }
   </script>
 {% endblock %}

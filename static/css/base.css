@@ -900,6 +900,15 @@ nav ul a:hover, nav ul a:focus {
 .product-detail-container .product-item-container .product-card .product-card-image .product-image-slider {
   display: flex;
   overflow: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+}
+.product-detail-container .product-item-container .product-card .product-card-image .product-image-slider::-webkit-scrollbar {
+  display: none;
 }
 .product-detail-container .product-item-container .product-card .product-card-image img {
   height: 500px;
@@ -909,6 +918,19 @@ nav ul a:hover, nav ul a:focus {
 }
 .product-detail-container .product-item-container .product-card .product-card-image .materialboxed.active {
   transition: 1s;
+}
+.product-detail-container .product-item-container .product-card .progress-scroll-text {
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin: 0 0 1rem 0;
+  text-transform: lowercase;
+}
+.product-detail-container .product-item-container .product-card .progress-bar {
+  height: 5px;
+  width: 0;
+  background: linear-gradient(45deg, var(--primary-brown-shadow), var(--secondary-brown));
+  margin-bottom: 2rem;
 }
 .product-detail-container .product-review-container {
   display: flex;
