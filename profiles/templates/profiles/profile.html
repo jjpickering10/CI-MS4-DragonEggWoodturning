@@ -23,6 +23,7 @@
           {% if request.user.is_superuser %}
           <li class="profile-links" data-link='newsletter'><i class="fas fa-mail-bulk"></i>Newsletter</li>
           <li class="profile-links" data-link='discount'><i class="fas fa-mail-bulk"></i>Discounts</li>
+          <li class="profile-links" data-link='products'><i class="fas fa-mail-bulk"></i>Products</li>
           {% endif %}
         </ul>
 
@@ -167,7 +168,7 @@
       {% if request.user.is_superuser %}
       <div data-link='newsletter' class="profile-admin-newsletter-container profile-segment hide">
         <form action="{% url 'send_newsletter' %}" method="POST">
-          {% csrf_token%}
+          {% csrf_token %}
           {{ newsletter_form }}
           <button class="global-button" type="submit">Send newsletter</button>
         </form>
@@ -187,6 +188,13 @@
             </form>
           </div>
         {% endfor %}
+      </div>
+      <div data-link='products' class="profile-admin-discount-container profile-segment hide">
+        <form action="" method="POST">
+          {% csrf_token %}
+          {{ product_form }}
+          {{ image_form }}
+        </form>
       </div>
       {% endif %}
     </div>

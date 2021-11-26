@@ -93,6 +93,7 @@
     </div>
     <div class="review-section">
       <h3>Reviews</h3>
+      {% if reviews|length > 0 %}
       {% for review in reviews %}
         <div class="review-content">
         {% if review.rating == 1 %}
@@ -174,6 +175,11 @@
           <p class="review-date">{{ review.date }}</p>
         </div>
       {% endfor %}
+      {% else %}
+      <div class="review-content">
+        <p>No Reviews Yet...</p>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>

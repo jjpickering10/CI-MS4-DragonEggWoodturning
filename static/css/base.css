@@ -981,7 +981,7 @@ nav ul a:hover, nav ul a:focus {
 .product-detail-container .product-review-container .review-section .review-content p {
   font-weight: 100;
   font-size: 1rem;
-  padding: 1rem 0 0;
+  padding: 0.5rem 0;
   display: flex;
 }
 .product-detail-container .product-review-container .review-section .review-content p i {

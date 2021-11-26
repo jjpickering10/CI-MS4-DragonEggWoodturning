@@ -6,7 +6,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 from products.models import Review, Category
-from products.forms import DiscountForm
+from products.forms import DiscountForm, ProductForm, ImageForm
 from newsletter.forms import NewsletterForm
 
 
@@ -34,9 +34,13 @@ def profile(request):
     if request.user.is_superuser:
         newsletter_form = NewsletterForm()
         discount_form = DiscountForm()
+        product_form = ProductForm()
+        image_form = ImageForm()
     else:
         newsletter_form = None
         discount_form = None
+        product_form = None
+        image_form = None
 
     template = 'profiles/profile.html'
 
@@ -48,6 +52,8 @@ def profile(request):
         'newsletter_form': newsletter_form,
         'categories': categories,
         'discount_form': discount_form,
+        'product_form': product_form,
+        'image_form': image_form
     }
 
     return render(request, template, context)
