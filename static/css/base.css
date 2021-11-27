@@ -365,25 +365,77 @@ body main {
 .home-container #home-reviews {
   display: flex;
   flex-direction: column;
+  background: var(--primary-cream);
+  padding-bottom: 3rem;
+}
+.home-container #home-reviews h2 {
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 .home-container #home-reviews .glider-contain {
   width: 75%;
+  background: var(--primary-brown);
 }
 .home-container #home-reviews .glider-contain .glider {
   margin: 2rem 0;
+  height: 500px;
 }
 .home-container #home-reviews .glider-contain .glider .glider-track {
+  height: 500px;
   padding: 2rem;
-  background: blue;
 }
 .home-container #home-reviews .glider-contain .glider .glider-track .glider-slide {
-  background-color: red;
   padding: 1rem;
-  margin: 0 1rem;
-  text-align: left;
+  margin: 0 5rem;
+  text-align: center;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide .home-reviews-content {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 85%, 40% 85%, 50% 100%, 60% 85%, 0 85%);
+          clip-path: polygon(0 15%, 100% 15%, 100% 85%, 40% 85%, 50% 100%, 60% 85%, 0 85%);
+  background: var(--primary-cream);
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide .home-reviews-content blockquote {
+  line-height: 2;
+  font-weight: 200;
+  padding: 1rem;
+  border: none;
+  font-size: 0.8rem;
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide .home-reviews-user {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-style: italic;
+  margin-top: 3rem;
+  color: var(--white);
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide .home-reviews-user i::before {
+  color: var(--primary-orange);
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide .home-reviews-rating {
+  font-size: 2rem;
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide .home-reviews-rating i::before {
+  color: var(--primary-orange);
 }
 .home-container #home-reviews .glider-contain .glider-prev, .home-container #home-reviews .glider-contain .glider-next {
-  padding: 1rem 0;
+  top: 50%;
+  transform: translateY(-115%);
+}
+.home-container #home-reviews .glider-contain .glider-dots {
+  margin-bottom: 3rem;
 }
 
 nav {

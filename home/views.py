@@ -12,7 +12,7 @@ def index(request):
     reviews = list(Review.objects.all())
 
     random.shuffle(reviews)
-    reviews = reviews[:10]
+    reviews = reviews
 
     context = {
         'categories': categories,
