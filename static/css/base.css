@@ -946,6 +946,15 @@ nav ul a:hover, nav ul a:focus {
   font-weight: 100;
   text-transform: uppercase;
 }
+.product-detail-container .product-review-container .review-form .review-unregistered {
+  margin-bottom: 1rem;
+}
+.product-detail-container .product-review-container .review-form .review-unregistered p {
+  font-size: 0.9rem;
+}
+.product-detail-container .product-review-container .review-form .review-unregistered p a {
+  color: var(--primary-orange);
+}
 .product-detail-container .product-review-container .review-form form {
   min-width: 300px;
   padding-right: 5rem;

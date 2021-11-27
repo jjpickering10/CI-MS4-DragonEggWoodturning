@@ -85,6 +85,12 @@
   <div class="product-review-container">
     <div class="review-form">
       <h3>Post a review</h3>
+      {% if not request.user.is_authenticated %}
+      <div class="review-unregistered">
+        <p>*** If you aren't logged in, you won't be able to edit or delete your review ***</p>
+        <p><a href="{% url 'account_signup' %}">Register</a> or <a href="{% url 'account_login' %}">Log In</a></p>
+      </div>
+      {% endif %}
       <form action="{% url 'product_detail' product.id %}" method="POST">
         {% csrf_token %}
         {{ review_form }}
