@@ -23,7 +23,7 @@
   {% for image in images %}
       <div>
         <img src="{{ image.image.url }}" alt="">
-        <a href="">Delete</a>
+        <a href="{% url 'delete_product_images' image.id %}">Delete</a>
       </div>
   {% endfor %}
 </div>

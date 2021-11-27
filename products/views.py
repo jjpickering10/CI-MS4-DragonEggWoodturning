@@ -274,6 +274,21 @@ def edit_product_images(request, product_id):
 
     return render(request, template, context)
 
+
+def delete_product_images(request, image_id):
+    """
+    A view to delete an image for a product
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    image = get_object_or_404(Image, pk=image_id)
+    image.delete()
+    messages.success(request, f'Image for {image.product.name} deleted!')
+    return redirect(reverse('edit_product_images', args=[image.product.id]))
+
+
 def delete_product(request, product_id):
     """
     A view to delete a product
