@@ -2245,6 +2245,29 @@ nav {
     }
 }
 
+// Edit products section
+
+.add_product_image_container {
+    height: 200px;
+}
+
+.edit_product_images_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    place-items: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        height: 250px;
+    }
+
+}
+
 
 // Footer
 

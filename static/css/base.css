@@ -1781,6 +1781,24 @@ nav ul a:hover, nav ul a:focus {
   margin-right: 1rem;
 }
 
+.add_product_image_container {
+  height: 200px;
+}
+
+.edit_product_images_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  place-items: center;
+}
+.edit_product_images_container div {
+  display: flex;
+  flex-direction: column;
+}
+.edit_product_images_container img {
+  height: 250px;
+}
+
 .page-footer {
   background: var(--primary-brown);
 }/*# sourceMappingURL=base.css.map */

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+  All wood used is sustainable and ethically sourced
+{% endblock %}
+
+{% block page_header_paragraph %}
+  <span>{{ product.name }}</span>
+{% endblock %}
+
+{% block content %}
+<h5>Editing - {{ product.name }}</h5>
+<div class="add_product_image_container">
+  <form action="{% url 'edit_product_images' product.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ image_form }}
+    <button type="submit">Add Images</button>
+  </form>
+</div>
+<div class="edit_product_images_container">
+  {% for image in images %}
+      <div>
+        <img src="{{ image.image.url }}" alt="">
+        <a href="">Delete</a>
+      </div>
+  {% endfor %}
+</div>
+{% endblock %}

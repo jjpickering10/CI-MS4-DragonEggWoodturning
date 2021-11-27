@@ -236,6 +236,28 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+def edit_product_images(request, product_id):
+    """
+    A view to edit a products images
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    image_form = ImageForm()
+
+    product = Product.objects.get(id=product_id)
+    images = product.image_set.all()
+
+    template = 'products/edit_product_images.html'
+    context = {
+        'images': images,
+        'product': product,
+        'image_form': image_form,
+    }
+
+    return render(request, template, context)
+
 def delete_product(request, product_id):
     """
     A view to delete a product
