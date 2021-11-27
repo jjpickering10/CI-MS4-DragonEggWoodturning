@@ -167,7 +167,7 @@
               {% endif %}
               <p><i class="fas fa-quote-left"></i><span>{{ review.body }}</span><i class="fas fa-quote-right"></i></p>
               <p class="review-date">{{ review.date }}</p>
-              <p><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a><a href="">Delete <i class="fas fa-trash"></i></a></p>
+              <p><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a><a href="{% url 'delete_review' review.id %}">Delete <i class="fas fa-trash"></i></a></p>
             </div>
           {% endfor %}
       </div>

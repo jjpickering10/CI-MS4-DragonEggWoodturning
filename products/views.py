@@ -146,6 +146,20 @@ def edit_review(request, review_id):
     return render(request, template, context)
 
 
+def delete_review(request, review_id):
+    """
+    A view to delete a review
+    """
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, only registered users can do that.')
+        return redirect(reverse('home'))
+
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('profile'))
+
+
 def add_discount(request, product_id):
     """
     A view to add discount
