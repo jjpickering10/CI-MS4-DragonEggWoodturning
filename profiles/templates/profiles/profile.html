@@ -110,6 +110,11 @@
           {% for review in reviews %}
             <div class="review-content">
               <h3>{{ review.product.name }}</h3>
+              {% if review.product.image_set.all|length > 0 %}
+                  <img class="responsive-img" src="{{ review.product.image_set.first.image.url }}" alt="">
+              {% else %}
+                <img class="responsive-img" src="{{ MEDIA_URL }}noimage.png">
+              {% endif %}
             {% if review.rating == 1 %}
             <!-- 1 star rating -->
               <div class="review-rating">
@@ -162,6 +167,7 @@
               {% endif %}
               <p><i class="fas fa-quote-left"></i><span>{{ review.body }}</span><i class="fas fa-quote-right"></i></p>
               <p class="review-date">{{ review.date }}</p>
+              <p><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a><a href="">Delete <i class="fas fa-trash"></i></a></p>
             </div>
           {% endfor %}
       </div>

@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib import messages
 
-from .models import Category, Product, Image, WoodType
+from .models import Category, Product, Image, WoodType, Review
 from .forms import ReviewForm, DiscountForm, ProductForm, ImageForm
 
 
@@ -114,6 +114,26 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def edit_review(request, review_id):
+    """
+    A view to edit a review
+    """
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, only registered users can do that.')
+        return redirect(reverse('home'))
+
+    review = Review.objects.get(id=review_id)
+    review_form = ReviewForm(instance=review)
+
+    template = 'products/edit_review.html'
+    context = {
+        'review_form': review_form,
+        'review': review,
+    }
+
+    return render(request, template, context)
 
 
 def add_discount(request, product_id):
