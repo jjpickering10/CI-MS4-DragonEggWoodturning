@@ -207,9 +207,25 @@ def edit_product(request, product_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=product_id)
-    product_form = ProductForm(instance=product)
-    messages.info(request, f'You are editing {product.name}')
+    product = Product.objects.get(id=product_id)
+    # print(product.name)
+
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST, instance=product)
+        # print(product_form)
+        if product_form.is_valid():
+            print('valid')
+            product_form.save()
+            messages.success(request, f'Successfully edited {product.name}')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            print('not valid')
+            messages.error(request, 'Failed to update. Please ensure form is valid.')
+            return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        product_form = ProductForm(instance=product)
+        print(product_form)
+        messages.info(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
     context = {

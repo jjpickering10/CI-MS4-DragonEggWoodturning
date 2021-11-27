@@ -1,8 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+  All wood used is sustainable and ethically sourced
+{% endblock %}
+
+{% block page_header_paragraph %}
+  <span>{{ product.name }}</span>
+{% endblock %}
+
 {% block content %}
-<div class="category-container">
-    {{ product_form }}
+<div>
+    <h5>Editing - {{ product.name }}</h5>
+    <form action="{% url 'edit_product' product.id %}" method="POST">
+        {% csrf_token %}
+        {{ product_form }}
+        <button type="submit">Edit Product</button>
+    </form>
 </div>
 {% endblock %}

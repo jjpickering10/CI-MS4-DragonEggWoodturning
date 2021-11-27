@@ -49,3 +49,4 @@ class ProductForm(forms.ModelForm):
 
         self.fields['category'].choices = cat_friendly_names
         self.fields['wood_type'].choices = wood_friendly_names
+        self.fields['price'].widget.attrs['min'] = 0
