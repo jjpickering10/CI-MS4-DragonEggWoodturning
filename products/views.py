@@ -127,6 +127,16 @@ def edit_review(request, review_id):
     review = Review.objects.get(id=review_id)
     review_form = ReviewForm(instance=review)
 
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST, instance=review)
+        if review_form.is_valid():
+            review_form.save()
+            messages.success(request, f'Edited review for {review.product}')
+            return redirect(reverse('profile'))
+        else:
+            messages.error(request, 'Error editing review.')
+            return redirect(reverse('profile'))
+
     template = 'products/edit_review.html'
     context = {
         'review_form': review_form,
