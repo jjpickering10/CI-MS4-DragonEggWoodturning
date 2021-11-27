@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Category, Product, Image, WoodType, Review
@@ -115,7 +116,7 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-
+@login_required
 def edit_review(request, review_id):
     """
     A view to edit a review
@@ -145,7 +146,7 @@ def edit_review(request, review_id):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_review(request, review_id):
     """
     A view to delete a review
@@ -159,7 +160,7 @@ def delete_review(request, review_id):
     messages.success(request, 'Review deleted!')
     return redirect(reverse('profile'))
 
-
+@login_required
 def add_discount(request, product_id):
     """
     A view to add discount
@@ -177,7 +178,7 @@ def add_discount(request, product_id):
             messages.error(request, f'Error giving discount for {product.name}')
             return redirect(reverse('product_detail', args=[product_id]))
 
-
+@login_required
 def category_discount(request, category_id):
     """
     A view to add discounts to all products in one category
@@ -206,7 +207,7 @@ def category_discount(request, category_id):
     category.save()
     return redirect(reverse('profile'))
 
-
+@login_required
 def add_product(request):
     """
     A view to add products
@@ -242,7 +243,7 @@ def add_product(request):
     else:
         return redirect(reverse('profile'))
 
-
+@login_required
 def edit_product(request, product_id):
     """
     A view to edit a product
@@ -279,7 +280,7 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-
+@login_required
 def edit_product_images(request, product_id):
     """
     A view to edit a products images
@@ -318,7 +319,7 @@ def edit_product_images(request, product_id):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_product_images(request, image_id):
     """
     A view to delete an image for a product
@@ -332,7 +333,7 @@ def delete_product_images(request, image_id):
     messages.success(request, f'Image for {image.product.name} deleted!')
     return redirect(reverse('edit_product_images', args=[image.product.id]))
 
-
+@login_required
 def delete_product(request, product_id):
     """
     A view to delete a product
