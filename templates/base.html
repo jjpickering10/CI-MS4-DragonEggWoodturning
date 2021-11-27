@@ -15,11 +15,11 @@
     {% block core_css %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {% block extra_css %}
+        {% endblock %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     {% endblock %}
-
-    {% block extra_css %}
-    {% endblock %}
+        
 
     <title>Dragon Egg Woodturning {% block extra_title%}{% endblock %}</title>
   </head>

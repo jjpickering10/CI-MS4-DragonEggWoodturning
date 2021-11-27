@@ -366,17 +366,24 @@ body main {
   display: flex;
   flex-direction: column;
 }
-.home-container #home-reviews .home-reviews-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  place-items: center;
-  min-height: 600px;
+.home-container #home-reviews .glider-contain {
+  width: 75%;
 }
-.home-container #home-reviews .home-reviews-container .home-reviews-card {
-  width: 300px;
-  height: 400px;
+.home-container #home-reviews .glider-contain .glider {
+  margin: 2rem 0;
+}
+.home-container #home-reviews .glider-contain .glider .glider-track {
+  padding: 2rem;
+  background: blue;
+}
+.home-container #home-reviews .glider-contain .glider .glider-track .glider-slide {
   background-color: red;
-  position: relative;
+  padding: 1rem;
+  margin: 0 1rem;
+  text-align: left;
+}
+.home-container #home-reviews .glider-contain .glider-prev, .home-container #home-reviews .glider-contain .glider-next {
+  padding: 1rem 0;
 }
 
 nav {

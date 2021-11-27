@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/glider.min.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="home-container">
         <section id="home-landing">
@@ -52,31 +56,47 @@
         </section>
         <section id="home-reviews">
             <h2>Our Reviews</h2>
-            <div class="home-reviews-container">
-                {% for review in reviews %}
-                <div class="home-reviews-card">
-                    <div class="home-reviews-content">
-                      <p>{{ review.body }}</p>
+            <div class="glider-contain">
+                <div class="glider">
+                    {% for review in reviews %}
+                    <div class="home-reviews-card">
+                        <div class="home-reviews-content">
+                          <p>{{ review.body }}</p>
+                        </div>
+                            {% if review.user %}
+                            <p class="home-reviews-user">{{ review.user }}</p>
+                            {% else %}
+                            <p class="home-reviews-user">Anonymous user</p>
+                            {% endif %}
+                            <p class="home-reviews-rating">{{ review.rating }}</p>
                     </div>
-                        {% if review.user %}
-                        <p class="home-reviews-user">{{ review.user }}</p>
-                        {% else %}
-                        <p class="home-reviews-user">Anonymous user</p>
-                        {% endif %}
-                        <p class="home-reviews-rating">{{ review.rating }}</p>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
             </div>
         </section>
     </div>
 {% endblock %}
 
 {% block extra_js %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/glider.min.js' %}"></script>
 <script>
  const headerSection = document.querySelector('.header-about-section')
 
  headerSection.classList.add('hide')
 
-
+ new Glider(document.querySelector('.glider'), {
+        slidesToScroll: 1,
+        slidesToShow: 5.5,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        }
+    });
 </script>
 {% endblock %}

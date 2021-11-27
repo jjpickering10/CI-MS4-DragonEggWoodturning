@@ -524,16 +524,24 @@ body {
         display: flex;
         flex-direction: column;
 
-        .home-reviews-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            place-items: center;
-            min-height: 600px;
-            .home-reviews-card {
-                width: 300px;
-                height: 400px;
-                background-color: red;
-                position: relative;
+        .glider-contain {
+            width: 75%;
+            .glider {
+                margin: 2rem 0;
+                .glider-track {
+                    padding: 2rem;
+                    background: blue;
+
+                    .glider-slide {
+                        background-color: red;
+                        padding: 1rem;
+                        margin: 0 1rem;
+                        text-align: left;
+                    }
+                }
+            }
+            .glider-prev, .glider-next {
+                padding: 1rem 0;
             }
             
         }
