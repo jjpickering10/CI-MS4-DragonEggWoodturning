@@ -116,6 +116,7 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+
 @login_required
 def edit_review(request, review_id):
     """
@@ -146,6 +147,7 @@ def edit_review(request, review_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_review(request, review_id):
     """
@@ -159,6 +161,7 @@ def delete_review(request, review_id):
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('profile'))
+
 
 @login_required
 def add_discount(request, product_id):
@@ -177,6 +180,7 @@ def add_discount(request, product_id):
         else:
             messages.error(request, f'Error giving discount for {product.name}')
             return redirect(reverse('product_detail', args=[product_id]))
+
 
 @login_required
 def category_discount(request, category_id):
@@ -206,6 +210,7 @@ def category_discount(request, category_id):
         messages.success(request, f'No discount for {category.name} products')
     category.save()
     return redirect(reverse('profile'))
+
 
 @login_required
 def add_product(request):
@@ -243,6 +248,7 @@ def add_product(request):
     else:
         return redirect(reverse('profile'))
 
+
 @login_required
 def edit_product(request, product_id):
     """
@@ -279,6 +285,7 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product_images(request, product_id):
@@ -319,6 +326,7 @@ def edit_product_images(request, product_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_product_images(request, image_id):
     """
@@ -332,6 +340,7 @@ def delete_product_images(request, image_id):
     image.delete()
     messages.success(request, f'Image for {image.product.name} deleted!')
     return redirect(reverse('edit_product_images', args=[image.product.id]))
+
 
 @login_required
 def delete_product(request, product_id):

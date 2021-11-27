@@ -50,12 +50,23 @@
             <div class="home-blog-posts"></div>
             <div class="home-blog-posts"></div>
         </section>
-        <section id="home-woodtype">
-            <div class="home-woodtype-section"></div>
-            <div class="home-woodtype-section"></div>
-            <div class="home-woodtype-section"></div>
-            <div class="home-woodtype-section"></div>
-            <div class="home-woodtype-section"></div>
+        <section id="home-reviews">
+            <h2>Our Reviews</h2>
+            <div class="home-reviews-container">
+                {% for review in reviews %}
+                <div class="home-reviews-card">
+                    <div class="home-reviews-content">
+                      <p>{{ review.body }}</p>
+                    </div>
+                        {% if review.user %}
+                        <p class="home-reviews-user">{{ review.user }}</p>
+                        {% else %}
+                        <p class="home-reviews-user">Anonymous user</p>
+                        {% endif %}
+                        <p class="home-reviews-rating">{{ review.rating }}</p>
+                </div>
+                {% endfor %}
+            </div>
         </section>
     </div>
 {% endblock %}

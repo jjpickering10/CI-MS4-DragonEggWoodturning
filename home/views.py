@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from products.models import Category
+from products.models import Category, Review
+
+import random
 
 def index(request):
     """
@@ -7,9 +9,14 @@ def index(request):
     """
 
     categories = Category.objects.all()
+    reviews = list(Review.objects.all())
+
+    random.shuffle(reviews)
+    reviews = reviews[:10]
 
     context = {
         'categories': categories,
+        'reviews': reviews
     }
 
     return render(request, 'home/index.html', context)

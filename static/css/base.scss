@@ -520,9 +520,23 @@ body {
     //     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     //     min-height: 50vh;
     // }
-    #home-woodtype {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    #home-reviews {
+        display: flex;
+        flex-direction: column;
+
+        .home-reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            place-items: center;
+            min-height: 600px;
+            .home-reviews-card {
+                width: 300px;
+                height: 400px;
+                background-color: red;
+                position: relative;
+            }
+            
+        }
     }
 }
 

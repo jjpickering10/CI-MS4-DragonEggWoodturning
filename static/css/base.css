@@ -362,9 +362,21 @@ body main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
-.home-container #home-woodtype {
+.home-container #home-reviews {
+  display: flex;
+  flex-direction: column;
+}
+.home-container #home-reviews .home-reviews-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  place-items: center;
+  min-height: 600px;
+}
+.home-container #home-reviews .home-reviews-container .home-reviews-card {
+  width: 300px;
+  height: 400px;
+  background-color: red;
+  position: relative;
 }
 
 nav {
