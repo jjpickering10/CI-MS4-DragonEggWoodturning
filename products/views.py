@@ -244,10 +244,26 @@ def edit_product_images(request, product_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    image_form = ImageForm()
-
     product = Product.objects.get(id=product_id)
     images = product.image_set.all()
+
+    if request.method == 'POST':
+        images = request.FILES.getlist('image')
+        for image in images:
+            image_form = ImageForm(image)
+            if image_form.is_valid():
+                new_image = image_form.save(commit=False)
+                new_image.product = product
+                new_image.image = image
+                new_image.save()
+                print(new_image)
+            else:
+                messages.error(request, 'Error adding images')
+                return redirect(reverse('edit_product_images', args=[product.id]))
+        messages.success(request, f'Successfully added images to {product.name}')
+        return redirect(reverse('edit_product_images', args=[product.id]))
+    else:
+        image_form = ImageForm()
 
     template = 'products/edit_product_images.html'
     context = {

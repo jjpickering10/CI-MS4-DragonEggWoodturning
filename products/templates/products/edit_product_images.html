@@ -12,6 +12,7 @@
 {% block content %}
 <h5>Editing - {{ product.name }}</h5>
 <div class="add_product_image_container">
+  <p>Add images to {{ product.name }} </p>
   <form action="{% url 'edit_product_images' product.id %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ image_form }}
