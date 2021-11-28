@@ -101,7 +101,7 @@
               {% else %}
               <h4>No ratings yet</h4>
               {% endif %}
-              <p>| {{ product.review_set.all|length }} review/s</p>
+              <p>{{ product.review_set.all|length }} review/s</p>
             </div>
             {% if product.final_price %}
               {% if product.discounted %}
