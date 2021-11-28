@@ -27,7 +27,7 @@ button {
     padding: 1rem 1.5rem;
     // border-radius: 2rem;
     background: var(--primary-orange);
-    color: var(--white);
+    color: var(--primary-brown);
     cursor: pointer;
     border: 1px solid var(--primary-brown);
     display: block;
@@ -419,7 +419,7 @@ body {
                 line-height: 2;
                 letter-spacing: 1px;
                 font-weight: 200;
-                text-transform: lowercase;
+                // text-transform: lowercase;
             }
         }
     }
@@ -696,8 +696,8 @@ body {
                         .home-reviews-user {
                             // position: absolute;
                             // bottom: 0;
-                            font-weight: 600;
-                            letter-spacing: 2px;
+                            font-weight: 300;
+                            letter-spacing: 1px;
                             font-style: italic;
                             margin-top: 3rem;
                             color: var(--white);
@@ -710,7 +710,7 @@ body {
                         .home-reviews-rating {
                             // position: absolute;
                             // top: 0;
-                            font-size: 2rem;
+                            font-size: 1rem;
                             i {
                                 &::before {
                                     color: var(--primary-orange);
@@ -1245,14 +1245,17 @@ nav {
 
     .watermark {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 30rem;
         // transform: translateY(-10%) rotate(-20deg);
         // z-index: -10000;
         opacity: 0.1;
         color: var(--white-shadow);
         pointer-events: none;
+        width: 100%;
+        padding: 5rem;
     }
 
     > *:nth-child(1) {
@@ -1463,10 +1466,15 @@ nav {
 
 .product-detail-container {
     flex-direction: column;
-    background: linear-gradient(180deg, var(--primary-cream)50%, var(--white)50%);
+    // background: linear-gradient(180deg, var(--primary-brown)50%, var(--white)50%);
+    background: var(--white);
+    margin-top: 0;
+    padding: 0;
     .product-item-container {
         .product-card {
-            background: var(--white);
+            background: var(--primary-brown);
+            padding: 4rem 5rem;
+            border-radius: 0 0 10rem 0;
             .product-card-image {
                 height: 500px;
                 scroll-behavior: smooth;
@@ -1484,9 +1492,11 @@ nav {
                 }
                 img {
                     height: 500px;
+                    box-shadow: none;
+                    width: auto;
 
                     &:hover {
-                        transform: scale(0.75);
+                        transform: scale(1);
                     }
                 }
                 .materialboxed.active {
@@ -1499,12 +1509,30 @@ nav {
                 letter-spacing: 2px;
                 margin: 0 0 1rem 0;
                 text-transform: lowercase;
+                color: var(--white);
             }
             .progress-bar {
                 height: 5px;
                 width: 0;
-                background: linear-gradient(45deg, var(--primary-brown-shadow), var(--secondary-brown));
+                background: linear-gradient(45deg, var(--white-shadow), var(--secondary-brown));
                 margin-bottom: 2rem;
+            }
+            .product-card-content {
+
+                .global-button {
+                    width: 100%;
+                }
+
+                form {
+                    .select-wrapper {
+                        input {
+                            color: var(--white);
+                        }
+                        .caret {
+                            fill: var(--white);
+                        }
+                    }
+                }
             }
         }
     }
@@ -1512,6 +1540,7 @@ nav {
     .product-review-container {
         display: flex;
         flex-wrap: wrap;
+        padding: 5rem;
 
         > *:nth-child(1) {
             flex: 1 1 50%;
@@ -1550,6 +1579,7 @@ nav {
                 
                 .global-button {
                     margin: 1rem 0;
+                    color: var(--primary-brown);
                 }
             }
         }
@@ -1557,10 +1587,11 @@ nav {
         .review-section {
             // padding: 0 0 0 5rem;
             .review-content {
-                padding: 1rem;
-                background: var(--primary-cream);
+                // padding: 1rem;
+                // background: var(--primary-cream);
+                margin: 2.5rem 0 1rem 0;
                 .review-rating {
-                    font-size: 2rem;
+                    font-size: 1rem;
                     display: flex;
                     align-items: center;
 
@@ -1570,29 +1601,21 @@ nav {
                     }
 
                     span {
-                        font-size: 0.5rem;
+                        font-size: 1rem;
                         margin-left: 0.25rem;
                     }
                 }
 
                 p {
-                    font-weight: 100;
-                    font-size: 1rem;
+                    font-weight: 200;
+                    font-size: 1.2rem;
                     padding: 0.5rem 0;
-                    display: flex;
-
-                    i {
-                        font-size: 1rem;
-                    }
-
-                    span {
-                        margin: 0 0.25rem;
-                    }
+                    font-style: italic;
                 }
 
                 .review-date {
                     font-size: .65rem;
-                    font-weight: 400;
+                    font-weight: 600;
                 }
             }
         }
@@ -1607,6 +1630,8 @@ nav {
     align-items: center;
     // background: var(--primary-cream);
     padding: 5rem;
+    position: relative;
+    overflow: hidden;
 
     .product-information {
         font-size: 1.1rem;
@@ -1771,6 +1796,7 @@ nav {
 
             a, input {
                 margin: 0;
+                color: var(--primary-brown);
             }
 
             a + input {

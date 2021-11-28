@@ -40,7 +40,6 @@
             {% else %}
             <h4>No ratings yet</h4>
             {% endif %}
-            <p>| {{ product.review_set.all|length }} review/s</p>
           </div>
           {% if product.final_price %}
             {% if product.discounted %}
@@ -98,7 +97,7 @@
       </form>
     </div>
     <div class="review-section">
-      <h3>Reviews</h3>
+      <h3>Reviews ({{ product.review_set.all|length }})</h3>
       {% if reviews|length > 0 %}
       {% for review in reviews %}
         <div class="review-content">
@@ -177,7 +176,7 @@
             {% endif %}
           </div>
           {% endif %}
-          <p><i class="fas fa-quote-left"></i><span>{{ review.body }}</span><i class="fas fa-quote-right"></i></p>
+          <p>{{ review.body }}</p>
           <p class="review-date">{{ review.date }}</p>
         </div>
       {% endfor %}
