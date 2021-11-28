@@ -578,14 +578,9 @@ nav ul a:hover, nav ul a:focus {
   background: var(--secondary-brown);
 }
 
-.about-page-container {
-  margin-bottom: 5rem;
-}
 .about-page-container .about-landing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  background: linear-gradient(90deg, var(--white) 50%, var(--primary-cream) 50%);
-  padding: 5rem 0;
 }
 .about-page-container .about-landing .about-landing-title {
   position: relative;
@@ -634,24 +629,26 @@ nav ul a:hover, nav ul a:focus {
   justify-content: center;
   position: relative;
   padding: 5rem;
+  background: var(--primary-brown);
 }
 .about-page-container .about-landing .about-landing-image img {
   padding: 3em;
   position: relative;
   width: 75%;
-  box-shadow: 0px 0px 0px 2px var(--primary-brown-shadow), 0px 0px 0px 10px var(--white), 0px 0px 0px 12px var(--primary-brown-shadow), 0px 0px 0px 20px var(--white), 0px 0px 0px 22px var(--primary-brown-shadow);
+  box-shadow: 0px 0px 0px 2px var(--white), 0px 0px 0px 10px var(--primary-brown), 0px 0px 0px 12px var(--white), 0px 0px 0px 20px var(--primary-brown), 0px 0px 0px 22px var(--white);
 }
 .about-page-container .about-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  background: linear-gradient(270deg, var(--white) 50%, var(--primary-cream) 50%);
-  padding: 5rem 0;
 }
 .about-page-container .about-info .about-segments {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
 }
 .about-page-container .about-info .about-segments h3 {
   font-weight: 100;
@@ -659,6 +656,10 @@ nav ul a:hover, nav ul a:focus {
   font-size: 2rem;
   box-shadow: 0 0 5px 0 var(--primary-brown-shadow);
   padding: 1rem;
+}
+.about-page-container .about-info .about-segments img {
+  width: 250px;
+  margin: 1rem 0;
 }
 .about-page-container .about-info .about-segments p {
   text-align: center;
@@ -668,6 +669,40 @@ nav ul a:hover, nav ul a:focus {
   letter-spacing: 1px;
   font-weight: 300;
   width: 75%;
+}
+.about-page-container .about-info .about-segments:first-of-type {
+  background: var(--primary-brown);
+}
+.about-page-container .about-info .about-segments:first-of-type h3 {
+  box-shadow: 0 0 5px 0 var(--white-shadow);
+  color: var(--white);
+}
+.about-page-container .about-info .about-segments:first-of-type p {
+  color: var(--white);
+}
+.about-page-container .about-info .about-segments:first-of-type::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "about";
+  font-size: 15rem;
+  color: var(--white);
+  opacity: 0.05;
+  pointer-events: none;
+}
+.about-page-container .about-info .about-segments:nth-of-type(2)::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  content: "";
+  height: 500%;
+  width: 50%;
+  background: var(--primary-brown-shadow);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
 }
 .about-page-container .about-info .about-segments .about-buttons {
   display: flex;

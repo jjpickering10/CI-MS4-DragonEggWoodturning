@@ -812,13 +812,13 @@ nav {
 // About page
 
 .about-page-container {
-    margin-bottom: 5rem;
+    // margin-bottom: 5rem;
     .about-landing {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         // min-height: 100vh;
-        background: linear-gradient(90deg, var(--white) 50%, var(--primary-cream) 50%);
-        padding: 5rem 0;
+        // background: linear-gradient(90deg, var(--white) 50%, var(--primary-cream) 50%);
+        // padding: 5rem 0;
 
         .about-landing-title {
             position: relative;
@@ -876,16 +876,17 @@ nav {
             justify-content: center;
             position: relative;
             padding: 5rem;
+            background: var(--primary-brown);
 
             img {
                 padding: 3em;
                 position: relative;
                 width: 75%;
-                box-shadow: 0px 0px 0px 2px var(--primary-brown-shadow),
-                            0px 0px 0px 10px var(--white),
-                            0px 0px 0px 12px var(--primary-brown-shadow),
-                            0px 0px 0px 20px var(--white),
-                            0px 0px 0px 22px var(--primary-brown-shadow);
+                box-shadow: 0px 0px 0px 2px var(--white),
+                            0px 0px 0px 10px var(--primary-brown),
+                            0px 0px 0px 12px var(--white),
+                            0px 0px 0px 20px var(--primary-brown),
+                            0px 0px 0px 22px var(--white);
             }
 
         }
@@ -894,14 +895,17 @@ nav {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         // min-height: 100vh;
-        background: linear-gradient(270deg, var(--white) 50%, var(--primary-cream) 50%);
-        padding: 5rem 0;
+        // background: linear-gradient(270deg, var(--white) 50%, var(--primary-cream) 50%);
+        // padding: 5rem 0;
 
         .about-segments {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             flex-direction: column;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
 
             h3 {
                 font-weight: 100;
@@ -909,6 +913,11 @@ nav {
                 font-size: 2rem;
                 box-shadow: 0 0 5px 0 var(--primary-brown-shadow);
                 padding: 1rem;
+            }
+
+            img {
+                width: 250px;
+                margin: 1rem 0;
             }
 
             p {
@@ -920,6 +929,47 @@ nav {
                 font-weight: 300;
                 width: 75%;
             }
+            &:first-of-type {
+                background: var(--primary-brown);
+
+                h3 {
+                    box-shadow: 0 0 5px 0 var(--white-shadow);
+                    color: var(--white);
+                }
+
+                p {
+                    color: var(--white);
+                }
+
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    content: 'about';
+                    font-size: 15rem;
+                    color: var(--white);
+                    opacity: 0.05;
+                    pointer-events: none;
+                    // z-index: -1;
+                }
+            }
+            &:nth-of-type(2) {
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    content: '';
+                    height: 500%;
+                    width: 50%;
+                    background: var(--primary-brown-shadow);
+                    opacity: 0.1;
+                    pointer-events: none;
+                    z-index: -1;
+                }
+            }
+
             .about-buttons {
                 display: flex;
                 margin-top: 1rem;
