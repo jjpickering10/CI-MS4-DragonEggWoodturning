@@ -333,7 +333,36 @@ body {
     }
 }
 
+.home-gallery {
+    width: 80vw;
+    height: 800px;
+    background: red;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 
+    .gallery-images-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        // transform: translate(-500px, -500px);
+        width: 100%;
+        // height: 100%;
+        // padding: 200px;
+        display: flex;
+        background: blue;
+
+        .gallery-column {
+            position: relative;
+            flex: 50%;
+            display: flex;
+            flex-direction: column;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
 
 .home-container {
     display: grid;

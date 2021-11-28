@@ -82,7 +82,7 @@ def add_blog(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        blog_form = BlogForm(request.POST)
+        blog_form = BlogForm(request.POST, request.FILES)
         if blog_form.is_valid():
             new_blog = blog_form.save(commit=False)
             new_blog.author = request.user
