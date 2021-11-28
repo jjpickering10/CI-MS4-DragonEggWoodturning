@@ -334,31 +334,21 @@ body {
 }
 
 .home-gallery {
-    width: 80vw;
-    height: 800px;
-    background: red;
-    margin: 0 auto;
+    width: 100vw;
+    background: var(--primary-brown);
+    padding: 5rem 0;
     position: relative;
     overflow: hidden;
 
     .gallery-images-section {
-        position: absolute;
-        left: 0;
-        top: 0;
-        // transform: translate(-500px, -500px);
-        width: 100%;
-        // height: 100%;
-        // padding: 200px;
-        display: flex;
-        background: blue;
+        transition: 2s ease-in-out;
 
         .gallery-column {
-            position: relative;
-            flex: 50%;
             display: flex;
-            flex-direction: column;
+
             img {
-                width: 100%;
+                width: 50%;
+                filter: grayscale(50%);
             }
         }
     }
@@ -552,13 +542,14 @@ body {
     #home-reviews {
         display: flex;
         flex-direction: column;
-        background: var(--primary-cream);
-        padding-bottom: 3rem;
+        background: var(--primary-brown);
+        // padding-bottom: 3rem;
         h2 {
             width: 100%;
             text-align: center;
             font-weight: 100;
             text-transform: uppercase;
+            color: var(--white);
         }
 
         .glider-contain {
@@ -659,7 +650,7 @@ body {
             .glider-prev, .glider-next {
                 top: 50%;
                 transform: translateY(-170%);
-                color: var(--primary-brown);
+                color: var(--white);
             }
             .glider-dots {
                 margin-bottom: 3rem;

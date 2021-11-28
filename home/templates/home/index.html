@@ -115,7 +115,7 @@
                                     <i class="fas fa-quote-left"></i><i class="fas fa-quote-right"></i>
                                     <i class="fas fa-comment-alt"></i>
                                 </div> -->
-                                <blockquote>{{ review.body|truncatewords:40 }}</blockquote>
+                                <blockquote>{{ review.body|truncatewords:30 }}</blockquote>
                             </div>
                               {% if review.user %}
                             <p class="home-reviews-user"><i class="fas fa-user-edit"></i> {{ review.user }}</p>
@@ -143,7 +143,7 @@
 
  new Glider(document.querySelector('.glider'), {
         slidesToScroll: 1,
-        slidesToShow: 2,
+        slidesToShow: 3,
         draggable: true,
         dots: '.dots',
         arrows: {

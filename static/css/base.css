@@ -280,29 +280,21 @@ body main {
 }
 
 .home-gallery {
-  width: 80vw;
-  height: 800px;
-  background: red;
-  margin: 0 auto;
+  width: 100vw;
+  background: var(--primary-brown);
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
 .home-gallery .gallery-images-section {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  display: flex;
-  background: blue;
+  transition: 2s ease-in-out;
 }
 .home-gallery .gallery-images-section .gallery-column {
-  position: relative;
-  flex: 50%;
   display: flex;
-  flex-direction: column;
 }
 .home-gallery .gallery-images-section .gallery-column img {
-  width: 100%;
+  width: 50%;
+  filter: grayscale(50%);
 }
 
 .home-container {
@@ -391,14 +383,14 @@ body main {
 .home-container #home-reviews {
   display: flex;
   flex-direction: column;
-  background: var(--primary-cream);
-  padding-bottom: 3rem;
+  background: var(--primary-brown);
 }
 .home-container #home-reviews h2 {
   width: 100%;
   text-align: center;
   font-weight: 100;
   text-transform: uppercase;
+  color: var(--white);
 }
 .home-container #home-reviews .glider-contain {
   width: 75%;
@@ -459,7 +451,7 @@ body main {
 .home-container #home-reviews .glider-contain .glider-prev, .home-container #home-reviews .glider-contain .glider-next {
   top: 50%;
   transform: translateY(-170%);
-  color: var(--primary-brown);
+  color: var(--white);
 }
 .home-container #home-reviews .glider-contain .glider-dots {
   margin-bottom: 3rem;
