@@ -432,10 +432,14 @@ body main {
 }
 .home-container #home-reviews .glider-contain .glider-prev, .home-container #home-reviews .glider-contain .glider-next {
   top: 50%;
-  transform: translateY(-115%);
+  transform: translateY(-170%);
+  color: var(--primary-brown);
 }
 .home-container #home-reviews .glider-contain .glider-dots {
   margin-bottom: 3rem;
+}
+.home-container #home-reviews .glider-contain .glider-dots .glider-dot.active {
+  background: var(--secondary-brown);
 }
 
 nav {

@@ -6,7 +6,7 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = '__all__'
-        exclude = ('image_url', 'author')
+        exclude = ('image_url', 'author', 'likes', 'like_count')
 
 
 class CommentForm(forms.ModelForm):

@@ -24,6 +24,7 @@
           <li class="profile-links" data-link='newsletter'><i class="fas fa-mail-bulk"></i>Newsletter</li>
           <li class="profile-links" data-link='discount'><i class="fas fa-mail-bulk"></i>Discounts</li>
           <li class="profile-links" data-link='products'><i class="fas fa-mail-bulk"></i>Products</li>
+          <li class="profile-links" data-link='blog'><i class="fas fa-mail-bulk"></i>Blogs</li>
           {% endif %}
         </ul>
 
@@ -227,6 +228,36 @@
         
         </table>
         {% endfor %}
+      </div>
+      <div data-link='blog' class="profile-admin-discount-container profile-segment hide">
+        <h2>Add New Blog</h2>
+        <form action="{% url 'add_blog' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ blog_form }}
+          <button type="submit">Add Blog</button>
+        </form>
+        <hr>
+        <h2>Current Blogs</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Blog title</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          
+          
+          {% for blog in blogs %}
+        <tbody>
+          <tr>
+            <td><a href="{% url 'blog_post' blog.id %}">{{ blog.title }}</a></td>
+            <td>{{ blog.date }}</td>
+            <td><a href="{% url 'edit_blog' blog.id %}">Edit</a></td>
+            <td><a href="{% url 'delete_blog' blog.id %}">Delete</a></td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
       </div>
       {% endif %}
     </div>

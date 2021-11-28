@@ -629,10 +629,14 @@ body {
             }
             .glider-prev, .glider-next {
                 top: 50%;
-                transform: translateY(-115%);
+                transform: translateY(-170%);
+                color: var(--primary-brown);
             }
             .glider-dots {
                 margin-bottom: 3rem;
+                .glider-dot.active {
+                    background: var(--secondary-brown);
+                }
             }
             
         }
