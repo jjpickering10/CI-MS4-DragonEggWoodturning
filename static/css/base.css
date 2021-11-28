@@ -6,6 +6,7 @@
   --primary-orange: #E66C4E;
   --primary-cream: #FFF5EF;
   --white: #fff;
+  --white-shadow: rgba(255, 255, 255, 0.25);
 }
 
 * {
@@ -175,7 +176,6 @@ body main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   height: 500px;
-  padding: 0 5rem;
 }
 .home-about .home-about-section {
   position: relative;
@@ -187,7 +187,7 @@ body main {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(54, 28, 21, 0.8);
 }
 .home-about .home-about-section .home-about-info {
   position: absolute;
@@ -225,14 +225,13 @@ body main {
 .home-about .home-about-section img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 #home-newsletter {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   min-height: 50vh;
+  background: var(--primary-brown);
 }
 #home-newsletter .newsletter-image {
   display: flex;
@@ -240,26 +239,27 @@ body main {
   align-items: center;
 }
 #home-newsletter .newsletter-image img {
-  -o-object-fit: cover;
-     object-fit: cover;
   width: 75%;
   height: 75%;
-  box-shadow: 10px 10px 10px 0 var(--primary-brown-shadow);
+  box-shadow: 10px 10px 0 0 var(--white-shadow);
+  padding: 5rem;
+  border-radius: 10rem 0;
 }
 #home-newsletter .newsletter-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, var(--primary-cream) 50%, var(--white) 50%);
 }
 #home-newsletter .newsletter-form h4 {
   margin: 1rem 0 0 0;
   text-transform: uppercase;
+  color: var(--white);
 }
 #home-newsletter .newsletter-form p {
   margin: 1rem 0;
   text-transform: lowercase;
+  color: var(--white);
 }
 #home-newsletter .newsletter-form form {
   display: flex;
@@ -267,7 +267,7 @@ body main {
   align-items: center;
   background: var(--secondary-brown);
   padding: 1rem;
-  box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
+  box-shadow: 10px 10px 0 0 var(--white);
 }
 #home-newsletter .newsletter-form form label {
   color: var(--primary-brown);
@@ -280,13 +280,13 @@ body main {
 }
 
 .home-gallery {
-  width: 100vw;
-  background: var(--primary-brown);
+  width: 75%;
   position: relative;
   overflow: hidden;
+  margin: 3rem auto;
 }
 .home-gallery .gallery-images-section {
-  transition: 2s ease-in-out;
+  transition: 1s ease-in-out;
 }
 .home-gallery .gallery-images-section .gallery-column {
   display: flex;
@@ -297,6 +297,10 @@ body main {
   padding: 25px;
 }
 
+.site-information {
+  width: 75%;
+  margin: 3rem auto 5rem auto;
+}
 .site-information .site-information-container {
   display: flex;
   flex-wrap: wrap;
@@ -308,7 +312,7 @@ body main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(10deg);
+  transform: translate(-50%, -50%);
   font-size: 15rem;
   color: var(--secondary-brown);
   text-align: center;
@@ -358,9 +362,7 @@ body main {
 }
 .home-container #home-landing {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-  min-height: 100vh;
-  background: linear-gradient(180deg, var(--white) 85%, var(--primary-cream) 85%);
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
 }
 .home-container #home-landing .home-landing-title {
   position: relative;
@@ -368,20 +370,20 @@ body main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 75%;
   padding: 5em;
-  background: linear-gradient(0deg, var(--white) 50%, var(--primary-cream) 50%);
+  background: var(--primary-brown);
+  border-radius: 0 0 10rem;
 }
 .home-container #home-landing .home-landing-title h1 {
   font-weight: 200;
   text-transform: lowercase;
   font-size: calc(2.5rem + 2vw);
   margin-bottom: 0;
-  color: var(--primary-brown);
+  color: var(--white);
   position: relative;
-  box-shadow: -10px -10px 10px 0 var(--primary-brown-shadow);
+  box-shadow: -5px -5px 5px 0 var(--white-shadow);
   line-height: 1.2;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
 }
 .home-container #home-landing .home-landing-title h1 span {
   color: var(--primary-orange);
@@ -391,7 +393,7 @@ body main {
 }
 .home-container #home-landing .home-landing-title p {
   font-weight: 100;
-  color: var(--primary-brown);
+  color: var(--white);
   font-size: 1.2rem;
   line-height: 2;
   padding: 0 2rem;
@@ -412,16 +414,15 @@ body main {
 }
 .home-container #home-landing .home-landing-title .landing-buttons a + a {
   margin-left: 1em;
-  background: none;
+  background: var(--white);
   color: var(--primary-orange);
-  box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--secondary-brown);
 }
 .home-container #home-landing .home-landing-title .landing-buttons a + a:hover, .home-container #home-landing .home-landing-title .landing-buttons a + a :focus {
   box-shadow: none;
   transition: 0.5s;
 }
 .home-container #home-landing .home-landing-image {
-  height: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -430,6 +431,7 @@ body main {
   padding: 3em;
   width: 90%;
   box-shadow: 10px 10px 10px 0px var(--primary-brown-shadow);
+  border-radius: 10rem 0;
 }
 .home-container #home-blog {
   display: grid;
@@ -516,7 +518,7 @@ body main {
 }
 
 nav {
-  background: var(--primary-cream);
+  background: var(--primary-brown);
   box-shadow: none;
 }
 nav .brand-logo {
@@ -532,7 +534,7 @@ nav .brand-logo {
   justify-content: center;
   align-items: center;
   background: var(--white);
-  box-shadow: 10px 10px 0 0 var(--primary-brown-shadow);
+  box-shadow: 10px 10px 0 0 var(--white);
   border-right: 10px solid var(--secondary-brown);
   border-bottom: 10px solid var(--primary-orange);
 }
@@ -567,7 +569,7 @@ nav .right {
   margin-right: 5rem;
 }
 nav ul a {
-  color: var(--primary-brown);
+  color: var(--white);
   text-transform: lowercase;
   font-weight: 300;
   letter-spacing: 1px;
@@ -688,6 +690,8 @@ nav ul a:hover, nav ul a:focus {
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
+  width: 50%;
+  margin: 5rem auto;
 }
 #home-products > h2 {
   text-transform: uppercase;
