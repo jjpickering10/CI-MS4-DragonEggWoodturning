@@ -2228,42 +2228,69 @@ nav {
             overflow-y: scroll;
             box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
             background: var(--primary-brown-shadow);
-            .review-content {
-                padding: 1rem;
-                margin: 1rem 0;
-                box-shadow: -5px 0 5px 0 var(--primary-brown-shadow);
-                background: var(--primary-cream);
-                h3 {
-                    font-size: 1.5rem;
-                    margin: 0.5rem 0;
+
+            table {
+                background: var(--secondary-brown);
+                thead {
+                    tr {
+                        color: var(--primary-brown);
+                    }
+                    th {
+                        border-radius: 0;
+                    }
                 }
-                .review-rating {
-                    font-size: 0.75rem;
-                    margin: 0.5rem 0;
-                    i {
-                        &::before {
-                            color: var(--primary-orange);
+                tbody {
+                    background: var(--primary-brown);
+                    td {
+                        border-radius: 0;
+                        &.product-review-rating {
+
+                            i {
+                                &::before {
+                                    color: var(--primary-orange);
+                                }
+                            }
                         }
                     }
                 }
-                p {
-                    font-size: 1.5rem;
-                    font-weight: 100;
-                    display: flex;
-                    margin: 0.5rem 0;
-                    i {
-                        font-size: 0.75rem;
-                    }
-                }
-                .review-date {
-                    font-size: 0.6rem;
-                    font-weight: 600;
-                }
             }
+
+            // .review-content {
+            //     padding: 1rem;
+            //     margin: 1rem 0;
+            //     box-shadow: -5px 0 5px 0 var(--primary-brown-shadow);
+            //     background: var(--primary-cream);
+            //     h3 {
+            //         font-size: 1.5rem;
+            //         margin: 0.5rem 0;
+            //     }
+            //     .review-rating {
+            //         font-size: 0.75rem;
+            //         margin: 0.5rem 0;
+            //         i {
+            //             &::before {
+            //                 color: var(--primary-orange);
+            //             }
+            //         }
+            //     }
+            //     p {
+            //         font-size: 1.5rem;
+            //         font-weight: 100;
+            //         display: flex;
+            //         margin: 0.5rem 0;
+            //         i {
+            //             font-size: 0.75rem;
+            //         }
+            //     }
+            //     .review-date {
+            //         font-size: 0.6rem;
+            //         font-weight: 600;
+            //     }
+            // }
         }
         .profile-admin-newsletter-container {
             box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
-            background: var(--primary-cream);
+            // background: var(--primary-cream);
 
             input[type=text]:not(.browser-default) {
                 border: 1px solid var(--primary-brown);
@@ -2287,8 +2314,13 @@ nav {
             overflow-y: scroll;
             // box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
             // background: var(--primary-brown-shadow);
+            .bag-container {
+                display: block;
+            }
             .bag-table {
                 background: none;
+                padding: 0;
+                margin: 0;
 
                 table {
                     thead {
@@ -2298,7 +2330,7 @@ nav {
                     }
                     tbody {
                         tr {
-                            border-bottom-color: var(--white);
+                            border-bottom-color: rgba(0,0,0,0.12);
                         }
                     }
                 }
@@ -2309,7 +2341,7 @@ nav {
             // background: var(--white);
             .category-content {
                 margin: 2rem 0;
-                box-shadow: -3px 0 0 0 var(--primary-brown-shadow);
+                box-shadow: -3px 0 0 0 var(--white-shadow);
                 padding: 1rem;
                 // background: var(--white);
                 h5 {
@@ -2326,13 +2358,19 @@ nav {
                 }
             }
             input[type=text]:not(.browser-default) {
-                border: 1px solid var(--primary-brown);
+                // border: 1px solid var(--white);
+                border: none;
                 padding: 1rem;
                 box-sizing: border-box;
-                // background: var(--white);
+                background: var(--white-shadow);
             }
             .select-wrapper {
                 width: 50%;
+
+                .caret {
+                    fill: var(--primary-brown);
+                    z-index: 1;
+                }
             }
             .global-button {
                 margin: 0;

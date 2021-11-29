@@ -1720,39 +1720,26 @@ nav ul a:hover, nav ul a:focus {
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
   background: var(--primary-brown-shadow);
 }
-.profile-container > .profile-section .profile-review-container .review-content {
-  padding: 1rem;
-  margin: 1rem 0;
-  box-shadow: -5px 0 5px 0 var(--primary-brown-shadow);
-  background: var(--primary-cream);
+.profile-container > .profile-section .profile-review-container table {
+  background: var(--secondary-brown);
 }
-.profile-container > .profile-section .profile-review-container .review-content h3 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+.profile-container > .profile-section .profile-review-container table thead tr {
+  color: var(--primary-brown);
 }
-.profile-container > .profile-section .profile-review-container .review-content .review-rating {
-  font-size: 0.75rem;
-  margin: 0.5rem 0;
+.profile-container > .profile-section .profile-review-container table thead th {
+  border-radius: 0;
 }
-.profile-container > .profile-section .profile-review-container .review-content .review-rating i::before {
+.profile-container > .profile-section .profile-review-container table tbody {
+  background: var(--primary-brown);
+}
+.profile-container > .profile-section .profile-review-container table tbody td {
+  border-radius: 0;
+}
+.profile-container > .profile-section .profile-review-container table tbody td.product-review-rating i::before {
   color: var(--primary-orange);
-}
-.profile-container > .profile-section .profile-review-container .review-content p {
-  font-size: 1.5rem;
-  font-weight: 100;
-  display: flex;
-  margin: 0.5rem 0;
-}
-.profile-container > .profile-section .profile-review-container .review-content p i {
-  font-size: 0.75rem;
-}
-.profile-container > .profile-section .profile-review-container .review-content .review-date {
-  font-size: 0.6rem;
-  font-weight: 600;
 }
 .profile-container > .profile-section .profile-admin-newsletter-container {
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
-  background: var(--primary-cream);
 }
 .profile-container > .profile-section .profile-admin-newsletter-container input[type=text]:not(.browser-default) {
   border: 1px solid var(--primary-brown);
@@ -1773,18 +1760,23 @@ nav ul a:hover, nav ul a:focus {
   max-height: 100vh;
   overflow-y: scroll;
 }
+.profile-container > .profile-section .profile-orders-container .bag-container {
+  display: block;
+}
 .profile-container > .profile-section .profile-orders-container .bag-table {
   background: none;
+  padding: 0;
+  margin: 0;
 }
 .profile-container > .profile-section .profile-orders-container .bag-table table thead tr {
   color: var(--primary-brown);
 }
 .profile-container > .profile-section .profile-orders-container .bag-table table tbody tr {
-  border-bottom-color: var(--white);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content {
   margin: 2rem 0;
-  box-shadow: -3px 0 0 0 var(--primary-brown-shadow);
+  box-shadow: -3px 0 0 0 var(--white-shadow);
   padding: 1rem;
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content h5 {
@@ -1799,12 +1791,17 @@ nav ul a:hover, nav ul a:focus {
   margin-top: 2rem;
 }
 .profile-container > .profile-section .profile-admin-discount-container input[type=text]:not(.browser-default) {
-  border: 1px solid var(--primary-brown);
+  border: none;
   padding: 1rem;
   box-sizing: border-box;
+  background: var(--white-shadow);
 }
 .profile-container > .profile-section .profile-admin-discount-container .select-wrapper {
   width: 50%;
+}
+.profile-container > .profile-section .profile-admin-discount-container .select-wrapper .caret {
+  fill: var(--primary-brown);
+  z-index: 1;
 }
 .profile-container > .profile-section .profile-admin-discount-container .global-button {
   margin: 0;

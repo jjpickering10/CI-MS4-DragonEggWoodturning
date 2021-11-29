@@ -108,69 +108,28 @@
         </div>
       </div>
       <div data-link='reviews' class="profile-review-container profile-segment hide">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Date</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
           {% for review in reviews %}
-            <div class="review-content">
-              <h3>{{ review.product.name }}</h3>
-              {% if review.product.image_set.all|length > 0 %}
-                  <img class="responsive-img" src="{{ review.product.image_set.first.image.url }}" alt="">
-              {% else %}
-                <img class="responsive-img" src="{{ MEDIA_URL }}noimage.png">
-              {% endif %}
-            {% if review.rating == 1 %}
-            <!-- 1 star rating -->
-              <div class="review-rating">
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              {% endif %}
-              {% if review.rating == 2 %}
-              <!-- 2 star rating -->
-              <div class="review-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              {% endif %}
-              {% if review.rating == 3 %}
-              <!-- 3 star rating -->
-              <div class="review-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              {% endif %}
-              {% if review.rating == 4 %}
-              <!-- 4 star rating -->
-              <div class="review-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              {% endif %}
-              {% if review.rating == 5 %}
-              <!-- 5 star rating -->
-              <div class="review-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              {% endif %}
-              <p><i class="fas fa-quote-left"></i><span>{{ review.body }}</span><i class="fas fa-quote-right"></i></p>
-              <p class="review-date">{{ review.date }}</p>
-              <p><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a><a href="{% url 'delete_review' review.id %}">Delete <i class="fas fa-trash"></i></a></p>
-            </div>
+          <tbody>
+            <tr>
+              <td>{{ review.product.name }}
+              </td>
+              <td>{{ review.date }}</td>
+              <td class="product-review-rating">{{ review.rating }} <i class="fas fa-star"></i></td>
+              <td><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a></td>
+              <td><a href="{% url 'delete_review' review.id %}">Delete <i class="fas fa-trash"></i></a></td>
+
+            </tr>
+          </tbody>
           {% endfor %}
+        </table>
       </div>
       {% if request.user.is_superuser %}
       <div data-link='newsletter' class="profile-admin-newsletter-container profile-segment hide">
