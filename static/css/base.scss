@@ -2133,7 +2133,7 @@ nav {
 
             .fas {
                 margin-right: 0.5rem;
-
+                min-width: 40px;
                 &::before {
                     color: var(--primary-orange);
                 }
@@ -2174,7 +2174,7 @@ nav {
 
                 }
             }
-            p {
+            p, a {
                 font-size: 0.85rem;
                 margin: 0.5rem 0;
                 i {
@@ -2182,6 +2182,19 @@ nav {
                         color: var(--primary-orange);
                         margin-right: 0.5rem;
                     }
+                }
+            }
+            p:last-of-type {
+                margin: 1rem 0;
+            }
+            a {
+                color: var(--white);
+                transition: 0.3s;
+                background: var(--white-shadow);
+                padding: 0.5rem;
+                &:hover, &:focus {
+                    transition: 0.3s;
+                    color: var(--secondary-brown);
                 }
             }
         }

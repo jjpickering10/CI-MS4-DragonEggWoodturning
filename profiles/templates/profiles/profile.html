@@ -16,15 +16,15 @@
 
         <h2>Menu</h2>
         <ul>
-          <li class="profile-links active" data-link='home'><i class="fas fa-user"></i>Profile Home</li>
+          <li class="profile-links active" data-link='home'><i class="fas fa-home"></i>Profile Home</li>
           <li class="profile-links" data-link='account'><i class="fas fa-user"></i>Account Info</li>
           <li class="profile-links" data-link='orders'><i class="fas fa-credit-card"></i>Orders</li>
           <li class="profile-links" data-link='reviews'><i class="fas fa-star"></i>Reviews</li>
           {% if request.user.is_superuser %}
           <li class="profile-links" data-link='newsletter'><i class="fas fa-mail-bulk"></i>Newsletter</li>
-          <li class="profile-links" data-link='discount'><i class="fas fa-mail-bulk"></i>Discounts</li>
-          <li class="profile-links" data-link='products'><i class="fas fa-mail-bulk"></i>Products</li>
-          <li class="profile-links" data-link='blog'><i class="fas fa-mail-bulk"></i>Blogs</li>
+          <li class="profile-links" data-link='discount'><i class="fas fa-pound-sign"></i>Discounts</li>
+          <li class="profile-links" data-link='products'><i class="fas fa-store-alt"></i>Products</li>
+          <li class="profile-links" data-link='blog'><i class="fas fa-blog"></i>Blogs</li>
           {% endif %}
         </ul>
 
@@ -37,6 +37,9 @@
         {% endif %}
         {% if profile.user.last_login %}
         <p><i class="far fa-clock"></i> Last login {{ profile.user.last_login }}</p>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+          <p><a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></p>
         {% endif %}
       </div>
       <div data-link='account' class="profile-account-info-container profile-segment hide">

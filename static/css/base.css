@@ -1646,6 +1646,7 @@ nav ul a:hover, nav ul a:focus {
 }
 .profile-container > .profile-nav .profile-links .fas {
   margin-right: 0.5rem;
+  min-width: 40px;
 }
 .profile-container > .profile-nav .profile-links .fas::before {
   color: var(--primary-orange);
@@ -1680,13 +1681,26 @@ nav ul a:hover, nav ul a:focus {
   width: 50%;
   background: linear-gradient(45deg, var(--primary-orange), var(--white));
 }
-.profile-container > .profile-section .profile-home-container p {
+.profile-container > .profile-section .profile-home-container p, .profile-container > .profile-section .profile-home-container a {
   font-size: 0.85rem;
   margin: 0.5rem 0;
 }
-.profile-container > .profile-section .profile-home-container p i::before {
+.profile-container > .profile-section .profile-home-container p i::before, .profile-container > .profile-section .profile-home-container a i::before {
   color: var(--primary-orange);
   margin-right: 0.5rem;
+}
+.profile-container > .profile-section .profile-home-container p:last-of-type {
+  margin: 1rem 0;
+}
+.profile-container > .profile-section .profile-home-container a {
+  color: var(--white);
+  transition: 0.3s;
+  background: var(--white-shadow);
+  padding: 0.5rem;
+}
+.profile-container > .profile-section .profile-home-container a:hover, .profile-container > .profile-section .profile-home-container a:focus {
+  transition: 0.3s;
+  color: var(--secondary-brown);
 }
 .profile-container > .profile-section .profile-account-info-container {
   margin: 0 auto;
