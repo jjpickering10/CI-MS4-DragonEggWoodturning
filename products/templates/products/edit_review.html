@@ -10,12 +10,16 @@
 {% endblock %}
 
 {% block content %}
-<div>
-    <h5>Editing review for - {{ review.product }}</h5>
+<div class="edit-blog-container">
+    <h2>Editing review for:
+      <span>product: {{ review.product }} *</span>
+      <span>by: {{ review.user }}</span>
+      <span>date: {{ review.date }}</span>
+    </h2>
     <form action="{% url 'edit_review' review.id %}" method="POST">
         {% csrf_token %}
         {{ review_form }}
-        <button type="submit">Edit Review</button>
+        <button class="global-button" type="submit">Edit Review</button>
     </form>
 </div>
 {% endblock %}

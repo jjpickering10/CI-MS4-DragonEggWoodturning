@@ -160,6 +160,16 @@ body main {
   font-weight: 500;
   color: var(--primary-orange);
 }
+.header-about-section .header-about-info p a {
+  padding: 0.5rem 1rem;
+  background: var(--white);
+  color: var(--primary-brown);
+  transition: 0.5s;
+}
+.header-about-section .header-about-info p a:hover, .header-about-section .header-about-info p a:focus {
+  background: var(--secondary-brown);
+  transition: 0.5s;
+}
 .header-about-section .header-about-info i::before {
   color: var(--primary-brown);
 }
@@ -2185,6 +2195,66 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .blog-post-container .blog-post-comments .blog-comment-section a {
   margin-right: 1rem;
+}
+
+.edit-blog-container {
+  background: var(--primary-brown);
+  color: var(--white);
+}
+.edit-blog-container h2 {
+  font-weight: 200;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5rem 0 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.edit-blog-container h2::after {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2%;
+  width: 25%;
+  background: linear-gradient(45deg, var(--primary-orange), var(--white));
+}
+.edit-blog-container h2 span {
+  font-size: 1rem;
+  font-weight: 100;
+}
+.edit-blog-container form {
+  margin-bottom: 5rem;
+  padding: 2rem 10vw 5rem 10vw;
+}
+.edit-blog-container form input[type=text]:not(.browser-default), .edit-blog-container form textarea,
+.edit-blog-container form input[type=number]:not(.browser-default) {
+  border: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: var(--primary-cream);
+  height: auto;
+}
+.edit-blog-container form .select-wrapper {
+  width: 50%;
+}
+.edit-blog-container form .select-wrapper .caret {
+  fill: var(--primary-brown);
+  z-index: 1;
+}
+.edit-blog-container form .global-button {
+  margin: 0;
+}
+.edit-blog-container form label {
+  position: initial;
+}
+.edit-blog-container form input[type=file] {
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .add_product_image_container {

@@ -187,6 +187,16 @@ body {
                 font-weight: 500;
                 color: var(--primary-orange);
             }
+            a {
+                padding: 0.5rem 1rem;
+                background: var(--white);
+                color: var(--primary-brown);
+                transition: 0.5s;
+                &:hover, &:focus {
+                    background: var(--secondary-brown);
+                    transition: 0.5s;
+                }
+            }
         }
 
         i {
@@ -205,6 +215,8 @@ body {
         z-index: -1;
     }
 }
+
+// Home section
 
 .home-about {
     display: grid;
@@ -2820,6 +2832,67 @@ nav {
             a {
                 margin-right: 1rem;
             }
+        }
+    }
+}
+
+.edit-blog-container {
+    background: var(--primary-brown);
+    color: var(--white);
+    h2 {
+        font-weight: 200;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 5rem 0 0 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2%;
+            width: 25%;
+            background: linear-gradient(45deg, var(--primary-orange), var(--white));
+
+        }
+        span {
+            font-size: 1rem;
+            font-weight: 100;
+        }
+    }
+    form {
+        margin-bottom: 5rem;
+        padding: 2rem 10vw 5rem 10vw;
+        input[type=text]:not(.browser-default), textarea,
+        input[type=number]:not(.browser-default) {
+            // border: 1px solid var(--white);
+            border: none;
+            padding: 1rem;
+            box-sizing: border-box;
+            background: var(--primary-cream);
+            height: auto;
+        }
+        .select-wrapper {
+            width: 50%;
+
+            .caret {
+                fill: var(--primary-brown);
+                z-index: 1;
+            }
+        }
+        .global-button {
+            margin: 0;
+        }
+        label {
+            position: initial;
+        }
+        input[type=file] {
+            width: 100%;
+            padding: 1rem 0;
         }
     }
 }

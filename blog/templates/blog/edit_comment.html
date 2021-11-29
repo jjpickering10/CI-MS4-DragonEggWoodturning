@@ -10,14 +10,17 @@
 
 {% block content %}
 
-<div>
-    <p>{{ comment.user }}</p>
-    <p>{{ comment.date }}</p>
-    <p>{{ comment.post }}</p>
+<div class="edit-blog-container">
+  <h2>Editing comment:
+    <span>post: {{ comment.post }}</span>
+    <span>by: {{ comment.user }}</span>
+    <span>date: {{ comment.date }}</span>
+  </h2>
+
     <form action="{% url 'edit_comment' comment.id %}" method="POST">
         {% csrf_token %}
         {{ comment_form }}
-        <button type="submit">Edit Comment</button>
+        <button class="global-button" type="submit">Edit Comment</button>
     </form>
 </div>
 {% endblock %}

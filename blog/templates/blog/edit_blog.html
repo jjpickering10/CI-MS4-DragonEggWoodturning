@@ -5,17 +5,19 @@
 {% endblock %}
 
 {% block page_header_paragraph %}
-  Blog <i class="fas fa-caret-right"></i> <span>Edit Blog</span>
+  Blog <i class="fas fa-caret-right"></i> <span>Edit Post: {{ post.title }}</span>
 {% endblock %}
 
 {% block content %}
 
-<div>
+<div class="edit-blog-container">
+
+  <h2>Editing post:<span>* {{ post.title }} *</span></h2>
 
     <form action="{% url 'edit_blog' post.id %}" method="POST">
         {% csrf_token %}
         {{ blog_form }}
-        <button type="submit">Edit Post</button>
+        <button class="global-button" type="submit">Edit Post</button>
     </form>
 </div>
 {% endblock %}

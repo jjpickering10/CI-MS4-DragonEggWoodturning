@@ -10,11 +10,12 @@
 
 {% block content %}
 
-<div>
+<div class="edit-blog-container">
+  <h2>Add a new blog post:</h2>
     <form action="{% url 'add_blog' %}" method="POST">
         {% csrf_token %}
         {{ blog_form }}
-        <button type="submit">Add Blog</button>
+        <button class="global-button" type="submit">Add Blog</button>
     </form>
 </div>
 {% endblock %}
