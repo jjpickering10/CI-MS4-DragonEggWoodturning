@@ -1833,7 +1833,7 @@ nav ul a:hover, nav ul a:focus {
   width: 80%;
 }
 .blog-container a {
-  color: var(--primary-brown);
+  color: var(--white);
   transition: 0.5s;
 }
 .blog-container a:hover, .blog-container a:focus {
@@ -1845,9 +1845,10 @@ nav ul a:hover, nav ul a:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--white);
+  background: var(--primary-brown);
   box-shadow: 0px 0px 5px 0 var(--primary-brown-shadow);
   margin: 0 auto;
+  border-radius: 5rem 0;
 }
 .blog-container .blog-card .blog-image {
   height: 250px;
@@ -1869,23 +1870,32 @@ nav ul a:hover, nav ul a:focus {
   flex: 1 0 auto;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: var(--secondary-brown);
-}
-.blog-container .blog-card .blog-content .blog-title {
-  padding-top: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  background: var(--primary-brown);
+  border-radius: 5rem 0;
 }
 .blog-container .blog-card .blog-content .blog-title h3 {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary-brown);
+  font-weight: 300;
   margin: 0 0 1rem 0;
   text-align: center;
+  position: relative;
+}
+.blog-container .blog-card .blog-content .blog-title h3::after {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  width: 25%;
+  transform: translateX(-50%);
+  height: 2px;
+  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
 }
 .blog-container .blog-card .blog-content .blog-title p {
   font-size: 0.7rem;
   text-align: center;
   margin: 0.25rem 0;
+  font-weight: 200;
 }
 .blog-container .blog-card .blog-content .blog-title p i::before {
   color: var(--primary-orange);
@@ -1900,9 +1910,11 @@ nav ul a:hover, nav ul a:focus {
   font-size: 0.75rem;
   margin: 0;
   font-weight: 200;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--secondary-brown);
 }
 .blog-container .blog-card .blog-content .blog-author .blog-date h4 {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .blog-container .blog-card .blog-content .blog-body {
   text-align: center;
@@ -1985,9 +1997,12 @@ nav ul a:hover, nav ul a:focus {
   margin-bottom: 2rem;
 }
 .blog-post-container .blog-post-comments .blog-comment-section h2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 .blog-post-container .blog-post-comments .blog-comment-section h2 span {
   font-size: 0.6rem;
@@ -1996,10 +2011,12 @@ nav ul a:hover, nav ul a:focus {
 .blog-post-container .blog-post-comments .blog-comment-section h2 i::before {
   color: var(--primary-orange);
 }
-.blog-post-container .blog-post-comments .blog-comment-section p {
-  font-size: 1rem;
+.blog-post-container .blog-post-comments .blog-comment-section blockquote {
+  font-size: 1.25rem;
   font-weight: 200;
   margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-left: 1px solid var(--secondary-brown);
 }
 .blog-post-container .blog-post-comments .blog-comment-section a {
   margin-right: 1rem;

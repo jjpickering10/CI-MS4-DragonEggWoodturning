@@ -64,7 +64,7 @@
             {% for comment in post.comment_set.all %}
             <div class="blog-comment-section">
                 <h2><i class="fas fa-user"></i> {{ comment.user }} <span>posted on: {{ comment.date }}</span></h2>
-                <p>{{ comment.body }}</p>
+                <blockquote>{{ comment.body }}</blockquote>
                 {% if request.user == comment.user %}
                     <div class="blog-post-comment-edit">
                         <a href="{% url 'edit_comment' comment.id %}">Edit</a>
