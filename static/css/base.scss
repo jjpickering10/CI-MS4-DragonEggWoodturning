@@ -2089,7 +2089,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     min-height: 50vh;
-    background: linear-gradient(-135deg, var(--primary-cream)50%, var(--white)0%);
+    // background: linear-gradient(-135deg, var(--primary-cream)50%, var(--white)0%);
     margin-bottom: 5rem;
 
     > .profile-nav {
@@ -2144,6 +2144,9 @@ nav {
     > .profile-section {
         flex: 1 1 60%;
         padding: 3rem;
+        background: var(--primary-brown);
+        color: var(--white);
+        border-radius: 0 0 0 5rem;
 
         > * {
             padding: 3rem;
@@ -2186,7 +2189,7 @@ nav {
         .profile-account-info-container {
             max-width: 600px;
             margin: 0 auto;
-            background: var(--primary-cream);
+            // background: var(--primary-cream);
             box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
 
             form {
@@ -2208,8 +2211,13 @@ nav {
                     }
                     label {
                         font-size: 0.7em;
-                        color: var(--primary-brown);
+                        // color: var(--primary-brown);
                         font-weight: 300;
+                    }
+                    .select-wrapper {
+                        .caret {
+                            z-index: 1;
+                        }
                     }
                 }
             }
@@ -2277,8 +2285,24 @@ nav {
         .profile-orders-container {
             max-height: 100vh;
             overflow-y: scroll;
-            box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
-            background: var(--primary-brown-shadow);
+            // box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+            // background: var(--primary-brown-shadow);
+            .bag-table {
+                background: none;
+
+                table {
+                    thead {
+                        tr {
+                            color: var(--primary-brown);
+                        }
+                    }
+                    tbody {
+                        tr {
+                            border-bottom-color: var(--white);
+                        }
+                    }
+                }
+            }
         }
         .profile-admin-discount-container {
             // box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
