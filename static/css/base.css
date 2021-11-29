@@ -1689,15 +1689,15 @@ nav ul a:hover, nav ul a:focus {
   margin-right: 0.5rem;
 }
 .profile-container > .profile-section .profile-account-info-container {
-  max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
 }
 .profile-container > .profile-section .profile-account-info-container form fieldset {
   border: none;
+  padding: 0;
 }
 .profile-container > .profile-section .profile-account-info-container form fieldset input[type=text]:not(.browser-default), .profile-container > .profile-section .profile-account-info-container form fieldset input[type=email]:not(.browser-default) {
-  background-color: #ded3cc;
+  background-color: var(--primary-cream);
   border-radius: 2px;
   border: none;
   padding: 0 0.5rem;
@@ -1714,29 +1714,50 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section .profile-account-info-container form fieldset .select-wrapper .caret {
   z-index: 1;
 }
-.profile-container > .profile-section .profile-review-container {
+.profile-container > .profile-section .profile-account-info-container form .global-button {
+  margin: 1rem 0;
+}
+.profile-container > .profile-section .profile-review-container,
+.profile-container > .profile-section .profile-orders-container {
   max-height: 100vh;
   overflow-y: scroll;
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
   background: var(--primary-brown-shadow);
 }
-.profile-container > .profile-section .profile-review-container table {
-  background: var(--secondary-brown);
+.profile-container > .profile-section .profile-review-container table,
+.profile-container > .profile-section .profile-orders-container table {
+  background: var(--primary-cream);
 }
-.profile-container > .profile-section .profile-review-container table thead tr {
+.profile-container > .profile-section .profile-review-container table thead tr,
+.profile-container > .profile-section .profile-orders-container table thead tr {
   color: var(--primary-brown);
 }
-.profile-container > .profile-section .profile-review-container table thead th {
+.profile-container > .profile-section .profile-review-container table thead th,
+.profile-container > .profile-section .profile-orders-container table thead th {
   border-radius: 0;
 }
-.profile-container > .profile-section .profile-review-container table tbody {
+.profile-container > .profile-section .profile-review-container table tbody,
+.profile-container > .profile-section .profile-orders-container table tbody {
   background: var(--primary-brown);
 }
-.profile-container > .profile-section .profile-review-container table tbody td {
+.profile-container > .profile-section .profile-review-container table tbody td,
+.profile-container > .profile-section .profile-orders-container table tbody td {
   border-radius: 0;
 }
-.profile-container > .profile-section .profile-review-container table tbody td.product-review-rating i::before {
+.profile-container > .profile-section .profile-review-container table tbody td.product-review-rating i::before,
+.profile-container > .profile-section .profile-orders-container table tbody td.product-review-rating i::before {
   color: var(--primary-orange);
+}
+.profile-container > .profile-section .profile-review-container table a,
+.profile-container > .profile-section .profile-orders-container table a {
+  color: var(--white);
+  transition: 0.3s;
+}
+.profile-container > .profile-section .profile-review-container table a:hover, .profile-container > .profile-section .profile-review-container table a:focus,
+.profile-container > .profile-section .profile-orders-container table a:hover,
+.profile-container > .profile-section .profile-orders-container table a:focus {
+  color: var(--secondary-brown);
+  transition: 0.3s;
 }
 .profile-container > .profile-section .profile-admin-newsletter-container {
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
@@ -1756,36 +1777,28 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section .profile-admin-newsletter-container .global-button {
   margin: 0;
 }
-.profile-container > .profile-section .profile-orders-container {
-  max-height: 100vh;
-  overflow-y: scroll;
-}
-.profile-container > .profile-section .profile-orders-container .bag-container {
-  display: block;
-}
-.profile-container > .profile-section .profile-orders-container .bag-table {
-  background: none;
-  padding: 0;
-  margin: 0;
-}
-.profile-container > .profile-section .profile-orders-container .bag-table table thead tr {
-  color: var(--primary-brown);
-}
-.profile-container > .profile-section .profile-orders-container .bag-table table tbody tr {
-  border-bottom-color: rgba(0, 0, 0, 0.12);
-}
 .profile-container > .profile-section .profile-admin-discount-container .category-content {
   margin: 2rem 0;
-  box-shadow: -3px 0 0 0 var(--white-shadow);
   padding: 1rem;
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content h5 {
   margin: 0;
   font-weight: 300;
+  letter-spacing: 1px;
+  position: relative;
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content h5 span {
   font-weight: 600;
   color: var(--primary-orange);
+}
+.profile-container > .profile-section .profile-admin-discount-container .category-content h5::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  width: 25%;
+  height: 2px;
+  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content form {
   margin-top: 2rem;
@@ -1794,7 +1807,7 @@ nav ul a:hover, nav ul a:focus {
   border: none;
   padding: 1rem;
   box-sizing: border-box;
-  background: var(--white-shadow);
+  background: var(--primary-cream);
 }
 .profile-container > .profile-section .profile-admin-discount-container .select-wrapper {
   width: 50%;
@@ -1805,6 +1818,91 @@ nav ul a:hover, nav ul a:focus {
 }
 .profile-container > .profile-section .profile-admin-discount-container .global-button {
   margin: 0;
+}
+.profile-container > .profile-section .profile-admin-blog-container table,
+.profile-container > .profile-section .profile-admin-products-container table {
+  background: var(--primary-cream);
+}
+.profile-container > .profile-section .profile-admin-blog-container table thead,
+.profile-container > .profile-section .profile-admin-products-container table thead {
+  color: var(--primary-brown);
+}
+.profile-container > .profile-section .profile-admin-blog-container table tbody,
+.profile-container > .profile-section .profile-admin-products-container table tbody {
+  background: var(--primary-brown);
+}
+.profile-container > .profile-section .profile-admin-blog-container table th, .profile-container > .profile-section .profile-admin-blog-container table td,
+.profile-container > .profile-section .profile-admin-products-container table th,
+.profile-container > .profile-section .profile-admin-products-container table td {
+  border-radius: 0;
+}
+.profile-container > .profile-section .profile-admin-blog-container table a,
+.profile-container > .profile-section .profile-admin-products-container table a {
+  color: var(--white);
+  transition: 0.3s;
+}
+.profile-container > .profile-section .profile-admin-blog-container table a:hover, .profile-container > .profile-section .profile-admin-blog-container table a:focus,
+.profile-container > .profile-section .profile-admin-products-container table a:hover,
+.profile-container > .profile-section .profile-admin-products-container table a:focus {
+  color: var(--secondary-brown);
+  transition: 0.3s;
+}
+.profile-container > .profile-section .profile-admin-blog-container h2,
+.profile-container > .profile-section .profile-admin-products-container h2 {
+  font-weight: 100;
+  letter-spacing: 1px;
+  position: relative;
+}
+.profile-container > .profile-section .profile-admin-blog-container h2::before,
+.profile-container > .profile-section .profile-admin-products-container h2::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  width: 25%;
+  height: 2px;
+  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+}
+.profile-container > .profile-section .profile-admin-blog-container h3,
+.profile-container > .profile-section .profile-admin-products-container h3 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.profile-container > .profile-section .profile-admin-blog-container form,
+.profile-container > .profile-section .profile-admin-products-container form {
+  margin-bottom: 5rem;
+}
+.profile-container > .profile-section .profile-admin-blog-container form input[type=text]:not(.browser-default), .profile-container > .profile-section .profile-admin-blog-container form textarea,
+.profile-container > .profile-section .profile-admin-blog-container form input[type=number]:not(.browser-default),
+.profile-container > .profile-section .profile-admin-products-container form input[type=text]:not(.browser-default),
+.profile-container > .profile-section .profile-admin-products-container form textarea,
+.profile-container > .profile-section .profile-admin-products-container form input[type=number]:not(.browser-default) {
+  border: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: var(--primary-cream);
+}
+.profile-container > .profile-section .profile-admin-blog-container form .select-wrapper,
+.profile-container > .profile-section .profile-admin-products-container form .select-wrapper {
+  width: 50%;
+}
+.profile-container > .profile-section .profile-admin-blog-container form .select-wrapper .caret,
+.profile-container > .profile-section .profile-admin-products-container form .select-wrapper .caret {
+  fill: var(--primary-brown);
+  z-index: 1;
+}
+.profile-container > .profile-section .profile-admin-blog-container form .global-button,
+.profile-container > .profile-section .profile-admin-products-container form .global-button {
+  margin: 0;
+}
+.profile-container > .profile-section .profile-admin-blog-container form label,
+.profile-container > .profile-section .profile-admin-products-container form label {
+  position: initial;
+}
+.profile-container > .profile-section .profile-admin-blog-container form input[type=file],
+.profile-container > .profile-section .profile-admin-products-container form input[type=file] {
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .blog-page-title {

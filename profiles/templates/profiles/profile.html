@@ -76,8 +76,8 @@
         </form>
       </div>
       <div data-link='orders' class="profile-orders-container profile-segment hide">
-        <div class="bag-container">
-          <div class="bag-table">
+        <div>
+          <div>
               <table>
                 <thead>
                   <tr>
@@ -119,8 +119,7 @@
           {% for review in reviews %}
           <tbody>
             <tr>
-              <td>{{ review.product.name }}
-              </td>
+              <td><a href="{% url 'product_detail' review.product.id %}">{{ review.product.name }}</a></td>
               <td>{{ review.date }}</td>
               <td class="product-review-rating">{{ review.rating }} <i class="fas fa-star"></i></td>
               <td><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a></td>
@@ -155,15 +154,14 @@
           </div>
         {% endfor %}
       </div>
-      <div data-link='products' class="profile-admin-discount-container profile-segment hide">
+      <div data-link='products' class="profile-admin-products-container profile-segment hide">
         <h2>Add New Product</h2>
         <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {{ product_form }}
           {{ image_form }}
-          <button type="submit">Add Product</button>
+          <button class="global-button" type="submit">Add Product</button>
         </form>
-        <hr>
         <h2>Current Products</h2>
         {% for category in categories %}
           <h3>{{ category.friendly_name }}({{ category.product_set.all|length }})</h3>
@@ -178,9 +176,9 @@
         <tbody>
           <tr>
             <td><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></td>
-            <td><a href="{% url 'edit_product' product.id %}">Edit</a></td>
-            <td><a href="{% url 'edit_product_images' product.id %}">Edit Images</a></td>
-            <td><a href="{% url 'delete_product' product.id %}">Delete</a></td>
+            <td><a href="{% url 'edit_product' product.id %}">Edit <i class="far fa-edit"></i></a></td>
+            <td><a href="{% url 'edit_product_images' product.id %}">Edit Images <i class="far fa-edit"></i></a></td>
+            <td><a href="{% url 'delete_product' product.id %}">Delete <i class="fas fa-trash"></i></a></td>
           </tr>
         </tbody>
         {% endfor %}
@@ -188,14 +186,13 @@
         </table>
         {% endfor %}
       </div>
-      <div data-link='blog' class="profile-admin-discount-container profile-segment hide">
+      <div data-link='blog' class="profile-admin-blog-container profile-segment hide">
         <h2>Add New Blog</h2>
         <form action="{% url 'add_blog' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {{ blog_form }}
-          <button type="submit">Add Blog</button>
+          <button class="global-button" type="submit">Add Blog</button>
         </form>
-        <hr>
         <h2>Current Blogs</h2>
         <table>
           <thead>
@@ -211,8 +208,8 @@
           <tr>
             <td><a href="{% url 'blog_post' blog.id %}">{{ blog.title }}</a></td>
             <td>{{ blog.date }}</td>
-            <td><a href="{% url 'edit_blog' blog.id %}">Edit</a></td>
-            <td><a href="{% url 'delete_blog' blog.id %}">Delete</a></td>
+            <td><a href="{% url 'edit_blog' blog.id %}">Edit <i class="far fa-edit"></i></a></td>
+            <td><a href="{% url 'delete_blog' blog.id %}">Delete <i class="fas fa-trash"></i></a></td>
           </tr>
         </tbody>
         {% endfor %}
