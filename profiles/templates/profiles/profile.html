@@ -31,7 +31,7 @@
     </div>
     <div class="profile-section">
       <div data-link='home' class="profile-home-container profile-segment">
-        <h2>Hello, <span>{{ profile.user }}</span></h2>
+        <h2 class="profile-section-header">Hello, <span>{{ profile.user }}</span></h2>
         {% if profile.user.date_joined %}
         <p><i class="fas fa-calendar-check"></i> Member since {{ profile.user.date_joined }}</p>
         {% endif %}
@@ -43,6 +43,7 @@
         {% endif %}
       </div>
       <div data-link='account' class="profile-account-info-container profile-segment hide">
+        <h2 class="profile-section-header">Your account details:</h2>
         <form action="{% url 'profile' %}" method="POST" id="profile-form">
           {% csrf_token %}
           <!-- Used help to get for attribute after Django removed it after adding fieldsets in -  https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template -->
@@ -79,38 +80,35 @@
         </form>
       </div>
       <div data-link='orders' class="profile-orders-container profile-segment hide">
-        <div>
-          <div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Order No.</th>
-                    <th>Date</th>
-                    <th>Items</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-          
-                {% for order in orders %}
-                <tbody>
-                  <tr>
-                    <td class="product-td"><a href="{% url 'checkout_success' order.order_number %}">{{ order.order_number|truncatechars:5 }}</a></td>
-                    <td>{{ order.date }}</td>
-                    <td>
-                      {% for item in order.lineitems.all %}
-                      <p>{{ item.product.name}} x {{ item.quantity }}</p>
-                      {% endfor %}
-                    </td>
-                    <td>£{{ order.grand_total }}</td>
-                  </tr>
-                </tbody>
+        <h2 class="profile-section-header">Your order history details:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Order No.</th>
+              <th>Date</th>
+              <th>Items</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+    
+          {% for order in orders %}
+          <tbody>
+            <tr>
+              <td class="product-td"><a href="{% url 'checkout_success' order.order_number %}">{{ order.order_number|truncatechars:5 }}</a></td>
+              <td>{{ order.date }}</td>
+              <td>
+                {% for item in order.lineitems.all %}
+                <p>{{ item.product.name}} x {{ item.quantity }}</p>
                 {% endfor %}
-                
-              </table>
-          </div>
-        </div>
+              </td>
+              <td>£{{ order.grand_total }}</td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
       </div>
       <div data-link='reviews' class="profile-review-container profile-segment hide">
+        <h2 class="profile-section-header">Your review history details:</h2>
         <table>
           <thead>
             <tr>
@@ -135,6 +133,7 @@
       </div>
       {% if request.user.is_superuser %}
       <div data-link='newsletter' class="profile-admin-newsletter-container profile-segment hide">
+        <h2 class="profile-section-header">Send newsletter to subscribers:</h2>
         <form action="{% url 'send_newsletter' %}" method="POST">
           {% csrf_token %}
           {{ newsletter_form }}
@@ -142,6 +141,7 @@
         </form>
       </div>
       <div data-link='discount' class="profile-admin-discount-container profile-segment hide">
+        <h2 class="profile-section-header">Add discount to categories:</h2>
         {% for category in categories %}
           <div class="category-content">
             <h5>{{ category.friendly_name }}
@@ -158,16 +158,17 @@
         {% endfor %}
       </div>
       <div data-link='products' class="profile-admin-products-container profile-segment hide">
-        <h2>Add New Product</h2>
+        <h2 class="profile-section-header">Add/edit/delete current products:</h2>
+        <h3>Add New Product</h3>
         <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {{ product_form }}
           {{ image_form }}
           <button class="global-button" type="submit">Add Product</button>
         </form>
-        <h2>Current Products</h2>
+        <h3>Current Products</h3>
         {% for category in categories %}
-          <h3>{{ category.friendly_name }}({{ category.product_set.all|length }})</h3>
+          <h4>{{ category.friendly_name }}({{ category.product_set.all|length }})</h4>
         <table>
         <thead>
           <tr>
@@ -190,13 +191,14 @@
         {% endfor %}
       </div>
       <div data-link='blog' class="profile-admin-blog-container profile-segment hide">
-        <h2>Add New Blog</h2>
+        <h2 class="profile-section-header">Add/edit/delete current blogs:</h2>
+        <h3>Add New Blog</h3>
         <form action="{% url 'add_blog' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {{ blog_form }}
           <button class="global-button" type="submit">Add Blog</button>
         </form>
-        <h2>Current Blogs</h2>
+        <h3>Current Blogs</h3>
         <table>
           <thead>
             <tr>

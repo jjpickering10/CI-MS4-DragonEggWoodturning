@@ -361,9 +361,12 @@ body main {
 }
 .home-container #home-landing {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-areas: "title" "image";
+  grid-auto-columns: 1fr;
+  gap: 5rem;
 }
 .home-container #home-landing .home-landing-title {
+  grid-area: title;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -422,6 +425,7 @@ body main {
   transition: 0.5s;
 }
 .home-container #home-landing .home-landing-image {
+  grid-area: image;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -431,6 +435,12 @@ body main {
   width: 90%;
   box-shadow: 10px 10px 10px 0px var(--primary-brown-shadow);
   border-radius: 10rem 0;
+}
+@media screen and (min-width: 992px) {
+  .home-container #home-landing {
+    grid-template-areas: "title image";
+    gap: 0;
+  }
 }
 .home-container #home-blog {
   display: grid;
@@ -572,9 +582,21 @@ nav ul a {
   text-transform: lowercase;
   font-weight: 300;
   letter-spacing: 1px;
+  transition: 0.5s;
 }
 nav ul a:hover, nav ul a:focus {
   background: var(--secondary-brown);
+  color: var(--primary-brown);
+  transition: 0.5s;
+}
+nav ul .shop-now-link a {
+  background: var(--primary-orange);
+  color: var(--primary-brown);
+  font-weight: 400;
+}
+nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
+  background: var(--white-shadow);
+  transition: 0.5s;
 }
 
 .about-page-container .about-landing {
@@ -724,23 +746,48 @@ nav ul a:hover, nav ul a:focus {
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
-  width: 50%;
+  width: 100%;
   margin: 5rem auto;
+  position: relative;
+  overflow: hidden;
+}
+#home-products::before {
+  position: absolute;
+  top: 0;
+  left: -90%;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--primary-brown-shadow);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+#home-products::after {
+  position: absolute;
+  top: 0;
+  right: -90%;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--primary-brown-shadow);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
 }
 #home-products > h2 {
   text-transform: uppercase;
   font-weight: 100;
-  margin: 3rem 0;
 }
 #home-products .category-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
   width: 100%;
-  padding: 0 5rem;
+  padding: 5rem 10vw;
 }
 #home-products .category-container .category-card {
-  width: 200px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -789,7 +836,7 @@ nav ul a:hover, nav ul a:focus {
   overflow: hidden;
 }
 #home-products .category-container .category-card a .category-card-image img {
-  width: 200px;
+  width: 300px;
   height: 200px;
   position: absolute;
   top: 0;
@@ -1661,18 +1708,16 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section > * {
   padding: 3rem;
 }
-.profile-container > .profile-section .profile-home-container {
-  position: relative;
-}
-.profile-container > .profile-section .profile-home-container h2 {
+.profile-container > .profile-section .profile-section-header {
   font-weight: 200;
   position: relative;
   margin: 0 0 2rem 0;
+  font-size: 2rem;
 }
-.profile-container > .profile-section .profile-home-container h2 span {
+.profile-container > .profile-section .profile-section-header span {
   font-weight: 400;
 }
-.profile-container > .profile-section .profile-home-container h2::after {
+.profile-container > .profile-section .profile-section-header::after {
   content: "";
   position: absolute;
   bottom: -1rem;
@@ -1680,6 +1725,9 @@ nav ul a:hover, nav ul a:focus {
   height: 5%;
   width: 50%;
   background: linear-gradient(45deg, var(--primary-orange), var(--white));
+}
+.profile-container > .profile-section .profile-home-container {
+  position: relative;
 }
 .profile-container > .profile-section .profile-home-container p, .profile-container > .profile-section .profile-home-container a {
   font-size: 0.85rem;
@@ -1696,7 +1744,7 @@ nav ul a:hover, nav ul a:focus {
   color: var(--white);
   transition: 0.3s;
   background: var(--white-shadow);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 .profile-container > .profile-section .profile-home-container a:hover, .profile-container > .profile-section .profile-home-container a:focus {
   transition: 0.3s;
@@ -1757,6 +1805,7 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section .profile-review-container table tbody td,
 .profile-container > .profile-section .profile-orders-container table tbody td {
   border-radius: 0;
+  font-weight: 100;
 }
 .profile-container > .profile-section .profile-review-container table tbody td.product-review-rating i::before,
 .profile-container > .profile-section .profile-orders-container table tbody td.product-review-rating i::before {
@@ -1766,6 +1815,7 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section .profile-orders-container table a {
   color: var(--white);
   transition: 0.3s;
+  font-weight: 100;
 }
 .profile-container > .profile-section .profile-review-container table a:hover, .profile-container > .profile-section .profile-review-container table a:focus,
 .profile-container > .profile-section .profile-orders-container table a:hover,
@@ -1792,30 +1842,23 @@ nav ul a:hover, nav ul a:focus {
   margin: 0;
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content {
-  margin: 2rem 0;
-  padding: 1rem;
+  margin: 3rem 0;
+  padding: 1rem 0;
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content h5 {
   margin: 0;
   font-weight: 300;
   letter-spacing: 1px;
   position: relative;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 .profile-container > .profile-section .profile-admin-discount-container .category-content h5 span {
   font-weight: 600;
   color: var(--primary-orange);
 }
-.profile-container > .profile-section .profile-admin-discount-container .category-content h5::before {
-  content: "";
-  position: absolute;
-  top: -0.5rem;
-  left: 0;
-  width: 25%;
-  height: 2px;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
-}
 .profile-container > .profile-section .profile-admin-discount-container .category-content form {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .profile-container > .profile-section .profile-admin-discount-container input[type=text]:not(.browser-default) {
   border: none;
@@ -1850,10 +1893,15 @@ nav ul a:hover, nav ul a:focus {
 .profile-container > .profile-section .profile-admin-products-container table td {
   border-radius: 0;
 }
+.profile-container > .profile-section .profile-admin-blog-container table td,
+.profile-container > .profile-section .profile-admin-products-container table td {
+  font-weight: 100;
+}
 .profile-container > .profile-section .profile-admin-blog-container table a,
 .profile-container > .profile-section .profile-admin-products-container table a {
   color: var(--white);
   transition: 0.3s;
+  font-weight: 100;
 }
 .profile-container > .profile-section .profile-admin-blog-container table a:hover, .profile-container > .profile-section .profile-admin-blog-container table a:focus,
 .profile-container > .profile-section .profile-admin-products-container table a:hover,
@@ -1861,26 +1909,24 @@ nav ul a:hover, nav ul a:focus {
   color: var(--secondary-brown);
   transition: 0.3s;
 }
-.profile-container > .profile-section .profile-admin-blog-container h2,
-.profile-container > .profile-section .profile-admin-products-container h2 {
+.profile-container > .profile-section .profile-admin-blog-container h3,
+.profile-container > .profile-section .profile-admin-products-container h3 {
   font-weight: 100;
   letter-spacing: 1px;
   position: relative;
-}
-.profile-container > .profile-section .profile-admin-blog-container h2::before,
-.profile-container > .profile-section .profile-admin-products-container h2::before {
-  content: "";
-  position: absolute;
-  top: -0.5rem;
-  left: 0;
-  width: 25%;
-  height: 2px;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
-}
-.profile-container > .profile-section .profile-admin-blog-container h3,
-.profile-container > .profile-section .profile-admin-products-container h3 {
-  font-weight: 300;
   font-size: 1.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: var(--white-shadow);
+  padding: 1rem;
+  margin-top: 5rem;
+}
+.profile-container > .profile-section .profile-admin-blog-container h4,
+.profile-container > .profile-section .profile-admin-products-container h4 {
+  font-weight: 300;
+  font-size: 1.3rem;
+  margin-top: 3rem;
 }
 .profile-container > .profile-section .profile-admin-blog-container form,
 .profile-container > .profile-section .profile-admin-products-container form {
