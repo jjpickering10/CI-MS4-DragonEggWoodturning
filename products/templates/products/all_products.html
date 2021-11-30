@@ -9,6 +9,22 @@
   <span class="product-heading-title"></span>
 {% endblock %}
 
+{% block search_section %}
+<section id="wood-filter-side-filter">
+  <div id="slide-out" class="sidenav">
+      <div class="background">
+        <img src="{{ MEDIA_URL }}wood-type-1.PNG">
+      </div>
+      <div>
+        <h4>Wood Type</h4>
+        {% for wood in wood_types %}
+        <p class="wood-type-link"><a href="{% url 'all_products' %}?wood={{ wood.id }}"><i class="far fa-square"></i>{{ wood.friendly_name }}</p></a>
+        {% endfor %}
+      </div>
+  </div>
+</section>
+{% endblock %}
+
 {% block content %}
 <!-- Search functionality -->
 <section class="search-section">
@@ -24,19 +40,7 @@
 
 <button data-target="slide-out" class="sidenav-trigger filter-wood"><i class="fas fa-filter"></i>Filter by Wood Type</button>
 
-<section id="wood-filter-side-filter">
-  <div id="slide-out" class="sidenav">
-      <div class="background">
-        <img src="{{ MEDIA_URL }}wood-type-1.PNG">
-      </div>
-      <div>
-        <h4>Wood Type</h4>
-        {% for wood in wood_types %}
-        <p class="wood-type-link"><a href="{% url 'all_products' %}?wood={{ wood.id }}"><i class="far fa-square"></i>{{ wood.friendly_name }}</p></a>
-        {% endfor %}
-      </div>
-  </div>
-</section>
+
 
 <div class="products-amount">
   <div class="products-location">
@@ -127,6 +131,7 @@
 {% endblock %}
 
 {% block extra_js %}
+{{ block.super }}
 <script>
  const categories = document.querySelectorAll('.category-names')
  const label = document.querySelectorAll('.product-label')

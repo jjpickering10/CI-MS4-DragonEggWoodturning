@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .to(documentElementsGsap[0], {
       opacity: 1,
       y: '0',
+      // translateY: ('-100%'),
       ease: "power1.out"
       
     }, '-=1')
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     timeline.to(documentElementsGsap[1], {
       opacity: 1,
       x: '0',
+      // translateX: ('-100%'),
       ease: "bounce.out",
       onComplete: postLoad
     })
@@ -116,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function postLoad() {
     document.body.classList.remove('post-load')
+    document.querySelector('.loading').style.display = 'none'
       // Scroll animations
     console.log(categoriesGsap);
     if (categoryHeaderGsap) {
