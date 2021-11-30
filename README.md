@@ -151,6 +151,8 @@ Typography:
 
 Animations:
 
+[GSAP](https://greensock.com/) animations throughout site for enjoyable UX experience. Primarily on landing page and as you scroll.
+
 Design: 
 
 
@@ -158,17 +160,66 @@ Design:
 
 ## Features
 
-- Home page
+- Landing page
+- - Distinct image and highlighted section letting the user now exactly what the site is about
+- - Call to action buttons
+- - Scrolling down, category selection grid
+- - Scrolling down, review section
+- - Scrolling down, 4 image display of wood with mouse move event listener to move images
+- - Scrolling down, information about the making of walking sticks
+- - Scrolling down, call to action to read more.
+- - Scrolling down, newsletter section where people can sign up to the newsletter. If they subscribe, they are sent a welcome email with an unsubscribe link attached.
+
 - About page
+- - Grid layout detailing the use of wood in making of the products
+- - Continued use of base structure as you scroll down.
+
 - Contact page
-- Products page
-- Products category page
-- Individual products page
-- Profile page
-- Shopping cart page
-- Checkout page
+- - ****
+
 - Blog page
-- Admin page
+- - Grid layout of current blogs, detailing title, amount of comments, amount of likes, date posted and a snippet of the blog.
+- - Links to individual blog post where the full post is displayed.
+- - Full blog page displays comments and a liked thumb.
+- - Has a search feature to search blogs.
+- - Logged in users can like and unlike a post. Which is displayed filling out the thumb icon if they have liked it.
+- - Logged in users can comment on a post. They can edit and delete their post also.
+
+- Products page
+- - Displays all products and a nav to select products from one of the categories.
+- - Has a search feature to search products.
+- - Has a filter wood feature that lets users filter products by various wood types.
+- - Has a sort feature to sort products by price, rating, name, category.
+- - Each product has a rating, which is calculated in the backend when someone adds a review.
+
+- Product detail page
+- - If the product has more than 1 image, a scroll feature is displayed.
+- - Users have a quantity selector to up or down, from 1 to 10 items. If a user adds more than 10 items, a message is displayed to say no more than 10 items of each allowed.
+- - Admin users have a feature to add a discount to an individual product, ranging from 5% to 50% off.
+- - Each product page has a review section, with users able to post reviews. Anonymous users are warned that they can not edit or delete reviews.
+- - The rating in each review is used to calculate product rating in the backend.
+
+- Shopping cart page
+- - Displays empty bag message if no items in shopping bag.
+- - If items in shopping bag, a notification in the nav is displayed.
+- - Users can edit their bag in the shopping cart page. They can also remove items.
+
+- Checkout page
+- - Shows checkout form with option to save account information if buyer is a logged in user.
+- - Display order summary of whats in the shopping bag.
+
+- Profile page
+- - Has a profile navigation allowing users to view their information such as:
+- - Account info - which they can edit.
+- - Orders - which they can view seperately.
+- - Reviews - a list of reviews they have posted that they can edit and delete.
+
+- Admin profile page
+- - Has all the features of a regular user but also has access to:
+- - Newsletter section - where admin can send out a newsletter which is sent as an email through a loop to all subscribers.
+- - Discount section - where admin can add discounts to categories which puts all items from that category on sale. Product price is updated in products page and category section on home page displays a sale feature if category has a discount.
+- - Products section - where admin can add, edit and delete products. Can edit product photos seperately to product information. Can add multiple photos at once.
+- - Blog section - where admin can add a edit and delete blogs.
 
 ## Technologies Used
 
@@ -193,6 +244,12 @@ Design:
 [Balsamiq](https://balsamiq.com/) - for wireframes
 
 [FontAwesome](https://fontawesome.com/) - for icons
+
+[Materialize](https://materializecss.com/) - CSS framework for design and layout.
+
+[Glider JS](https://nickpiscitelli.github.io/Glider.js/) - for review section carousel.
+
+[GSAP](GSAP](https://greensock.com/)) - for animations.
 
 [Google Fonts](https://fonts.google.com/) - for fonts
 
