@@ -16,6 +16,8 @@ const categoriesGsap = gsap.utils.toArray('.category-container .category-card')
 const reviewContainerGsap = document.querySelector('.glider')
 const reviewHeaderGsap = document.querySelector('#home-reviews h2')
 console.log(reviewContainerGsap);
+// Gallery Whole site
+const galleryContainerGsap = document.querySelector('.home-gallery')
 
 // console.log(reviewsGsap);
 
@@ -162,6 +164,18 @@ document.addEventListener('DOMContentLoaded', function() {
         translateY: `-100px`,
         opacity: 0,
         duration: 1,
+      })
+    }
+    if (galleryContainerGsap) {
+      gsap.from(galleryContainerGsap, {
+        scrollTrigger: {
+          trigger: galleryContainerGsap,
+          toggleActions: 'restart pause resume restart'
+        },
+        translateX: '-50px',
+        translateY: '-100px',
+        opacity: 0,
+        duration: 0.5,
       })
     }
   }
