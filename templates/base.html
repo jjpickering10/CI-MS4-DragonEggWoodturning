@@ -40,7 +40,6 @@
               <li><a href="{% url 'about' %}">About</a></li>
               <li><a href="{% url 'blog' %}">Blog</a></li>
               <li class="shop-now-link"><a href="{% url 'all_products' %}">Shop</a></li>
-              <li><a href="{% url 'all_categories' %}">Categories</a></li>
               {% if request.user.is_authenticated %}
                 <li><a href="{% url 'profile' %}" ><i class="fas fa-user"></i></a></li>
                 <li><a href="{% url 'account_logout' %}">Logout</a></li>
@@ -63,7 +62,6 @@
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'blog' %}">Blog</a></li>
         <li><a href="{% url 'all_products' %}">Shop</a></li>
-        <li><a href="{% url 'all_categories' %}">Categories</a></li>
         {% if request.user.is_authenticated %}
           <li><a href="{% url 'profile' %}" ><i class="fas fa-user"></i></a></li>
           <li><a href="{% url 'account_logout' %}">Logout</a></li>

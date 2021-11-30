@@ -355,16 +355,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('profile'))
-
-
-def all_categories(request):
-    """
-    A view to show all categories
-    """
-    categories = Category.objects.all()
-
-    context = {
-        'categories': categories,
-    }
-
-    return render(request, 'products/all_categories.html', context)
