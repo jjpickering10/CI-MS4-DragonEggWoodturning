@@ -18,14 +18,18 @@ const reviewHeaderGsap = document.querySelector('#home-reviews h2')
 console.log(reviewContainerGsap);
 // Gallery Whole site
 const galleryContainerGsap = document.querySelector('.home-gallery')
-
-// console.log(reviewsGsap);
+// Site information Whole Site
+const siteInfoContainerGsap = document.querySelector('.site-information-container')
+const siteInfoSegmentsGsap = document.querySelectorAll('.site-info-content')
+const siteInfoSegmentHeaders = document.querySelectorAll('.site-info-content h3')
+const siteInfoSegmentText = document.querySelectorAll('.site-info-content p')
 
 const timeline = gsap.timeline({
   defaults: {
     duration: 1
   }
 })
+const segmentTimeline = gsap.timeline()
 
 // Materialize JS
 
@@ -124,27 +128,29 @@ document.addEventListener('DOMContentLoaded', function() {
         opacity: 0,
         duration: 0.5,
       })
-      categoriesGsap.forEach(category => {
-        gsap.from(category, {
-          scrollTrigger: {
-            trigger: category,
-            toggleActions: 'restart pause resume restart'
-          },
-          translateX: '-50px%',
-          opacity: 0,
-          delay: Math.random()
-        })
-      })
-      // gsap.from(categoriesGsap, {
-      //   scrollTrigger: {
-      //     trigger: categoryContainerGsap,
-      //     toggleActions: 'restart pause resume restart'
-      //   },
-      //   translateY: '50px',
-      //   opacity: 0,
-      //   duration: 1,
-      //   stagger: 0.25
+      // categoriesGsap.forEach(category => {
+      //   gsap.from(category, {
+      //     scrollTrigger: {
+      //       trigger: category,
+      //       toggleActions: 'restart pause resume restart'
+      //     },
+      //     // translateX: '-50px',
+      //     // translateY: '50px',
+      //     opacity: 0,
+      //     // duration: 0.5,
+      //     // delay: Math.abs(Math.random() - 0.5)
+      //   })
       // })
+      gsap.from(categoriesGsap, {
+        scrollTrigger: {
+          trigger: categoryContainerGsap,
+          toggleActions: 'restart pause resume restart'
+        },
+        translateY: '50px',
+        opacity: 0,
+        duration: 1,
+        stagger: 0.25
+      })
     }
     if (reviewHeaderGsap) {
       gsap.from(reviewHeaderGsap, {
@@ -172,11 +178,49 @@ document.addEventListener('DOMContentLoaded', function() {
           trigger: galleryContainerGsap,
           toggleActions: 'restart pause resume restart'
         },
-        translateX: '-50px',
-        translateY: '-100px',
+        translateX: '-100px',
+        // translateY: '-100px',
         opacity: 0,
         duration: 0.5,
       })
+    }
+    if (siteInfoContainerGsap) {
+      gsap.from(siteInfoContainerGsap, {
+        scrollTrigger: {
+          trigger: siteInfoContainerGsap,
+          toggleActions: 'restart pause resume restart'
+        },
+        // translateX: '-50px',
+        // translateY: '-100px',
+        opacity: 0,
+        duration: 2,
+      })
+      siteInfoSegmentsGsap.forEach((segment, i) => {
+        const segmentChildren = gsap.utils.toArray(segment.children)
+        console.log(segmentChildren);
+        // console.log(i, segment);
+        const direction = (i == 0 || i == 2) ? '-' : ''
+        // console.log(direction);
+        gsap.from(segment, {
+          scrollTrigger: {
+            trigger: segment,
+            toggleActions: 'restart pause resume restart'
+          },
+          opacity: 0,
+          duration: 2,
+        })
+        gsap.from(segmentChildren, {
+          scrollTrigger: {
+            trigger: segment,
+            toggleActions: 'restart pause resume restart'
+          },
+          translateX: `${direction}200px`,
+          // opacity: 0,
+          duration: 2,
+          stagger: 0.5
+        })
+      })
+      
     }
   }
   
