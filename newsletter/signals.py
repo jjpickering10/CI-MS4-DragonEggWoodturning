@@ -4,7 +4,7 @@ from .models import Subscribers, Newsletter
 
 
 @receiver(post_save, sender=Subscribers)
-def update_save(sender, instance, created, **kwargs):
+def update_send_welcome_email(sender, instance, created, **kwargs):
     """
     Send welcome newsletter
     """
@@ -13,7 +13,7 @@ def update_save(sender, instance, created, **kwargs):
 
 
 @receiver(post_save, sender=Newsletter)
-def update_save(sender, instance, created, **kwargs):
+def update_send_newsletter(sender, instance, created, **kwargs):
     """
     Send newsletter
     """

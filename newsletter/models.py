@@ -39,7 +39,7 @@ class Subscribers(models.Model):
                 }
             )
 
-        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [subscriber_email])
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [subscriber_email], fail_silently=False)
 
     def save(self, *args, **kwargs):
         """
