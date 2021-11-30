@@ -42,24 +42,62 @@ document.addEventListener('DOMContentLoaded', function() {
   // Loading
 
   const documentElements = [document.querySelector('.main-section'), document.querySelector('.header-about-section')]
+  const landingSegments = [
+    document.querySelector('.home-landing-title'),
+    document.querySelector('.home-landing-title h1'),
+    document.querySelectorAll('.home-landing-title p'),
+    document.querySelector('.home-landing-title .landing-buttons'),
+    document.querySelectorAll('.home-landing-title .landing-buttons a'),
+    document.querySelector('.home-landing-image')
+  ]
 
-  const timeline = gsap.timeline({defaults: {duration: 1}})
+  console.log(landingSegments);
+
+  const timeline = gsap.timeline({
+    defaults: {
+      duration: 1
+    }
+  })
 
   window.addEventListener('load', () => {
     timeline.to(document.querySelector('.loading'), {
       opacity: 0,
       
       ease: "circ.out"
-    }, '-=0.5').to(documentElements[0], {
+    }, '-=0.5')
+    .to(documentElements[0], {
       opacity: 1,
       y: '0',
       ease: "power1.out"
       
-    }, '-=1').to(documentElements[1], {
+    }, '-=1')
+    if (landingSegments[0] != null) {
+      timeline.to(landingSegments, {
+        opacity: 1,
+        ease: "power1.out",
+        stagger: 0.25
+      })
+      timeline.to(landingSegments[5], {
+        x: '0',
+        duration: 1.5,
+        ease: "bounce.out",
+      }, '-=2')
+      timeline.to(landingSegments[4], {
+        x: '0',
+        duration: 0.25,
+        ease: "power4.out",
+        stagger: 0.1
+      }, '-=2')
+    }
+    timeline.to(documentElements[1], {
       opacity: 1,
       x: '0',
       ease: "bounce.out",
-      
+      onComplete: postLoad
     })
+  })
+
+  function postLoad() {
     document.body.classList.remove('post-load')
-    })
+  }
+  

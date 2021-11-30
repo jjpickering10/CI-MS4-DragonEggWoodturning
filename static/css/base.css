@@ -107,6 +107,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow-x: hidden;
 }
 body.post-load {
   max-height: 100vh;
@@ -441,6 +442,7 @@ body main {
   grid-template-areas: "title" "image";
   grid-auto-columns: 1fr;
   gap: 5rem;
+  min-height: 100vh;
 }
 .home-container #home-landing .home-landing-title {
   grid-area: title;
@@ -449,9 +451,16 @@ body main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
   padding: 5em;
   background: var(--primary-brown);
   border-radius: 0 0 10rem;
+  opacity: 0;
+}
+@media screen and (min-width: 992px) {
+  .home-container #home-landing .home-landing-title {
+    height: 75%;
+  }
 }
 .home-container #home-landing .home-landing-title h1 {
   font-weight: 200;
@@ -463,6 +472,7 @@ body main {
   box-shadow: -5px -5px 5px 0 var(--white-shadow);
   line-height: 1.2;
   padding: 1rem 2rem 1rem 2rem;
+  opacity: 0;
 }
 .home-container #home-landing .home-landing-title h1 span {
   color: var(--primary-orange);
@@ -477,10 +487,12 @@ body main {
   line-height: 2;
   padding: 0 2rem;
   text-transform: lowercase;
+  opacity: 0;
 }
 .home-container #home-landing .home-landing-title .landing-buttons {
   display: flex;
   padding: 2rem;
+  opacity: 0;
 }
 .home-container #home-landing .home-landing-title .landing-buttons a {
   font-style: 1.7em;
@@ -490,6 +502,7 @@ body main {
   margin: 0;
   text-align: center;
   width: 15em;
+  transform: translateX(-100vw);
 }
 .home-container #home-landing .home-landing-title .landing-buttons a + a {
   margin-left: 1em;
@@ -503,9 +516,17 @@ body main {
 }
 .home-container #home-landing .home-landing-image {
   grid-area: image;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateX(200%);
+}
+@media screen and (min-width: 992px) {
+  .home-container #home-landing .home-landing-image {
+    height: 75%;
+  }
 }
 .home-container #home-landing .home-landing-image img {
   padding: 3em;
@@ -824,7 +845,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   align-items: center;
   margin-bottom: 3rem;
   width: 100%;
-  margin: 5rem auto;
+  margin: 0 auto 5rem auto;
   position: relative;
   overflow: hidden;
 }

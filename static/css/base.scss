@@ -96,6 +96,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    overflow-x: hidden;
 
     &.post-load {
         max-height: 100vh;
@@ -503,7 +504,7 @@ body {
         'image';
         grid-auto-columns: 1fr;
         gap: 5rem;
-        // min-height: 100vh;
+        min-height: 100vh;
         // background: linear-gradient(180deg, var(--white) 85%, var(--primary-cream) 85%);
         // margin-top: 2rem;
 
@@ -514,10 +515,15 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            // height: 75%;
+            height: 100%;
             padding: 5em;
             background: var(--primary-brown);
             border-radius: 0 0 10rem;
+            opacity: 0;
+
+            @media screen and (min-width: 992px) {
+                height: 75%;
+            }
 
             // &::after {
             //     content: '';
@@ -544,6 +550,7 @@ body {
                 // border: none;
                 line-height: 1.2;
                 padding: 1rem 2rem 1rem 2rem;
+                opacity: 0;
 
                 span {
                     color: var(--primary-orange);
@@ -560,11 +567,13 @@ body {
                 line-height: 2;
                 padding: 0 2rem;
                 text-transform: lowercase;
+                opacity: 0;
             }
 
             .landing-buttons {
                 display: flex;
                 padding: 2rem;
+                opacity: 0;
 
                 a {
                     font-style: 1.7em;
@@ -574,6 +583,7 @@ body {
                     margin: 0;
                     text-align: center;
                     width: 15em;
+                    transform: translateX(-100vw);
 
                     + a {
                         margin-left: 1em;
@@ -592,10 +602,16 @@ body {
 
         .home-landing-image {
             grid-area: image;
-            // height: 75%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            transform: translateX(200%);
+
+            @media screen and (min-width: 992px) {
+                height: 75%;
+            }
 
             img {
                 padding: 3em;
@@ -1087,7 +1103,7 @@ nav {
     margin-bottom: 3rem;
     // width: 50%;
     width: 100%;
-    margin: 5rem auto;
+    margin: 0 auto 5rem auto;
     position: relative;
     overflow: hidden;
 
