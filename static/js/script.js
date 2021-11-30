@@ -7,9 +7,17 @@ const landingSegmentsGsap = [
   document.querySelectorAll('.home-landing-title .landing-buttons a'),
   document.querySelector('.home-landing-image')
 ]
+
+// Categories Landing Page
 const categoryContainerGsap = document.querySelector('.category-container')
 const categoryHeaderGsap = document.querySelector('#home-products h2')
 const categoriesGsap = gsap.utils.toArray('.category-container .category-card')
+// Reviews Whole Site
+const reviewContainerGsap = document.querySelector('.glider')
+const reviewHeaderGsap = document.querySelector('#home-reviews h2')
+console.log(reviewContainerGsap);
+
+// console.log(reviewsGsap);
 
 const timeline = gsap.timeline({
   defaults: {
@@ -114,15 +122,46 @@ document.addEventListener('DOMContentLoaded', function() {
         opacity: 0,
         duration: 0.5,
       })
-      gsap.from(categoriesGsap, {
+      categoriesGsap.forEach(category => {
+        gsap.from(category, {
+          scrollTrigger: {
+            trigger: category,
+            toggleActions: 'restart pause resume restart'
+          },
+          translateX: '-50px%',
+          opacity: 0,
+          delay: Math.random()
+        })
+      })
+      // gsap.from(categoriesGsap, {
+      //   scrollTrigger: {
+      //     trigger: categoryContainerGsap,
+      //     toggleActions: 'restart pause resume restart'
+      //   },
+      //   translateY: '50px',
+      //   opacity: 0,
+      //   duration: 1,
+      //   stagger: 0.25
+      // })
+    }
+    if (reviewHeaderGsap) {
+      gsap.from(reviewHeaderGsap, {
         scrollTrigger: {
-          trigger: categoryContainerGsap,
+          trigger: reviewHeaderGsap,
           toggleActions: 'restart pause resume restart'
         },
-        translateY: '50px',
+        translateX: '-50px',
+        opacity: 0,
+        duration: 0.5,
+      })
+      gsap.from(reviewContainerGsap, {
+        scrollTrigger: {
+          trigger: reviewHeaderGsap,
+          toggleActions: 'restart pause resume restart'
+        },
+        translateY: `-100px`,
         opacity: 0,
         duration: 1,
-        stagger: 0.25
       })
     }
   }
