@@ -2872,3 +2872,42 @@ nav {
         }
     }
 }
+
+// Modals
+
+.modal {
+    box-shadow: 0 0 0 4px var(--white);
+    .modal-content {
+        background: var(--primary-brown);
+        color: var(--white);
+        p {
+            font-weight: 200;
+
+        }
+    }
+    .modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px 0;
+        background: var(--primary-brown);
+        .global-button {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            
+        }
+        .global-button + .global-button {
+            background: none;
+            border: 0;
+            color: var(--white);
+        }
+    }
+}
+.modal-overlay {
+    background: var(--primary-brown);
+    opacity: 0.9 !important;
+}

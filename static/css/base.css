@@ -2499,4 +2499,40 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .page-footer .footer-copyright .container a:hover i, .page-footer .footer-copyright .container a:focus i {
   color: var(--secondary-brown);
   transition: color 0.5s;
+}
+
+.modal {
+  box-shadow: 0 0 0 4px var(--white);
+}
+.modal .modal-content {
+  background: var(--primary-brown);
+  color: var(--white);
+}
+.modal .modal-content p {
+  font-weight: 200;
+}
+.modal .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 0;
+  background: var(--primary-brown);
+}
+.modal .modal-footer .global-button {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.modal .modal-footer .global-button + .global-button {
+  background: none;
+  border: 0;
+  color: var(--white);
+}
+
+.modal-overlay {
+  background: var(--primary-brown);
+  opacity: 0.9 !important;
 }/*# sourceMappingURL=base.css.map */
