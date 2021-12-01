@@ -8,6 +8,11 @@ canvas.height = window.innerHeight;
 const particlesArray = [];
 let randomColor = "#D2B48C";
 
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
 const canvasMouse = {
   x: undefined,
   y: undefined,
