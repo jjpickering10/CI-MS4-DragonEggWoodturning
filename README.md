@@ -160,6 +160,8 @@ Design:
 
 ## Features
 
+- - Loading animation includes html canvas element with mouse move drawing of particles for nice UX experience as page loads. Techniques used I learned from a really good youtuber [here](https://www.youtube.com/c/Frankslaboratory)
+
 - Landing page
 - - Distinct image and highlighted section letting the user now exactly what the site is about
 - - Call to action buttons
@@ -294,6 +296,18 @@ Chrome Dev Tools
 ## Testing
 
 ### Project Barriers and Solutions
+
+- - Auto focus on checkout form broke the sites loading animation. After trying to debug why this was happening for a good hour I tested removing the auto focus feature and the animations worked. Whilst having auto focus on the checkout form would be useful, I felt it was more important to keep the fluid loading animations throughout the site, instead of trying to have it disabled for just one page and keep the auto focus. There is probably a better fix to include both but due to time constraints I chose to simply remove the auto focus.
+
+- - The sidenav popout for the wood filter broke when adding in GSAP animations. I fixed this by taking it out of the 'main' dom element and putting it above.
+
+- - Had issues with reviews user input. Easy fix by adding null=true and blank=true to review model. Of course this means anonymous users can not edit or delete their reviews but I decided to let this be a feature as anonymous users can buy products, so they should be able to review also. A warning is shown above the review form on each product detail page to inform users of this.
+
+- - The add to bag feature allows inputs from 1 - 10. But you could add multiple 'add to bag' inputs and go above 10. I fixed this by calculating item total and informing users via messages if they tried to add more items that only 10 items per product could be purchased.
+
+- - Initially styled the site with a light theme, but as I built the site further and further I switched to a darker theme as I felt this looks cleaner and gave a better UX experience.
+
+- - Adding a new product set the original price. But with the category on sale feature, it meant that if a new product was added to a category, it wouldnt match the category discount. I fixed this by adding in a signal to check if product category was on sale and then calculating the correct price from that.
 
 ### Feature To Improve
 
