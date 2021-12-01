@@ -234,10 +234,10 @@ body {
                 padding: 0.5rem 1rem;
                 background: var(--white);
                 color: var(--primary-brown);
-                transition: 0.5s;
+                transition: background-color 0.5s;
                 &:hover, &:focus {
                     background: var(--secondary-brown);
-                    transition: 0.5s;
+                    transition: background-color 0.5s;
                 }
             }
         }
@@ -755,13 +755,12 @@ nav {
             color: var(--white);
             text-transform: lowercase;
             font-weight: 300;
-            letter-spacing: 1px;
-            transition: 0.5s;
+            transition: color 0.5s, background-color 0.5s;
 
             &:hover, &:focus {
                 background: var(--secondary-brown);
                 color: var(--primary-brown);
-                transition: 0.5s;
+                transition: color 0.5s, background-color 0.5s;
             }
         }
         .shop-now-link {
@@ -769,9 +768,11 @@ nav {
                 background: var(--primary-orange);
                 color: var(--primary-brown);
                 font-weight: 400;
+                transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
                 &:hover, &:focus {
                     background: var(--white-shadow);
-                    transition: 0.5s;
+                    color: var(--white);
+                    transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
                 }
             }
         }
@@ -1070,11 +1071,11 @@ nav {
                     left: 0;
                     
                     object-fit: cover;
-                    transition: 0.5s;
+                    transition: transform 0.5s;
                     
                     &:hover, &:focus {
                         transform: scale(1.5);
-                        transition: 0.5s;
+                        transition: transform 0.5s;
                     }
                 }
                 }
@@ -1089,12 +1090,12 @@ nav {
 
                     .category-title {
                         font-weight: 400;
-                        transition: 0.3s;
+                        transition: transform 0.3s;
                         font-size: 90%;
 
                         &:hover, &:focus {
                             transform: scale(1.1);
-                            transition: 0.3s;
+                            transition: transform 0.3s;
                         }
                     }
 
@@ -1174,12 +1175,12 @@ nav {
 
     .wood-type-link {
         padding: 0.5rem;
-        transition: 0.4s;
+        transition: transform 0.4s, font-weight 0.4s;
         letter-spacing: 2px;
         font-weight: 300;
 
         &:hover {
-            transition: 0.4s;
+            transition: transform 0.4s, font-weight 0.4s;
             transform: translateX(1rem);
             font-weight: 500;
         }
@@ -1193,7 +1194,7 @@ nav {
                 &:hover {
                     background: var(--primary-brown);
                     transform: scale(1.2);
-                    transition: 0.2s;
+                    transition: transform 0.2s;
                 }
             }
         }
@@ -1319,12 +1320,12 @@ nav {
                     padding: 1rem;
                     object-fit: contain;
                     transform: scale(1);
-                    transition: 0.3s;
+                    transition: transform 0.3s;
                     box-shadow: 0px 0px 0px 1px var(--white-shadow);
 
                     &:hover {
                         transform: scale(0.9);
-                        transition: 0.3s;
+                        transition: transform 0.3s;
                     }
                 }
             }
@@ -1752,12 +1753,12 @@ nav {
                 padding: 1rem;
                 font-size: 1rem;
                 border: 1px solid black;
-                transition: 0.2s;
+                transition: transform 0.2s;
                 cursor: pointer;
 
                 &:hover, &:focus {
                     transform: scale(1.1);
-                    transition: 0.2s;
+                    transition: transform 0.2s;
                 }
             }
         }
@@ -1779,7 +1780,7 @@ nav {
 
                 &:hover, :focus {
                     box-shadow: none;
-                    transition: 0.5s;
+                    transition: box-shadow 0.5s;
                 }
             }
         }
@@ -1909,7 +1910,7 @@ nav {
 
                 &:hover, :focus {
                     box-shadow: none;
-                    transition: 0.5s;
+                    transition: box-shadow 0.5s;
                 }
             }
         }
@@ -2016,7 +2017,7 @@ nav {
 
             &:hover, :focus {
                 box-shadow: none;
-                transition: 0.5s;
+                transition: box-shadow 0.5s;
             }
         }
     }
@@ -2081,7 +2082,7 @@ nav {
             border-left: none;
             box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
             padding: 0.5rem;
-            transition: 0.3s;
+            transition: background-color 0.3s, font-weight 0.3s;
 
             &.active {
                 font-weight: 500;
@@ -2090,7 +2091,7 @@ nav {
 
             &:hover, &:focus {
                 font-weight: 500;
-                transition: 0.3s;
+                transition:  background-color 0.3s, font-weight 0.3s;
                 background: var(--primary-brown-shadow);
             }
             position: relative;
@@ -2154,11 +2155,11 @@ nav {
             }
             a {
                 color: var(--white);
-                transition: 0.3s;
+                transition: color 0.3s;
                 background: var(--white-shadow);
                 padding: 0.5rem 1rem;
                 &:hover, &:focus {
-                    transition: 0.3s;
+                    transition: color 0.3s;
                     color: var(--secondary-brown);
                 }
             }
@@ -2237,11 +2238,11 @@ nav {
                 }
                 a {
                     color: var(--white);
-                    transition: 0.3s;
+                    transition: color 0.3s;
                     font-weight: 100;
                     &:hover, &:focus {
                         color: var(--secondary-brown);
-                        transition: 0.3s;
+                        transition: color 0.3s;
                     }
                 }
             }
@@ -2337,11 +2338,11 @@ nav {
                 }
                 a {
                     color: var(--white);
-                    transition: 0.3s;
+                    transition: color 0.3s;
                     font-weight: 100;
                     &:hover, &:focus {
                         color: var(--secondary-brown);
-                        transition: 0.3s;
+                        transition: color 0.3s;
                     }
                 }
             }
@@ -2436,12 +2437,12 @@ nav {
 
     a {
         color: var(--white);
-        transition: 0.5s;
+        transition: transform 0.5s;
 
         &:hover, &:focus {
 
             transform: translateY(-20px);
-            transition: 0.5s;
+            transition: transform 0.5s;
         }
     }
 

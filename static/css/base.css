@@ -232,11 +232,11 @@ body main {
   padding: 0.5rem 1rem;
   background: var(--white);
   color: var(--primary-brown);
-  transition: 0.5s;
+  transition: background-color 0.5s;
 }
 .header-about-section .header-about-info p a:hover, .header-about-section .header-about-info p a:focus {
   background: var(--secondary-brown);
-  transition: 0.5s;
+  transition: background-color 0.5s;
 }
 .header-about-section .header-about-info i::before {
   color: var(--primary-brown);
@@ -680,22 +680,23 @@ nav ul a {
   color: var(--white);
   text-transform: lowercase;
   font-weight: 300;
-  letter-spacing: 1px;
-  transition: 0.5s;
+  transition: color 0.5s, background-color 0.5s;
 }
 nav ul a:hover, nav ul a:focus {
   background: var(--secondary-brown);
   color: var(--primary-brown);
-  transition: 0.5s;
+  transition: color 0.5s, background-color 0.5s;
 }
 nav ul .shop-now-link a {
   background: var(--primary-orange);
   color: var(--primary-brown);
   font-weight: 400;
+  transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
 }
 nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   background: var(--white-shadow);
-  transition: 0.5s;
+  color: var(--white);
+  transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
 }
 
 .about-page-container .about-landing {
@@ -942,11 +943,11 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   left: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: 0.5s;
+  transition: transform 0.5s;
 }
 #home-products .category-container .category-card a .category-card-image img:hover, #home-products .category-container .category-card a .category-card-image img:focus {
   transform: scale(1.5);
-  transition: 0.5s;
+  transition: transform 0.5s;
 }
 #home-products .category-container .category-card a .category-content {
   display: flex;
@@ -957,12 +958,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 #home-products .category-container .category-card a .category-content .category-title {
   font-weight: 400;
-  transition: 0.3s;
+  transition: transform 0.3s;
   font-size: 90%;
 }
 #home-products .category-container .category-card a .category-content .category-title:hover, #home-products .category-container .category-card a .category-content .category-title:focus {
   transform: scale(1.1);
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 #home-products .category-container .category-card a .category-content p {
   font-weight: 200;
@@ -1019,12 +1020,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 #wood-filter-side-filter .wood-type-link {
   padding: 0.5rem;
-  transition: 0.4s;
+  transition: transform 0.4s, font-weight 0.4s;
   letter-spacing: 2px;
   font-weight: 300;
 }
 #wood-filter-side-filter .wood-type-link:hover {
-  transition: 0.4s;
+  transition: transform 0.4s, font-weight 0.4s;
   transform: translateX(1rem);
   font-weight: 500;
 }
@@ -1037,7 +1038,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 #wood-filter-side-filter .wood-type-link a i:hover {
   background: var(--primary-brown);
   transform: scale(1.2);
-  transition: 0.2s;
+  transition: transform 0.2s;
 }
 
 .products-amount {
@@ -1142,12 +1143,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   -o-object-fit: contain;
      object-fit: contain;
   transform: scale(1);
-  transition: 0.3s;
+  transition: transform 0.3s;
   box-shadow: 0px 0px 0px 1px var(--white-shadow);
 }
 .product-container .product-item-container .product-card .product-card-image img:hover, .product-detail-container .product-item-container .product-card .product-card-image img:hover {
   transform: scale(0.9);
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 .product-container .product-item-container .product-card .product-card-content, .product-detail-container .product-item-container .product-card .product-card-content {
   display: flex;
@@ -1506,12 +1507,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid black;
-  transition: 0.2s;
+  transition: transform 0.2s;
   cursor: pointer;
 }
 .product-card-description form .quantity-slider i:hover, .product-card-description form .quantity-slider i:focus {
   transform: scale(1.1);
-  transition: 0.2s;
+  transition: transform 0.2s;
 }
 .product-card-description form .add-to-bag-buttons {
   display: flex;
@@ -1528,7 +1529,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .product-card-description form .add-to-bag-buttons a + input:hover, .product-card-description form .add-to-bag-buttons a + input :focus {
   box-shadow: none;
-  transition: 0.5s;
+  transition: box-shadow 0.5s;
 }
 
 .bag-container {
@@ -1635,7 +1636,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .bag-container .bag-subtotal .bag-buttons a + a:hover, .bag-container .bag-subtotal .bag-buttons a + a :focus {
   box-shadow: none;
-  transition: 0.5s;
+  transition: box-shadow 0.5s;
 }
 .bag-container .empty-bag {
   display: flex;
@@ -1722,7 +1723,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .checkout-nav a + a:hover, .checkout-nav a + a :focus {
   box-shadow: none;
-  transition: 0.5s;
+  transition: box-shadow 0.5s;
 }
 
 .checkout-success-container {
@@ -1777,7 +1778,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   border-left: none;
   box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
   padding: 0.5rem;
-  transition: 0.3s;
+  transition: background-color 0.3s, font-weight 0.3s;
   position: relative;
   color: var(--primary-brown);
 }
@@ -1787,7 +1788,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .profile-container > .profile-nav .profile-links:hover, .profile-container > .profile-nav .profile-links:focus {
   font-weight: 500;
-  transition: 0.3s;
+  transition: background-color 0.3s, font-weight 0.3s;
   background: var(--primary-brown-shadow);
 }
 .profile-container > .profile-nav .profile-links .fas {
@@ -1841,12 +1842,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .profile-container > .profile-section .profile-home-container a {
   color: var(--white);
-  transition: 0.3s;
+  transition: color 0.3s;
   background: var(--white-shadow);
   padding: 0.5rem 1rem;
 }
 .profile-container > .profile-section .profile-home-container a:hover, .profile-container > .profile-section .profile-home-container a:focus {
-  transition: 0.3s;
+  transition: color 0.3s;
   color: var(--secondary-brown);
 }
 .profile-container > .profile-section .profile-account-info-container {
@@ -1913,14 +1914,14 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .profile-container > .profile-section .profile-review-container table a,
 .profile-container > .profile-section .profile-orders-container table a {
   color: var(--white);
-  transition: 0.3s;
+  transition: color 0.3s;
   font-weight: 100;
 }
 .profile-container > .profile-section .profile-review-container table a:hover, .profile-container > .profile-section .profile-review-container table a:focus,
 .profile-container > .profile-section .profile-orders-container table a:hover,
 .profile-container > .profile-section .profile-orders-container table a:focus {
   color: var(--secondary-brown);
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 .profile-container > .profile-section .profile-admin-newsletter-container {
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
@@ -1999,14 +2000,14 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .profile-container > .profile-section .profile-admin-blog-container table a,
 .profile-container > .profile-section .profile-admin-products-container table a {
   color: var(--white);
-  transition: 0.3s;
+  transition: color 0.3s;
   font-weight: 100;
 }
 .profile-container > .profile-section .profile-admin-blog-container table a:hover, .profile-container > .profile-section .profile-admin-blog-container table a:focus,
 .profile-container > .profile-section .profile-admin-products-container table a:hover,
 .profile-container > .profile-section .profile-admin-products-container table a:focus {
   color: var(--secondary-brown);
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 .profile-container > .profile-section .profile-admin-blog-container h3,
 .profile-container > .profile-section .profile-admin-products-container h3 {
@@ -2098,11 +2099,11 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .blog-container a {
   color: var(--white);
-  transition: 0.5s;
+  transition: transform 0.5s;
 }
 .blog-container a:hover, .blog-container a:focus {
   transform: translateY(-20px);
-  transition: 0.5s;
+  transition: transform 0.5s;
 }
 .blog-container .blog-card {
   width: 300px;
