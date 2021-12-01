@@ -32,6 +32,14 @@ class Particle {
     this.color = randomColor;
     this.blur = Math.random() * 5 + 5;
   }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    this.size -= 0.01;
+    if (this.size > 0.2) {
+      this.size -= 0.1;
+    }
+  }
   draw() {
     ctx.fillStyle = this.color;
     ctx.shadowBlur = this.blur;
@@ -45,12 +53,19 @@ class Particle {
 function handleParticles() {
   for (let i = 0; i < particlesArray.length; i++) {
     particlesArray[i].draw();
+    particlesArray[i].update();
+    if (particlesArray[i].size <= 0.1) {
+      particlesArray.splice(i, 1);
+      i--;
+    }
   }
 }
 
 animate = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   handleParticles();
   requestAnimationFrame(animate);
+  console.log(particlesArray.length);
 };
 animate();
 
