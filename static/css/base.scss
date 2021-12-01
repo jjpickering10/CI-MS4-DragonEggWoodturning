@@ -2763,7 +2763,8 @@ nav {
         color: var(--white-shadow);
         opacity: 0.2;
         text-align: center;
-        animation: footer 3s linear infinite
+        animation: footer 3s linear infinite;
+        pointer-events: none;
     }
     @keyframes footer {
         0% {
@@ -2798,7 +2799,6 @@ nav {
     }
     a {
         font-size: 1rem;
-        letter-spacing: 1px;
         font-weight: 300;
         text-transform: lowercase;
         padding: 0.5rem 1rem;
@@ -2818,9 +2818,28 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
+            a {
+                color: var(--white);
+                text-transform: lowercase;
+                font-weight: 300;
+                transition: color 0.5s, background-color 0.5s;
+            
+                &:hover, &:focus {
+                    background: var(--secondary-brown);
+                    color: var(--primary-brown);
+                    transition: color 0.5s, background-color 0.5s;
+                }
+            }
             .footer-shop-link {
                 background-color: var(--primary-orange);
                 color: var(--primary-brown);
+                font-weight: 400;
+                transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+                &:hover, &:focus {
+                    background: var(--white-shadow);
+                    color: var(--white);
+                    transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+                }
             }
         }
     }
@@ -2834,6 +2853,10 @@ nav {
             a {
                 font-size: 1.5rem;
                 padding: 0;
+                &:hover i, &:focus i {
+                    color: var(--secondary-brown);
+                    transition: color 0.5s;
+                }
             }
         }
     }
