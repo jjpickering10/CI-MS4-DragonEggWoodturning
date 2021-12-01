@@ -5,6 +5,8 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+let randomColor = "#D2B48C";
+
 const canvasMouse = {
   x: undefined,
   y: undefined,
@@ -15,6 +17,18 @@ canvas.addEventListener("mousemove", (e) => {
   canvasMouse.y = e.y;
   console.log(canvasMouse);
 });
+
+class Particle {
+  constructor() {
+    this.x = canvasMouse.x;
+    this.y = canvasMouse.y;
+    this.size = Math.random() * 1 + 2;
+    this.speedX = Math.random() * 3 - 1.5;
+    this.speedY = Math.random() * 3 - 1.5;
+    this.color = randomColor;
+    this.blur = Math.random() * 5 + 5;
+  }
+}
 
 
 
