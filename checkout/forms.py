@@ -22,5 +22,5 @@ class OrderForm(forms.ModelForm):
 
         super().__init__(*args, **kwargs)
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        # self.fields['full_name'].widget.attrs['autofocus'] = True
                 

@@ -1791,7 +1791,7 @@ nav {
 
                 &:hover, :focus {
                     box-shadow: none;
-                    transition: box-shadow 0.5s;
+                    transition: 0.5s;
                 }
             }
         }
@@ -1921,7 +1921,7 @@ nav {
 
                 &:hover, :focus {
                     box-shadow: none;
-                    transition: box-shadow 0.5s;
+                    transition: 0.5s;
                 }
             }
         }
@@ -1946,7 +1946,7 @@ nav {
 
 .checkout-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 5rem auto;
 
     .checkout-section {
@@ -2028,7 +2028,7 @@ nav {
 
             &:hover, :focus {
                 box-shadow: none;
-                transition: box-shadow 0.5s;
+                transition: 0.5s;
             }
         }
     }

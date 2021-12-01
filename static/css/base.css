@@ -1539,7 +1539,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .product-card-description form .add-to-bag-buttons a + input:hover, .product-card-description form .add-to-bag-buttons a + input :focus {
   box-shadow: none;
-  transition: box-shadow 0.5s;
+  transition: 0.5s;
 }
 
 .bag-container {
@@ -1646,7 +1646,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .bag-container .bag-subtotal .bag-buttons a + a:hover, .bag-container .bag-subtotal .bag-buttons a + a :focus {
   box-shadow: none;
-  transition: box-shadow 0.5s;
+  transition: 0.5s;
 }
 .bag-container .empty-bag {
   display: flex;
@@ -1663,7 +1663,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 
 .checkout-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 5rem auto;
 }
 .checkout-container .checkout-section > h5, .checkout-container .checkout-section > p {
@@ -1733,7 +1733,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .checkout-nav a + a:hover, .checkout-nav a + a :focus {
   box-shadow: none;
-  transition: box-shadow 0.5s;
+  transition: 0.5s;
 }
 
 .checkout-success-container {
