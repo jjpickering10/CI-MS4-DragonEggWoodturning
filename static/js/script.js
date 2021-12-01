@@ -64,8 +64,12 @@ function handleParticles() {
 animate = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   handleParticles();
+  if (randomColor === "#E66C4E") {
+    randomColor = "#D2B48C";
+  } else {
+    randomColor = "#E66C4E";
+  }
   requestAnimationFrame(animate);
-  console.log(particlesArray.length);
 };
 animate();
 
