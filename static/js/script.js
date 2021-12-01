@@ -28,6 +28,14 @@ class Particle {
     this.color = randomColor;
     this.blur = Math.random() * 5 + 5;
   }
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.shadowBlur = this.blur;
+    ctx.shadowColor = this.color;
+    ctx.beginPath();
+    ctx.rect(this.x, this.y, this.size, this.size);
+    ctx.fill();
+  }
 }
 
 
