@@ -23,6 +23,9 @@ const siteInfoContainerGsap = document.querySelector('.site-information-containe
 const siteInfoSegmentsGsap = document.querySelectorAll('.site-info-content')
 const siteInfoSegmentHeaders = document.querySelectorAll('.site-info-content h3')
 const siteInfoSegmentText = document.querySelectorAll('.site-info-content p')
+// Home about whole site
+const homeAboutContainerGsap = document.querySelector('.home-about-section')
+const homeAboutSegmentsGsap = [document.querySelector('.home-about-info h2'), document.querySelector('.home-about-info p'), document.querySelector('.home-about-info a')]
 
 const timeline = gsap.timeline({
   defaults: {
@@ -222,6 +225,31 @@ document.addEventListener('DOMContentLoaded', function() {
           duration: 2,
           stagger: 0.5
         })
+      })
+      
+    }
+    if (homeAboutContainerGsap) {
+      gsap.from(homeAboutContainerGsap, {
+        scrollTrigger: {
+          trigger: homeAboutContainerGsap,
+          toggleActions: 'restart pause resume restart'
+        },
+        // translateX: '-50px',
+        // translateY: '-100px',
+        opacity: 0,
+        duration: 2,
+      })
+      // homeAboutSegmentsGsap.forEach(segment => {  
+        gsap.from(homeAboutSegmentsGsap, {
+          scrollTrigger: {
+            trigger: homeAboutSegmentsGsap,
+            toggleActions: 'restart pause resume restart'
+          },
+          translateY: '100px',
+          opacity: 0,
+          duration: 0.75,
+          stagger: 0.25
+        // })
       })
       
     }

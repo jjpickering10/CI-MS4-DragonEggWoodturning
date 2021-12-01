@@ -294,11 +294,11 @@ body main {
   width: 300px;
   text-align: center;
   box-shadow: 10px 10px 0 0 var(--primary-cream);
-  transition: 0.5s;
+  transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
 }
 .home-about .home-about-section .home-about-info a:hover, .home-about .home-about-section .home-about-info a:focus {
   box-shadow: none;
-  transition: 0.5s;
+  transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
 }
 .home-about .home-about-section img {
   width: 100%;
