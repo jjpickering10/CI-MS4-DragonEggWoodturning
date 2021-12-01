@@ -124,8 +124,19 @@
               <td>{{ review.date }}</td>
               <td class="product-review-rating">{{ review.rating }} <i class="fas fa-star"></i></td>
               <td><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a></td>
-              <td><a href="{% url 'delete_review' review.id %}">Delete <i class="fas fa-trash"></i></a></td>
-
+              <!-- Modal Trigger -->
+              <td><a class="modal-trigger" href="#{{ review.id }}-{{ review.product }}">Delete <i class="fas fa-trash"></i></a></td>
+              <!-- Modal Structure -->
+              <div id="{{ review.id }}-{{ review.product }}" class="modal">
+                <div class="modal-content">
+                  <p>{{ review.rating }} stars review - {{ review.product }}</p>
+                  <p>Are you sure you want to delete?</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close">Cancel</a>
+                  <a href="{% url 'delete_review' review.id %}">Delete <i class="fas fa-trash"></i></a>
+                </div>
+              </div>
             </tr>
           </tbody>
           {% endfor %}
@@ -182,7 +193,19 @@
             <td><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></td>
             <td><a href="{% url 'edit_product' product.id %}">Edit <i class="far fa-edit"></i></a></td>
             <td><a href="{% url 'edit_product_images' product.id %}">Edit Images <i class="far fa-edit"></i></a></td>
-            <td><a href="{% url 'delete_product' product.id %}">Delete <i class="fas fa-trash"></i></a></td>
+            <!-- Modal Trigger -->
+            <td><a class="modal-trigger" href="#{{ product.id }}-{{ product.name }}">Delete <i class="fas fa-trash"></i></a></td>
+            <!-- Modal Structure -->
+            <div id="{{ product.id }}-{{ product.name }}" class="modal">
+              <div class="modal-content">
+                <p>{{ product.name }}</p>
+                <p>Are you sure you want to delete?</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close">Cancel</a>
+                <a href="{% url 'delete_product' product.id %}">Delete <i class="fas fa-trash"></i></a>
+              </div>
+            </div>
           </tr>
         </tbody>
         {% endfor %}
@@ -214,7 +237,19 @@
             <td><a href="{% url 'blog_post' blog.id %}">{{ blog.title }}</a></td>
             <td>{{ blog.date }}</td>
             <td><a href="{% url 'edit_blog' blog.id %}">Edit <i class="far fa-edit"></i></a></td>
-            <td><a href="{% url 'delete_blog' blog.id %}">Delete <i class="fas fa-trash"></i></a></td>
+            <!-- Modal Trigger -->
+            <td><a class="modal-trigger" href="#{{ blog.id }}-{{ blog.title }}">Delete <i class="fas fa-trash"></i></a></td>
+            <!-- Modal Structure -->
+            <div id="{{ blog.id }}-{{ blog.title }}" class="modal">
+              <div class="modal-content">
+                <p>{{ blog.title }}</p>
+                <p>Are you sure you want to delete?</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close">Cancel</a>
+                <a href="{% url 'delete_blog' blog.id %}">Delete <i class="fas fa-trash"></i></a>
+              </div>
+            </div>
           </tr>
         </tbody>
         {% endfor %}
@@ -262,6 +297,16 @@
   })
  })
 
+//  Modals
+
+const modalTriggers = document.querySelectorAll('.modal-trigger')
+
+modalTriggers.forEach(modal => {
+  modal.addEventListener('click', () => {
+    const nearest = modal.closest('.profile-segment')
+    nearest.style.transform = 'none'
+  })
+})
 
 </script>
 {% endblock %}
