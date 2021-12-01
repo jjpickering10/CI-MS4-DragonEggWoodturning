@@ -1,3 +1,24 @@
+// Canvas
+
+const canvas = document.querySelector(".canvas-loading");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const canvasMouse = {
+  x: undefined,
+  y: undefined,
+};
+
+canvas.addEventListener("mousemove", (e) => {
+  canvasMouse.x = e.x;
+  canvasMouse.y = e.y;
+  console.log(canvasMouse);
+});
+
+
+
+// ---------------------------------------------------------------------
 const documentElementsGsap = [document.querySelector('.main-section'), document.querySelector('.header-about-section')]
 const landingSegmentsGsap = [
   document.querySelector('.home-landing-title'),
