@@ -1,4 +1,4 @@
-// Canvas
+// Canvas --- Learned Canvas drawing from https://www.youtube.com/c/Frankslaboratory 
 
 const canvas = document.querySelector(".canvas-loading");
 const ctx = canvas.getContext("2d");
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
       opacity: 1,
       x: '0',
       // translateX: ('-100%'),
-      ease: "bounce.out",
+      ease: "elastic.out(1, 0.75)",
       onComplete: postLoad
     })
   })

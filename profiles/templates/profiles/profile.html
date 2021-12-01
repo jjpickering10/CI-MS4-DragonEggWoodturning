@@ -238,6 +238,14 @@
     section.classList.add('hide')
     if (dataLink === section.dataset.link) {
       section.classList.remove('hide')
+      let randomEase = Math.random() <= 0.5 ? 'bounce.out' : 'elastic.out(1, 0.75)'
+      console.log(randomEase)
+      gsap.from(section, {
+        translateX: '50%',
+        opacity: 0,
+        duration: 1,
+        ease: randomEase
+      })
     }
    })
  }
