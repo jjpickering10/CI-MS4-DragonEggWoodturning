@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: 2,
       ease: "circ.out"
     })
+    .to(document.querySelector('.canvas-loading'), {
+      opacity: 0,
+      duration: 2,
+      ease: "circ.out"
+    }, '-=2')
     .to(documentElementsGsap[0], {
       opacity: 1,
       y: '0',
@@ -205,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function postLoad() {
     document.body.classList.remove('post-load')
     document.querySelector('.loading').style.display = 'none'
+    document.querySelector('.canvas-loading').style.display = 'none'
       // Scroll animations
     console.log(categoriesGsap);
     if (categoryHeaderGsap) {

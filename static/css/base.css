@@ -19,7 +19,7 @@
   position: absolute;
   height: 100vh;
   width: 100vw;
-  z-index: 500000;
+  z-index: 996;
   background: var(--primary-brown);
 }
 
@@ -33,8 +33,7 @@
   position: absolute;
   height: 10vh;
   width: 100vw;
-  z-index: -500000;
-  background: var(--primary-brown);
+  z-index: 998;
 }
 .loading h1 {
   position: absolute;
