@@ -2365,5 +2365,105 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 
 .page-footer {
+  position: relative;
   background: var(--primary-brown);
+  overflow: hidden;
+}
+.page-footer .footer-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  color: var(--white-shadow);
+  opacity: 0.2;
+  text-align: center;
+  -webkit-animation: footer 3s linear infinite;
+          animation: footer 3s linear infinite;
+}
+@-webkit-keyframes footer {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-50%, calc(-50% + 10px));
+  }
+  50% {
+    transform: translate(-50%, calc(-50% + 20px ));
+  }
+  75% {
+    transform: translate(-50%, calc(-50% + 10px));
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes footer {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-50%, calc(-50% + 10px));
+  }
+  50% {
+    transform: translate(-50%, calc(-50% + 20px ));
+  }
+  75% {
+    transform: translate(-50%, calc(-50% + 10px));
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+.page-footer h5, .page-footer p, .page-footer a {
+  color: var(--white);
+}
+.page-footer h5 {
+  font-weight: 200;
+  text-align: center;
+}
+.page-footer h5 span {
+  color: var(--primary-orange);
+}
+.page-footer p {
+  font-weight: 100;
+  text-align: center;
+}
+.page-footer a {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-transform: lowercase;
+  padding: 0.5rem 1rem;
+}
+.page-footer .container .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.page-footer .container .row > * {
+  flex: 50%;
+}
+.page-footer .container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-footer .container ul .footer-shop-link {
+  background-color: var(--primary-orange);
+  color: var(--primary-brown);
+}
+.page-footer .footer-copyright .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+.page-footer .footer-copyright .container a {
+  font-size: 1.5rem;
+  padding: 0;
 }/*# sourceMappingURL=base.css.map */

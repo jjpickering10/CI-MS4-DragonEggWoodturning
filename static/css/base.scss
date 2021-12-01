@@ -2749,5 +2749,91 @@ nav {
 // Footer
 
 .page-footer {
+    position: relative;
     background: var(--primary-brown);
+    overflow: hidden;
+    .footer-watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        color: var(--white-shadow);
+        opacity: 0.2;
+        text-align: center;
+        animation: footer 3s linear infinite
+    }
+    @keyframes footer {
+        0% {
+            transform: translate(-50%, -50%);
+        }
+        25% {
+            transform: translate(-50%, calc(-50% + 10px));
+        }
+        50% {
+            transform: translate(-50%, calc(-50% + 20px ));
+        }
+        75% {
+            transform: translate(-50%, calc(-50% + 10px));
+        }
+        100% {
+            transform: translate(-50%, -50%);
+        }
+    }
+    h5, p, a {
+        color: var(--white);
+    }
+    h5 {
+        font-weight: 200;
+        text-align: center;
+        span {
+            color: var(--primary-orange);
+        }
+    }
+    p {
+        font-weight: 100;
+        text-align: center;
+    }
+    a {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+        text-transform: lowercase;
+        padding: 0.5rem 1rem;
+    }
+    .container {
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            > * {
+                flex: 50%;
+            }
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .footer-shop-link {
+                background-color: var(--primary-orange);
+                color: var(--primary-brown);
+            }
+        }
+    }
+    .footer-copyright {
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            a {
+                font-size: 1.5rem;
+                padding: 0;
+            }
+        }
+    }
 }
