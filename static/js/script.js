@@ -1,3 +1,7 @@
+if (window.scrollY != 0 ) {
+  window.location.assign(window.location.href)
+  console.log('reloaded')
+}
 // Canvas --- Learned Canvas drawing from https://www.youtube.com/c/Frankslaboratory 
 
 const canvas = document.querySelector(".canvas-loading");
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var modalElems = document.querySelectorAll('.modal');
     var modalInstances = M.Modal.init(modalElems, options);
   });
-
+  
   // Gallery mouse move
 
   const galleryContainer = document.querySelector('.home-gallery')
@@ -159,9 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   // Loading
-
-  console.log(landingSegmentsGsap);
-
+  
   window.addEventListener('load', () => {
     timeline.to(document.querySelector('.loading'), {
       opacity: 0,
@@ -206,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
       onComplete: postLoad
     })
   })
+
 
   function postLoad() {
     document.body.classList.remove('post-load')

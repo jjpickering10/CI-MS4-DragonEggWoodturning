@@ -47,7 +47,19 @@
         {% if request.user.is_superuser %}
             <div class="blog-post-admin">
                 <a href="{% url 'edit_blog' post.id %}">Edit</a>
-                <a href="{% url 'delete_blog' post.id %}">Delete</a>
+                <!-- Modal Trigger -->
+                <a class="modal-trigger" href="#{{ post.id }}-{{ post.title }}">Delete</a>
+                <!-- Modal Structure -->
+                <div id="{{ post.id }}-{{ post.title }}" class="modal">
+                    <div class="modal-content">
+                        <p>{{ post.title }}</p>
+                        <p>Are you sure you want to delete?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close global-button">Cancel</a>
+                        <a href="{% url 'delete_blog' post.id %}" class=" global-button">Delete <i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
             </div>
         {% endif %}
     </div>
@@ -68,7 +80,19 @@
                 {% if request.user == comment.user %}
                     <div class="blog-post-comment-edit">
                         <a href="{% url 'edit_comment' comment.id %}">Edit</a>
-                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                        <!-- Modal Trigger -->
+                        <a class="modal-trigger" href="#{{ comment.id }}-{{ comment.post.title }}">Delete</a>
+                        <!-- Modal Structure -->
+                        <div id="{{ comment.id }}-{{ comment.post.title }}" class="modal">
+                            <div class="modal-content">
+                                <p>Comment on: {{ post.title }}</p>
+                                <p>Are you sure you want to delete?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close global-button">Cancel</a>
+                                <a href="{% url 'delete_comment' comment.id %}" class=" global-button">Delete <i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
                     </div>
                 {% endif %}
             </div>
