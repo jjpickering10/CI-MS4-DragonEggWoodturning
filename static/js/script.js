@@ -5,6 +5,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const particlesArray = [];
 let randomColor = "#D2B48C";
 
 const canvasMouse = {
@@ -15,7 +16,10 @@ const canvasMouse = {
 canvas.addEventListener("mousemove", (e) => {
   canvasMouse.x = e.x;
   canvasMouse.y = e.y;
-  console.log(canvasMouse);
+
+  for (let i = 0; i < 1; i++) {
+    particlesArray.push(new Particle());
+  }
 });
 
 class Particle {
@@ -37,6 +41,18 @@ class Particle {
     ctx.fill();
   }
 }
+
+function handleParticles() {
+  for (let i = 0; i < particlesArray.length; i++) {
+    particlesArray[i].draw();
+  }
+}
+
+animate = () => {
+  handleParticles();
+  requestAnimationFrame(animate);
+};
+animate();
 
 
 
