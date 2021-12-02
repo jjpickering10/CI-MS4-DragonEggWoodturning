@@ -436,7 +436,6 @@ body main {
   position: relative;
   text-align: center;
   font-weight: 300;
-  text-transform: uppercase;
 }
 .site-information .site-information-container .site-info-content h3::before {
   content: "";
@@ -600,7 +599,7 @@ body main {
   margin: 3rem auto 0 auto;
   text-align: center;
   font-weight: 100;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--white);
   position: relative;
 }
@@ -934,7 +933,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   z-index: -1;
 }
 #home-products > h2 {
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-weight: 100;
 }
 #home-products > h2::before {
@@ -1028,7 +1027,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 #home-products .category-container .category-card a .category-content .category-title {
   font-weight: 400;
   transition: transform 0.3s;
-  font-size: 90%;
+  font-size: 1rem;
 }
 #home-products .category-container .category-card a .category-content .category-title:hover, #home-products .category-container .category-card a .category-content .category-title:focus {
   transform: scale(1.1);

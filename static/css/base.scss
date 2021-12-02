@@ -35,7 +35,6 @@
     height: 10vh;
     width: 100vw;
     z-index: 998;
-    // background: var(--primary-brown);
     h1 {
         position: absolute;
         font-weight: 100;
@@ -469,7 +468,6 @@ body {
                 position: relative;
                 text-align: center;
                 font-weight: 300;
-                text-transform: uppercase;
                 &::before {
                     content: '';
                     position: absolute;
@@ -649,7 +647,7 @@ body {
             margin: 3rem auto 0 auto;
             text-align: center;
             font-weight: 100;
-            text-transform: uppercase;
+            text-transform: lowercase;
             color: var(--white);
             position: relative;
             &::before {
@@ -1054,7 +1052,7 @@ nav {
     }
 
     > h2 {
-        text-transform: uppercase;
+        text-transform: lowercase;
         font-weight: 100;
         &::before {
             content: '';
@@ -1159,7 +1157,7 @@ nav {
                     .category-title {
                         font-weight: 400;
                         transition: transform 0.3s;
-                        font-size: 90%;
+                        font-size: 1rem;
 
                         &:hover, &:focus {
                             transform: scale(1.1);
