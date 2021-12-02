@@ -16,7 +16,6 @@
       <div class="product-card-image">
           {% if product.image_set.all|length > 0 %}
           <div class="product-image-slider">
-            <!-- <img class="materialboxed product-image-slider" src="{{ product.image_set.first.image.url }}" alt=""> -->
             {% for image in product.image_set.all %}
             <img class="materialboxed" src="{{ image.image.url }}" alt="">
             {% endfor %}
@@ -205,13 +204,11 @@
 
   plus.addEventListener('click', () => {
     slider.valueAsNumber +=1
-    console.log(slider.valueAsNumber);
     slider.value = slider.valueAsNumber
     output.innerHTML = slider.value;
   })
   minus.addEventListener('click', () => {
     slider.valueAsNumber -=1
-    console.log(slider.valueAsNumber);
     slider.value = slider.valueAsNumber
     output.innerHTML = slider.value;
   })

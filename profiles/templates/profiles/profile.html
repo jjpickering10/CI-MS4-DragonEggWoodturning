@@ -274,7 +274,6 @@
     if (dataLink === section.dataset.link) {
       section.classList.remove('hide')
       let randomEase = Math.random() <= 0.5 ? 'expo.out' : 'elastic.out(1, 0.75)'
-      console.log(randomEase)
       gsap.from(section, {
         translateX: '50%',
         opacity: 0,
@@ -292,7 +291,6 @@
     })
     link.classList.add('active')
     dataLink = link.dataset.link
-    console.log(dataLink);
     checkSections(dataLink)
   })
  })

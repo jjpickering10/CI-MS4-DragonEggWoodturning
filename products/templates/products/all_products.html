@@ -162,20 +162,16 @@
 
     sortKey.addEventListener('change', (e) => {
     const selected = e.srcElement.value
-    console.log(selected);
     if (selected != 'reset') {
       const sort = selected.split("_")[0]
       const direction = selected.split("_")[1]
 
       url.searchParams.set('sort', sort)
       url.searchParams.set('direction', direction)
-      console.log(url);
-
       window.location.replace(url)
     } else {
         url.searchParams.delete("sort")
         url.searchParams.delete("direction")
-
         window.location.replace(url)
     }
    })

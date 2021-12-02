@@ -3,11 +3,11 @@
 {% load bag_tools %}
 
 {% block page_header %}
-  Inspired by nature
+Inspired by nature
 {% endblock %}
 
 {% block page_header_paragraph %}
-  <span>Shopping cart</span>
+<span>Shopping cart</span>
 {% endblock %}
 
 {% block content %}
@@ -15,123 +15,116 @@
 <div class="bag-container">
   <div class="bag-table">
     {% if bag_items %}
-        {% if free_delivery_delta > 0 %}
-        <p class="free-delivery"><i class="fas fa-exclamation"></i> For <span>free</span> delivery, spend <span class="delivery-threshold">£{{ free_delivery_delta }}</span> extra!</p>
-        {% endif %}
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-  
-        {% for item in bag_items %}
-        <tbody>
-          <tr>
-            <td class="product-td">{{ item.product.name }}
-              {% if item.product.image_set.all|length > 0 %}
-              <img src="{{ item.product.image_set.first.image.url }}" alt="">
+    {% if free_delivery_delta > 0 %}
+    <p class="free-delivery"><i class="fas fa-exclamation"></i> For <span>free</span> delivery, spend <span
+        class="delivery-threshold">£{{ free_delivery_delta }}</span> extra!</p>
+    {% endif %}
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+
+      {% for item in bag_items %}
+      <tbody>
+        <tr>
+          <td class="product-td">{{ item.product.name }}
+            {% if item.product.image_set.all|length > 0 %}
+            <img src="{{ item.product.image_set.first.image.url }}" alt="">
             {% else %}
-              <img src="{{ MEDIA_URL }}noimage.png">
+            <img src="{{ MEDIA_URL }}noimage.png">
             {% endif %}
-            </td>
-            {% if item.product.final_price %}
-              {% if item.product.discounted %}
-                <td>£<span style="text-decoration: line-through;">{{ item.product.price}}</span> {{ item.product.final_price }}</td>
-                {% else %}
-                <td>£{{ item.product.final_price }}</td>
-                {% endif %}
-            {% else %}
-                <td>£ {{ item.product.price }}</td>
-            {% endif %}
-            <td>
-              <div class="edit-bag-container">
-                <form class="update-bag-total" action="{% url 'edit_bag' item.item_id %}" method="POST">
-                  {% csrf_token %}
-                  <p class="range-slider">
-                    <input type="range" class="update-range" name="quantity" value ='{{ item.quantity }}' min="1" max="10" data-item_id="{{ item.product.name }}" />
-                  </p>
-                  <p class="quantity-slider"><i class="fas fa-plus"></i><span data-item_id="{{ item.product.name }}" class="update-value"></span><i class="fas fa-minus"></i></p>
-                    <input type="submit" value="Edit">
-                </form>
-                  <form class="remove-from-bag" action="{% url 'remove_from_bag' item.item_id %}" method="POST">
-                    {% csrf_token %}
-                    <input type="submit" value="Remove All">
-                </form>
-              </div>
-            </td>
-            {% if item.product.final_price %}
-            <td>£{{ item.product.final_price | calc_subtotal:item.quantity }}</td>
-            {% else %}
-            <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
-            {% endif %}
-          </tr>
-        </tbody>
-        {% endfor %}
-        
-      </table>
-      <div class="bag-subtotal">
-        <div>
-          <h5>Subtotal: <span>£{{ grand_total|floatformat:2 }}</span></h5>
-          <p>Delivery: <span>£{{ delivery|floatformat:2 }}</span></p>
-        </div>
-        <div class="bag-buttons">
-          <a class="global-button" href="{% url 'all_products' %}">Keep Shopping</a>
-          <a class="global-button" href="{% url 'checkout' %}">Secure Checkout</a>
-        </div>
+          </td>
+          {% if item.product.final_price %}
+          {% if item.product.discounted %}
+          <td>£<span style="text-decoration: line-through;">{{ item.product.price}}</span>
+            {{ item.product.final_price }}</td>
+          {% else %}
+          <td>£{{ item.product.final_price }}</td>
+          {% endif %}
+          {% else %}
+          <td>£ {{ item.product.price }}</td>
+          {% endif %}
+          <td>
+            <div class="edit-bag-container">
+              <form class="update-bag-total" action="{% url 'edit_bag' item.item_id %}" method="POST">
+                {% csrf_token %}
+                <p class="range-slider">
+                  <input type="range" class="update-range" name="quantity" value='{{ item.quantity }}' min="1" max="10"
+                    data-item_id="{{ item.product.name }}" />
+                </p>
+                <p class="quantity-slider"><i class="fas fa-plus"></i><span data-item_id="{{ item.product.name }}"
+                    class="update-value"></span><i class="fas fa-minus"></i></p>
+                <input type="submit" value="Edit">
+              </form>
+              <form class="remove-from-bag" action="{% url 'remove_from_bag' item.item_id %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Remove All">
+              </form>
+            </div>
+          </td>
+          {% if item.product.final_price %}
+          <td>£{{ item.product.final_price | calc_subtotal:item.quantity }}</td>
+          {% else %}
+          <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
+          {% endif %}
+        </tr>
+      </tbody>
+      {% endfor %}
+
+    </table>
+    <div class="bag-subtotal">
+      <div>
+        <h5>Subtotal: <span>£{{ grand_total|floatformat:2 }}</span></h5>
+        <p>Delivery: <span>£{{ delivery|floatformat:2 }}</span></p>
       </div>
-      {% else %}
-      <div class="empty-bag">
-        <p>Your bag is empty</p>
+      <div class="bag-buttons">
         <a class="global-button" href="{% url 'all_products' %}">Keep Shopping</a>
+        <a class="global-button" href="{% url 'checkout' %}">Secure Checkout</a>
       </div>
-      {% endif %}
+    </div>
+    {% else %}
+    <div class="empty-bag">
+      <p>Your bag is empty</p>
+      <a class="global-button" href="{% url 'all_products' %}">Keep Shopping</a>
+    </div>
+    {% endif %}
   </div>
 </div>
 
-  {% endblock %}
+{% endblock %}
 
-  {% block extra_js %}
+{% block extra_js %}
 <!-- Taken from https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
 <script>
   const sliders = document.querySelectorAll(".update-range");
   const outputs = document.querySelectorAll(".update-value");
 
   sliders.forEach(slider => {
-    // console.log(slider.dataset.item_id)
+
     outputs.forEach(output => {
-      // console.log(output.dataset.item_id)
       if (slider.dataset.item_id === output.dataset.item_id) {
-        // console.log(slider)
-        console.log(output)
         output.innerHTML = slider.value;
         const plus = output.previousSibling
         const minus = output.nextSibling
 
         plus.addEventListener('click', () => {
-        slider.valueAsNumber +=1
-        console.log(slider.valueAsNumber);
-        slider.value = slider.valueAsNumber
-        output.innerHTML = slider.value;
-          })
+          slider.valueAsNumber += 1
+          slider.value = slider.valueAsNumber
+          output.innerHTML = slider.value;
+        })
 
         minus.addEventListener('click', () => {
-          slider.valueAsNumber -=1
-          console.log(slider.valueAsNumber);
+          slider.valueAsNumber -= 1
           slider.value = slider.valueAsNumber
           output.innerHTML = slider.value;
         })
       }
     })
   })
-
-  
-  // let inputValue = document.getElementById('product-range')
-  // console.log(inputValue.value);
-
-  
-  </script>
+</script>
 {% endblock %}
