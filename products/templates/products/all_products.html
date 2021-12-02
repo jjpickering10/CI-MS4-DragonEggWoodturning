@@ -78,7 +78,7 @@
 
 <div class="product-container">
   <div class="product-category-container">
-    <h2> Category</h2>
+    <h2> Choose from:</h2>
     <p class="category-names"><a href="{% url 'all_products' %}"><i class="far fa-square"></i><i class="fas fa-check hide"></i>All Products</a></p>
     {% for category in all_categories %}
     <p class="category-names"><a href="{% url 'all_products' %}?category={{ category.id }}"><i class="far fa-square"></i><i class="fas fa-check hide"></i>{{ category.friendly_name }}</a></p>

@@ -451,6 +451,7 @@ body main {
   position: relative;
   text-align: center;
   font-weight: 300;
+  text-transform: capitalize;
 }
 .site-information .site-information-container .site-info-content h3::before {
   content: "";
@@ -720,21 +721,18 @@ nav {
   box-shadow: none;
 }
 nav .brand-logo {
-  color: var(--primary-brown);
+  color: var(--white);
   font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: lowercase;
   margin-left: 5rem;
   padding: 0 1rem;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--white);
   box-shadow: 10px 10px 0 0 var(--white);
   border-right: 10px solid var(--secondary-brown);
   border-bottom: 10px solid var(--primary-orange);
+}
+nav .brand-logo span {
+  color: var(--primary-orange);
 }
 nav .sidenav-trigger {
   color: var(--primary-brown);
@@ -803,7 +801,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .about-page-container .about-landing .about-landing-title h1 {
   font-weight: 200;
   text-transform: lowercase;
-  font-size: calc(0.1rem + 2vw);
   margin-bottom: 0;
   color: var(--primary-brown);
   position: relative;
@@ -1189,6 +1186,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   text-transform: uppercase;
   position: relative;
   color: var(--white);
+  font-size: 2rem;
 }
 .product-container .product-category-container p, .product-detail-container .product-category-container p {
   margin: 1rem 0;
@@ -1863,10 +1861,11 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 }
 .profile-container > .profile-nav h2 {
   font-weight: 100;
-  text-transform: uppercase;
+  text-transform: capitalize;
   position: relative;
   padding: 1rem;
   border-left: 3px solid var(--primary-orange);
+  font-size: 2.5rem;
 }
 .profile-container > .profile-nav .profile-links {
   margin: 1rem 0;
@@ -1879,6 +1878,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
   padding: 0.5rem;
   transition: background-color 0.3s, font-weight 0.3s;
+  text-transform: lowercase;
   position: relative;
   color: var(--primary-brown);
 }
@@ -2526,6 +2526,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .page-footer h5 {
   font-weight: 200;
   text-align: center;
+  text-transform: lowercase;
 }
 .page-footer h5 span {
   color: var(--primary-orange);

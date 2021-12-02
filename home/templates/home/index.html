@@ -23,7 +23,7 @@
             </div>
         </section>
         <section id="home-products">
-            <h2>Our Selection</h2>
+            <h2>What we sell</h2>
             <div class="category-container">
                 {% for category in categories %}
                 <div class="category-card"><a href="{% url 'all_products' %}?category={{ category.id }}">
@@ -55,7 +55,7 @@
             <div class="home-blog-posts"></div>
         </section>
         <section id="home-reviews">
-            <h2>Our Reviews</h2>
+            <h2>What people think</h2>
             <div class="glider-contain">
                 <div class="glider">
                     {% for review in reviews %}
