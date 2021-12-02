@@ -401,12 +401,25 @@ body {
     position: relative;
     overflow: hidden;
     margin: 3rem auto;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 25%;
+        height: 0.5rem;
+        background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+        border-radius: 1rem;
+        transform: translate(-50%, 0);
+    }
 
     .gallery-images-section {
         transition: 1s ease-in-out;
+        position: relative;
 
         .gallery-column {
             display: flex;
+            
 
             img {
                 width: 50%;
@@ -465,6 +478,7 @@ body {
                     transform: translateX(-50%);
                     height: 5px;
                     width: 50px;
+                    border-radius: 1rem;
                     background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
                 }
             }
@@ -512,17 +526,13 @@ body {
             }
 
             h1 {
-                font-weight: 200;
+                font-weight: 400;
                 
                 text-transform: lowercase;
-                font-size: calc(2.5rem + 2vw);
-                margin-bottom: 0;
+                margin: 2rem 0 1rem 0;
                 color: var(--white);
                 position: relative;
                 
-                box-shadow: -5px -5px 5px 0 var(--white-shadow);
-                
-                line-height: 1.2;
                 padding: 1rem 2rem 1rem 2rem;
                 opacity: 0;
 
@@ -531,6 +541,29 @@ body {
                     font-weight: 900;
                     text-transform: uppercase;
                     font-size: 110%;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 2rem;
+                    width: 25%;
+                    height: 0.5rem;
+                    background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+                    border-radius: 1rem;
+                }
+                &::after {
+                    content: 'wood';
+                    position: absolute;
+                    top: -50%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 500%;
+                    color: var(--white-shadow);
+                    opacity: 0.1;
+                    transform: translateY(-50%);
+                    line-height: 1;
                 }
             }
 
@@ -612,11 +645,24 @@ body {
         background: var(--primary-brown);
         
         h2 {
-            width: 100%;
+            width: fit-content;
+            margin: 3rem auto 0 auto;
             text-align: center;
             font-weight: 100;
             text-transform: uppercase;
             color: var(--white);
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -1rem;
+                left: 50%;
+                width: 25%;
+                height: 0.5rem;
+                background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+                border-radius: 1rem;
+                transform: translate(-50%, 0);
+            }
         }
 
         .glider-contain {
@@ -1010,6 +1056,17 @@ nav {
     > h2 {
         text-transform: uppercase;
         font-weight: 100;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            width: 25%;
+            height: 0.5rem;
+            background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+            border-radius: 1rem;
+            transform: translate(-50%, 0);
+        }
         
     }
 
@@ -2284,9 +2341,7 @@ nav {
         
             .category-content {
                 margin: 3rem 0;
-                // box-shadow: -3px 0 0 0 var(--white-shadow);
                 padding: 1rem 0;
-                // background: var(--white);
                 h5 {
                     margin: 0;
                     font-weight: 300;
@@ -2298,15 +2353,6 @@ nav {
                         font-weight: 600;
                         color: var(--primary-orange);
                     }
-                    // &::before {
-                    //     content: '';
-                    //     position: absolute;
-                    //     top: -0.5rem;
-                    //     left: 0;
-                    //     width: 25%;
-                    //     height: 2px;
-                    //     background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
-                    // }
                 }
                 form {
                     margin-top: 1rem;
