@@ -39,7 +39,8 @@ class Subscribers(models.Model):
                 }
             )
 
-        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [subscriber_email], fail_silently=False)
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [
+            subscriber_email], fail_silently=False)
 
     def save(self, *args, **kwargs):
         """
@@ -70,7 +71,7 @@ class Newsletter(models.Model):
         for email in emails:
             subscriber_email = email.email
             unsubscribe_id = email.unsubscribe
-            
+
             subject = render_to_string(
                 'newsletter/newsletter_emails/newsletter_subject.txt', {
                     'title': title
@@ -86,4 +87,5 @@ class Newsletter(models.Model):
                     }
                 )
 
-            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [subscriber_email], fail_silently=False)
+            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [
+                subscriber_email], fail_silently=False)

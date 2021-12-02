@@ -1,13 +1,14 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+import json
+import stripe
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.conf import settings
-from .forms import OrderForm
-from .models import OrderLineItem, Order
 from products.models import Product
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
-import stripe
-import json
+from .forms import OrderForm
+from .models import OrderLineItem, Order
 
 
 @require_POST
@@ -20,10 +21,8 @@ def cache_checkout_data(request):
             'bag': json.dumps(request.session.get('bag')),
             'save_info': request.POST.get('save_info')
         })
-
         return HttpResponse(status=200)
     except Exception as e:
-        print("Payment failed")
         return HttpResponse(content=e, status=400)
 
 
@@ -66,17 +65,17 @@ def checkout(request):
                 order_line_item.save()
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
 
     else:
         bag = request.session.get('bag', {})
-        
+
         if not bag:
             return redirect(reverse('all_products'))
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
-        print(total)
         stripe_total = round(total * 100)
 
         stripe.api_key = stripe_secret_key
@@ -117,10 +116,8 @@ def checkout_success(request, order_number):
     """
     A view to checkout success page
     """
-    
+
     save_info = request.session.get('save_info')
-    print(save_info)
-    print(type(save_info))
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:

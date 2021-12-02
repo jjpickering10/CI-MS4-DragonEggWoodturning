@@ -1,18 +1,16 @@
 from django.shortcuts import render, redirect, reverse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Post, Comment
 from .forms import CommentForm, BlogForm
 
-from django.contrib import messages
 
 def blog(request):
     """
     Display blog page
     """
     posts = Post.objects.all()
-    for post in posts:
-        print(post.comment_set.all())
 
     query = None
 
@@ -41,10 +39,9 @@ def blog_post(request, blog_id):
     """
     post = Post.objects.get(id=blog_id)
     liked = False
+
     if post.likes.filter(id=request.user.id).exists():
         liked = True
-
-    print(post)
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
@@ -145,7 +142,7 @@ def delete_blog(request, blog_id):
     if not request.user.is_superuser:
         messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))
-        
+
     post = Post.objects.get(id=blog_id)
     post.delete()
     messages.success(request, f'Blog post {post.title} deleted')
@@ -164,10 +161,12 @@ def edit_comment(request, comment_id):
         edited_comment = CommentForm(request.POST, instance=comment)
         if edited_comment.is_valid():
             edited_comment.save()
-            messages.success(request, f'Comment on post {comment.post.title} edited')
+            messages.success(
+                request, f'Comment on post {comment.post.title} edited')
             return redirect(reverse('blog_post', args=[comment.post.id]))
         else:
-            messages.error(request, f'Error editing comment on post {comment.post.title}')
+            messages.error(
+                request, f'Error editing comment on post {comment.post.title}')
             return redirect(reverse('blog_post', args=[comment.post.id]))
     else:
         comment_form = CommentForm(instance=comment)
@@ -202,17 +201,17 @@ def like_post(request, blog_id):
     if not request.user.is_authenticated:
         messages.info(request, 'Only registered users can like a post')
         return redirect(reverse('blog_post', args=[blog_id]))
-    
+
     post = Post.objects.get(id=blog_id)
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
-        post.like_count -=1
+        post.like_count -= 1
         post.save()
         messages.success(request, f'You unliked {post.title}')
     else:
         post.likes.add(request.user)
-        post.like_count +=1
+        post.like_count += 1
         post.save()
         messages.success(request, f'You liked {post.title}')
-    
+
     return redirect(reverse('blog_post', args=[blog_id]))

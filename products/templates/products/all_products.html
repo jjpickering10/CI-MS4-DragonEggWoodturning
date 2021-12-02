@@ -44,7 +44,7 @@
 
 <div class="products-amount">
   <div class="products-location">
-    {% if products|length == all_products|length %}
+    {% if products|length == total_products|length %}
     <p>{{ products|length }} products | <span class="product-label">All Products</span></p>
     {% else %}
     <p>{{ products|length }} products |

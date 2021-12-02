@@ -11,7 +11,8 @@ class Category(models.Model):
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
-    description = models.TextField(max_length=254, default='Sorry, no description currently')
+    description = models.TextField(
+        max_length=254, default='Sorry, no description currently')
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     on_sale = models.BooleanField(default=False)
@@ -19,7 +20,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_friendly_name(self):
         return self.friendly_name
 
@@ -30,7 +31,7 @@ class WoodType(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_friendly_name(self):
         return self.friendly_name
 
@@ -43,16 +44,20 @@ class Product(models.Model):
         (25, '25% off'),
         (50, '50% off'),
     )
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
     wood_type = models.ManyToManyField(WoodType)
     sku = models.CharField(max_length=254, default='sku', blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     discounted = models.BooleanField(default=False)
-    discount_choices = models.IntegerField(choices=DISCOUNT_OPTIONS, null=True, blank=True)
-    final_price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    rating = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
+    discount_choices = models.IntegerField(
+        choices=DISCOUNT_OPTIONS, null=True, blank=True)
+    final_price = models.DecimalField(
+        max_digits=5, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(
+        max_digits=3, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -64,7 +69,8 @@ class Product(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_rating(self):
-        self.rating = self.review_set.aggregate(Avg('rating'))['rating__avg'] or 0
+        self.rating = self.review_set.aggregate(
+            Avg('rating'))['rating__avg'] or 0
         self.save()
 
     def add_discount(self):
@@ -75,12 +81,8 @@ class Product(models.Model):
 
     def generate_final_price(self):
         if self.discounted:
-            # print(self.discount_choices)
-            # print(self.price)
             discount_amount = (self.price / 100) * self.discount_choices
-            # print(discount_amount)
             final_amount = self.price - discount_amount
-            # print(final_amount)
             self.final_price = round(final_amount, 2)
         else:
             self.final_price = self.price
@@ -88,7 +90,6 @@ class Product(models.Model):
     def check_category_on_sale(self):
         if self.category.on_sale:
             self.discount_choices = self.category.on_sale_amount
-            print(self.discount_choices)
             self.save()
 
     def save(self, *args, **kwargs):
@@ -130,7 +131,8 @@ class Review(models.Model):
     body = models.TextField()
     rating = models.IntegerField(choices=RATINGS_CHOICES, default=0)
     date = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.product.name

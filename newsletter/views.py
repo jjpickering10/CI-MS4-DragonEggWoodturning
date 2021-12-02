@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 from .models import Subscribers
 from .forms import SubscribersForm, NewsletterForm
-
-from django.contrib import messages
-
 
 
 def subscribe(request):
@@ -12,7 +10,6 @@ def subscribe(request):
     """
 
     current_subscribers = Subscribers.objects.all()
-    print(current_subscribers)
 
     if request.method == 'POST':
         new_subscriber = request.POST.get('email')
@@ -39,7 +36,8 @@ def unsubscribe(request, unsubscribe_id):
     subscribers = Subscribers.objects.all()
     current_subscriber = None
     if subscribers.filter(unsubscribe=unsubscribe_id).exists():
-        current_subscriber = Subscribers.objects.get(unsubscribe=unsubscribe_id)
+        current_subscriber = Subscribers.objects.get(
+            unsubscribe=unsubscribe_id)
         current_subscriber.delete()
         messages.success(request, 'Unsubscribed')
     else:

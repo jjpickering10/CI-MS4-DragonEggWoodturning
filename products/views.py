@@ -13,13 +13,11 @@ def all_products(request):
     A view to show all products
     """
     products = Product.objects.all()
-    # images = Image.objects.all()
     wood_types = WoodType.objects.all()
     all_categories = Category.objects.all()
-    all_products = Product.objects.all()
+    total_products = Product.objects.all()
     query = None
     categories = None
-    current_categories = None
     wood_search = None
     wood_results = None
     sort = None
@@ -41,7 +39,8 @@ def all_products(request):
             if not query:
                 return redirect(reverse('all_products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
         if 'sort' in request.GET:
@@ -63,13 +62,12 @@ def all_products(request):
 
     context = {
         'products': products,
-        # 'images': images,
         'search_term': query,
         'current_categories': categories,
         'wood_types': wood_types,
         'wood_results': wood_results,
         'all_categories': all_categories,
-        'all_products': all_products,
+        'total_products': total_products,
         'current_sorting': current_sorting
     }
 
@@ -178,7 +176,8 @@ def add_discount(request, product_id):
             messages.success(request, f'Discount for {product.name} added')
             return redirect(reverse('product_detail', args=[product_id]))
         else:
-            messages.error(request, f'Error giving discount for {product.name}')
+            messages.error(
+                request, f'Error giving discount for {product.name}')
             return redirect(reverse('product_detail', args=[product_id]))
 
 
@@ -190,10 +189,7 @@ def category_discount(request, category_id):
 
     products = Product.objects.filter(category=category_id)
     category = Category.objects.get(id=category_id)
-    # print(products)
-
     discount = request.POST.get('discount_choices')
-    print('discount', discount)
 
     for product in products:
         discount_form = DiscountForm(request.POST, instance=product)
@@ -203,7 +199,8 @@ def category_discount(request, category_id):
     if discount:
         category.on_sale = True
         category.on_sale_amount = int(discount)
-        messages.success(request, f'{discount} for all {category.name} products added')
+        messages.success(
+            request, f'{discount} for all {category.name} products added')
     else:
         category.on_sale = False
         category.on_sale_amount = None
@@ -224,11 +221,9 @@ def add_product(request):
     if request.method == "POST":
         product_form = ProductForm(request.POST)
         images = request.FILES.getlist('image')
-        print(images)
         if product_form.is_valid():
             new_product = product_form.save()
             product = Product.objects.get(id=new_product.id)
-            print(product)
             for image in images:
                 image_form = ImageForm(image)
                 if image_form.is_valid():
@@ -236,7 +231,6 @@ def add_product(request):
                     new_image.product = product
                     new_image.image = image
                     new_image.save()
-                    print(new_image)
                 else:
                     messages.error(request, 'Error adding product')
                     return redirect(reverse('profile'))
@@ -259,23 +253,19 @@ def edit_product(request, product_id):
         return redirect(reverse('home'))
 
     product = Product.objects.get(id=product_id)
-    # print(product.name)
 
     if request.method == 'POST':
         product_form = ProductForm(request.POST, instance=product)
-        # print(product_form)
         if product_form.is_valid():
-            print('valid')
             product_form.save()
             messages.success(request, f'Successfully edited {product.name}')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            print('not valid')
-            messages.error(request, 'Failed to update. Please ensure form is valid.')
+            messages.error(
+                request, 'Failed to update. Please ensure form is valid.')
             return redirect(reverse('product_detail', args=[product.id]))
     else:
         product_form = ProductForm(instance=product)
-        print(product_form)
         messages.info(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
@@ -308,11 +298,12 @@ def edit_product_images(request, product_id):
                 new_image.product = product
                 new_image.image = image
                 new_image.save()
-                print(new_image)
             else:
                 messages.error(request, 'Error adding images')
-                return redirect(reverse('edit_product_images', args=[product.id]))
-        messages.success(request, f'Successfully added images to {product.name}')
+                return redirect(reverse(
+                    'edit_product_images', args=[product.id]))
+        messages.success(
+            request, f'Successfully added images to {product.name}')
         return redirect(reverse('edit_product_images', args=[product.id]))
     else:
         image_form = ImageForm()

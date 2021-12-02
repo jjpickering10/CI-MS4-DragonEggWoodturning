@@ -10,14 +10,6 @@ class ReviewForm(forms.ModelForm):
             'rating',
         )
 
-    # def __init__(self, *args, **kwargs):
-    #     """
-    #     Set autofocus on first field
-    #     """
-    #     super().__init__(*args, **kwargs)
-
-    #     self.fields['body'].widget.attrs['autofocus'] = True
-
 
 class DiscountForm(forms.ModelForm):
     class Meta:
@@ -44,8 +36,10 @@ class ProductForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         wood_types = WoodType.objects.all()
-        cat_friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
-        wood_friendly_names = [(w.id, w.get_friendly_name()) for w in wood_types]
+        cat_friendly_names = [
+            (c.id, c.get_friendly_name()) for c in categories]
+        wood_friendly_names = [
+            (w.id, w.get_friendly_name()) for w in wood_types]
 
         self.fields['category'].choices = cat_friendly_names
         self.fields['wood_type'].choices = wood_friendly_names

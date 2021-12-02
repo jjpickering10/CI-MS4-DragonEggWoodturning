@@ -1,7 +1,7 @@
+import random
 from django.shortcuts import render
 from products.models import Category, Review
 
-import random
 
 def index(request):
     """
@@ -12,7 +12,6 @@ def index(request):
     reviews = list(Review.objects.all())
 
     random.shuffle(reviews)
-    reviews = reviews
 
     context = {
         'categories': categories,

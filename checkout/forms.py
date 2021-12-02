@@ -17,10 +17,3 @@ class OrderForm(forms.ModelForm):
             'postcode',
             'country',
         )
-
-    def __init__(self, *args, **kwargs):
-
-        super().__init__(*args, **kwargs)
-
-        # self.fields['full_name'].widget.attrs['autofocus'] = True
-                
