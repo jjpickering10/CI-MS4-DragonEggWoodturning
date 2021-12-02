@@ -430,27 +430,36 @@ body {
 }
 
 .site-information {
-    width: 75%;
+    width: 100%;
     margin: 3rem auto 5rem auto;
+    position: relative;
+    overflow: hidden;
+    &::before, &::after {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 15vw;
+        color: var(--secondary-brown);
+        text-align: center;
+        width: 200%;
+        opacity: 0.1;
+        z-index: 2;
+    }
+    &::before {
+        content: 'hand crafted';
+        top: 0;
+    }
+    &::after {
+        content: 'walking sticks';
+        bottom: 0;
+    }
     .site-information-container {
         display: flex;
         flex-wrap: wrap;
         position: relative;
         overflow: hidden;
+        padding: 5rem;
 
-        &::before {
-            content: 'hand crafted walking sticks';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 15rem;
-            color: var(--secondary-brown);
-            text-align: center;
-            width: 100%;
-            opacity: 0.1;
-            z-index: 2;
-        }
         .site-info-content {
             flex: 50%;
             display: flex;
@@ -458,6 +467,7 @@ body {
             align-items: center;
             justify-content: flex-start;
             padding: 5rem;
+            border-radius: 0 5rem 0;
 
             &:nth-of-type(2), &:nth-of-type(3) {
                 background: var(--primary-brown);
@@ -553,11 +563,11 @@ body {
                 &::after {
                     content: 'wood';
                     position: absolute;
-                    top: -50%;
+                    top: 0;
                     left: 0;
                     width: 100%;
-                    height: 100%;
-                    font-size: 500%;
+                    height: auto;
+                    font-size: 15vw;
                     color: var(--white-shadow);
                     opacity: 0.1;
                     transform: translateY(-50%);
@@ -641,6 +651,22 @@ body {
         display: flex;
         flex-direction: column;
         background: var(--primary-brown);
+        position: relative;
+        &::after {
+            content: 'reviews';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            font-size: 25vw;
+            color: var(--white-shadow);
+            opacity: 0.1;
+            transform: translate(-50%, -30%);
+            line-height: 1;
+            text-align: center;
+            pointer-events: none;
+        }
         
         h2 {
             width: fit-content;
@@ -702,6 +728,7 @@ body {
                                 padding: 1rem;
                                 border: none;
                                 font-size: 0.8rem;
+                                word-break: break-word;
                             }
                         }
 
@@ -1024,31 +1051,24 @@ nav {
     position: relative;
     overflow: hidden;
 
-    &::before {
+    &::before, &::after {
         position: absolute;
         top: 0;
-        left: -90%;
         content: "";
         height: 100%;
         width: 100%;
-        background: var(--primary-brown-shadow);
-        opacity: 0.5;
+        background: linear-gradient(0deg, var(--white), var(--primary-brown-shadow), var(--white));
+        opacity: 0.2;
         pointer-events: none;
         z-index: -1;
+        border-radius: 5rem;
         
     }
-    &::after {
-        position: absolute;
-        top: 0;
-        right: -90%;
-        content: "";
-        height: 100%;
-        width: 100%;
-        background: var(--primary-brown-shadow);
-        opacity: 0.5;
-        pointer-events: none;
-        z-index: -1;
-        
+    &::before {
+        left: -70%;
+    }
+    &::after { 
+        right: -70%;
     }
 
     > h2 {
@@ -2601,6 +2621,8 @@ nav {
                 text-align: center;
                 padding: 0 1rem 1rem 1rem;
                 font-weight: 100;
+                word-break: break-word;
+                width: 90%;
             }
         }
     }

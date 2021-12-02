@@ -54,7 +54,7 @@
                     <h4>{{ post.date }}</h4>
                 </div>
                 </div>
-                <p class="blog-body">{{ post.body|truncatewords:10 }}</p>
+                <p class="blog-body">{{ post.body|truncatechars:60 }}</p>
             </div>
             </div>
     </a>

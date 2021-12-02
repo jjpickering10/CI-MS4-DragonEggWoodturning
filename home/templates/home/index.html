@@ -115,7 +115,7 @@
                                     <i class="fas fa-quote-left"></i><i class="fas fa-quote-right"></i>
                                     <i class="fas fa-comment-alt"></i>
                                 </div> -->
-                                <blockquote>{{ review.body|truncatewords:30 }}</blockquote>
+                                <blockquote>{{ review.body|truncatechars:100 }}</blockquote>
                             </div>
                               {% if review.user %}
                             <p class="home-reviews-user"><i class="fas fa-user-edit"></i> {{ review.user }}</p>

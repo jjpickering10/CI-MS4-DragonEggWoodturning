@@ -187,8 +187,8 @@ window.addEventListener('load', () => {
     timeline.to(landingSegmentsGsap[5], {
       x: '0',
       duration: 1.5,
-      ease: "bounce.out",
-    }, '-=2')
+      ease: "back.out(2)",
+    }, '-=1')
     timeline.to(landingSegmentsGsap[4], {
       x: '0',
       duration: 0.25,
