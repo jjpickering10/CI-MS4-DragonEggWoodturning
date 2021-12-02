@@ -1,6 +1,5 @@
-if (window.scrollY != 0 ) {
+if (window.scrollY != 0) {
   window.location.assign(window.location.href)
-  console.log('reloaded')
 }
 // Canvas --- Learned Canvas drawing from https://www.youtube.com/c/Frankslaboratory 
 
@@ -102,7 +101,6 @@ const categoriesGsap = gsap.utils.toArray('.category-container .category-card')
 // Reviews Whole Site
 const reviewContainerGsap = document.querySelector('.glider')
 const reviewHeaderGsap = document.querySelector('#home-reviews h2')
-console.log(reviewContainerGsap);
 // Gallery Whole site
 const galleryContainerGsap = document.querySelector('.home-gallery')
 // Site information Whole Site
@@ -126,7 +124,7 @@ const segmentTimeline = gsap.timeline()
 M.AutoInit();
 
 var toastMessage = document.querySelector('.message-container')
-var toastClose = document.querySelector('.toast-action') 
+var toastClose = document.querySelector('.toast-action')
 if (toastMessage) {
   M.toast({
     html: toastMessage,
@@ -142,30 +140,28 @@ if (toastClose) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-    var modalElems = document.querySelectorAll('.modal');
-    var modalInstances = M.Modal.init(modalElems, options);
-  });
-  
-  // Gallery mouse move
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, options);
+  var modalElems = document.querySelectorAll('.modal');
+  var modalInstances = M.Modal.init(modalElems, options);
+});
 
-  const galleryContainer = document.querySelector('.home-gallery')
-  const galleryImages = document.querySelector('.gallery-images-section')
+// Gallery mouse move
 
-  galleryContainer.addEventListener('mousemove', (e)=> {
-    let x = e.clientX - galleryContainer.getBoundingClientRect().left
-    // let y = e.clientY - galleryContainer.getBoundingClientRect().top
-    console.log(x);
+const galleryContainer = document.querySelector('.home-gallery')
+const galleryImages = document.querySelector('.gallery-images-section')
 
-    galleryImages.style.transform = `translate(-${x}px)`
-  })
+galleryContainer.addEventListener('mousemove', (e) => {
+  let x = e.clientX - galleryContainer.getBoundingClientRect().left
 
-  // Loading
-  
-  window.addEventListener('load', () => {
-    timeline.to(document.querySelector('.loading'), {
+  galleryImages.style.transform = `translate(-${x}px)`
+})
+
+// Loading
+
+window.addEventListener('load', () => {
+  timeline.to(document.querySelector('.loading'), {
       opacity: 0,
       duration: 2,
       ease: "circ.out"
@@ -178,172 +174,153 @@ document.addEventListener('DOMContentLoaded', function() {
     .to(documentElementsGsap[0], {
       opacity: 1,
       y: '0',
-      // translateY: ('-100%'),
+
       ease: "power1.out"
-      
+
     }, '-=1')
-    if (landingSegmentsGsap[0] != null) {
-      timeline.to(landingSegmentsGsap, {
-        opacity: 1,
-        ease: "power1.out",
-        stagger: 0.25
-      })
-      timeline.to(landingSegmentsGsap[5], {
-        x: '0',
-        duration: 1.5,
-        ease: "bounce.out",
-      }, '-=2')
-      timeline.to(landingSegmentsGsap[4], {
-        x: '0',
-        duration: 0.25,
-        ease: "power4.out",
-        stagger: 0.1
-      }, '-=2')
-    }
-    timeline.to(documentElementsGsap[1], {
+  if (landingSegmentsGsap[0] != null) {
+    timeline.to(landingSegmentsGsap, {
       opacity: 1,
-      x: '0',
-      // translateX: ('-100%'),
-      ease: "elastic.out(1, 0.75)",
-      onComplete: postLoad
+      ease: "power1.out",
+      stagger: 0.25
     })
-  })
-
-
-  function postLoad() {
-    document.body.classList.remove('post-load')
-    document.querySelector('.loading').style.display = 'none'
-    document.querySelector('.canvas-loading').style.display = 'none'
-      // Scroll animations
-    console.log(categoriesGsap);
-    if (categoryHeaderGsap) {
-      gsap.from(categoryHeaderGsap, {
-        scrollTrigger: {
-          trigger: categoryHeaderGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        translateX: '50px',
-        opacity: 0,
-        duration: 0.5,
-      })
-      // categoriesGsap.forEach(category => {
-      //   gsap.from(category, {
-      //     scrollTrigger: {
-      //       trigger: category,
-      //       toggleActions: 'restart pause resume restart'
-      //     },
-      //     // translateX: '-50px',
-      //     // translateY: '50px',
-      //     opacity: 0,
-      //     // duration: 0.5,
-      //     // delay: Math.abs(Math.random() - 0.5)
-      //   })
-      // })
-      gsap.from(categoriesGsap, {
-        scrollTrigger: {
-          trigger: categoryContainerGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        translateY: '50px',
-        opacity: 0,
-        duration: 1,
-        stagger: 0.25
-      })
-    }
-    if (reviewHeaderGsap) {
-      gsap.from(reviewHeaderGsap, {
-        scrollTrigger: {
-          trigger: reviewHeaderGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        translateX: '-50px',
-        opacity: 0,
-        duration: 0.5,
-      })
-      gsap.from(reviewContainerGsap, {
-        scrollTrigger: {
-          trigger: reviewHeaderGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        translateY: `-100px`,
-        opacity: 0,
-        duration: 1,
-      })
-    }
-    if (galleryContainerGsap) {
-      gsap.from(galleryContainerGsap, {
-        scrollTrigger: {
-          trigger: galleryContainerGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        translateX: '-100px',
-        // translateY: '-100px',
-        opacity: 0,
-        duration: 0.5,
-      })
-    }
-    if (siteInfoContainerGsap) {
-      gsap.from(siteInfoContainerGsap, {
-        scrollTrigger: {
-          trigger: siteInfoContainerGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        // translateX: '-50px',
-        // translateY: '-100px',
-        opacity: 0,
-        duration: 2,
-      })
-      siteInfoSegmentsGsap.forEach((segment, i) => {
-        const segmentChildren = gsap.utils.toArray(segment.children)
-        console.log(segmentChildren);
-        // console.log(i, segment);
-        const direction = (i == 0 || i == 2) ? '-' : ''
-        // console.log(direction);
-        gsap.from(segment, {
-          scrollTrigger: {
-            trigger: segment,
-            toggleActions: 'restart pause resume restart'
-          },
-          opacity: 0,
-          duration: 2,
-        })
-        gsap.from(segmentChildren, {
-          scrollTrigger: {
-            trigger: segment,
-            toggleActions: 'restart pause resume restart'
-          },
-          translateX: `${direction}200px`,
-          // opacity: 0,
-          duration: 2,
-          stagger: 0.5
-        })
-      })
-      
-    }
-    if (homeAboutContainerGsap) {
-      gsap.from(homeAboutContainerGsap, {
-        scrollTrigger: {
-          trigger: homeAboutContainerGsap,
-          toggleActions: 'restart pause resume restart'
-        },
-        // translateX: '-50px',
-        // translateY: '-100px',
-        opacity: 0,
-        duration: 2,
-      })
-      // homeAboutSegmentsGsap.forEach(segment => {  
-        gsap.from(homeAboutSegmentsGsap, {
-          scrollTrigger: {
-            trigger: homeAboutSegmentsGsap,
-            toggleActions: 'restart pause resume restart'
-          },
-          translateY: '100px',
-          opacity: 0,
-          duration: 0.75,
-          stagger: 0.25
-        // })
-      })
-      
-    }
+    timeline.to(landingSegmentsGsap[5], {
+      x: '0',
+      duration: 1.5,
+      ease: "bounce.out",
+    }, '-=2')
+    timeline.to(landingSegmentsGsap[4], {
+      x: '0',
+      duration: 0.25,
+      ease: "power4.out",
+      stagger: 0.1
+    }, '-=2')
   }
-  
+  timeline.to(documentElementsGsap[1], {
+    opacity: 1,
+    x: '0',
+
+    ease: "elastic.out(1, 0.75)",
+    onComplete: postLoad
+  })
+})
+
+
+function postLoad() {
+  document.body.classList.remove('post-load')
+  document.querySelector('.loading').style.display = 'none'
+  document.querySelector('.canvas-loading').style.display = 'none'
+  // Scroll animations
+  if (categoryHeaderGsap) {
+    gsap.from(categoryHeaderGsap, {
+      scrollTrigger: {
+        trigger: categoryHeaderGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+      translateX: '50px',
+      opacity: 0,
+      duration: 0.5,
+    })
+
+    gsap.from(categoriesGsap, {
+      scrollTrigger: {
+        trigger: categoryContainerGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+      translateY: '50px',
+      opacity: 0,
+      duration: 1,
+      stagger: 0.25
+    })
+  }
+  if (reviewHeaderGsap) {
+    gsap.from(reviewHeaderGsap, {
+      scrollTrigger: {
+        trigger: reviewHeaderGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+      translateX: '-50px',
+      opacity: 0,
+      duration: 0.5,
+    })
+    gsap.from(reviewContainerGsap, {
+      scrollTrigger: {
+        trigger: reviewHeaderGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+      translateY: `-100px`,
+      opacity: 0,
+      duration: 1,
+    })
+  }
+  if (galleryContainerGsap) {
+    gsap.from(galleryContainerGsap, {
+      scrollTrigger: {
+        trigger: galleryContainerGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+      translateX: '-100px',
+
+      opacity: 0,
+      duration: 0.5,
+    })
+  }
+  if (siteInfoContainerGsap) {
+    gsap.from(siteInfoContainerGsap, {
+      scrollTrigger: {
+        trigger: siteInfoContainerGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+
+      opacity: 0,
+      duration: 2,
+    })
+    siteInfoSegmentsGsap.forEach((segment, i) => {
+      const segmentChildren = gsap.utils.toArray(segment.children)
+      const direction = (i == 0 || i == 2) ? '-' : ''
+      gsap.from(segment, {
+        scrollTrigger: {
+          trigger: segment,
+          toggleActions: 'restart pause resume restart'
+        },
+        opacity: 0,
+        duration: 2,
+      })
+      gsap.from(segmentChildren, {
+        scrollTrigger: {
+          trigger: segment,
+          toggleActions: 'restart pause resume restart'
+        },
+        translateX: `${direction}200px`,
+
+        duration: 2,
+        stagger: 0.5
+      })
+    })
+
+  }
+  if (homeAboutContainerGsap) {
+    gsap.from(homeAboutContainerGsap, {
+      scrollTrigger: {
+        trigger: homeAboutContainerGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+
+      opacity: 0,
+      duration: 2,
+    })
+
+    gsap.from(homeAboutSegmentsGsap, {
+      scrollTrigger: {
+        trigger: homeAboutSegmentsGsap,
+        toggleActions: 'restart pause resume restart'
+      },
+      translateY: '100px',
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.25
+
+    })
+
+  }
+}
