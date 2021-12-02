@@ -407,7 +407,7 @@ body {
         left: 50%;
         width: 25%;
         height: 0.5rem;
-        background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+        background: linear-gradient(90deg, var(--primary-orange), transparent);
         border-radius: 1rem;
         transform: translate(-50%, 0);
     }
@@ -415,6 +415,7 @@ body {
     .gallery-images-section {
         transition: 1s ease-in-out;
         position: relative;
+        margin: 2rem 0;
 
         .gallery-column {
             display: flex;
@@ -439,7 +440,7 @@ body {
         left: 50%;
         transform: translate(-50%, 0);
         font-size: 15vw;
-        color: var(--secondary-brown);
+        color: var(--primary-cream);
         text-align: center;
         width: 200%;
         opacity: 0.1;
@@ -459,19 +460,23 @@ body {
         position: relative;
         overflow: hidden;
         padding: 5rem;
+        gap: 5rem;
 
         .site-info-content {
-            flex: 50%;
+            flex: 40%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             padding: 5rem;
             border-radius: 0 5rem 0;
+            box-shadow: 0 0 1rem 0 var(--primary-brown-shadow);
+            background: var(--secondary-brown);
 
             &:nth-of-type(2), &:nth-of-type(3) {
                 background: var(--primary-brown);
                 color: var(--white);
+                border-radius: 5rem 0;
             }
 
             h3 {
@@ -487,7 +492,7 @@ body {
                     height: 5px;
                     width: 50px;
                     border-radius: 1rem;
-                    background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+                    background: linear-gradient(90deg, var(--primary-orange), transparent);
                 }
             }
             p {
@@ -507,7 +512,7 @@ body {
 
     #home-landing {
         display: grid;
-        
+        background: linear-gradient(135deg, transparent 50%, var(--secondary-brown));
         grid-template-areas: 
         'title'
         'image';
@@ -557,7 +562,7 @@ body {
                     left: 2rem;
                     width: 25%;
                     height: 0.5rem;
-                    background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+                    background: linear-gradient(90deg, var(--primary-orange), transparent);
                     border-radius: 1rem;
                 }
                 &::after {
@@ -683,7 +688,7 @@ body {
                 left: 50%;
                 width: 25%;
                 height: 0.5rem;
-                background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+                background: linear-gradient(90deg, var(--primary-orange), transparent);
                 border-radius: 1rem;
                 transform: translate(-50%, 0);
             }
@@ -895,7 +900,7 @@ nav {
                     left: 2rem;
                     height: 10%;
                     width: 25%;
-                    background: linear-gradient(45deg, var(--primary-orange), var(--white));
+                    background: linear-gradient(90deg, var(--primary-orange), transparent);
                 }
             }
 
@@ -1045,9 +1050,9 @@ nav {
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
-    
+    background: var(--primary-brown);
     width: 100%;
-    margin: 0 auto 5rem auto;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
 
@@ -1057,10 +1062,10 @@ nav {
         content: "";
         height: 100%;
         width: 100%;
-        background: linear-gradient(0deg, var(--white), var(--primary-brown-shadow), var(--white));
+        background: linear-gradient(180deg, transparent, var(--white-shadow));
         opacity: 0.2;
         pointer-events: none;
-        z-index: -1;
+        // z-index: -1;
         border-radius: 5rem;
         
     }
@@ -1074,6 +1079,8 @@ nav {
     > h2 {
         text-transform: lowercase;
         font-weight: 100;
+        color: var(--white);
+        margin-top: 5rem;
         &::before {
             content: '';
             position: absolute;
@@ -1081,7 +1088,7 @@ nav {
             left: 50%;
             width: 25%;
             height: 0.5rem;
-            background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+            background: linear-gradient(90deg, var(--primary-orange), transparent);
             border-radius: 1rem;
             transform: translate(-50%, 0);
         }
@@ -1107,6 +1114,7 @@ nav {
             box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
             margin: 0 auto;
             position: relative;
+            border-radius: 2rem 0;
             
             a {
                 width: 100%;
@@ -1147,7 +1155,7 @@ nav {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    
+                    border-radius: 2rem 0 0;
                     overflow: hidden;
                 img {
                     width: 300px;
@@ -1155,7 +1163,7 @@ nav {
                     position: absolute;
                     top: 0;
                     left: 0;
-                    
+                    border-radius: 2rem 0 0;
                     object-fit: cover;
                     transition: transform 0.5s;
                     
@@ -2219,7 +2227,7 @@ nav {
                 left: 0;
                 height: 5%;
                 width: 50%;
-                background: linear-gradient(45deg, var(--primary-orange), var(--white));
+                background: linear-gradient(90deg, var(--primary-orange), transparent);
 
             }
         }
@@ -2759,7 +2767,7 @@ nav {
             transform: translateX(-50%);
             height: 2%;
             width: 25%;
-            background: linear-gradient(45deg, var(--primary-orange), var(--white));
+            background: linear-gradient(90deg, var(--primary-orange), transparent);
 
         }
         span {

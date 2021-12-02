@@ -174,7 +174,7 @@ window.addEventListener('load', () => {
     .to(documentElementsGsap[0], {
       opacity: 1,
       y: '0',
-
+      duration: 2,
       ease: "power1.out"
 
     }, '-=1')

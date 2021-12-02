@@ -380,13 +380,14 @@ body main {
   left: 50%;
   width: 25%;
   height: 0.5rem;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
   border-radius: 1rem;
   transform: translate(-50%, 0);
 }
 .home-gallery .gallery-images-section {
   transition: 1s ease-in-out;
   position: relative;
+  margin: 2rem 0;
 }
 .home-gallery .gallery-images-section .gallery-column {
   display: flex;
@@ -408,7 +409,7 @@ body main {
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 15vw;
-  color: var(--secondary-brown);
+  color: var(--primary-cream);
   text-align: center;
   width: 200%;
   opacity: 0.1;
@@ -428,19 +429,23 @@ body main {
   position: relative;
   overflow: hidden;
   padding: 5rem;
+  gap: 5rem;
 }
 .site-information .site-information-container .site-info-content {
-  flex: 50%;
+  flex: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   padding: 5rem;
   border-radius: 0 5rem 0;
+  box-shadow: 0 0 1rem 0 var(--primary-brown-shadow);
+  background: var(--secondary-brown);
 }
 .site-information .site-information-container .site-info-content:nth-of-type(2), .site-information .site-information-container .site-info-content:nth-of-type(3) {
   background: var(--primary-brown);
   color: var(--white);
+  border-radius: 5rem 0;
 }
 .site-information .site-information-container .site-info-content h3 {
   position: relative;
@@ -456,7 +461,7 @@ body main {
   height: 5px;
   width: 50px;
   border-radius: 1rem;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
 }
 .site-information .site-information-container .site-info-content p {
   text-align: center;
@@ -472,6 +477,7 @@ body main {
 }
 .home-container #home-landing {
   display: grid;
+  background: linear-gradient(135deg, transparent 50%, var(--secondary-brown));
   grid-template-areas: "title" "image";
   grid-auto-columns: 1fr;
   gap: 5rem;
@@ -517,7 +523,7 @@ body main {
   left: 2rem;
   width: 25%;
   height: 0.5rem;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
   border-radius: 1rem;
 }
 .home-container #home-landing .home-landing-title h1::after {
@@ -636,7 +642,7 @@ body main {
   left: 50%;
   width: 25%;
   height: 0.5rem;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
   border-radius: 1rem;
   transform: translate(-50%, 0);
 }
@@ -811,7 +817,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   left: 2rem;
   height: 10%;
   width: 25%;
-  background: linear-gradient(45deg, var(--primary-orange), var(--white));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
 }
 .about-page-container .about-landing .about-landing-title p {
   font-weight: 100;
@@ -930,8 +936,9 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
+  background: var(--primary-brown);
   width: 100%;
-  margin: 0 auto 5rem auto;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
@@ -941,10 +948,9 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   content: "";
   height: 100%;
   width: 100%;
-  background: linear-gradient(0deg, var(--white), var(--primary-brown-shadow), var(--white));
+  background: linear-gradient(180deg, transparent, var(--white-shadow));
   opacity: 0.2;
   pointer-events: none;
-  z-index: -1;
   border-radius: 5rem;
 }
 #home-products::before {
@@ -956,6 +962,8 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 #home-products > h2 {
   text-transform: lowercase;
   font-weight: 100;
+  color: var(--white);
+  margin-top: 5rem;
 }
 #home-products > h2::before {
   content: "";
@@ -964,7 +972,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   left: 50%;
   width: 25%;
   height: 0.5rem;
-  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-brown));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
   border-radius: 1rem;
   transform: translate(-50%, 0);
 }
@@ -984,6 +992,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
   margin: 0 auto;
   position: relative;
+  border-radius: 2rem 0;
 }
 #home-products .category-container .category-card a {
   width: 100%;
@@ -1022,6 +1031,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 2rem 0 0;
   overflow: hidden;
 }
 #home-products .category-container .category-card a .category-card-image img {
@@ -1030,6 +1040,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: 2rem 0 0;
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.5s;
@@ -1913,7 +1924,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   left: 0;
   height: 5%;
   width: 50%;
-  background: linear-gradient(45deg, var(--primary-orange), var(--white));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
 }
 .profile-container > .profile-section .profile-home-container {
   position: relative;
@@ -2402,7 +2413,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
   transform: translateX(-50%);
   height: 2%;
   width: 25%;
-  background: linear-gradient(45deg, var(--primary-orange), var(--white));
+  background: linear-gradient(90deg, var(--primary-orange), transparent);
 }
 .edit-blog-container h2 span {
   font-size: 1rem;
