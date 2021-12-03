@@ -864,15 +864,15 @@ nav {
     }
 }
 
-// About page, 404 and 500
+// About page, Contact page, 404 and 500
 
-.about-page-container, .error-container {
+.about-page-container, .contact-page-container, .error-container {
     
-    .about-landing, .error-landing {
+    .about-landing, .contact-landing, .error-landing {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         
-        .about-landing-title, .error-landing-title {
+        .about-landing-title, .contact-landing-title, .error-landing-title {
             position: relative;
             overflow: hidden;
             display: flex;
