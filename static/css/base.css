@@ -716,11 +716,11 @@ body main {
   background: var(--secondary-brown);
 }
 
-nav {
+nav, #mobile-demo {
   background: var(--primary-brown);
   box-shadow: none;
 }
-nav .brand-logo {
+nav .brand-logo, #mobile-demo .brand-logo {
   color: var(--white);
   font-size: 1rem;
   font-weight: 300;
@@ -731,20 +731,20 @@ nav .brand-logo {
   border-right: 10px solid var(--secondary-brown);
   border-bottom: 10px solid var(--primary-orange);
 }
-nav .brand-logo span {
+nav .brand-logo span, #mobile-demo .brand-logo span {
   color: var(--primary-orange);
 }
-nav .sidenav-trigger {
-  color: var(--primary-brown);
+nav .sidenav-trigger, #mobile-demo .sidenav-trigger {
+  color: var(--white);
 }
-nav i {
+nav i, #mobile-demo i {
   font-size: inherit;
   position: relative;
 }
-nav .shopping-cart-link {
+nav .shopping-cart-link, #mobile-demo .shopping-cart-link {
   position: relative;
 }
-nav .shopping-cart-link .shopping-cart-icon {
+nav .shopping-cart-link .shopping-cart-icon, #mobile-demo .shopping-cart-link .shopping-cart-icon {
   position: absolute;
   top: -40%;
   left: -40%;
@@ -761,30 +761,76 @@ nav .shopping-cart-link .shopping-cart-icon {
   justify-content: center;
   font-weight: 700;
 }
-nav .right {
+nav .right, #mobile-demo .right {
   margin-right: 5rem;
 }
-nav ul a {
+nav ul a, #mobile-demo ul a {
   color: var(--white);
   text-transform: lowercase;
   font-weight: 300;
   transition: color 0.5s, background-color 0.5s;
 }
-nav ul a:hover, nav ul a:focus {
+nav ul a:hover, nav ul a:focus, #mobile-demo ul a:hover, #mobile-demo ul a:focus {
   background: var(--secondary-brown);
   color: var(--primary-brown);
   transition: color 0.5s, background-color 0.5s;
 }
-nav ul .shop-now-link a {
+nav ul .shop-now-link a, #mobile-demo ul .shop-now-link a {
   background: var(--primary-orange);
   color: var(--primary-brown);
   font-weight: 400;
   transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
 }
-nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
+nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .shop-now-link a:hover, #mobile-demo ul .shop-now-link a:focus {
   background: var(--white-shadow);
   color: var(--white);
   transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+}
+
+#mobile-demo li a {
+  color: var(--white);
+  font-weight: 300;
+  text-transform: lowercase;
+  transition: color 0.5s, background-color 0.5s;
+}
+#mobile-demo li a:hover, #mobile-demo li a:focus {
+  background: var(--secondary-brown);
+  color: var(--primary-brown);
+  transition: color 0.5s, background-color 0.5s;
+}
+#mobile-demo li a i::before {
+  color: var(--white);
+}
+#mobile-demo .shop-now-link a {
+  background: var(--primary-orange);
+  color: var(--primary-brown);
+  font-weight: 400;
+  transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+}
+#mobile-demo .shop-now-link a:hover, #mobile-demo .shop-now-link a:focus {
+  background: var(--white-shadow);
+  color: var(--white);
+  transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+}
+#mobile-demo .shopping-cart-link {
+  position: relative;
+}
+#mobile-demo .shopping-cart-link .shopping-cart-icon {
+  position: absolute;
+  top: -40%;
+  left: 0%;
+  color: var(--white);
+  width: 100px;
+  height: 100px;
+  background: var(--primary-orange);
+  text-align: center;
+  border-radius: 50%;
+  transform: scale(0.2);
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 
 .about-page-container .about-landing, .about-page-container .contact-landing, .about-page-container .error-landing, .contact-page-container .about-landing, .contact-page-container .contact-landing, .contact-page-container .error-landing, .error-container .about-landing, .error-container .contact-landing, .error-container .error-landing {

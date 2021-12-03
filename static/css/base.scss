@@ -781,7 +781,7 @@ body {
 
 // Navbar
 
-nav {
+nav, #mobile-demo {
     background: var(--primary-brown);
     box-shadow: none;
 
@@ -801,7 +801,7 @@ nav {
     }
 
     .sidenav-trigger {
-        color: var(--primary-brown);
+        color: var(--white);
     }
 
     i {
@@ -860,6 +860,60 @@ nav {
                     transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
                 }
             }
+        }
+    }
+}
+
+#mobile-demo {
+    li {
+        a {
+            color: var(--white);
+            font-weight: 300;
+            text-transform: lowercase;
+            transition: color 0.5s, background-color 0.5s;
+            &:hover, &:focus {
+                background: var(--secondary-brown);
+                color: var(--primary-brown);
+                transition: color 0.5s, background-color 0.5s;
+            }
+            i {
+                &::before {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .shop-now-link {
+        a {
+        background: var(--primary-orange);
+        color: var(--primary-brown);
+        font-weight: 400;
+        transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+            &:hover, &:focus {
+                background: var(--white-shadow);
+                color: var(--white);
+                transition: background-color 0.5s, font-weight 0.5s, color 0.5s;
+            }
+        }
+    }
+    .shopping-cart-link {
+        position: relative;
+        .shopping-cart-icon {
+            position: absolute;
+            top: -40%;
+            left: 0%;
+            color: var(--white);
+            width: 100px;
+            height: 100px;
+            background: var(--primary-orange);
+            text-align: center;
+            border-radius: 50%;
+            transform: scale(0.2);
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
         }
     }
 }
