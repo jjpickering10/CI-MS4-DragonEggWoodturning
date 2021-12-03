@@ -18,7 +18,8 @@
             </div>
             <div class="contact-landing-form">
               <p>Please fill out the form and we'll get back to you as soon as possible <i class="fas fa-reply"></i></p>
-              <form action="" method="POST">
+              <form action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
                 {{ contact_form }}
                 <button class="global-button" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
               </form>

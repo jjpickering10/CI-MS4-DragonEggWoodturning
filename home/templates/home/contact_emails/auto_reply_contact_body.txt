@@ -1,0 +1,12 @@
+Hey, {{ contact_name }}
+
+This is an auto reply.
+
+We have received your messaged.
+
+{{ contact_message }}
+
+We will be in touch shortly.
+
+Thank you, 
+Dragon Egg Woodturning.
