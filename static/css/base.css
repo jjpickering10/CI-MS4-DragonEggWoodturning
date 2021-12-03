@@ -801,12 +801,16 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .about-page-container .about-landing .about-landing-title .error-buttons, .about-page-container .about-landing .error-landing-title .error-buttons, .about-page-container .error-landing .about-landing-title .error-buttons, .about-page-container .error-landing .error-landing-title .error-buttons, .error-container .about-landing .about-landing-title .error-buttons, .error-container .about-landing .error-landing-title .error-buttons, .error-container .error-landing .about-landing-title .error-buttons, .error-container .error-landing .error-landing-title .error-buttons {
   display: flex;
   margin-top: 1rem;
+  justify-content: flex-start;
+}
+.about-page-container .about-landing .about-landing-title .error-buttons a, .about-page-container .about-landing .error-landing-title .error-buttons a, .about-page-container .error-landing .about-landing-title .error-buttons a, .about-page-container .error-landing .error-landing-title .error-buttons a, .error-container .about-landing .about-landing-title .error-buttons a, .error-container .about-landing .error-landing-title .error-buttons a, .error-container .error-landing .about-landing-title .error-buttons a, .error-container .error-landing .error-landing-title .error-buttons a {
+  margin: 0;
 }
 .about-page-container .about-landing .about-landing-title .error-buttons a + a, .about-page-container .about-landing .error-landing-title .error-buttons a + a, .about-page-container .error-landing .about-landing-title .error-buttons a + a, .about-page-container .error-landing .error-landing-title .error-buttons a + a, .error-container .about-landing .about-landing-title .error-buttons a + a, .error-container .about-landing .error-landing-title .error-buttons a + a, .error-container .error-landing .about-landing-title .error-buttons a + a, .error-container .error-landing .error-landing-title .error-buttons a + a {
   margin-left: 1em;
-  background: none;
+  background: var(--white);
   color: var(--primary-orange);
-  box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--secondary-brown);
 }
 .about-page-container .about-landing .about-landing-title .error-buttons a + a:hover, .about-page-container .about-landing .about-landing-title .error-buttons a + a :focus, .about-page-container .about-landing .error-landing-title .error-buttons a + a:hover, .about-page-container .about-landing .error-landing-title .error-buttons a + a :focus, .about-page-container .error-landing .about-landing-title .error-buttons a + a:hover, .about-page-container .error-landing .about-landing-title .error-buttons a + a :focus, .about-page-container .error-landing .error-landing-title .error-buttons a + a:hover, .about-page-container .error-landing .error-landing-title .error-buttons a + a :focus, .error-container .about-landing .about-landing-title .error-buttons a + a:hover, .error-container .about-landing .about-landing-title .error-buttons a + a :focus, .error-container .about-landing .error-landing-title .error-buttons a + a:hover, .error-container .about-landing .error-landing-title .error-buttons a + a :focus, .error-container .error-landing .about-landing-title .error-buttons a + a:hover, .error-container .error-landing .about-landing-title .error-buttons a + a :focus, .error-container .error-landing .error-landing-title .error-buttons a + a:hover, .error-container .error-landing .error-landing-title .error-buttons a + a :focus {
   box-shadow: none;
@@ -844,6 +848,14 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus {
 .about-page-container .about-landing .about-landing-title p i::before, .about-page-container .about-landing .error-landing-title p i::before, .about-page-container .error-landing .about-landing-title p i::before, .about-page-container .error-landing .error-landing-title p i::before, .error-container .about-landing .about-landing-title p i::before, .error-container .about-landing .error-landing-title p i::before, .error-container .error-landing .about-landing-title p i::before, .error-container .error-landing .error-landing-title p i::before {
   color: var(--secondary-brown);
   margin: 1rem;
+}
+.about-page-container .about-landing .error-landing-title, .about-page-container .error-landing .error-landing-title, .error-container .about-landing .error-landing-title, .error-container .error-landing .error-landing-title {
+  background: var(--primary-brown);
+  color: var(--white);
+}
+.about-page-container .about-landing .error-landing-title p, .about-page-container .error-landing .error-landing-title p, .error-container .about-landing .error-landing-title p, .error-container .error-landing .error-landing-title p {
+  color: var(--white);
+  padding: 0;
 }
 .about-page-container .about-landing .about-landing-image, .about-page-container .about-landing .error-landing-image, .about-page-container .error-landing .about-landing-image, .about-page-container .error-landing .error-landing-image, .error-container .about-landing .about-landing-image, .error-container .about-landing .error-landing-image, .error-container .error-landing .about-landing-image, .error-container .error-landing .error-landing-image {
   display: flex;

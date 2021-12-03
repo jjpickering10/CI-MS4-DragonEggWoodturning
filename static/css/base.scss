@@ -877,18 +877,22 @@ nav {
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            
             padding: 5em;
 
             .error-buttons {
                 display: flex;
                 margin-top: 1rem;
+                justify-content: flex-start;
+
+                a {
+                    margin: 0;
+                }
 
                 a + a {
                     margin-left: 1em;
-                    background: none;
+                    background: var(--white);
                     color: var(--primary-orange);
-                    box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
+                    box-shadow: 0.5rem 0.5rem 0 0 var(--secondary-brown);
 
                     &:hover, :focus {
                         box-shadow: none;
@@ -933,6 +937,15 @@ nav {
                         margin: 1rem;
                     }
                 }
+            }
+        }
+
+        .error-landing-title {
+            background: var(--primary-brown);
+            color: var(--white);
+            p {
+                color: var(--white);
+                padding: 0;
             }
         }
 
