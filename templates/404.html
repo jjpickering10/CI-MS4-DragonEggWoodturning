@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+  All wood used is sustainable and ethically sourced
+{% endblock %}
+
+{% block page_header_paragraph %}
+  <span>404 - Page Not Found</span>
+{% endblock %}
+
+{% block content %}
+    <div class="error-container">
+        <section class="error-landing">
+            <div class="error-landing-title">
+                <h3>Oops! We couldn't find that page.</h3>
+                <p><i class="fas fa-sad-tear"></i>&Downarrow; Maybe you can find what you're looking for here &Downarrow;</p>
+                <div class="error-buttons">
+                    <a href="{% url 'home' %}" class="global-button">Home</a>
+                    <a href="{% url 'all_products' %}" class="global-button">Shop</a>
+                </div>
+            </div>
+            <div class="error-landing-image">
+                <img src="{{ MEDIA_URL }}about-page-wood-image.PNG" alt="">
+            </div>
+        </section>
+    </div>
+{% endblock %}
