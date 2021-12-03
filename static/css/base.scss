@@ -949,7 +949,7 @@ nav {
             }
         }
 
-        .about-landing-image, .error-landing-image {
+        .about-landing-image, .error-landing-image, .contact-landing-form {
             
             display: flex;
             align-items: center;
@@ -969,6 +969,33 @@ nav {
                             0px 0px 0px 22px var(--white);
             }
 
+        }
+        .contact-landing-form {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            p {
+                color: var(--white);
+
+            }
+            form {
+                input[type=text]:not(.browser-default), input[type=email]:not(.browser-default) {
+                    border: none;
+                    background: var(--primary-cream);
+                    padding: 0 0.5rem;
+                    box-sizing: border-box;
+                }
+                textarea {
+                    border: none;
+                    background: var(--primary-cream);
+                    padding: 0.5rem;
+                    box-sizing: border-box;
+                    height: 10rem;
+                }
+                .global-button {
+                    margin: 0;
+                }
+            }
         }
     }
     .about-info {
