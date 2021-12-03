@@ -535,7 +535,7 @@ body {
             border-radius: 0 0 10rem;
             opacity: 0;
 
-            @media screen and (min-width: 992px) {
+            @media only screen and (min-width: 992px) {
                 height: 75%;
             }
 
@@ -630,7 +630,7 @@ body {
             opacity: 0;
             transform: translateX(200%);
 
-            @media screen and (min-width: 992px) {
+            @media only screen and (min-width: 992px) {
                 height: 75%;
             }
 
@@ -642,7 +642,7 @@ body {
 
             }
         }
-        @media screen and (min-width: 992px) {
+        @media only screen and (min-width: 992px) {
             grid-template-areas: "title image";
             gap: 0;
         }
@@ -797,6 +797,9 @@ nav, #mobile-demo {
         border-bottom: 10px solid var(--primary-orange);
         span {
             color: var(--primary-orange);
+        }
+        @media only screen and (max-width: 992px) {
+            margin: 0;
         }
     }
 
