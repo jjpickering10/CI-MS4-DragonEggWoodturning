@@ -2,6 +2,8 @@ import random
 from django.shortcuts import render
 from products.models import Category, Review
 
+from .forms import ContactForm
+
 
 def index(request):
     """
@@ -34,4 +36,10 @@ def contact(request):
     A view to return the contact page
     """
 
-    return render(request, 'home/contact.html')
+    contact_form = ContactForm()
+
+    context = {
+        'contact_form': contact_form,
+    }
+
+    return render(request, 'home/contact.html', context)
