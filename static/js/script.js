@@ -283,8 +283,9 @@ function postLoad() {
           trigger: segment,
           toggleActions: 'restart pause resume restart'
         },
+        translateX: `${direction}200px`,
         opacity: 0,
-        duration: 2,
+        duration: 1,
       })
       gsap.from(segmentChildren, {
         scrollTrigger: {
@@ -292,9 +293,9 @@ function postLoad() {
           toggleActions: 'restart pause resume restart'
         },
         translateX: `${direction}200px`,
-
-        duration: 2,
-        stagger: 0.5
+        opacity: 0,
+        duration: 1,
+        stagger: 0.25
       })
     })
 

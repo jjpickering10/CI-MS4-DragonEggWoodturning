@@ -368,10 +368,15 @@ body main {
 }
 
 .home-gallery {
-  width: 75%;
+  width: 100%;
   position: relative;
   overflow: hidden;
   margin: 3rem auto;
+}
+@media only screen and (min-width: 992px) {
+  .home-gallery {
+    width: 75%;
+  }
 }
 .home-gallery::before {
   content: "";
@@ -428,19 +433,34 @@ body main {
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  padding: 5rem;
+  padding: 0.5rem;
   gap: 5rem;
 }
+@media only screen and (min-width: 500px) {
+  .site-information .site-information-container {
+    padding: 5rem;
+  }
+}
 .site-information .site-information-container .site-info-content {
-  flex: 40%;
+  flex: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 5rem;
+  padding: 1rem;
   border-radius: 0 5rem 0;
   box-shadow: 0 0 1rem 0 var(--primary-brown-shadow);
   background: var(--secondary-brown);
+}
+@media only screen and (min-width: 992px) {
+  .site-information .site-information-container .site-info-content {
+    flex: 40%;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .site-information .site-information-container .site-info-content {
+    padding: 2rem;
+  }
 }
 .site-information .site-information-container .site-info-content:nth-of-type(2), .site-information .site-information-container .site-info-content:nth-of-type(3) {
   background: var(--primary-brown);
@@ -466,7 +486,7 @@ body main {
 }
 .site-information .site-information-container .site-info-content p {
   text-align: center;
-  padding: 0 3rem;
+  padding: 1rem 0;
   line-height: 2;
   letter-spacing: 1px;
   font-weight: 200;
@@ -1121,7 +1141,14 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
   width: 100%;
-  padding: 5rem 10vw;
+  padding: 5rem 0;
+}
+@media only screen and (min-width: 420px) {
+  #home-products .category-container {
+    padding: 3rem 0;
+    border-radius: 0;
+    padding: 5rem 10vw;
+  }
 }
 #home-products .category-container .category-card {
   width: 300px;
