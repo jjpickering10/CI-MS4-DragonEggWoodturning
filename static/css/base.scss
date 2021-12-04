@@ -687,6 +687,11 @@ body {
                 padding: 3em;
                 width: 90%;
                 box-shadow: 2px 5px 5px 0px var(--primary-brown-shadow);
+                // box-shadow: 0px 0px 0px 2px var(--white-shadow),
+                //             0px 0px 0px 10px var(--white),
+                //             0px 0px 0px 12px var(--white-shadow),
+                //             0px 0px 0px 20px var(--white),
+                //             0px 0px 0px 22px var(--white-shadow);
                 border-radius: 3rem 0;
 
             }
@@ -2731,11 +2736,14 @@ nav, #mobile-demo {
 
 .blog-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
     min-height: 50vh;
     margin: 5rem auto;
-    width: 80%;
+    width: 100%;
+    @media only screen and (min-width: 992px) {
+        width: 80%;
+    }
 
     a {
         color: var(--white);
@@ -2856,8 +2864,11 @@ nav, #mobile-demo {
 }
 
 .blog-post-container {
-    padding: 0 5rem;
-    background: linear-gradient(145deg, var(--primary-cream)50%, transparent 50%);
+    padding: 1rem 0;
+    background: var(--primary-cream);
+    @media only screen and (min-width: 992px) {
+        padding: 1rem 5rem;
+    }
 
 
     .blog-post-content {
@@ -2870,6 +2881,7 @@ nav, #mobile-demo {
         .blog-post-title {
             padding: 0 2rem;
             margin: 0 0 1rem 0;
+            word-break: break-word;
             h2 {
                 font-size: 3rem;
                 font-weight: 200;
@@ -2908,6 +2920,10 @@ nav, #mobile-demo {
             padding: 2rem;
             background: var(--white);
             line-height: 2;
+            word-break: break-word;
+            @media only screen and (min-width: 992px) {
+                margin: 2rem 2rem 0 2rem;
+            }
         }
         .blog-post-admin {
             padding: 0.5rem 2rem;
@@ -2935,6 +2951,7 @@ nav, #mobile-demo {
 
         .blog-comment-section {
             margin-bottom: 2rem;
+            word-break: break-word;
             h2 {
                 font-size: 1rem;
                 font-weight: 500;

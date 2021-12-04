@@ -2432,11 +2432,16 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 
 .blog-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
   min-height: 50vh;
   margin: 5rem auto;
-  width: 80%;
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .blog-container {
+    width: 80%;
+  }
 }
 .blog-container a {
   color: var(--white);
@@ -2531,8 +2536,13 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 
 .blog-post-container {
-  padding: 0 5rem;
-  background: linear-gradient(145deg, var(--primary-cream) 50%, transparent 50%);
+  padding: 1rem 0;
+  background: var(--primary-cream);
+}
+@media only screen and (min-width: 992px) {
+  .blog-post-container {
+    padding: 1rem 5rem;
+  }
 }
 .blog-post-container .blog-post-content {
   display: flex;
@@ -2544,6 +2554,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .blog-post-container .blog-post-content .blog-post-title {
   padding: 0 2rem;
   margin: 0 0 1rem 0;
+  word-break: break-word;
 }
 .blog-post-container .blog-post-content .blog-post-title h2 {
   font-size: 3rem;
@@ -2580,6 +2591,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   padding: 2rem;
   background: var(--white);
   line-height: 2;
+  word-break: break-word;
+}
+@media only screen and (min-width: 992px) {
+  .blog-post-container .blog-post-content .blog-post-body {
+    margin: 2rem 2rem 0 2rem;
+  }
 }
 .blog-post-container .blog-post-content .blog-post-admin {
   padding: 0.5rem 2rem;
@@ -2603,6 +2620,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 .blog-post-container .blog-post-comments .blog-comment-section {
   margin-bottom: 2rem;
+  word-break: break-word;
 }
 .blog-post-container .blog-post-comments .blog-comment-section h2 {
   font-size: 1rem;
