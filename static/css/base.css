@@ -2437,29 +2437,57 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   min-height: 50vh;
   margin: 5rem auto;
   width: 100%;
+  padding: 5rem 0;
+  background: var(--primary-brown);
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 600px) {
   .blog-container {
-    width: 80%;
+    padding: 5rem 10vw;
   }
 }
 .blog-container a {
   color: var(--white);
   transition: transform 0.5s;
+  box-shadow: 0 0 5px 0 var(--white-shadow);
+  position: relative;
+}
+.blog-container a:after {
+  position: absolute;
+  content: "Read More";
+  top: 50%;
+  left: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+  background: var(--primary-orange);
+  color: var(--primary-brown);
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 0.5rem 1rem;
+  z-index: 2;
 }
 .blog-container a:hover, .blog-container a:focus {
   transform: translateY(-20px);
   transition: transform 0.5s;
+}
+.blog-container a:hover:after, .blog-container a:focus:after {
+  opacity: 1;
+  transition: 0.3s;
+}
+.blog-container a:hover .blog-card, .blog-container a:focus .blog-card {
+  opacity: 0.25;
+  transition: opacity 0.5s;
 }
 .blog-container .blog-card {
   width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--primary-brown);
-  box-shadow: 0px 0px 5px 0 var(--primary-brown-shadow);
   margin: 0 auto;
-  border-radius: 5rem 0;
 }
 .blog-container .blog-card .blog-image {
   height: 250px;
@@ -2468,12 +2496,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   align-items: center;
 }
 .blog-container .blog-card .blog-image img {
-  height: 250px;
+  width: 100%;
+  max-height: 100%;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
   transform: scale(0.75);
-  box-shadow: 0px 0px 10px 0px var(--primary-brown-shadow);
 }
 .blog-container .blog-card .blog-content {
   display: flex;
@@ -2482,8 +2510,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem 1rem 1rem;
-  background: var(--primary-brown);
-  border-radius: 5rem 0;
 }
 .blog-container .blog-card .blog-content .blog-title h3 {
   font-size: 1.5rem;

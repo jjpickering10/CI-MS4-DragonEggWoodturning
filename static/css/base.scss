@@ -2741,18 +2741,47 @@ nav, #mobile-demo {
     min-height: 50vh;
     margin: 5rem auto;
     width: 100%;
-    @media only screen and (min-width: 992px) {
-        width: 80%;
+    padding: 5rem 0;
+    background: var(--primary-brown);
+    @media only screen and (min-width: 600px) {
+        padding: 5rem 10vw;
     }
 
     a {
         color: var(--white);
         transition: transform 0.5s;
+        box-shadow: 0 0 5px 0 var(--white-shadow);
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: 'Read More';
+            top: 50%;
+            left: 50%;
+            width: fit-content;
+            height: fit-content;
+            transform: translate(-50%, -50%);
+            background: var(--primary-orange);
+            color: var(--primary-brown);
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 0.5rem 1rem;
+            z-index: 2;
+        }
 
         &:hover, &:focus {
 
             transform: translateY(-20px);
             transition: transform 0.5s;
+
+            &:after {
+                opacity: 1;
+                transition: 0.3s;
+            }
+            .blog-card {
+                opacity: 0.25;
+                transition: opacity 0.5s;
+            }
         }
     }
 
@@ -2761,10 +2790,7 @@ nav, #mobile-demo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: var(--primary-brown);
-        box-shadow: 0px 0px 5px 0 var(--primary-brown-shadow);
         margin: 0 auto;
-        border-radius: 5rem 0;
 
         .blog-image {
 
@@ -2774,12 +2800,11 @@ nav, #mobile-demo {
             align-items: center;
             
             img {
-                
-                height: 250px;
+                width: 100%;
+                max-height: 100%;
                 display: block;
                 object-fit: contain;
                 transform: scale(0.75);
-                box-shadow: 0px 0px 10px 0px var(--primary-brown-shadow);
             }
         }
 
@@ -2790,8 +2815,6 @@ nav, #mobile-demo {
             justify-content: space-between;
             align-items: center;
             padding: 0 1rem 1rem 1rem;
-            background: var(--primary-brown);
-            border-radius: 5rem 0;
 
             .blog-title {
                 
