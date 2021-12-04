@@ -315,10 +315,13 @@ body {
             }
 
             a {
-                width: 300px;
+                width: 50%;
                 text-align: center;
                 box-shadow: 10px 10px 0 0 var(--primary-cream);
                 transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
+                @media only screen and (min-width: 420px) {
+                    width: 300px;
+                }
 
                 &:hover, &:focus {
                     box-shadow: none;
@@ -337,30 +340,41 @@ body {
 
 #home-newsletter {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    min-height: 50vh;
+    grid-template-areas: 
+        'newsletter-image'
+        'newsletter-form';
+    grid-auto-columns: 1fr;
     background: var(--primary-brown);
+    @media only screen and (min-width: 992px) {
+        grid-template-areas: 
+        'newsletter-image newsletter-form';
+    }
 
     .newsletter-image {
+        grid-area: newsletter-image;
         display: flex;
         justify-content: center;
         align-items: center;
 
         img {
-            width: 75%;
-            height: 75%;
-            box-shadow: 10px 10px 0 0 var(--white-shadow);
-            padding: 5rem;
-            border-radius: 10rem 0;
+            padding: 3em;
+            width: 90%;
+            box-shadow: 2px 5px 5px 0px var(--white-shadow);
+            border-radius: 3rem 0;
+            margin: 3rem 0;
+            @media only screen and (min-width: 992px) {
+                height: 400px;
+            }
         }
     }
 
     .newsletter-form {
+        grid-area: newsletter-form;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        padding: 1rem;
         h4 {
             margin: 1rem 0 0 0;
             text-transform: uppercase;
@@ -371,6 +385,7 @@ body {
             margin: 1rem 0;
             text-transform: lowercase;
             color: var(--white);
+            text-align: center;
         }
 
         form {
@@ -671,8 +686,8 @@ body {
             img {
                 padding: 3em;
                 width: 90%;
-                box-shadow: 10px 10px 10px 0px var(--primary-brown-shadow);
-                border-radius: 10rem 0;
+                box-shadow: 2px 5px 5px 0px var(--primary-brown-shadow);
+                border-radius: 3rem 0;
 
             }
         }
@@ -3095,6 +3110,7 @@ nav, #mobile-demo {
             justify-content: center;
             gap: 0.5rem;
             font-size: 0.75rem;
+            text-align: center;
             a {
                 font-size: 1.5rem;
                 padding: 0;

@@ -301,10 +301,15 @@ body main {
   text-align: center;
 }
 .home-about .home-about-section .home-about-info a {
-  width: 300px;
+  width: 50%;
   text-align: center;
   box-shadow: 10px 10px 0 0 var(--primary-cream);
   transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+@media only screen and (min-width: 420px) {
+  .home-about .home-about-section .home-about-info a {
+    width: 300px;
+  }
 }
 .home-about .home-about-section .home-about-info a:hover, .home-about .home-about-section .home-about-info a:focus {
   box-shadow: none;
@@ -317,27 +322,40 @@ body main {
 
 #home-newsletter {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  min-height: 50vh;
+  grid-template-areas: "newsletter-image" "newsletter-form";
+  grid-auto-columns: 1fr;
   background: var(--primary-brown);
 }
+@media only screen and (min-width: 992px) {
+  #home-newsletter {
+    grid-template-areas: "newsletter-image newsletter-form";
+  }
+}
 #home-newsletter .newsletter-image {
+  grid-area: newsletter-image;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #home-newsletter .newsletter-image img {
-  width: 75%;
-  height: 75%;
-  box-shadow: 10px 10px 0 0 var(--white-shadow);
-  padding: 5rem;
-  border-radius: 10rem 0;
+  padding: 3em;
+  width: 90%;
+  box-shadow: 2px 5px 5px 0px var(--white-shadow);
+  border-radius: 3rem 0;
+  margin: 3rem 0;
+}
+@media only screen and (min-width: 992px) {
+  #home-newsletter .newsletter-image img {
+    height: 400px;
+  }
 }
 #home-newsletter .newsletter-form {
+  grid-area: newsletter-form;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 #home-newsletter .newsletter-form h4 {
   margin: 1rem 0 0 0;
@@ -348,6 +366,7 @@ body main {
   margin: 1rem 0;
   text-transform: lowercase;
   color: var(--white);
+  text-align: center;
 }
 #home-newsletter .newsletter-form form {
   display: flex;
@@ -645,8 +664,8 @@ body main {
 .home-container #home-landing .home-landing-image img {
   padding: 3em;
   width: 90%;
-  box-shadow: 10px 10px 10px 0px var(--primary-brown-shadow);
-  border-radius: 10rem 0;
+  box-shadow: 2px 5px 5px 0px var(--primary-brown-shadow);
+  border-radius: 3rem 0;
 }
 @media only screen and (min-width: 992px) {
   .home-container #home-landing {
@@ -2754,6 +2773,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   justify-content: center;
   gap: 0.5rem;
   font-size: 0.75rem;
+  text-align: center;
 }
 .page-footer .footer-copyright .container a {
   font-size: 1.5rem;
