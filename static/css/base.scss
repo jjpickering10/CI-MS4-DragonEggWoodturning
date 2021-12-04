@@ -2461,34 +2461,35 @@ nav, #mobile-demo {
 // Profile page
 
 .profile-container {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     min-height: 50vh;
     margin-bottom: 5rem;
+    display: grid;
+    grid-template-areas: 
+        'profile-left'
+        'profile-right';
+    grid-auto-columns: 1fr;
+    @media only screen and (min-width: 750px) {
+        grid-template-areas: 
+        'profile-left profile-right';
+        grid-auto-columns: 300px 2fr;
+    }
 
     > .profile-nav {
-        flex: 1 1 40%;
-        padding: 3rem;
-        
-        h2 {
-            font-weight: 100;
-            text-transform: capitalize;
-            position: relative;
-            padding: 1rem;
-            border-left: 3px solid var(--primary-orange);
-            font-size: 2.5rem;
+        // flex: 1 1 40%;
+        grid-area: profile-left;
+        padding: 3rem 0.5rem;
+        @media only screen and (min-width: 992px) {
+            padding: 2rem;
         }
 
         .profile-links {
-            margin: 1rem 0;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 200;
             letter-spacing: 2px;
-            cursor: pointer;
-            border: 1px solid var(--primary-brown);
-            border-left: none;
-            box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
-            padding: 0.5rem;
+            cursor: pointer;    
+            padding: 0.25rem 0.5rem;
             transition: background-color 0.3s, font-weight 0.3s;
             text-transform: lowercase;
 
@@ -2506,7 +2507,7 @@ nav, #mobile-demo {
             color: var(--primary-brown);
 
             .fas {
-                margin-right: 0.5rem;
+                margin-right: 0.25rem;
                 min-width: 40px;
                 &::before {
                     color: var(--primary-orange);
@@ -2516,14 +2517,23 @@ nav, #mobile-demo {
         }
     }
     > .profile-section {
-        flex: 1 1 60%;
-        padding: 3rem;
+        // flex: 1 1 60%;
+        grid-area: profile-right;
+        padding: 3rem 0.5rem;
         background: var(--primary-brown);
         color: var(--white);
+        max-height: 100vh;
+        overflow-y: scroll;
         border-radius: 0 0 0 5rem;
+        @media only screen and (min-width: 992px) {
+            padding: 3rem;
+        }
 
         > * {
-            padding: 3rem;
+            padding: 1rem;
+            @media only screen and (min-width: 992px) {
+                padding: 3rem;
+            }
         }
 
         .profile-section-header {
@@ -2579,7 +2589,7 @@ nav, #mobile-demo {
             box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
 
             form {
-
+                max-width: 400px;
                 fieldset {
                     border: none;
                     padding: 0;
@@ -2621,6 +2631,7 @@ nav, #mobile-demo {
 
             table {
                 background: var(--primary-cream);
+                width: 95%;
                 thead {
                     tr {
                         color: var(--primary-brown);
@@ -2720,6 +2731,7 @@ nav, #mobile-demo {
         .profile-admin-blog-container,
         .profile-admin-products-container {
             table {
+                width: 95%;
                 background: var(--primary-cream);
                 thead {
                     color: var(--primary-brown);

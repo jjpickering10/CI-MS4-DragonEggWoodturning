@@ -13,8 +13,6 @@
 
 <div class="profile-container">
     <div class="profile-nav">
-
-        <h2>Menu</h2>
         <ul>
           <li class="profile-links active" data-link='home'><i class="fas fa-home"></i>Profile Home</li>
           <li class="profile-links" data-link='account'><i class="fas fa-user"></i>Account Info</li>
@@ -234,7 +232,7 @@
           {% for blog in blogs %}
         <tbody>
           <tr>
-            <td><a href="{% url 'blog_post' blog.id %}">{{ blog.title }}</a></td>
+            <td><a href="{% url 'blog_post' blog.id %}">{{ blog.title|truncatechars:10 }}</a></td>
             <td>{{ blog.date }}</td>
             <td><a href="{% url 'edit_blog' blog.id %}">Edit <i class="far fa-edit"></i></a></td>
             <!-- Modal Trigger -->

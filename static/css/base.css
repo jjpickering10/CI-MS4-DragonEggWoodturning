@@ -2218,33 +2218,33 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 
 .profile-container {
-  display: flex;
-  flex-wrap: wrap;
   min-height: 50vh;
   margin-bottom: 5rem;
+  display: grid;
+  grid-template-areas: "profile-left" "profile-right";
+  grid-auto-columns: 1fr;
+}
+@media only screen and (min-width: 750px) {
+  .profile-container {
+    grid-template-areas: "profile-left profile-right";
+    grid-auto-columns: 300px 2fr;
+  }
 }
 .profile-container > .profile-nav {
-  flex: 1 1 40%;
-  padding: 3rem;
+  grid-area: profile-left;
+  padding: 3rem 0.5rem;
 }
-.profile-container > .profile-nav h2 {
-  font-weight: 100;
-  text-transform: capitalize;
-  position: relative;
-  padding: 1rem;
-  border-left: 3px solid var(--primary-orange);
-  font-size: 2.5rem;
+@media only screen and (min-width: 992px) {
+  .profile-container > .profile-nav {
+    padding: 2rem;
+  }
 }
 .profile-container > .profile-nav .profile-links {
-  margin: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 200;
   letter-spacing: 2px;
   cursor: pointer;
-  border: 1px solid var(--primary-brown);
-  border-left: none;
-  box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   transition: background-color 0.3s, font-weight 0.3s;
   text-transform: lowercase;
   position: relative;
@@ -2260,21 +2260,33 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   background: var(--primary-brown-shadow);
 }
 .profile-container > .profile-nav .profile-links .fas {
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
   min-width: 40px;
 }
 .profile-container > .profile-nav .profile-links .fas::before {
   color: var(--primary-orange);
 }
 .profile-container > .profile-section {
-  flex: 1 1 60%;
-  padding: 3rem;
+  grid-area: profile-right;
+  padding: 3rem 0.5rem;
   background: var(--primary-brown);
   color: var(--white);
+  max-height: 100vh;
+  overflow-y: scroll;
   border-radius: 0 0 0 5rem;
 }
+@media only screen and (min-width: 992px) {
+  .profile-container > .profile-section {
+    padding: 3rem;
+  }
+}
 .profile-container > .profile-section > * {
-  padding: 3rem;
+  padding: 1rem;
+}
+@media only screen and (min-width: 992px) {
+  .profile-container > .profile-section > * {
+    padding: 3rem;
+  }
 }
 .profile-container > .profile-section .profile-section-header {
   font-weight: 200;
@@ -2322,6 +2334,9 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   margin: 0 auto;
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
 }
+.profile-container > .profile-section .profile-account-info-container form {
+  max-width: 400px;
+}
 .profile-container > .profile-section .profile-account-info-container form fieldset {
   border: none;
   padding: 0;
@@ -2357,6 +2372,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .profile-container > .profile-section .profile-review-container table,
 .profile-container > .profile-section .profile-orders-container table {
   background: var(--primary-cream);
+  width: 95%;
 }
 .profile-container > .profile-section .profile-review-container table thead tr,
 .profile-container > .profile-section .profile-orders-container table thead tr {
@@ -2446,6 +2462,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 .profile-container > .profile-section .profile-admin-blog-container table,
 .profile-container > .profile-section .profile-admin-products-container table {
+  width: 95%;
   background: var(--primary-cream);
 }
 .profile-container > .profile-section .profile-admin-blog-container table thead,
