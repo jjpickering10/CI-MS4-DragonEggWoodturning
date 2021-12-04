@@ -2315,12 +2315,21 @@ nav, #mobile-demo {
 
 .checkout-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 0 auto 5rem auto;
+    grid-template-areas: 
+        'checkout-right'
+        'checkout-left';
+    grid-auto-columns: 1fr;
+    @media only screen and (min-width: 992px) {
+        grid-template-areas: 
+        'checkout-left checkout-right';
+    }
 
     .checkout-section {
         padding-top: 5rem;
+        grid-area: checkout-left;
         &:nth-child(2) {
+            grid-area: checkout-right;
             background: var(--primary-brown);
             color: var(--white);
             .bag-table {
@@ -2357,11 +2366,12 @@ nav, #mobile-demo {
 
 
     form {
-        width: 400px;
+        max-width: 400px;
         margin: 0 auto;
 
         fieldset {
             border: none;
+            width: 95%;
         }
         legend {
             font-weight: 500;
@@ -2371,11 +2381,11 @@ nav, #mobile-demo {
             font-size: 0.7em;
             color: var(--primary-brown);
             font-weight: 300;
-            margin: 0rem 0 1em 0;
+            margin: 0rem 0 0.75em 0;
         }
         input[type=text]:not(.browser-default), input[type=email]:not(.browser-default), #card-element, #card-errors {
             padding: 0 0.5rem;
-            width: 360px;
+            max-width: 360px;
             border: none;
             background: #ded3cc;
             border-radius: 2px;
@@ -2389,7 +2399,7 @@ nav, #mobile-demo {
 
         #card-element {
             padding: 1.5rem;
-            width: 375px;
+            max-width: 375px;
         }
     }
 }
