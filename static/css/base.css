@@ -502,14 +502,27 @@ body main {
     height: 75%;
   }
 }
+@media only screen and (max-width: 992px) {
+  .home-container #home-landing .home-landing-title {
+    padding: 3rem 0;
+    border-radius: 0;
+  }
+}
 .home-container #home-landing .home-landing-title h1 {
   font-weight: 400;
+  font-size: 3rem;
   text-transform: lowercase;
   margin: 2rem 0 1rem 0;
   color: var(--white);
   position: relative;
   padding: 1rem 2rem 1rem 2rem;
   opacity: 0;
+}
+@media only screen and (max-width: 992px) {
+  .home-container #home-landing .home-landing-title h1 {
+    padding: 1rem 0;
+    text-align: center;
+  }
 }
 .home-container #home-landing .home-landing-title h1 span {
   color: var(--primary-orange);
@@ -543,16 +556,32 @@ body main {
 .home-container #home-landing .home-landing-title p {
   font-weight: 100;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2;
   padding: 0 2rem;
   text-transform: lowercase;
   opacity: 0;
 }
+@media only screen and (max-width: 992px) {
+  .home-container #home-landing .home-landing-title p {
+    text-align: center;
+  }
+}
 .home-container #home-landing .home-landing-title .landing-buttons {
   display: flex;
   padding: 2rem;
   opacity: 0;
+}
+@media only screen and (max-width: 480px) {
+  .home-container #home-landing .home-landing-title .landing-buttons {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .home-container #home-landing .home-landing-title .landing-buttons {
+    margin: 0 auto;
+  }
 }
 .home-container #home-landing .home-landing-title .landing-buttons a {
   font-style: 1.7em;
@@ -586,6 +615,11 @@ body main {
 @media only screen and (min-width: 992px) {
   .home-container #home-landing .home-landing-image {
     height: 75%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .home-container #home-landing .home-landing-image {
+    padding: 0 0 5rem 0;
   }
 }
 .home-container #home-landing .home-landing-image img {
@@ -725,7 +759,8 @@ nav .brand-logo, #mobile-demo .brand-logo {
   font-size: 1rem;
   font-weight: 300;
   text-transform: lowercase;
-  margin-left: 5rem;
+  text-align: center;
+  line-height: 56px;
   padding: 0 1rem;
   box-shadow: 10px 10px 0 0 var(--white);
   border-right: 10px solid var(--secondary-brown);
@@ -734,9 +769,16 @@ nav .brand-logo, #mobile-demo .brand-logo {
 nav .brand-logo span, #mobile-demo .brand-logo span {
   color: var(--primary-orange);
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 992px) {
+  nav .brand-logo, #mobile-demo .brand-logo {
+    margin-left: 5rem;
+    line-height: 56px;
+  }
+}
+@media only screen and (max-width: 420px) {
   nav .brand-logo, #mobile-demo .brand-logo {
     margin: 0;
+    line-height: 2;
   }
 }
 nav .sidenav-trigger, #mobile-demo .sidenav-trigger {

@@ -538,10 +538,14 @@ body {
             @media only screen and (min-width: 992px) {
                 height: 75%;
             }
+            @media only screen and (max-width: 992px) {
+                padding: 3rem 0;
+                border-radius: 0;
+            }
 
             h1 {
                 font-weight: 400;
-                
+                font-size: 3rem;
                 text-transform: lowercase;
                 margin: 2rem 0 1rem 0;
                 color: var(--white);
@@ -549,6 +553,10 @@ body {
                 
                 padding: 1rem 2rem 1rem 2rem;
                 opacity: 0;
+                @media only screen and (max-width: 992px) {
+                    padding: 1rem 0;
+                    text-align: center;
+                }
 
                 span {
                     color: var(--primary-orange);
@@ -584,17 +592,27 @@ body {
             p {
                 font-weight: 100;
                 color: var(--white);
-                font-size: 1.2rem;
+                font-size: 1rem;
                 line-height: 2;
                 padding: 0 2rem;
                 text-transform: lowercase;
                 opacity: 0;
+                @media only screen and (max-width: 992px) {
+                    text-align: center;
+                }
             }
 
             .landing-buttons {
                 display: flex;
                 padding: 2rem;
                 opacity: 0;
+                @media only screen and (max-width: 480px) {
+                    margin: 0 auto;
+                    width: 100%;
+                }
+                @media only screen and (max-width: 992px) {
+                    margin: 0 auto;
+                }
 
                 a {
                     font-style: 1.7em;
@@ -632,6 +650,10 @@ body {
 
             @media only screen and (min-width: 992px) {
                 height: 75%;
+            }
+            @media only screen and (max-width: 992px) {
+                padding: 0 0 5rem 0;
+                
             }
 
             img {
@@ -790,7 +812,8 @@ nav, #mobile-demo {
         font-size: 1rem;
         font-weight: 300;
         text-transform: lowercase;
-        margin-left: 5rem;
+        text-align: center;
+        line-height: 56px;
         padding: 0 1rem;
         box-shadow: 10px 10px 0 0 var(--white);
         border-right: 10px solid var(--secondary-brown);
@@ -798,8 +821,13 @@ nav, #mobile-demo {
         span {
             color: var(--primary-orange);
         }
-        @media only screen and (max-width: 992px) {
+        @media only screen and (min-width: 992px) {
+            margin-left: 5rem;
+            line-height: 56px;
+        }
+        @media only screen and (max-width: 420px) {
             margin: 0;
+            line-height: 2;
         }
     }
 
