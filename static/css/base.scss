@@ -2316,9 +2316,18 @@ nav, #mobile-demo {
 .checkout-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin: 5rem auto;
+    margin: 0 auto 5rem auto;
 
     .checkout-section {
+        padding-top: 5rem;
+        &:nth-child(2) {
+            background: var(--primary-brown);
+            color: var(--white);
+            .bag-table {
+                min-width: 0;
+                margin-top: 0;
+            }
+        }
          > h5, > p {
             text-align: center;
             font-weight: 200;
@@ -2332,7 +2341,8 @@ nav, #mobile-demo {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            padding: 0.75em;
 
             input[type=checkbox] + span:not(.lever) {
                 font-size: 0.75rem;
@@ -2361,6 +2371,7 @@ nav, #mobile-demo {
             font-size: 0.7em;
             color: var(--primary-brown);
             font-weight: 300;
+            margin: 0rem 0 1em 0;
         }
         input[type=text]:not(.browser-default), input[type=email]:not(.browser-default), #card-element, #card-errors {
             padding: 0 0.5rem;
@@ -2369,6 +2380,11 @@ nav, #mobile-demo {
             background: #ded3cc;
             border-radius: 2px;
             box-shadow: 0px 2px 2px 0px var(--primary-brown-shadow);
+        }
+
+        .global-button {
+            margin: 0;
+            width: 100%;
         }
 
         #card-element {

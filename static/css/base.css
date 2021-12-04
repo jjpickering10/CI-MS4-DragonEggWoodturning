@@ -2094,7 +2094,18 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .checkout-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: 5rem auto;
+  margin: 0 auto 5rem auto;
+}
+.checkout-container .checkout-section {
+  padding-top: 5rem;
+}
+.checkout-container .checkout-section:nth-child(2) {
+  background: var(--primary-brown);
+  color: var(--white);
+}
+.checkout-container .checkout-section:nth-child(2) .bag-table {
+  min-width: 0;
+  margin-top: 0;
 }
 .checkout-container .checkout-section > h5, .checkout-container .checkout-section > p {
   text-align: center;
@@ -2108,7 +2119,8 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 0.75em;
 }
 .checkout-container .checkout-section .checkout-pay-section input[type=checkbox] + span:not(.lever) {
   font-size: 0.75rem;
@@ -2132,6 +2144,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   font-size: 0.7em;
   color: var(--primary-brown);
   font-weight: 300;
+  margin: 0rem 0 1em 0;
 }
 .checkout-container form input[type=text]:not(.browser-default), .checkout-container form input[type=email]:not(.browser-default), .checkout-container form #card-element, .checkout-container form #card-errors {
   padding: 0 0.5rem;
@@ -2140,6 +2153,10 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   background: #ded3cc;
   border-radius: 2px;
   box-shadow: 0px 2px 2px 0px var(--primary-brown-shadow);
+}
+.checkout-container form .global-button {
+  margin: 0;
+  width: 100%;
 }
 .checkout-container form #card-element {
   padding: 1.5rem;
