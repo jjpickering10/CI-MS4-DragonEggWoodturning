@@ -982,14 +982,32 @@ nav, #mobile-demo {
     
     .about-landing, .contact-landing, .error-landing {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        grid-template-areas: 
+        'left'
+        'right';
+        grid-auto-columns: 1fr;
+        @media only screen and (min-width: 992px) {
+            grid-template-areas: "left right";
+            gap: 0;
+        }
         
         .about-landing-title, .contact-landing-title, .error-landing-title {
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 5em;
+            justify-content: center;
+            align-items: center;
+            padding: 1em 1rem 2rem 1rem;
+            grid-area: left;
+            @media only screen and (min-width: 420px) {
+                padding: 2rem 2rem 3rem 2rem;
+            }
+            @media only screen and (min-width: 992px) {
+                padding: 5rem 5rem 6rem 5rem;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
 
             .error-buttons {
                 display: flex;
@@ -1016,11 +1034,17 @@ nav, #mobile-demo {
             h1 {
                 font-weight: 200;
                 text-transform: lowercase;
-                margin-bottom: 0;
+                margin: 1rem 0;
+                font-size: 3rem;
                 color: var(--primary-brown);
                 position: relative;
                 line-height: 1.2;
-                padding: 1rem 2rem 1rem 2rem;
+                padding: 1rem 0 0 0;
+                text-align: center;
+                @media only screen and (min-width: 992px) {
+                    padding: 1rem 2rem 1rem 2rem;
+                    text-align: left;
+                }
 
                 &::before {
                     content: '';
@@ -1036,10 +1060,16 @@ nav, #mobile-demo {
             p {
                 font-weight: 100;
                 color: var(--primary-brown);
-                font-size: 1.4rem;
+                font-size: 1rem;
                 line-height: 2;
-                padding: 0 2rem;
                 text-transform: lowercase;
+                padding: 0 1rem;
+                text-align: center;
+                @media only screen and (min-width: 992px) {
+                    padding: 0 2rem;
+                    font-size: 1.4rem;
+                    text-align: left;
+                }
 
                 i {
                     font-size: 2rem;
@@ -1069,9 +1099,10 @@ nav, #mobile-demo {
             position: relative;
             padding: 5rem;
             background: var(--primary-brown);
+            grid-area: right;
 
             img {
-                padding: 3em;
+                padding: 1em;
                 position: relative;
                 width: 75%;
                 box-shadow: 0px 0px 0px 2px var(--white),
@@ -1112,7 +1143,21 @@ nav, #mobile-demo {
     }
     .about-info {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        grid-template-areas: 
+        'left'
+        'right';
+        grid-auto-columns: 1fr;
+        @media only screen and (min-width: 992px) {
+            grid-template-areas: "left right";
+            gap: 0;
+        }
+
+        .about-segments:nth-child(1) {
+            grid-area: left;
+        }
+        .about-segments:nth-child(2) {
+            grid-area: right;
+        }
         
 
         .about-segments {

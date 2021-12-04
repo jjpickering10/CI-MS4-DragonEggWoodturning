@@ -921,14 +921,36 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 
 .about-page-container .about-landing, .about-page-container .contact-landing, .about-page-container .error-landing, .contact-page-container .about-landing, .contact-page-container .contact-landing, .contact-page-container .error-landing, .error-container .about-landing, .error-container .contact-landing, .error-container .error-landing {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-areas: "left" "right";
+  grid-auto-columns: 1fr;
+}
+@media only screen and (min-width: 992px) {
+  .about-page-container .about-landing, .about-page-container .contact-landing, .about-page-container .error-landing, .contact-page-container .about-landing, .contact-page-container .contact-landing, .contact-page-container .error-landing, .error-container .about-landing, .error-container .contact-landing, .error-container .error-landing {
+    grid-template-areas: "left right";
+    gap: 0;
+  }
 }
 .about-page-container .about-landing .about-landing-title, .about-page-container .about-landing .contact-landing-title, .about-page-container .about-landing .error-landing-title, .about-page-container .contact-landing .about-landing-title, .about-page-container .contact-landing .contact-landing-title, .about-page-container .contact-landing .error-landing-title, .about-page-container .error-landing .about-landing-title, .about-page-container .error-landing .contact-landing-title, .about-page-container .error-landing .error-landing-title, .contact-page-container .about-landing .about-landing-title, .contact-page-container .about-landing .contact-landing-title, .contact-page-container .about-landing .error-landing-title, .contact-page-container .contact-landing .about-landing-title, .contact-page-container .contact-landing .contact-landing-title, .contact-page-container .contact-landing .error-landing-title, .contact-page-container .error-landing .about-landing-title, .contact-page-container .error-landing .contact-landing-title, .contact-page-container .error-landing .error-landing-title, .error-container .about-landing .about-landing-title, .error-container .about-landing .contact-landing-title, .error-container .about-landing .error-landing-title, .error-container .contact-landing .about-landing-title, .error-container .contact-landing .contact-landing-title, .error-container .contact-landing .error-landing-title, .error-container .error-landing .about-landing-title, .error-container .error-landing .contact-landing-title, .error-container .error-landing .error-landing-title {
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 5em;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 1rem 2rem 1rem;
+  grid-area: left;
+}
+@media only screen and (min-width: 420px) {
+  .about-page-container .about-landing .about-landing-title, .about-page-container .about-landing .contact-landing-title, .about-page-container .about-landing .error-landing-title, .about-page-container .contact-landing .about-landing-title, .about-page-container .contact-landing .contact-landing-title, .about-page-container .contact-landing .error-landing-title, .about-page-container .error-landing .about-landing-title, .about-page-container .error-landing .contact-landing-title, .about-page-container .error-landing .error-landing-title, .contact-page-container .about-landing .about-landing-title, .contact-page-container .about-landing .contact-landing-title, .contact-page-container .about-landing .error-landing-title, .contact-page-container .contact-landing .about-landing-title, .contact-page-container .contact-landing .contact-landing-title, .contact-page-container .contact-landing .error-landing-title, .contact-page-container .error-landing .about-landing-title, .contact-page-container .error-landing .contact-landing-title, .contact-page-container .error-landing .error-landing-title, .error-container .about-landing .about-landing-title, .error-container .about-landing .contact-landing-title, .error-container .about-landing .error-landing-title, .error-container .contact-landing .about-landing-title, .error-container .contact-landing .contact-landing-title, .error-container .contact-landing .error-landing-title, .error-container .error-landing .about-landing-title, .error-container .error-landing .contact-landing-title, .error-container .error-landing .error-landing-title {
+    padding: 2rem 2rem 3rem 2rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .about-page-container .about-landing .about-landing-title, .about-page-container .about-landing .contact-landing-title, .about-page-container .about-landing .error-landing-title, .about-page-container .contact-landing .about-landing-title, .about-page-container .contact-landing .contact-landing-title, .about-page-container .contact-landing .error-landing-title, .about-page-container .error-landing .about-landing-title, .about-page-container .error-landing .contact-landing-title, .about-page-container .error-landing .error-landing-title, .contact-page-container .about-landing .about-landing-title, .contact-page-container .about-landing .contact-landing-title, .contact-page-container .about-landing .error-landing-title, .contact-page-container .contact-landing .about-landing-title, .contact-page-container .contact-landing .contact-landing-title, .contact-page-container .contact-landing .error-landing-title, .contact-page-container .error-landing .about-landing-title, .contact-page-container .error-landing .contact-landing-title, .contact-page-container .error-landing .error-landing-title, .error-container .about-landing .about-landing-title, .error-container .about-landing .contact-landing-title, .error-container .about-landing .error-landing-title, .error-container .contact-landing .about-landing-title, .error-container .contact-landing .contact-landing-title, .error-container .contact-landing .error-landing-title, .error-container .error-landing .about-landing-title, .error-container .error-landing .contact-landing-title, .error-container .error-landing .error-landing-title {
+    padding: 5rem 5rem 6rem 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 .about-page-container .about-landing .about-landing-title .error-buttons, .about-page-container .about-landing .contact-landing-title .error-buttons, .about-page-container .about-landing .error-landing-title .error-buttons, .about-page-container .contact-landing .about-landing-title .error-buttons, .about-page-container .contact-landing .contact-landing-title .error-buttons, .about-page-container .contact-landing .error-landing-title .error-buttons, .about-page-container .error-landing .about-landing-title .error-buttons, .about-page-container .error-landing .contact-landing-title .error-buttons, .about-page-container .error-landing .error-landing-title .error-buttons, .contact-page-container .about-landing .about-landing-title .error-buttons, .contact-page-container .about-landing .contact-landing-title .error-buttons, .contact-page-container .about-landing .error-landing-title .error-buttons, .contact-page-container .contact-landing .about-landing-title .error-buttons, .contact-page-container .contact-landing .contact-landing-title .error-buttons, .contact-page-container .contact-landing .error-landing-title .error-buttons, .contact-page-container .error-landing .about-landing-title .error-buttons, .contact-page-container .error-landing .contact-landing-title .error-buttons, .contact-page-container .error-landing .error-landing-title .error-buttons, .error-container .about-landing .about-landing-title .error-buttons, .error-container .about-landing .contact-landing-title .error-buttons, .error-container .about-landing .error-landing-title .error-buttons, .error-container .contact-landing .about-landing-title .error-buttons, .error-container .contact-landing .contact-landing-title .error-buttons, .error-container .contact-landing .error-landing-title .error-buttons, .error-container .error-landing .about-landing-title .error-buttons, .error-container .error-landing .contact-landing-title .error-buttons, .error-container .error-landing .error-landing-title .error-buttons {
   display: flex;
@@ -951,11 +973,19 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .about-page-container .about-landing .about-landing-title h1, .about-page-container .about-landing .contact-landing-title h1, .about-page-container .about-landing .error-landing-title h1, .about-page-container .contact-landing .about-landing-title h1, .about-page-container .contact-landing .contact-landing-title h1, .about-page-container .contact-landing .error-landing-title h1, .about-page-container .error-landing .about-landing-title h1, .about-page-container .error-landing .contact-landing-title h1, .about-page-container .error-landing .error-landing-title h1, .contact-page-container .about-landing .about-landing-title h1, .contact-page-container .about-landing .contact-landing-title h1, .contact-page-container .about-landing .error-landing-title h1, .contact-page-container .contact-landing .about-landing-title h1, .contact-page-container .contact-landing .contact-landing-title h1, .contact-page-container .contact-landing .error-landing-title h1, .contact-page-container .error-landing .about-landing-title h1, .contact-page-container .error-landing .contact-landing-title h1, .contact-page-container .error-landing .error-landing-title h1, .error-container .about-landing .about-landing-title h1, .error-container .about-landing .contact-landing-title h1, .error-container .about-landing .error-landing-title h1, .error-container .contact-landing .about-landing-title h1, .error-container .contact-landing .contact-landing-title h1, .error-container .contact-landing .error-landing-title h1, .error-container .error-landing .about-landing-title h1, .error-container .error-landing .contact-landing-title h1, .error-container .error-landing .error-landing-title h1 {
   font-weight: 200;
   text-transform: lowercase;
-  margin-bottom: 0;
+  margin: 1rem 0;
+  font-size: 3rem;
   color: var(--primary-brown);
   position: relative;
   line-height: 1.2;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 0 0 0;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .about-page-container .about-landing .about-landing-title h1, .about-page-container .about-landing .contact-landing-title h1, .about-page-container .about-landing .error-landing-title h1, .about-page-container .contact-landing .about-landing-title h1, .about-page-container .contact-landing .contact-landing-title h1, .about-page-container .contact-landing .error-landing-title h1, .about-page-container .error-landing .about-landing-title h1, .about-page-container .error-landing .contact-landing-title h1, .about-page-container .error-landing .error-landing-title h1, .contact-page-container .about-landing .about-landing-title h1, .contact-page-container .about-landing .contact-landing-title h1, .contact-page-container .about-landing .error-landing-title h1, .contact-page-container .contact-landing .about-landing-title h1, .contact-page-container .contact-landing .contact-landing-title h1, .contact-page-container .contact-landing .error-landing-title h1, .contact-page-container .error-landing .about-landing-title h1, .contact-page-container .error-landing .contact-landing-title h1, .contact-page-container .error-landing .error-landing-title h1, .error-container .about-landing .about-landing-title h1, .error-container .about-landing .contact-landing-title h1, .error-container .about-landing .error-landing-title h1, .error-container .contact-landing .about-landing-title h1, .error-container .contact-landing .contact-landing-title h1, .error-container .contact-landing .error-landing-title h1, .error-container .error-landing .about-landing-title h1, .error-container .error-landing .contact-landing-title h1, .error-container .error-landing .error-landing-title h1 {
+    padding: 1rem 2rem 1rem 2rem;
+    text-align: left;
+  }
 }
 .about-page-container .about-landing .about-landing-title h1::before, .about-page-container .about-landing .contact-landing-title h1::before, .about-page-container .about-landing .error-landing-title h1::before, .about-page-container .contact-landing .about-landing-title h1::before, .about-page-container .contact-landing .contact-landing-title h1::before, .about-page-container .contact-landing .error-landing-title h1::before, .about-page-container .error-landing .about-landing-title h1::before, .about-page-container .error-landing .contact-landing-title h1::before, .about-page-container .error-landing .error-landing-title h1::before, .contact-page-container .about-landing .about-landing-title h1::before, .contact-page-container .about-landing .contact-landing-title h1::before, .contact-page-container .about-landing .error-landing-title h1::before, .contact-page-container .contact-landing .about-landing-title h1::before, .contact-page-container .contact-landing .contact-landing-title h1::before, .contact-page-container .contact-landing .error-landing-title h1::before, .contact-page-container .error-landing .about-landing-title h1::before, .contact-page-container .error-landing .contact-landing-title h1::before, .contact-page-container .error-landing .error-landing-title h1::before, .error-container .about-landing .about-landing-title h1::before, .error-container .about-landing .contact-landing-title h1::before, .error-container .about-landing .error-landing-title h1::before, .error-container .contact-landing .about-landing-title h1::before, .error-container .contact-landing .contact-landing-title h1::before, .error-container .contact-landing .error-landing-title h1::before, .error-container .error-landing .about-landing-title h1::before, .error-container .error-landing .contact-landing-title h1::before, .error-container .error-landing .error-landing-title h1::before {
   content: "";
@@ -969,10 +999,18 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .about-page-container .about-landing .about-landing-title p, .about-page-container .about-landing .contact-landing-title p, .about-page-container .about-landing .error-landing-title p, .about-page-container .contact-landing .about-landing-title p, .about-page-container .contact-landing .contact-landing-title p, .about-page-container .contact-landing .error-landing-title p, .about-page-container .error-landing .about-landing-title p, .about-page-container .error-landing .contact-landing-title p, .about-page-container .error-landing .error-landing-title p, .contact-page-container .about-landing .about-landing-title p, .contact-page-container .about-landing .contact-landing-title p, .contact-page-container .about-landing .error-landing-title p, .contact-page-container .contact-landing .about-landing-title p, .contact-page-container .contact-landing .contact-landing-title p, .contact-page-container .contact-landing .error-landing-title p, .contact-page-container .error-landing .about-landing-title p, .contact-page-container .error-landing .contact-landing-title p, .contact-page-container .error-landing .error-landing-title p, .error-container .about-landing .about-landing-title p, .error-container .about-landing .contact-landing-title p, .error-container .about-landing .error-landing-title p, .error-container .contact-landing .about-landing-title p, .error-container .contact-landing .contact-landing-title p, .error-container .contact-landing .error-landing-title p, .error-container .error-landing .about-landing-title p, .error-container .error-landing .contact-landing-title p, .error-container .error-landing .error-landing-title p {
   font-weight: 100;
   color: var(--primary-brown);
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 2;
-  padding: 0 2rem;
   text-transform: lowercase;
+  padding: 0 1rem;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .about-page-container .about-landing .about-landing-title p, .about-page-container .about-landing .contact-landing-title p, .about-page-container .about-landing .error-landing-title p, .about-page-container .contact-landing .about-landing-title p, .about-page-container .contact-landing .contact-landing-title p, .about-page-container .contact-landing .error-landing-title p, .about-page-container .error-landing .about-landing-title p, .about-page-container .error-landing .contact-landing-title p, .about-page-container .error-landing .error-landing-title p, .contact-page-container .about-landing .about-landing-title p, .contact-page-container .about-landing .contact-landing-title p, .contact-page-container .about-landing .error-landing-title p, .contact-page-container .contact-landing .about-landing-title p, .contact-page-container .contact-landing .contact-landing-title p, .contact-page-container .contact-landing .error-landing-title p, .contact-page-container .error-landing .about-landing-title p, .contact-page-container .error-landing .contact-landing-title p, .contact-page-container .error-landing .error-landing-title p, .error-container .about-landing .about-landing-title p, .error-container .about-landing .contact-landing-title p, .error-container .about-landing .error-landing-title p, .error-container .contact-landing .about-landing-title p, .error-container .contact-landing .contact-landing-title p, .error-container .contact-landing .error-landing-title p, .error-container .error-landing .about-landing-title p, .error-container .error-landing .contact-landing-title p, .error-container .error-landing .error-landing-title p {
+    padding: 0 2rem;
+    font-size: 1.4rem;
+    text-align: left;
+  }
 }
 .about-page-container .about-landing .about-landing-title p i, .about-page-container .about-landing .contact-landing-title p i, .about-page-container .about-landing .error-landing-title p i, .about-page-container .contact-landing .about-landing-title p i, .about-page-container .contact-landing .contact-landing-title p i, .about-page-container .contact-landing .error-landing-title p i, .about-page-container .error-landing .about-landing-title p i, .about-page-container .error-landing .contact-landing-title p i, .about-page-container .error-landing .error-landing-title p i, .contact-page-container .about-landing .about-landing-title p i, .contact-page-container .about-landing .contact-landing-title p i, .contact-page-container .about-landing .error-landing-title p i, .contact-page-container .contact-landing .about-landing-title p i, .contact-page-container .contact-landing .contact-landing-title p i, .contact-page-container .contact-landing .error-landing-title p i, .contact-page-container .error-landing .about-landing-title p i, .contact-page-container .error-landing .contact-landing-title p i, .contact-page-container .error-landing .error-landing-title p i, .error-container .about-landing .about-landing-title p i, .error-container .about-landing .contact-landing-title p i, .error-container .about-landing .error-landing-title p i, .error-container .contact-landing .about-landing-title p i, .error-container .contact-landing .contact-landing-title p i, .error-container .contact-landing .error-landing-title p i, .error-container .error-landing .about-landing-title p i, .error-container .error-landing .contact-landing-title p i, .error-container .error-landing .error-landing-title p i {
   font-size: 2rem;
@@ -996,9 +1034,10 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   position: relative;
   padding: 5rem;
   background: var(--primary-brown);
+  grid-area: right;
 }
 .about-page-container .about-landing .about-landing-image img, .about-page-container .about-landing .error-landing-image img, .about-page-container .about-landing .contact-landing-form img, .about-page-container .contact-landing .about-landing-image img, .about-page-container .contact-landing .error-landing-image img, .about-page-container .contact-landing .contact-landing-form img, .about-page-container .error-landing .about-landing-image img, .about-page-container .error-landing .error-landing-image img, .about-page-container .error-landing .contact-landing-form img, .contact-page-container .about-landing .about-landing-image img, .contact-page-container .about-landing .error-landing-image img, .contact-page-container .about-landing .contact-landing-form img, .contact-page-container .contact-landing .about-landing-image img, .contact-page-container .contact-landing .error-landing-image img, .contact-page-container .contact-landing .contact-landing-form img, .contact-page-container .error-landing .about-landing-image img, .contact-page-container .error-landing .error-landing-image img, .contact-page-container .error-landing .contact-landing-form img, .error-container .about-landing .about-landing-image img, .error-container .about-landing .error-landing-image img, .error-container .about-landing .contact-landing-form img, .error-container .contact-landing .about-landing-image img, .error-container .contact-landing .error-landing-image img, .error-container .contact-landing .contact-landing-form img, .error-container .error-landing .about-landing-image img, .error-container .error-landing .error-landing-image img, .error-container .error-landing .contact-landing-form img {
-  padding: 3em;
+  padding: 1em;
   position: relative;
   width: 75%;
   box-shadow: 0px 0px 0px 2px var(--white), 0px 0px 0px 10px var(--primary-brown), 0px 0px 0px 12px var(--white), 0px 0px 0px 20px var(--primary-brown), 0px 0px 0px 22px var(--white);
@@ -1029,7 +1068,20 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 .about-page-container .about-info, .contact-page-container .about-info, .error-container .about-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-areas: "left" "right";
+  grid-auto-columns: 1fr;
+}
+@media only screen and (min-width: 992px) {
+  .about-page-container .about-info, .contact-page-container .about-info, .error-container .about-info {
+    grid-template-areas: "left right";
+    gap: 0;
+  }
+}
+.about-page-container .about-info .about-segments:nth-child(1), .contact-page-container .about-info .about-segments:nth-child(1), .error-container .about-info .about-segments:nth-child(1) {
+  grid-area: left;
+}
+.about-page-container .about-info .about-segments:nth-child(2), .contact-page-container .about-info .about-segments:nth-child(2), .error-container .about-info .about-segments:nth-child(2) {
+  grid-area: right;
 }
 .about-page-container .about-info .about-segments, .contact-page-container .about-info .about-segments, .error-container .about-info .about-segments {
   display: flex;
