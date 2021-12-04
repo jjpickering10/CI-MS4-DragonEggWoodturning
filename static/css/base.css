@@ -2896,22 +2896,33 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   padding: 1rem 0;
 }
 
-.add_product_image_container {
-  height: 200px;
+.add_product_image_container form {
+  margin: 0;
+  padding: 2rem 10vw 5rem 10vw;
+}
+.add_product_image_container form .global-button {
+  margin: 0;
+}
+.add_product_image_container form label {
+  position: initial;
+}
+.add_product_image_container form input[type=file] {
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .edit_product_images_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
-  place-items: center;
+  padding: 1rem 1rem 2rem 1rem;
 }
-.edit_product_images_container div {
-  display: flex;
-  flex-direction: column;
+.edit_product_images_container div img {
+  padding: 0 1rem;
+  width: 100%;
 }
-.edit_product_images_container img {
-  height: 250px;
+.edit_product_images_container div a {
+  padding: 0 1rem;
 }
 
 .page-footer {

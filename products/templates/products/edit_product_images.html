@@ -10,21 +10,34 @@
 {% endblock %}
 
 {% block content %}
-<h5>Editing - {{ product.name }}</h5>
-<div class="add_product_image_container">
-  <p>Add images to {{ product.name }} </p>
-  <form action="{% url 'edit_product_images' product.id %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ image_form }}
-    <button type="submit">Add Images</button>
-  </form>
-</div>
-<div class="edit_product_images_container">
-  {% for image in images %}
-      <div>
-        <img src="{{ image.image.url }}" alt="">
-        <a href="{% url 'delete_product_images' image.id %}">Delete</a>
-      </div>
-  {% endfor %}
+<div class="edit-blog-container">
+  <h2>Editing Images: <span>Add images to {{ product.name }}</span></h2>
+  <div class="add_product_image_container">
+    <form action="{% url 'edit_product_images' product.id %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ image_form }}
+      <button class="global-button" type="submit">Add Images</button>
+    </form>
+  </div>
+  <div class="edit_product_images_container">
+    {% for image in images %}
+        <div>
+          <img class="materialboxed" src="{{ image.image.url }}" alt="">
+            <!-- Modal Trigger -->
+            <a class="modal-trigger" href="#{{ image.id }}-{{ image.product.name }}">Delete <i class="fas fa-trash"></i></a>
+            <!-- Modal Structure -->
+            <div id="{{ image.id }}-{{ image.product.name }}" class="modal">
+              <div class="modal-content">
+                <p>Image for - {{ image.product.name }}</p>
+                <p>Are you sure you want to delete?</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close global-button">Cancel</a>
+                <a href="{% url 'delete_product_images' image.id %}" class="global-button">Delete <i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

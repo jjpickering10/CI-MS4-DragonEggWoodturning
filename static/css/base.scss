@@ -3186,23 +3186,39 @@ nav, #mobile-demo {
 // Edit products section
 
 .add_product_image_container {
-    height: 200px;
+    form {
+        margin: 0;
+        padding: 2rem 10vw 5rem 10vw;
+
+        .global-button {
+            margin: 0;
+        }
+        label {
+            position: initial;
+        }
+        input[type=file] {
+            width: 100%;
+            padding: 1rem 0;
+        }
+    }
 }
 
 .edit_product_images_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
-    place-items: center;
+    padding: 1rem 1rem 2rem 1rem;
 
     div {
-        display: flex;
-        flex-direction: column;
+        img {
+            padding: 0 1rem;
+            width: 100%;
+        }
+        a {
+            padding: 0 1rem;
+        }
     }
 
-    img {
-        height: 250px;
-    }
 
 }
 
