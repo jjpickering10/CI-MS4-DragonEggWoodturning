@@ -185,7 +185,7 @@ window.addEventListener('load', () => {
       stagger: 0.25
     })
     timeline.to(landingSegmentsGsap[5], {
-      x: '0',
+      x: '15px',
       duration: 1.5,
       ease: "back.out(2)",
     }, '-=1')

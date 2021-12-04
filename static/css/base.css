@@ -467,7 +467,6 @@ body main {
   align-items: center;
   justify-content: flex-start;
   padding: 1rem;
-  border-radius: 0 5rem 0;
   box-shadow: 0 0 1rem 0 var(--primary-brown-shadow);
   background: var(--secondary-brown);
 }
@@ -484,7 +483,6 @@ body main {
 .site-information .site-information-container .site-info-content:nth-of-type(2), .site-information .site-information-container .site-info-content:nth-of-type(3) {
   background: var(--primary-brown);
   color: var(--white);
-  border-radius: 5rem 0;
 }
 .site-information .site-information-container .site-info-content h3 {
   position: relative;
@@ -517,11 +515,12 @@ body main {
 }
 .home-container #home-landing {
   display: grid;
-  background: linear-gradient(135deg, transparent 50%, var(--secondary-brown));
+  background: var(--primary-brown);
   grid-template-areas: "title" "image";
   grid-auto-columns: 1fr;
   gap: 5rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 .home-container #home-landing .home-landing-title {
   grid-area: title;
@@ -549,7 +548,7 @@ body main {
 }
 .home-container #home-landing .home-landing-title h1 {
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-transform: lowercase;
   margin: 2rem 0 1rem 0;
   color: var(--white);
@@ -591,6 +590,7 @@ body main {
   opacity: 0.1;
   transform: translateY(-50%);
   line-height: 1;
+  pointer-events: none;
 }
 .home-container #home-landing .home-landing-title p {
   font-weight: 100;
@@ -650,11 +650,8 @@ body main {
   justify-content: center;
   opacity: 0;
   transform: translateX(200%);
-}
-@media only screen and (min-width: 992px) {
-  .home-container #home-landing .home-landing-image {
-    height: 75%;
-  }
+  transform-style: preserve-3d;
+  perspective: 100rem;
 }
 @media only screen and (max-width: 992px) {
   .home-container #home-landing .home-landing-image {
@@ -662,10 +659,9 @@ body main {
   }
 }
 .home-container #home-landing .home-landing-image img {
-  padding: 3em;
-  width: 90%;
-  box-shadow: 2px 5px 5px 0px var(--primary-brown-shadow);
-  border-radius: 3rem 0;
+  width: 125%;
+  box-shadow: 0px 0px 10px 0px var(--primary-orange);
+  transform: rotateY(45deg);
 }
 @media only screen and (min-width: 992px) {
   .home-container #home-landing {
