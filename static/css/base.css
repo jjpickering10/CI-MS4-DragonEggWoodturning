@@ -390,12 +390,8 @@ body main {
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin: 3rem auto;
-}
-@media only screen and (min-width: 992px) {
-  .home-gallery {
-    width: 75%;
-  }
+  padding: 3rem 0;
+  background: var(--primary-brown);
 }
 .home-gallery::before {
   content: "";
@@ -419,14 +415,14 @@ body main {
 .home-gallery .gallery-images-section .gallery-column img {
   width: 50%;
   filter: grayscale(50%);
-  padding: 25px;
 }
 
 .site-information {
   width: 100%;
-  margin: 3rem auto 5rem auto;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
+  background: var(--primary-brown);
 }
 .site-information::before, .site-information::after {
   position: absolute;
@@ -436,7 +432,7 @@ body main {
   color: var(--primary-cream);
   text-align: center;
   width: 200%;
-  opacity: 0.1;
+  opacity: 0.02;
   z-index: 2;
 }
 .site-information::before {
@@ -506,7 +502,7 @@ body main {
   padding: 1rem 0;
   line-height: 2;
   letter-spacing: 1px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .home-container {

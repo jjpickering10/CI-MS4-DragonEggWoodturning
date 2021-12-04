@@ -241,7 +241,7 @@ function postLoad() {
       },
       translateX: '-50px',
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
     })
     gsap.from(reviewContainerGsap, {
       scrollTrigger: {
@@ -259,10 +259,8 @@ function postLoad() {
         trigger: galleryContainerGsap,
         toggleActions: 'restart pause resume restart'
       },
-      translateX: '-100px',
-
-      opacity: 0,
-      duration: 0.5,
+      translateY: '-100px',
+      duration: 1,
     })
   }
   if (siteInfoContainerGsap) {
@@ -271,8 +269,6 @@ function postLoad() {
         trigger: siteInfoContainerGsap,
         toggleActions: 'restart pause resume restart'
       },
-
-      opacity: 0,
       duration: 2,
     })
     siteInfoSegmentsGsap.forEach((segment, i) => {
@@ -306,9 +302,7 @@ function postLoad() {
         trigger: homeAboutContainerGsap,
         toggleActions: 'restart pause resume restart'
       },
-
-      opacity: 0,
-      duration: 2,
+      duration: 1,
     })
 
     gsap.from(homeAboutSegmentsGsap, {
