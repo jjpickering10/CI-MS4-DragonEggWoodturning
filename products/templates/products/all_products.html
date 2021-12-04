@@ -141,20 +141,28 @@
 // Add dynamic watermark
  function addWatermark() {
     const watermark = document.createElement('p')
-    const text = document.createTextNode(label[0].textContent)
-    watermark.append(text)
-    watermark.classList.add('watermark')
-    productContainer.append(watermark)
+    if (label.length > 0) {
+      const text = document.createTextNode(label[0].textContent)
+      watermark.append(text)
+      watermark.classList.add('watermark')
+      productContainer.append(watermark)
+    } else {
+      const text = document.createTextNode('shop')
+      watermark.append(text)
+      watermark.classList.add('watermark')
+      productContainer.append(watermark)
+    }
  }
  addWatermark()
 // Display check for current category
+if (label.length > 0) {
  categories.forEach(category => {
    if (label[0].textContent === category.textContent) {
      category.children[0].children[1].classList.remove('hide')
      category.style.fontWeight = 500
      productHeadingTitle.textContent = category.textContent
    }
- })
+ })}
 
  //  Sorting
     const sortKey = document.getElementById('sort-key')

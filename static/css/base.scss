@@ -1520,11 +1520,24 @@ nav, #mobile-demo {
 .products-amount {
     width: 100%;
     text-align: center;
-    margin-top: 5rem auto 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    @media only screen and (min-width: 992px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+    .sort-box {
+        max-width: 300px;
+        margin: 0 auto;
+        @media only screen and (min-width: 992px) {
+            margin: 0;
+        }
+    }
+    .products-location, .sort-box {
+        margin-top: 1rem;
+    }
 
     p {
         font-weight: 300;
@@ -1540,10 +1553,15 @@ nav, #mobile-demo {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    padding: 2rem 5rem;
+    padding: 2rem 1rem;
     overflow: hidden;
     margin-top: 3rem;
     background: var(--primary-brown);
+    text-align: center;
+    @media only screen and (min-width: 992px) {
+        padding: 2rem 5rem;
+        text-align: left;
+    }
 
     .watermark {
         position: absolute;
@@ -1559,10 +1577,16 @@ nav, #mobile-demo {
     }
 
     > *:nth-child(1) {
-        flex: 1 1 30%;
+        flex: 1 1 100%;
+        @media only screen and (min-width: 992px) {
+            flex: 1 1 30%;
+        }
     }
     > *:nth-child(2) {
-        flex: 1 1 70%;
+        flex: 1 1 100%;
+        @media only screen and (min-width: 992px) {
+            flex: 1 1 70%;
+        }
     }
 
     .product-category-container {
@@ -1589,7 +1613,6 @@ nav, #mobile-demo {
             a {
                 position: relative;
                 color: var(--white);
-                box-shadow: 2px 2px 0 0 var(--white-shadow);
                 padding: 0.25rem;
 
                 .fa-square {
