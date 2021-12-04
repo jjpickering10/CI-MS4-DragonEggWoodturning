@@ -2563,7 +2563,8 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 
 .blog-post-container {
   padding: 1rem 0;
-  background: var(--primary-cream);
+  background: var(--primary-brown);
+  color: var(--white);
 }
 @media only screen and (min-width: 992px) {
   .blog-post-container {
@@ -2576,6 +2577,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   justify-content: center;
   align-items: flex-start;
   padding: 2rem 0 0 0;
+  color: var(--white);
 }
 .blog-post-container .blog-post-content .blog-post-title {
   padding: 0 2rem;
@@ -2585,7 +2587,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .blog-post-container .blog-post-content .blog-post-title h2 {
   font-size: 3rem;
   font-weight: 200;
-  color: var(--primary-brown);
   margin: 0;
   text-decoration: underline;
   -webkit-text-decoration-color: var(--secondary-brown);
@@ -2594,7 +2595,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .blog-post-container .blog-post-content .blog-post-title p {
   font-weight: 200;
   font-size: 1.5rem;
-  color: var(--primary-brown);
 }
 .blog-post-container .blog-post-content .blog-post-title p i::before {
   color: var(--primary-orange);
@@ -2612,10 +2612,19 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .blog-post-container .blog-post-content .blog-post-image {
   padding: 0.5rem 2rem;
 }
+.blog-post-container .blog-post-content .blog-post-image img {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .blog-post-container .blog-post-content .blog-post-image img {
+    width: 50%;
+  }
+}
 .blog-post-container .blog-post-content .blog-post-body {
   font-weight: 300;
   padding: 2rem;
   background: var(--white);
+  color: var(--primary-brown);
   line-height: 2;
   word-break: break-word;
 }
@@ -2626,6 +2635,13 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 .blog-post-container .blog-post-content .blog-post-admin {
   padding: 0.5rem 2rem;
+  margin: 0;
+  background: var(--white);
+}
+@media only screen and (min-width: 992px) {
+  .blog-post-container .blog-post-content .blog-post-admin {
+    margin: 0 2rem;
+  }
 }
 .blog-post-container .blog-post-content .blog-post-admin a {
   margin-right: 1rem;
@@ -2637,6 +2653,8 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .blog-post-container .blog-post-comments-form form textarea {
   padding: 1rem;
   height: auto;
+  color: var();
+  background: white;
 }
 .blog-post-container .blog-post-comments-form form .global-button {
   margin: 0;

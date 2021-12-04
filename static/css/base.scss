@@ -2888,7 +2888,8 @@ nav, #mobile-demo {
 
 .blog-post-container {
     padding: 1rem 0;
-    background: var(--primary-cream);
+    background: var(--primary-brown);
+    color: var(--white);
     @media only screen and (min-width: 992px) {
         padding: 1rem 5rem;
     }
@@ -2900,6 +2901,7 @@ nav, #mobile-demo {
         justify-content: center;
         align-items: flex-start;
         padding: 2rem 0 0 0;
+        color: var(--white);
 
         .blog-post-title {
             padding: 0 2rem;
@@ -2908,7 +2910,6 @@ nav, #mobile-demo {
             h2 {
                 font-size: 3rem;
                 font-weight: 200;
-                color: var(--primary-brown);
                 margin: 0;
                 text-decoration: underline;
                 text-decoration-color: var(--secondary-brown);
@@ -2916,7 +2917,6 @@ nav, #mobile-demo {
             p {
                 font-weight: 200;
                 font-size: 1.5rem;
-                color: var(--primary-brown);
                 i {
                     &::before {
                         color: var(--primary-orange);
@@ -2937,11 +2937,18 @@ nav, #mobile-demo {
         }
         .blog-post-image {
             padding: 0.5rem 2rem;
+            img {
+                width: 100%;
+                @media only screen and (min-width: 992px) {
+                    width: 50%;
+                }
+            }
         }
         .blog-post-body {
             font-weight: 300;
             padding: 2rem;
             background: var(--white);
+            color: var(--primary-brown);
             line-height: 2;
             word-break: break-word;
             @media only screen and (min-width: 992px) {
@@ -2950,6 +2957,11 @@ nav, #mobile-demo {
         }
         .blog-post-admin {
             padding: 0.5rem 2rem;
+            margin: 0;
+            background: var(--white);
+            @media only screen and (min-width: 992px) {
+                margin: 0 2rem;
+            }
 
             a {
                 margin-right: 1rem;
@@ -2963,6 +2975,8 @@ nav, #mobile-demo {
             textarea {
                 padding: 1rem;
                 height: auto;
+                color: var();
+                background: white;
             }
             .global-button {
                 margin: 0;
