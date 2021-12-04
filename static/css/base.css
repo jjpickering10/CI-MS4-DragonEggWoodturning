@@ -1612,14 +1612,35 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   margin-top: 0;
   padding: 0;
 }
+.product-detail-container .product-item-container {
+  display: grid;
+  grid-template-areas: "left" "right";
+  grid-auto-columns: 1fr;
+}
+@media only screen and (min-width: 992px) {
+  .product-detail-container .product-item-container {
+    grid-template-areas: "left right";
+  }
+}
 .product-detail-container .product-item-container .product-card {
+  grid-area: left;
   background: var(--primary-brown);
-  padding: 4rem 5rem;
+  padding: 4rem 1rem;
   border-radius: 0 0 10rem 0;
 }
+@media only screen and (min-width: 992px) {
+  .product-detail-container .product-item-container .product-card {
+    padding: 4rem 5rem;
+  }
+}
 .product-detail-container .product-item-container .product-card .product-card-image {
-  height: 500px;
+  height: 300px;
   scroll-behavior: smooth;
+}
+@media only screen and (min-width: 992px) {
+  .product-detail-container .product-item-container .product-card .product-card-image {
+    height: 500px;
+  }
 }
 .product-detail-container .product-item-container .product-card .product-card-image .product-image-slider {
   display: flex;
@@ -1635,9 +1656,14 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   display: none;
 }
 .product-detail-container .product-item-container .product-card .product-card-image img {
-  height: 500px;
+  height: 300px;
   box-shadow: none;
   width: auto;
+}
+@media only screen and (min-width: 992px) {
+  .product-detail-container .product-item-container .product-card .product-card-image img {
+    height: 500px;
+  }
 }
 .product-detail-container .product-item-container .product-card .product-card-image img:hover {
   transform: scale(1);
@@ -1671,7 +1697,13 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .product-detail-container .product-review-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 5rem;
+  padding: 0;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .product-detail-container .product-review-container {
+    padding: 5rem;
+  }
 }
 .product-detail-container .product-review-container > *:nth-child(1) {
   flex: 1 1 50%;
@@ -1694,7 +1726,12 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 .product-detail-container .product-review-container .review-form form {
   min-width: 300px;
-  padding-right: 5rem;
+  padding: 0rem 1rem;
+}
+@media only screen and (min-width: 992px) {
+  .product-detail-container .product-review-container .review-form form {
+    padding: 0 2rem;
+  }
 }
 .product-detail-container .product-review-container .review-form form textarea {
   border: 1px solid var(--primary-brown);
@@ -1702,11 +1739,25 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   height: auto;
 }
 .product-detail-container .product-review-container .review-form form .select-wrapper {
-  width: 25%;
+  width: 50%;
+  margin: 0 auto 3rem auto;
+}
+@media only screen and (min-width: 600px) {
+  .product-detail-container .product-review-container .review-form form .select-wrapper {
+    margin: 0 0 3rem 0;
+  }
 }
 .product-detail-container .product-review-container .review-form form .global-button {
-  margin: 1rem 0;
+  margin: 0 auto;
   color: var(--primary-brown);
+}
+@media only screen and (min-width: 600px) {
+  .product-detail-container .product-review-container .review-form form .global-button {
+    margin: 1rem 0;
+  }
+}
+.product-detail-container .product-review-container .review-section {
+  padding: 0 1rem;
 }
 .product-detail-container .product-review-container .review-section .review-content {
   margin: 2.5rem 0 1rem 0;
@@ -1715,6 +1766,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .product-detail-container .product-review-container .review-section .review-content .review-rating i {
   margin: 0 0.25rem 0 0;
@@ -1740,9 +1792,15 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 5rem;
+  grid-area: right;
+  padding: 0;
   position: relative;
   overflow: hidden;
+}
+@media only screen and (min-width: 992px) {
+  .product-card-description {
+    padding: 5rem;
+  }
 }
 .product-card-description .product-information {
   font-size: 1.1rem;

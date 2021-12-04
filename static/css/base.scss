@@ -1784,13 +1784,28 @@ nav, #mobile-demo {
     margin-top: 0;
     padding: 0;
     .product-item-container {
+        display: grid;
+        grid-template-areas: 
+        'left'
+        'right';
+        grid-auto-columns: 1fr;
+        @media only screen and (min-width: 992px) {
+            grid-template-areas: 'left right';
+        }
         .product-card {
+            grid-area: left;
             background: var(--primary-brown);
-            padding: 4rem 5rem;
+            padding: 4rem 1rem;
             border-radius: 0 0 10rem 0;
+            @media only screen and (min-width: 992px) {
+                padding: 4rem 5rem;
+            }
             .product-card-image {
-                height: 500px;
+                height: 300px;
                 scroll-behavior: smooth;
+                @media only screen and (min-width: 992px) {
+                    height: 500px;
+                }
                 .product-image-slider {
                     display: flex;
                     overflow: scroll;
@@ -1804,9 +1819,12 @@ nav, #mobile-demo {
                     }
                 }
                 img {
-                    height: 500px;
+                    height: 300px;
                     box-shadow: none;
                     width: auto;
+                    @media only screen and (min-width: 992px) {
+                        height: 500px;
+                    }
 
                     &:hover {
                         transform: scale(1);
@@ -1853,7 +1871,11 @@ nav, #mobile-demo {
     .product-review-container {
         display: flex;
         flex-wrap: wrap;
-        padding: 5rem;
+        padding: 0;
+        text-align: center;
+        @media only screen and (min-width: 992px) {
+            padding: 5rem;
+        }
 
         > *:nth-child(1) {
             flex: 1 1 50%;
@@ -1879,7 +1901,10 @@ nav, #mobile-demo {
             }
             form {
                 min-width: 300px;
-                padding-right: 5rem;
+                padding: 0rem 1rem;
+                @media only screen and (min-width: 992px) {
+                    padding: 0 2rem;
+                }
                 textarea {
                     border: 1px solid var(--primary-brown);
                     padding: 2rem;
@@ -1887,26 +1912,32 @@ nav, #mobile-demo {
                 }
 
                 .select-wrapper {
-                    width: 25%;
+                    width: 50%;
+                    margin: 0 auto 3rem auto;
+                    @media only screen and (min-width: 600px) {
+                        margin: 0 0 3rem 0;
+                    }
                 }
                 
                 .global-button {
-                    margin: 1rem 0;
+                    margin: 0 auto;
                     color: var(--primary-brown);
+                    @media only screen and (min-width: 600px) {
+                        margin: 1rem 0;
+                    }
                 }
             }
         }
 
         .review-section {
-            
+            padding: 0 1rem;
             .review-content {
-                
                 margin: 2.5rem 0 1rem 0;
                 .review-rating {
                     font-size: 1rem;
                     display: flex;
                     align-items: center;
-
+                    justify-content: center;
                     i {
                         margin: 0 0.25rem 0 0;
                         color: var(--primary-orange);
@@ -1940,10 +1971,13 @@ nav, #mobile-demo {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    
-    padding: 5rem;
+    grid-area: right;
+    padding: 0;
     position: relative;
     overflow: hidden;
+    @media only screen and (min-width: 992px) {
+        padding: 5rem;
+    }
 
     .product-information {
         font-size: 1.1rem;

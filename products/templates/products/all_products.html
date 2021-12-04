@@ -162,7 +162,9 @@ if (label.length > 0) {
      category.style.fontWeight = 500
      productHeadingTitle.textContent = category.textContent
    }
- })}
+ })} else {
+  productHeadingTitle.textContent = 'Shop'
+ }
 
  //  Sorting
     const sortKey = document.getElementById('sort-key')
