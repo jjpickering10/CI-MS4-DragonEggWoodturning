@@ -788,7 +788,8 @@ body {
                                 font-weight: 200;
                                 padding: 1rem;
                                 border: none;
-                                font-size: 0.8rem;
+                                font-size: 1rem;
+                                font-style: italic;
                                 word-break: break-word;
                             }
                         }
@@ -797,9 +798,9 @@ body {
                             
                             font-weight: 300;
                             letter-spacing: 1px;
-                            font-style: italic;
                             margin-top: 3rem;
                             color: var(--white);
+                            font-size: 0.8rem;
                             i {
                                 &::before {
                                     color: var(--primary-orange);
@@ -1333,10 +1334,9 @@ nav, #mobile-demo {
             justify-content: center;
             align-items: center;
             background: var(--primary-cream);
-            box-shadow: 2px 2px 2px 0 var(--primary-brown-shadow);
+            box-shadow: 0px 0px 5px 0 var(--primary-orange);
             margin: 0 auto;
             position: relative;
-            border-radius: 2rem 0;
             
             a {
                 width: 100%;
@@ -1377,7 +1377,6 @@ nav, #mobile-demo {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border-radius: 2rem 0 0;
                     overflow: hidden;
                 img {
                     width: 300px;
@@ -1385,7 +1384,6 @@ nav, #mobile-demo {
                     position: absolute;
                     top: 0;
                     left: 0;
-                    border-radius: 2rem 0 0;
                     object-fit: cover;
                     transition: transform 0.5s;
                     
