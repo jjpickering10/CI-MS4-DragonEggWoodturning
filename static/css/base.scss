@@ -2167,6 +2167,7 @@ nav, #mobile-demo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--primary-brown);
 
     img {
         width: 50px;
@@ -2175,10 +2176,14 @@ nav, #mobile-demo {
     }
 
     .bag-table {
-        margin: 5rem 0;
-        padding: 2rem;
-        box-shadow: 0px 0px 5px 2px var(--primary-brown-shadow);
-        background: var(--white);
+        min-width: 75vw;
+        margin: 5rem 1rem;
+        padding: 0;
+        background: var(--primary-brown);
+        color: var(--white);
+        @media only screen and (min-width: 420px) {
+            padding: 2rem;
+        }
         .free-delivery {
             font-weight: 100;
             font-style: italic;
@@ -2201,6 +2206,7 @@ nav, #mobile-demo {
 
             thead {
                 background: var(--secondary-brown);
+                color: var(--primary-brown);
             }
 
             th {
@@ -2220,8 +2226,7 @@ nav, #mobile-demo {
                 gap: 10px;
                 input[type=submit] {
                     font-size: 0.75rem;
-                    border: 1px solid var(--primary-brown);
-                    background: var(--primary-brown-shadow);
+                    border: 1px solid var(--white);
                     border-radius: 0;
                     padding: 0.15rem;
                     cursor: pointer;
@@ -2248,7 +2253,7 @@ nav, #mobile-demo {
                     i {
                         padding: 0.5rem;
                         font-size: 0.5rem;
-                        border: 1px solid black;
+                        border: 1px solid var(--white);
                         transition: 0.2s;
                         cursor: pointer;
                     }
@@ -2268,21 +2273,23 @@ nav, #mobile-demo {
     }
 
     .bag-subtotal {
-
         .bag-buttons {
 
             display: flex;
-            padding: 1rem;
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            a {
+                margin: 0;
+                padding: 1rem 1.2rem;
+            }
 
             a + a {
-                margin-left: 1rem;
                 height: 50%;
                 background: none;
                 color: var(--primary-orange);
-                box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
-
+                box-shadow: 0 0 2px 0 var(--white);
                 &:hover, :focus {
-                    box-shadow: none;
                     transition: 0.5s;
                 }
             }
