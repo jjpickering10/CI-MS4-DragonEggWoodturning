@@ -252,6 +252,9 @@ Design:
 - Products section - where admin can add, edit and delete products. Can edit product photos seperately to product information. Can add multiple photos at once. If a product is added to a category that is currently on sale, the price will be discounted via a signal.
 - Blog section - where admin can add, edit and delete blogs.
 
+**Custom 404 and 500 pages**
+- Include links back to home and shop
+
 ## Technologies Used
 
 ### Languages
@@ -282,6 +285,8 @@ Design:
 
 [GSAP](https://greensock.com/) - for animations.
 
+[jQuery](https://jquery.com/) - JavaScript library.
+
 [Google Fonts](https://fonts.google.com/) - for fonts
 
 [Favicon Generator](https://favicon.io/favicon-generator/) - for favicon
@@ -289,6 +294,8 @@ Design:
 [DB Docs](https://dbdocs.io/) - for database structure image
 
 [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) - template engine for Python
+
+[Django](https://www.djangoproject.com/) - high-level Python web framework.
 
 ### Resources
 
@@ -313,6 +320,12 @@ Design:
 [Autoprefixer](https://autoprefixer.github.io/) - adds vendor prefixes to CSS
 
 [Heroku](https://www.heroku.com/) - cloud platform service for deployment
+
+[Heroku Postgres](https://www.heroku.com/postgres) - database used in production
+
+[SQLite3](https://www.sqlite.org/index.html) - database used in development
+
+[AWS](https://aws.amazon.com/s3/) - cloud storage for media and static files
 
 Code Institute Course
 
@@ -346,6 +359,114 @@ Chrome Dev Tools
 ---
 
 ## Deployment
+
+### Local Install
+
+- Repository initially set up on Github with Code Institute template.
+
+- Use of Gitpod for code editor.
+
+- Deployed using the master branch.
+
+**Clone**
+
+- Locate the GitHub Repository.
+
+- Click the "Code" button.
+
+- Highlight the "HTTPS" button to clone with HTTPS and copy the link.
+
+- Open Git Bash
+
+- Identify location in IDE where you want the cloned directory to be made.
+
+- Type git clone, and then paste the URL, which is the link that's been copied.
+
+- Your local clone will be made.
+
+**Create Environment Variables**
+
+- Create `env.py` file, add `import os` to the top of file and add these environment variables.
+
+| Env variables |
+| ------------- |
+| `os.environ['DEVELOPMENT']` = `True` |
+| `os.environ['SECRET_KEY']` = `'<your value>'` |
+| `os.environ['STRIPE_PUBLIC_KEY']` = `'<your value>'` |
+| `os.environ['STRIPE_SECRET_KEY']` = `'<your value>'  ` |
+| `os.environ['STRIPE_WH_SECRET']` = `'<your value>'` |
+| `os.environ['DATABASE_URL']` = `'<your value>'` |
+| `os.environ['AWS_ACCESS_KEY_ID']` = `'<your value>'` |
+| `os.environ['AWS_S3_REGION_NAME']` = `'<your value>'` |
+| `os.environ['AWS_SECRET_ACCESS_KEY']` = `'<your value>'` |
+| `os.environ['EMAIL_HOST_PASS']` = `'<your value>'` |
+| `os.environ['EMAIL_HOST_USER']` = `'<your value>'` |
+| `os.environ['DEFAULT_FROM_EMAIL']` = `'<your value>'` |
+| `os.environ['UNSUBSCRIBE_URL']` = `'<your value>'` |
+| `os.environ['HEROKU_HOSTNAME']` = `'<your value>'` |
+
+- Create `.gitignore` file.
+
+| Include in `.gitignore` |
+| ------------- |
+| `env.py` |
+| `__pycache__/` |
+| `*.sqlite3` |
+| `core.Microsoft*` |
+| `core.mongo*` |
+| `core.python*` |
+| `*.py[cod]` |
+| `node_modules/` |
+| `.github/` |
+| `*.pyc` |
+
+**Install project dependencies**
+
+- Install project requirements by typing `pip install -r requirements.txt`
+
+**Create Superuser**
+
+- Type `python manage.py createsuperuser` and following instructions in the terminal.
+
+**Migrate**
+
+- Apply model migrations with `python3 manage.py makemigrations` followed by `python3 manage.py migrate`.
+
+**Load product data**
+
+- Type `python3 manage.py loaddata db.json`
+
+**Deploy Locally**
+
+- Run `python3 manage.py runserver` and open localhost URL.
+
+### Heroku
+
+- Register Heroku account, or log in if you already have one.
+
+- Create new app.
+
+- Finish setup, including name and region.
+
+- Under resources, choose heroku postgres database with free hobby dev account
+
+- Postgres requires dj_database_url and psycopg2, which is installed with `requirements.txt` file.
+
+- Under settings, reveal config vars. Configure config variables from `env.py` file excluding development variable. Add in `USE AWS = True`
+
+- Deploy tab and select github option
+
+- Connect to your github
+
+- Manually deploy
+
+- Once complete, enable automatic deploys
+
+- Open app to see deployed version.
+
+## AWS
+
+- Instructions for hosting media and static files with AWS S3 Bucket can be found [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html)
 
 ---
 
