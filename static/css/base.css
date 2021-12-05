@@ -804,6 +804,7 @@ nav .brand-logo span, #mobile-demo .brand-logo span {
   nav .brand-logo, #mobile-demo .brand-logo {
     margin-left: 5rem;
     line-height: 56px;
+    font-size: 1.5rem;
   }
 }
 @media only screen and (max-width: 420px) {
