@@ -3,6 +3,9 @@ from .models import Review, Product, Category, WoodType, Image
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    Form for review
+    """
     class Meta:
         model = Review
         fields = (
@@ -12,12 +15,18 @@ class ReviewForm(forms.ModelForm):
 
 
 class DiscountForm(forms.ModelForm):
+    """
+    Form for discount
+    """
     class Meta:
         model = Product
         fields = ['discount_choices']
 
 
 class ImageForm(forms.ModelForm):
+    """
+    Form for image
+    """
     class Meta:
         model = Image
         fields = ['image']
@@ -28,6 +37,9 @@ class ImageForm(forms.ModelForm):
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Form for products
+    """
     class Meta:
         model = Product
         fields = ('category', 'wood_type', 'name', 'description', 'price',)

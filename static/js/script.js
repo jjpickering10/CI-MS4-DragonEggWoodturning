@@ -1,7 +1,7 @@
 if (window.scrollY != 0) {
   window.location.assign(window.location.href)
 }
-// Canvas --- Learned Canvas drawing from https://www.youtube.com/c/Frankslaboratory 
+// Canvas particle system on loading page --- Learned Canvas drawing from https://www.youtube.com/c/Frankslaboratory 
 
 const canvas = document.querySelector(".canvas-loading");
 const ctx = canvas.getContext("2d");
@@ -84,6 +84,7 @@ animate();
 
 
 // ---------------------------------------------------------------------
+// Main Landing Page elements
 const documentElementsGsap = [document.querySelector('.main-section'), document.querySelector('.header-about-section')]
 const landingSegmentsGsap = [
   document.querySelector('.home-landing-title'),
@@ -206,7 +207,7 @@ window.addEventListener('load', () => {
   })
 })
 
-
+// Once loading animation is complete
 function postLoad() {
   document.body.classList.remove('post-load')
   document.querySelector('.loading').style.display = 'none'

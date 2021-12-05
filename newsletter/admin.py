@@ -3,7 +3,9 @@ from .models import Subscribers, Newsletter
 
 
 class SubscribersAdmin(admin.ModelAdmin):
-
+    """
+    Subscribers admin
+    """
     list_display = (
         'email',
         'date',
@@ -16,7 +18,9 @@ class SubscribersAdmin(admin.ModelAdmin):
 
 
 class NewsletterAdmin(admin.ModelAdmin):
-
+    """
+    Newsletter admin
+    """
     list_display = (
         'title',
         'date',
@@ -26,6 +30,6 @@ class NewsletterAdmin(admin.ModelAdmin):
         '-date',
     )
 
+
 admin.site.register(Subscribers, SubscribersAdmin)
 admin.site.register(Newsletter, NewsletterAdmin)
-

@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
-
+    """
+    Category model
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -26,6 +28,9 @@ class Category(models.Model):
 
 
 class WoodType(models.Model):
+    """
+    Woodtype model
+    """
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -37,6 +42,9 @@ class WoodType(models.Model):
 
 
 class Product(models.Model):
+    """
+    Product model
+    """
     DISCOUNT_OPTIONS = (
         (5, '5% off'),
         (10, '10% off'),
@@ -105,7 +113,9 @@ class Product(models.Model):
 
 
 class Image(models.Model):
-
+    """
+    Image model
+    """
     class Meta:
         verbose_name_plural = 'Images'
 
@@ -118,7 +128,9 @@ class Image(models.Model):
 
 
 class Review(models.Model):
-
+    """
+    Review model
+    """
     RATINGS_CHOICES = (
         (1, '1 Star'),
         (2, '2 Stars'),

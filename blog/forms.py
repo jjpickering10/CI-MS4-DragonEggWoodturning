@@ -3,6 +3,9 @@ from .models import Comment, Post
 
 
 class BlogForm(forms.ModelForm):
+    """
+    Form for blog
+    """
     class Meta:
         model = Post
         fields = '__all__'
@@ -10,6 +13,9 @@ class BlogForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Form for comment
+    """
     class Meta:
         model = Comment
         fields = ['body']

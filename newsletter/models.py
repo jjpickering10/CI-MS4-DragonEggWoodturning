@@ -7,6 +7,9 @@ from django.db import models
 
 
 class Subscribers(models.Model):
+    """
+    Subscribers model
+    """
     email = models.EmailField(max_length=254, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     unsubscribe = models.CharField(max_length=254, null=True, blank=True)
@@ -52,6 +55,9 @@ class Subscribers(models.Model):
 
 
 class Newsletter(models.Model):
+    """
+    Newsletter model
+    """
     title = models.CharField(max_length=100, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     message = models.TextField(null=True)
