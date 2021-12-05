@@ -529,7 +529,6 @@ body main {
   height: 100%;
   padding: 5em;
   background: var(--primary-brown);
-  border-radius: 0 0 10rem;
   opacity: 0;
 }
 @media only screen and (min-width: 992px) {
@@ -540,7 +539,6 @@ body main {
 @media only screen and (max-width: 992px) {
   .home-container #home-landing .home-landing-title {
     padding: 3rem 0;
-    border-radius: 0;
   }
 }
 .home-container #home-landing .home-landing-title h1 {
