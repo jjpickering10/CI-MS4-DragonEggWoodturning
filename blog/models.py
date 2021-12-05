@@ -12,7 +12,8 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name='like', blank=True, default=None)
+    likes = models.ManyToManyField(
+        User, related_name='like', blank=True, default=None)
     like_count = models.IntegerField(default=0)
 
     class Meta:

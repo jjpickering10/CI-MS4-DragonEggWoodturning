@@ -157,11 +157,11 @@ def delete_review(request, review_id):
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, only registered users can do that.')
         return redirect(reverse('home'))
-    if not request.user == comment.user:
+    review = get_object_or_404(Review, pk=review_id)
+    if not request.user == review.user:
         messages.warning(request, "You don't have permission to do that")
         return redirect(reverse('home'))
 
-    review = get_object_or_404(Review, pk=review_id)
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('profile'))

@@ -1,4 +1,3 @@
-import json
 import stripe
 from django.conf import settings
 from django.http import HttpResponse
@@ -27,11 +26,11 @@ def webhook(request):
             payload, sig_header, wh_secret
         )
     except ValueError as e:
-    # Invalid payload
+        # Invalid payload
         return HttpResponse(status=400)
 
     except stripe.error.SignatureVerificationError as e:
-    # Invalid signature
+        # Invalid signature
         return HttpResponse(status=400)
 
     except Exception as e:

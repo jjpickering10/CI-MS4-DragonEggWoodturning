@@ -108,7 +108,8 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | Success! Order already exists',
+                content=f'Webhook received: {event["type"]} | \
+                    Success! Order already exists',
                 status=200)
         else:
             order = None
@@ -144,7 +145,8 @@ class StripeWH_Handler:
 
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | Success! created order',
+            content=f'Webhook received: {event["type"]} | \
+                Success! created order',
             status=200
         )
 
