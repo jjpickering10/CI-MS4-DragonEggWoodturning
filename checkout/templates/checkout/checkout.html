@@ -86,7 +86,7 @@
               <tr>
                 <td class="product-td">{{ item.product.name }}
                   {% if item.product.image_set.all|length > 0 %}
-                  <img src="{{ item.product.image_set.first.image.url }}" alt="">
+                  <img src="{{ item.product.image_set.first.image.url }}" alt="product-{{ item.product.name }}">
                 {% else %}
                   <img src="{{ MEDIA_URL }}noimage.png">
                 {% endif %}

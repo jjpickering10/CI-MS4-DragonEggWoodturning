@@ -37,7 +37,7 @@
         <div class="blog-card">
             <div class="blog-image">
                 {% if post.image %}
-                    <img src="{{ post.image.url }}" alt="">
+                    <img src="{{ post.image.url }}" alt="image-for-{{ post.title }}">
                 {% else %}
                     <img src="{{ MEDIA_URL }}noimage.png">
                 {% endif %}

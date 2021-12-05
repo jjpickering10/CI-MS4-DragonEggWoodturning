@@ -17,7 +17,7 @@
           {% if product.image_set.all|length > 0 %}
           <div class="product-image-slider">
             {% for image in product.image_set.all %}
-            <img class="materialboxed" src="{{ image.image.url }}" alt="">
+            <img class="materialboxed" src="{{ image.image.url }}" alt="product-{{ image.product.name }}">
             {% endfor %}
           </div>
           {% else %}

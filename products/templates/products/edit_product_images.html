@@ -22,7 +22,7 @@
   <div class="edit_product_images_container">
     {% for image in images %}
         <div>
-          <img class="materialboxed" src="{{ image.image.url }}" alt="">
+          <img class="materialboxed" src="{{ image.image.url }}" alt="product-{{ image.product.name }}">
             <!-- Modal Trigger -->
             <a class="modal-trigger" href="#{{ image.id }}-{{ image.product.name }}">Delete <i class="fas fa-trash"></i></a>
             <!-- Modal Structure -->
