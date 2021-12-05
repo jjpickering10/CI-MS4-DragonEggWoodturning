@@ -157,6 +157,10 @@ def edit_comment(request, comment_id):
     """
     comment = Comment.objects.get(id=comment_id)
 
+    if not request.user == comment.user:
+        messages.warning(request, "You don't have permission to do that")
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         edited_comment = CommentForm(request.POST, instance=comment)
         if edited_comment.is_valid():
@@ -187,6 +191,9 @@ def delete_comment(request, comment_id):
     Delete a comment
     """
     comment = Comment.objects.get(id=comment_id)
+    if not request.user == comment.user:
+        messages.warning(request, "You don't have permission to do that")
+        return redirect(reverse('home'))
     comment.delete()
     messages.success(request, f'Comment on post {comment.post.title} deleted')
 

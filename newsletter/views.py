@@ -54,6 +54,9 @@ def unsubscribe(request, unsubscribe_id):
 
 
 def send_newsletter(request):
+    """
+    Send newsletter to subscribers
+    """
     if not request.user.is_superuser:
         messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))

@@ -125,6 +125,9 @@ def edit_review(request, review_id):
         return redirect(reverse('home'))
 
     review = Review.objects.get(id=review_id)
+    if not request.user == review.user:
+        messages.warning(request, "You don't have permission to do that")
+        return redirect(reverse('home'))
     review_form = ReviewForm(instance=review)
 
     if request.method == 'POST':
@@ -154,6 +157,9 @@ def delete_review(request, review_id):
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, only registered users can do that.')
         return redirect(reverse('home'))
+    if not request.user == comment.user:
+        messages.warning(request, "You don't have permission to do that")
+        return redirect(reverse('home'))
 
     review = get_object_or_404(Review, pk=review_id)
     review.delete()
@@ -166,6 +172,10 @@ def add_discount(request, product_id):
     """
     A view to add discount
     """
+
+    if not request.user.is_superuser:
+        messages.info(request, 'Only admin can do that')
+        return redirect(reverse('home'))
 
     product = Product.objects.get(id=product_id)
 
@@ -186,6 +196,10 @@ def category_discount(request, category_id):
     """
     A view to add discounts to all products in one category
     """
+
+    if not request.user.is_superuser:
+        messages.info(request, 'Only admin can do that')
+        return redirect(reverse('home'))
 
     products = Product.objects.filter(category=category_id)
     category = Category.objects.get(id=category_id)
