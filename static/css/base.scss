@@ -439,12 +439,15 @@ body {
 
         .gallery-column {
             display: flex;
-            
+            transform-style: preserve-3d;
+            perspective: 100rem;
 
             img {
                 width: 50%;
                 filter: grayscale(50%);
-                // padding: 25px;
+                transform-origin: center right;
+                box-shadow: 0 0 5px 0 var(--primary-orange);
+                transition: 1s ease-in-out;
             }
         }
     }

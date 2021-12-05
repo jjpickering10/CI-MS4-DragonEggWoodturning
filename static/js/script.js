@@ -101,8 +101,6 @@ const categoriesGsap = gsap.utils.toArray('.category-container .category-card')
 // Reviews Whole Site
 const reviewContainerGsap = document.querySelector('.glider')
 const reviewHeaderGsap = document.querySelector('#home-reviews h2')
-// Gallery Whole site
-const galleryContainerGsap = document.querySelector('.home-gallery')
 // Site information Whole Site
 const siteInfoContainerGsap = document.querySelector('.site-information-container')
 const siteInfoSegmentsGsap = document.querySelectorAll('.site-info-content')
@@ -151,11 +149,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const galleryContainer = document.querySelector('.home-gallery')
 const galleryImages = document.querySelector('.gallery-images-section')
+const galleryImagesIndividual = document.querySelectorAll('.gallery-column img')
 
 galleryContainer.addEventListener('mousemove', (e) => {
   let x = e.clientX - galleryContainer.getBoundingClientRect().left
-
   galleryImages.style.transform = `translate(-${x}px)`
+  galleryImagesIndividual.forEach(image => {
+    image.style.transform = `rotateY(${(x*0.01) - 10}deg)`
+  })
 })
 
 // Loading
@@ -250,16 +251,6 @@ function postLoad() {
       },
       translateY: `-100px`,
       opacity: 0,
-      duration: 1,
-    })
-  }
-  if (galleryContainerGsap) {
-    gsap.from(galleryContainerGsap, {
-      scrollTrigger: {
-        trigger: galleryContainerGsap,
-        toggleActions: 'restart pause resume restart'
-      },
-      translateY: '-100px',
       duration: 1,
     })
   }

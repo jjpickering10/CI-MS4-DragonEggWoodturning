@@ -407,10 +407,15 @@ body main {
 }
 .home-gallery .gallery-images-section .gallery-column {
   display: flex;
+  transform-style: preserve-3d;
+  perspective: 100rem;
 }
 .home-gallery .gallery-images-section .gallery-column img {
   width: 50%;
   filter: grayscale(50%);
+  transform-origin: center right;
+  box-shadow: 0 0 5px 0 var(--primary-orange);
+  transition: 1s ease-in-out;
 }
 
 .site-information {
