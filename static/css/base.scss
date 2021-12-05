@@ -2176,7 +2176,7 @@ nav, #mobile-demo {
             margin-bottom: 1rem;
             span {
                 font-weight: 500;
-                color: red;
+                color: var(--primary-orange);
             }
 
             .delivery-threshold {
@@ -2393,18 +2393,20 @@ nav, #mobile-demo {
 // Checkout success page
 
 .checkout-nav {
-    width: 50%;
     margin: 2rem auto;
     display: flex;
 
     a {
-        width: 300px;
+        
         text-align: center;
+        @media only screen and (min-width: 992px) {
+            width: 300px;
+        }
 
         + a {
             margin-left: 1em;
             background: none;
-            color: var(--primary-orange);
+            color: var(--primary-brown);
             box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
 
             &:hover, :focus {
@@ -2419,10 +2421,12 @@ nav, #mobile-demo {
     display: flex;
     flex-direction: column;
     margin: 3rem auto;
-    width: 80%;
     background: var(--white);
     padding: 1rem;
     box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+    @media only screen and (min-width: 600px) {
+        width: 80%;
+    }
 
     h3 {
         text-transform: uppercase;

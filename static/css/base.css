@@ -1984,7 +1984,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 .bag-container .bag-table .free-delivery span {
   font-weight: 500;
-  color: red;
+  color: var(--primary-orange);
 }
 .bag-container .bag-table .free-delivery .delivery-threshold {
   text-decoration: underline;
@@ -2163,18 +2163,21 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 }
 
 .checkout-nav {
-  width: 50%;
   margin: 2rem auto;
   display: flex;
 }
 .checkout-nav a {
-  width: 300px;
   text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .checkout-nav a {
+    width: 300px;
+  }
 }
 .checkout-nav a + a {
   margin-left: 1em;
   background: none;
-  color: var(--primary-orange);
+  color: var(--primary-brown);
   box-shadow: 0.5rem 0.5rem 0 0 var(--primary-brown-shadow);
 }
 .checkout-nav a + a:hover, .checkout-nav a + a :focus {
@@ -2186,10 +2189,14 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   display: flex;
   flex-direction: column;
   margin: 3rem auto;
-  width: 80%;
   background: var(--white);
   padding: 1rem;
   box-shadow: 0 0 10px 0 var(--primary-brown-shadow);
+}
+@media only screen and (min-width: 600px) {
+  .checkout-success-container {
+    width: 80%;
+  }
 }
 .checkout-success-container h3 {
   text-transform: uppercase;
