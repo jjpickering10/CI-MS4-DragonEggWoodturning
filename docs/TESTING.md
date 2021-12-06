@@ -1,4 +1,4 @@
-**Code Validation - HTML, CSS, JavaScript, Python**
+## Code Validation - HTML, CSS, JavaScript, Python
 
 ***HTML Validity***
 
@@ -89,7 +89,203 @@ Errors included:
 - Do not use 'new' for side effects.
 - - Ignored: required for gliderjs
 
-**User Stories**
+## User Stories
+
+As an anonymous user, I want to be able to:
+
+- Expected: **navigate site**, so that I can - *find what I'm looking for easily*
+- - Logo links directly back to home page.
+- - Home link throughout site in header section links back to home page.
+- - Blog page links direct to specific blog post page.
+- - Products page links direct to specific product detail page.
+- - About section link on home page as you scroll down links to about page.
+- - Category cards on home page links to products page with selected categories filtered, as expected.
+- - - Result: Achieved.
+
+---
+
+- Expected: **search for products**, so that I can - *consider buying something*
+- - Searched known post in blog page, page refreshes with correct blogs from search.
+- - Searched various incorrect words, page refreshes with '0 blogs found' heading.
+- - Searched known product in products page, page refreshes with correct products from search.
+- - Searched various incorrect products, page refreshes with '0 products found' heading.
+- - - Result: Achieved.
+
+---
+
+- Expected: **filter products**, so that I can - *find exactly what I am looking for easily*
+- - Wood filtering button displays sidenav and on click, page refreshes an am shown correct products filtered with wood type.
+- - Checked all sort features, page refreshes and correctly orders the products with the chosen sort method.
+- - Category links all refresh and display correct products once clicked, including checkmark next to category name.
+- - - Result: Achieved.
+
+---
+
+- Expected: **read about products**, so that I can - *understand the product more*
+- - Viewed shop now link and clicked individual products, clear description of the product is shown on each page.
+- - - Result: Achieved.
+
+---
+
+- Expected: **read about site**, so that I can - *understand about woodturning and how the products are made*
+- - Viewed about link in nav to see clear details about the site.
+- - Also scrolling down, I can read information about the making of walking sticks.
+- - - Result: Achieved.
+
+---
+
+- Expected: **contact site**, so that I can - *enquire about any questions/issues I have*
+- - Tried sending contact form with empty fields, was asked to fill in fields.
+- - Sent form with correct fields. Received success message and redirected to home page.
+- - Received email from DragonEggWoodturning email as an auto reply.
+- - - Result: Achieved.
+
+---
+
+- Expected: **register**, so that I can - *save my buying history and details for any other purchases*
+- - Tried registering with incorrect fields, non-matching passwords and emails. Displayed error messages detailing errors.
+- - Registered with correct details. Received message detailing success sign up and redirected to verify email page detailing that a verification link has been sent to my email.
+- Received email with verification link. Clicked link and confirmed email. Success message displayed and am redirected to login page.
+- - - Result: Achieved.
+
+---
+
+
+- Expected: **buy products**, so that I can - *receive what I like from the store*
+- - Added 10 items to bag. Shown success message. Icon displayed next to shopping bag nav icon.
+- - Tried adding another item of same type. Shown warning message that only 10 items max allowed.
+- - Tried editing bag items in shopping bag. Shown success message and redirected to shopping bag with updated items.
+- - Tried removing all items. Shown success message and redirected to shopping bag page with empty bag.
+- - Added item, am shown free delivery message.
+- - Tried checking out with empty fields, am shown message to fill in fields.
+- - - Result: Achieved.
+
+---
+
+- Expected: **make secure payments**, so that I can - *make sure my payments are handled safely*
+- - Filled in forms apart from card, am shown card incomplete message.
+- - Filled in correct card details and am taken to checkout success page with order number.
+- - - Result: Achieved.
+
+---
+
+- Expected: **receive confirmation**, so that I can - *know that I have made the purchase*
+- - Recieved email confirmation with order number, order date, order total, shipping details and a contact link.
+- - - Result: Achieved.
+
+---
+
+- Expected: **review products**, so that I can - *give my feedback*
+- - Product detail page displays warning above review section that I can't edit or delete my review if I post a review.
+- - Tried posting a review. Shown success message and redirected to product detail page. My review is displayed with anonymous review as the user.
+- - - Result: Achieved.
+
+---
+
+- Expected: **subscribe to newsletter**, so that I can - *stay updated with site's new products and additional information*
+- - Tried subscribing with empty field. Was shown fill in field message.
+- - Subscribed with correct email. Was shown success message and directed back to home page.
+- - Received email from Dragon Egg Woodturning, with unsubscribe link.
+- - - Result: Achieved.
+
+---
+
+- Expected: **unsubscribe to newsletter**, so that I can - *stop receiving updates*
+- - Clicked on unsubscribe link. Was shown success message that my email has been unsubscribed.
+- - - Result: Achieved.
+
+---
+
+
+As a registered user, I want to be able to:
+
+- Expected: **log in**, so that I can - *view previous buying history and save my details*
+- - Tried signing in with incorrect password. Am not able to log in.
+- - Tried signing in with correct password. Given success message and am directed to home page with account icon in nav bar.
+- - Tried logging out and am given success message and directed back to home page. Account icon no longer in nav bar.
+- - Attempting to go to profile url when logged out takes me to log in page.
+- - - Result: Achieved.
+
+---
+
+- Expected: **store my details/view profile**, so that I can - *prevent having to enter my details everytime*
+- - Profile for logged in user displays my username with details on when I became a member and my last log in date.
+- - Profile navigation displays orders table, review table and account info.
+- - - Result: Achieved.
+
+---
+
+- Expected: **update details**, so that I can - *save new details if any need to be changed*
+- - Tried updating profile and am shown success message. Profile account info is now filled with my data.
+- - Checkout form is now filled with account data.
+- - - Result: Achieved.
+
+---
+
+- Expected: **view purchase history**, so that I can - *check previous buys to see if I want to buy another*
+- - All orders are listed in profile under order history with link to view in full.
+- - - Result: Achieved.
+
+---
+
+- Expected: **review products**, so that I can - *give feedback to the store*
+- - Tried posting review as logged in user. No warning about editing displayed. Review posted with my review displayed with my user name. Review also now in profile.
+- - Tried liking blog post. Given info message saying only logged in users can like a post. Redirected to blog post page.
+- - - Result: Achieved.
+
+---
+
+- Expected: **comment on blog posts**, so that I can - *give feedback to the store*
+- - Tried commenting on a post. Was given info message saying only logged in users can post. Was redirected to blog post page.
+- - Tried commenting on blog post as logged in user. Am shown success message, redirected to post and my comment is now displayed with edit and delete links. Other comments dont have these links.
+- - Liked post in blog post page, am shown success message and the thumb icon has filled and like count has increased.
+- - Unliked post in blog post page, am shown success message and thumb icon not filled and like count has decreased.
+- - - Result: Achieved.
+
+---
+
+- Expected: **edit/delete any comments, reviews I have made**, so that I can - *have full control over my involvement in the site*
+- - Tried editing review. Given success message and redirected. Edited review now displayed on product page and in profile.
+- - Tried deleting review. Given success message and redirected. Review no longer displayed on product page and in profile.
+- - Edit comment link takes me to edit comment page. Editing comment redirects me back to post with success message with new edited comment.
+- - Delete link displays pop up delete notification. Confirming delete redirects to post with success message and comment no longer displayed.
+- - Tried going back to edit link and am displayed with info message saying it doesn't exist and redirected to home page.
+- - - Result: Achieved.
+
+---
+
+As an admin user, I want to be able to:
+
+- Expected: **add new products**, so that I can - *update current stock*
+- - 
+
+- Expected: **edit products**, so that I can - *make changes if necessary*
+- - 
+
+- Expected: **delete products**, so that I can - *remove old products if certain products are no longer available in the store *
+- - 
+
+- Expected: **create blog posts**, so that I can - *give readers an update on what is currently going on with the store and the woodturning work*
+- - 
+
+- Expected: **edit blog posts**, so that I can - *make changes if necessary*
+- - 
+
+- Expected: **delete blog posts**, so that I can - *remove any unwanted posts if necessary*
+- - 
+
+- Expected: **add discounts**, so that I can - *provide updates on pricing to users*
+- - Set discount for walking sticks. All walking sticks prices now have a line through original price and display updated price. Walking sticks category on home page now has sale icon attached to it. Category name in profile has discount notification displayed. Individual products show discount in product page.
+- - Removed discount, all products now back to original price.
+- - - Result: Achieved.
+
+- Expected: **send newsletters**, so that I can - *update subscribers on anything relating to new products, new blogs, discounts etc*
+- - Tried sending newsletter with incorrect fields. Shown fill in fields notification.
+- - Sent newsletter and shown success message and redirected back to profile.
+- - Checked a subscriber test email and it had received newsletter email from Dragon Egg Woodturning with unsubscribe link attached also.
+- - - Result: Achieved.
+
+## Manual Site Testing - Anon user, registered user, admin
 
 **Responsiveness - mobile, tablet, laptop**
 
@@ -99,20 +295,34 @@ Used [responsitor](https://www.responsinator.com/) to check multiple phones/tabl
 
 Site on different screen sizes can be seen [here](https://www.responsinator.com/?url=https%3A%2F%2Fdragon-egg-woodturning.herokuapp.com%2F)
 
+**Crud - posts, comments, reviews, products**
 
-**Navigation - links**
+- Error: Tried liking blog post. Redirected to log in page
+- - Fixed: removed login_required decorator.
 
-- Tested all navigation links to ensure they all work, including mobile navigation.
-- Profile link only visible to logged in users.
-- Logout link only visible to logged in users. Logout button in profile directs to logout page.
-- Logo links directly back to home page.
-- Home link throughout site in header section links back to home page.
-- Blog page links direct to specific blog post page.
-- Products page links direct to specific product detail page.
-- About section link on home page as you scroll down links to about page.
-- Category cards on home page links to products page with selected categories filtered, as expected.
-- Login/Register links only visible to users not logged in.
-- Sign in link directs to log in page on register page. Sign up link directs to register page on login page.
+- Error: Tried to comment on post. Received ValueError
+- - Fixed: edited blog_post view to ensure only authenticated users can post.
+
+**Subscribe and Unsubscribe**
+
+- Tried subscribing with same email. Was shown error message saying email already subscribed.
+
+**Login/Register/Logout**
+
+**Newsletter Forms**
+
+**404 and 500**
+
+- Error header styled incorrectly
+- - was fixed.
+
+- Incorrect URL directs to 404 page as expected.
+- Go home and shop now links all direct to correct page.
+- 500 page assumed to be correct.
+
+**Admin - discount, newsletter, products, blogs**
+
+- Logged in as superuser. Profile has additional sections including newsletter, discounts, products and blogs.
 
 **Footer**
 
@@ -121,99 +331,39 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 
 **Searching/filtering/sorting - Products, Blogs**
 
-- Searched known post in blog page, page refreshes with correct blogs from search.
-- Searched various incorrect words, page refreshes with '0 blogs found' heading.
-- Link back to all blogs directs to blog page.
-- Searched known product in products page, page refreshes with correct products from search.
-- Searched various incorrect products, page refreshes with '0 products found' heading.
-- Category links all refresh and display correct products once clicked, including checkmark next to category name.
-- Wood filtering button displays sidenav and on click, page refreshes an am shown correct products filtered with wood type.
-- Checked all sort features, page refreshes and correctly orders the products with the chosen sort method.
-
-**Crud - posts, comments, reviews, products**
-
--- Error: Tried liking blog post. Redirected to log in page - Fixed: removed login_required decorator.
-
--- Error: Tried to comment on post. Received ValueError - Fixed: edited blog_post view to ensure only authenticated users can post.
-
-- Tried liking blog post. Given info message saying only logged in users can like a post. Redirected to blog post page.
-- Tried commenting on a post. Was given info message saying only logged in users can post. Was redirected to blog post page.
-- Product detail page displays warning above review section that I can't edit or delete my review if I post a review.
-- Tried posting a review. Shown success message and redirected to product detail page. My review is displayed with anonymous review as the user.
-
-**Login/Register/Logout**
-
-- Tried registering with incorrect fields, non-matching passwords and emails. Displayed error messages detailing errors.
-- Registered with correct details. Received message detailing success sign up and redirected to verify email page detailing that a verification link has been sent to my email.
-- Received email with verification link. Clicked link and confirmed email. Success message displayed and am redirected to login page.
-- Tried signing in with incorrect password. Am not able to log in.
-- Tried signing in with correct password. Given success message and am directed to home page with account icon in nav bar.
-- Tried logging out and am given success message and directed back to home page. Account icon no longer in nav bar.
-- Attempting to go to profile url when logged out takes me to log in page.
-
-
 **Contact Forms**
 
--- Contact form styled incorrectly: - was fixed.
+- Contact form styled incorrectly
+- - was fixed.
 
--- Contact header styled incorrectly: - was fixed.
+- Contact header styled incorrectly
+- - was fixed.
 
-- Tried sending contact form with empty fields, was asked to fill in fields.
-- Send form with correct fields. Received success message and redirected to home page.
-- Received email from DragonEggWoodturning email as an auto reply.
 - Default email address received email with message sent from contact form.
-
-**Newsletter Forms**
-
-**404 and 500**
-
--- Error header styled incorrectly: - was fixed.
-
-- Incorrect URL directs to 404 page as expected.
-- Go home and shop now links all direct to correct page.
-- 500 page assumed to be correct.
-
-**Payment - adding, editing, removing**
-
-- Added 10 items to bag. Shown success message. Icon displayed next to shopping bag nav icon.
-- Tried adding another item of same type. Shown warning message that only 10 items max allowed.
-- Tried editing bag items in shopping bag. Shown success message and redirected to shopping bag with updated items.
-- Tried removing all items. Shown success message and redirected to shopping bag page with empty bag.
-- Added item, am shown free delivery message.
-- Tried checking out with empty fields, am shown message to fill in fields.
-- Filled in forms apart from card, am shown card incomplete message.
-- Filled in correct card details and am taken to checkout success page with order number.
-- Recieved email confirmation with order number, order date, order total, shipping details and a contact link.
-
------- Error: order number in email different to order number in checkout, also 2 orders in admin - Fixed: checkout view post_code to postcode form data. (Indicates webhook working correctly as order was generated as it wasn't found to match in the database)
-
-- Tried checking out again, received email confirmation with order number matching checkout success. Also only 1 order in admin.
 
 **Profile - orders, reviews, account info**
 
-- Profile for logged in user displays my username with details on when I became a member and my last log in date.
-- Profile navigation displays orders table, review table and account info.
-- Tried updating profile and am shown success message. Profile account info is now filled with my data.
-- Checkout form is now filled with account data.
-- Liked post in blog post page, am shown success message and the thumb icon has filled and like count has increased.
-- Unliked post in blog post page, am shown success message and thumb icon not filled and like count has decreased.
-- Tried commenting on blog post. Am shown success message, redirected to post and my comment is now displayed with edit and delete links. Other comments dont have these links.
-- Edit comment link takes me to edit comment page. Editing comment redirects me back to post with success message with new edited comment.
-- Delete link displays pop up delete notification. Confirming delete redirects to post with success message and comment no longer displayed.
------ Error: going back to edit link displays server error after deleting comment - Fixed: added conditional if statements to views where this may be applicable.
-- Tried going back to edit link and am displayed with info message saying it doesn't exist and redirected to home page.
+- Error: going back to edit link displays server error after deleting comment
+- - Fixed: added conditional if statements to views where this may be applicable.
+
+--------------------
+**Navigation - links**
+
+- Tested all navigation links to ensure they all work, including mobile navigation.
+- Profile link only visible to logged in users.
+- Logout link only visible to logged in users. Logout button in profile directs to logout page.
+- Login/Register links only visible to users not logged in.
+- Sign in link directs to log in page on register page. Sign up link directs to register page on login page.
+
+**Payment - adding, editing, removing**
+
+- Error: order number in email different to order number in checkout, also 2 orders in admin
+- - Fixed: checkout view post_code to postcode form data. (Indicates webhook working correctly as order was generated as it wasn't found to match in the database)
+
+- Tried checking out again, received email confirmation with order number matching checkout success. Also only 1 order in admin.
 
 
-**Admin - discount, newsletter, products, blogs**
 
-**Subscribe and Unsubscribe**
 
-- Tried subscribing with empty field. Was shown fill in field message.
-- Subscribed with correct email. Was shown success message and directed back to home page.
-- Received email from Dragon Egg Woodturning, with unsubscribe link.
-- Tried subscribing with same email. Was shown error message saying email already subscribed.
-- Clicked on unsubscribe link. Was shown success message that my email has been unsubscribed.
-
-**Manual Site Testing - Anon user, registered user, admin**
-
+----------
 Testing deployed version
