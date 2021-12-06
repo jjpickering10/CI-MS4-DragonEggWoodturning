@@ -78,6 +78,10 @@ def product_detail(request, product_id):
     """
     A view to show an individual product
     """
+    if not Product.objects.filter(id=product_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     reviews = product.review_set.all()
 
@@ -120,6 +124,10 @@ def edit_review(request, review_id):
     """
     A view to edit a review
     """
+    if not Review.objects.filter(id=review_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, only registered users can do that.')
         return redirect(reverse('home'))
@@ -154,6 +162,10 @@ def delete_review(request, review_id):
     """
     A view to delete a review
     """
+    if not Review.objects.filter(id=review_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, only registered users can do that.')
         return redirect(reverse('home'))
@@ -172,6 +184,9 @@ def add_discount(request, product_id):
     """
     A view to add discount
     """
+    if not Product.objects.filter(id=product_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
 
     if not request.user.is_superuser:
         messages.info(request, 'Only admin can do that')
@@ -196,6 +211,9 @@ def category_discount(request, category_id):
     """
     A view to add discounts to all products in one category
     """
+    if not Category.objects.filter(id=category_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
 
     if not request.user.is_superuser:
         messages.info(request, 'Only admin can do that')
@@ -262,6 +280,10 @@ def edit_product(request, product_id):
     """
     A view to edit a product
     """
+    if not Product.objects.filter(id=product_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -296,6 +318,10 @@ def edit_product_images(request, product_id):
     """
     A view to edit a products images
     """
+    if not Product.objects.filter(id=product_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -337,6 +363,10 @@ def delete_product_images(request, image_id):
     """
     A view to delete an image for a product
     """
+    if not Image.objects.filter(id=image_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -352,6 +382,10 @@ def delete_product(request, product_id):
     """
     A view to delete a product
     """
+    if not Product.objects.filter(id=product_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

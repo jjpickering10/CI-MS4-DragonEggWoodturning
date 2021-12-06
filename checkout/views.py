@@ -4,6 +4,7 @@ from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.conf import settings
+from django.contrib import messages
 from products.models import Product
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
@@ -116,6 +117,10 @@ def checkout_success(request, order_number):
     """
     A view to checkout success page
     """
+
+    if not Order.objects.filter(order_number=order_number).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
 
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

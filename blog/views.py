@@ -37,6 +37,10 @@ def blog_post(request, blog_id):
     """
     Display a single blog post
     """
+    if not Post.objects.filter(id=blog_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     post = Post.objects.get(id=blog_id)
     liked = False
 
@@ -111,6 +115,10 @@ def edit_blog(request, blog_id):
     """
     Edit a blog
     """
+    if not Post.objects.filter(id=blog_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_superuser:
         messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))
@@ -144,6 +152,10 @@ def delete_blog(request, blog_id):
     """
     Delete a blog post
     """
+    if not Post.objects.filter(id=blog_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_superuser:
         messages.info(request, 'Only admin can do that')
         return redirect(reverse('home'))
@@ -160,7 +172,14 @@ def edit_comment(request, comment_id):
     """
     Edit a comment
     """
+    if not Comment.objects.filter(id=comment_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     comment = Comment.objects.get(id=comment_id)
+
+    if not comment.exists():
+        return redirect(reverse('home'))
 
     if not request.user == comment.user:
         messages.warning(request, "You don't have permission to do that")
@@ -195,6 +214,10 @@ def delete_comment(request, comment_id):
     """
     Delete a comment
     """
+    if not Comment.objects.filter(id=comment_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     comment = Comment.objects.get(id=comment_id)
     if not request.user == comment.user:
         messages.warning(request, "You don't have permission to do that")
@@ -209,6 +232,10 @@ def like_post(request, blog_id):
     """
     View for liking and unliking a post
     """
+    if not Post.objects.filter(id=blog_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     if not request.user.is_authenticated:
         messages.info(request, 'Only registered users can like a post')
         return redirect(reverse('blog_post', args=[blog_id]))

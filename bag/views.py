@@ -19,6 +19,10 @@ def add_to_bag(request, item_id):
     """
     Add quantity of items to the bag
     """
+    if not Product.objects.filter(id=item_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     product = Product.objects.get(id=item_id)
@@ -46,6 +50,10 @@ def remove_from_bag(request, item_id):
     """
     Remove items in the bag
     """
+    if not Product.objects.filter(id=item_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     product = Product.objects.get(id=item_id)
     bag = request.session.get('bag', {})
 
@@ -62,6 +70,10 @@ def edit_bag(request, item_id):
     """
     Edit items in the bag
     """
+    if not Product.objects.filter(id=item_id).exists():
+        messages.info(request, 'Doesnt exist')
+        return redirect(reverse('home'))
+
     product = Product.objects.get(id=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
