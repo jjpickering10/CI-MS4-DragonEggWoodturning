@@ -180,7 +180,9 @@
         <p>Sign up to our newsletter to receive updates</p>
         <form action="{% url 'subscribe' %}" method="POST">
           {% csrf_token %}
-          {{ subscribers_form }}
+          <table>
+            {{ subscribers_form }}
+          </table>
           <button class="global-button" type="submit">Join</button>
         </form>
       </div>
