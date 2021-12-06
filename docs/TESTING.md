@@ -47,6 +47,9 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 - Tried liking blog post. Given info message saying only logged in users can like a post. Redirected to blog post page.
 - Tried commenting on a post. Was given info message saying only logged in users can post. Was redirected to blog post page.
 
+- Product detail page displays warning above review section that I can't edit or delete my review if I post a review.
+- Tried posting a review. Shown success message and redirected to product detail page. My review is displayed with anonymous review as the user.
+
 **Login/Register/Logout**
 
 
@@ -163,6 +166,14 @@ Errors included:
 
 
 **Payment - adding, editing, removing**
+
+- Added 10 items to bag. Shown success message. Icon displayed next to shopping bag nav icon.
+- Tried adding another item of same type. Shown warning message that only 10 items max allowed.
+- Tried editing bag items in shopping bag. Shown success message and redirected to shopping bag with updated items.
+- Tried removing all items. Shown success message and redirected to shopping bag page with empty bag.
+- Added item, am shown free delivery message.
+- Tried checking out with empty fields, am shown message to fill in fields.
+- Filled in forms apart from card, am shown card incomplete message.
 
 **Profile - orders, reviews, account info**
 
