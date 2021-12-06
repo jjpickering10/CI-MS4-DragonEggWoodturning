@@ -174,6 +174,10 @@ Errors included:
 - Added item, am shown free delivery message.
 - Tried checking out with empty fields, am shown message to fill in fields.
 - Filled in forms apart from card, am shown card incomplete message.
+- Filled in correct card details and am taken to checkout success page with order number.
+- Recieved email confirmation with order number, order date, order total, shipping details and a contact link.
+------ Error: order number in email different to order number in checkout, also 2 orders in admin - Fixed: checkout view post_code to postcode form data. (Indicates webhook working correctly as order was generated as it wasn't found to match in the database)
+- Tried checking out again, received email confirmation with order number matching checkout success. Also only 1 order in admin.
 
 **Profile - orders, reviews, account info**
 
