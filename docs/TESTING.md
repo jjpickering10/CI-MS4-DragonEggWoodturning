@@ -41,6 +41,12 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 
 **Crud - posts, comments, reviews, products**
 
+-- Error: Tried liking blog post. Redirected to log in page - Fixed: removed login_required decorator.
+-- Error: Tried to comment on post. Received ValueError - Fixed: edited blog_post view to ensure only authenticated users can post.
+
+- Tried liking blog post. Given info message saying only logged in users can like a post. Redirected to blog post page.
+- Tried commenting on a post. Was given info message saying only logged in users can post. Was redirected to blog post page.
+
 **Login/Register/Logout**
 
 
@@ -163,6 +169,12 @@ Errors included:
 **Admin - discount, newsletter, products, blogs**
 
 **Subscribe and Unsubscribe**
+
+- Tried subscribing with empty field. Was shown fill in field message.
+- Subscribed with correct email. Was shown success message and directed back to home page.
+- Received email from Dragon Egg Woodturning, with unsubscribe link.
+- Tried subscribing with same email. Was shown error message saying email already subscribed.
+- Clicked on unsubscribe link. Was shown success message that my email has been unsubscribed.
 
 **Manual Site Testing - Anon user, registered user, admin**
 

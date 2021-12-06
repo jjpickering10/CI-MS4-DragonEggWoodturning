@@ -44,6 +44,11 @@ def blog_post(request, blog_id):
         liked = True
 
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            messages.info(request, "Only logged in users \
+                can comment on posts")
+            return redirect(reverse('blog_post', args=[blog_id]))
+
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
@@ -200,7 +205,6 @@ def delete_comment(request, comment_id):
     return redirect(reverse('blog_post', args=[comment.post.id]))
 
 
-@login_required
 def like_post(request, blog_id):
     """
     View for liking and unliking a post
