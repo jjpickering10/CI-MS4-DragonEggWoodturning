@@ -46,6 +46,9 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 
 **Contact Forms**
 
+-- Contact form styled incorrectly: - was fixed.
+-- Contact header styled incorrectly: - was fixed.
+
 - Tried sending contact form with empty fields, was asked to fill in fields.
 - Send form with correct fields. Received success message and redirected to home page.
 - Received email from DragonEggWoodturning email as an auto reply.
@@ -54,6 +57,8 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 **Newsletter Forms**
 
 **404 and 500**
+
+-- Error header styled incorrectly: - was fixed.
 
 - Incorrect URL directs to 404 page as expected.
 - Go home and shop now links all direct to correct page.

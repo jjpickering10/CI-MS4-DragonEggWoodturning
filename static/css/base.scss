@@ -1079,6 +1079,9 @@ nav, #mobile-demo {
         .error-landing-title {
             background: var(--primary-brown);
             color: var(--white);
+            h2 {
+                color: var(--white);
+            }
             p {
                 color: var(--white);
                 padding: 0;

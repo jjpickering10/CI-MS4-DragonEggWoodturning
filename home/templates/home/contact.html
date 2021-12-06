@@ -13,14 +13,14 @@
     <div class="contact-page-container">
         <section class="contact-landing">
             <div class="contact-landing-title">
-                <h1>Contact Us</h1>
+                <h2>Contact Us</h2>
                 <p><i class="fas fa-envelope"></i>Any questions? We love hearing from you!</p>
             </div>
             <div class="contact-landing-form">
               <p>Please fill out the form and we'll get back to you as soon as possible <i class="fas fa-reply"></i></p>
               <form action="{% url 'contact' %}" method="POST">
                 {% csrf_token %}
-                <table>
+                <table class="global-table">
                   {{ contact_form }}
                 </table>
                 <button class="global-button" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>

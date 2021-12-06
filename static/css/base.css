@@ -1015,6 +1015,9 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   background: var(--primary-brown);
   color: var(--white);
 }
+.about-page-container .about-landing .error-landing-title h2, .about-page-container .contact-landing .error-landing-title h2, .about-page-container .error-landing .error-landing-title h2, .contact-page-container .about-landing .error-landing-title h2, .contact-page-container .contact-landing .error-landing-title h2, .contact-page-container .error-landing .error-landing-title h2, .error-container .about-landing .error-landing-title h2, .error-container .contact-landing .error-landing-title h2, .error-container .error-landing .error-landing-title h2 {
+  color: var(--white);
+}
 .about-page-container .about-landing .error-landing-title p, .about-page-container .contact-landing .error-landing-title p, .about-page-container .error-landing .error-landing-title p, .contact-page-container .about-landing .error-landing-title p, .contact-page-container .contact-landing .error-landing-title p, .contact-page-container .error-landing .error-landing-title p, .error-container .about-landing .error-landing-title p, .error-container .contact-landing .error-landing-title p, .error-container .error-landing .error-landing-title p {
   color: var(--white);
   padding: 0;
