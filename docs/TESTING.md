@@ -257,26 +257,47 @@ As a registered user, I want to be able to:
 As an admin user, I want to be able to:
 
 - Expected: **add new products**, so that I can - *update current stock*
-- - 
+- - Tried add product with empty fields. Was shown fill in field message.
+- - Tried add product with correct fields. Was shown success message and redirected to back to profile.
+- - New product is now on products page, has its own product detail page and is listed in my admin profile product section.
+- - Tested adding product where a category was on sale. Price was updated accordingly.
+- - - Result: Achieved.
 
 - Expected: **edit products**, so that I can - *make changes if necessary*
-- - 
+- - Can edit product from profile section. Clicked edit link and am shown edit product page with prefilled data.
+- - Edited product, shown success message, redirected to product detail page and updated product is now listed on the site and in my profile section.
+- - Can edit product images from profile section. Clicked edit images link and am shown edit images product page with prefilled images.
+- - Can select multiple images to upload.
+- - Added multiple images, redirected back to edit images page where new images are shown. New images are now shown in product detail page.
+- - - Result: Achieved.
 
 - Expected: **delete products**, so that I can - *remove old products if certain products are no longer available in the store *
-- - 
+- - Can delete product images from profile section. Clicked edit images link and am shown edit images product page with prefilled images.
+- - Deleted image, shown success message, redirected to edit images page where the deleted image is now no longer there or on the product detail page.
+- - Can delete product from profile section. Clicked delete link and am shown delete modal pop up.
+- - Deleted product, shown success message and deleted product is now no longer listed on the site or in my profile section.
+- - - Result: Achieved.
 
 - Expected: **create blog posts**, so that I can - *give readers an update on what is currently going on with the store and the woodturning work*
-- - 
+- - Tried add blog post with empty fields. Was shown fill in field message.
+- - Tried add blog post with correct fields. Was shown success message and redirected to blog page.
+- - New blog is now on blog page, has its own blog post page and is listed in my admin profile blog section.
+- - - Result: Achieved.
 
 - Expected: **edit blog posts**, so that I can - *make changes if necessary*
-- - 
+- - Can edit blog from blog post page or from profile section. Clicked edit link and am shown edit blog page with prefilled data.
+- - Edited blog, shown success message and updated blog is now listed on the site and in my profile section.
+- - - Result: Achieved.
 
 - Expected: **delete blog posts**, so that I can - *remove any unwanted posts if necessary*
-- - 
+- - Can delete blog from blog post page or from profile section. Clicked delete link and am shown delete modal pop up.
+- - Deleted blog, shown success message and deleted blog is now no longer listed on the site or in my profile section.
+- - - Result: Achieved.
 
 - Expected: **add discounts**, so that I can - *provide updates on pricing to users*
 - - Set discount for walking sticks. All walking sticks prices now have a line through original price and display updated price. Walking sticks category on home page now has sale icon attached to it. Category name in profile has discount notification displayed. Individual products show discount in product page.
 - - Removed discount, all products now back to original price.
+- - Set discount for individual product on product detail page. Individual product now shows updated price in product detail page.
 - - - Result: Achieved.
 
 - Expected: **send newsletters**, so that I can - *update subscribers on anything relating to new products, new blogs, discounts etc*
