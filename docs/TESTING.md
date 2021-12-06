@@ -89,6 +89,14 @@ Errors included:
 - Do not use 'new' for side effects.
 - - Ignored: required for gliderjs
 
+***Python Validity***
+
+- Installed flake8 to check errors in Python code.
+- - Warnings in auto generated files ignored.
+- - Edited line lengths, unused variables and other errors/warnings.
+- Checked all Python files with through [pep8online](http://pep8online.com/) to check PEP8 compliance.
+- All files passed.
+
 ## User Stories
 
 As an anonymous user, I want to be able to:
@@ -306,7 +314,7 @@ As an admin user, I want to be able to:
 - - Checked a subscriber test email and it had received newsletter email from Dragon Egg Woodturning with unsubscribe link attached also.
 - - - Result: Achieved.
 
-## Manual Site Testing - Anon user, registered user, admin
+## Manual Site Testing
 
 **Responsiveness - mobile, tablet, laptop**
 
@@ -316,7 +324,7 @@ Used [responsitor](https://www.responsinator.com/) to check multiple phones/tabl
 
 Site on different screen sizes can be seen [here](https://www.responsinator.com/?url=https%3A%2F%2Fdragon-egg-woodturning.herokuapp.com%2F)
 
-**Crud - posts, comments, reviews, products**
+**Crud**
 
 - Error: Tried liking blog post. Redirected to log in page
 - - Fixed: removed login_required decorator.
@@ -330,7 +338,12 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 
 **Login/Register/Logout**
 
+- Tested login functionality with incorrect passwords, emails etc.
+
 **Newsletter Forms**
+
+- Tested newsletter is sent to all subscribers.
+- Tested confirmation email after subscribing.
 
 **404 and 500**
 
@@ -341,7 +354,7 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 - Go home and shop now links all direct to correct page.
 - 500 page assumed to be correct.
 
-**Admin - discount, newsletter, products, blogs**
+**Admin**
 
 - Logged in as superuser. Profile has additional sections including newsletter, discounts, products and blogs.
 
@@ -351,6 +364,10 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 - Social Media links all open in new tab.
 
 **Searching/filtering/sorting - Products, Blogs**
+
+- Tested search functionality in both products and blog pages. Results show correct queries.
+- Tested sorting products. Results show correct sorting.
+- Tested filtering by wood. Filter results show correct filtered products.
 
 **Contact Forms**
 
@@ -362,29 +379,46 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 
 - Default email address received email with message sent from contact form.
 
-**Profile - orders, reviews, account info**
+**Profile**
 
 - Error: going back to edit link displays server error after deleting comment
 - - Fixed: added conditional if statements to views where this may be applicable.
+
+- Profile link only visible to logged in users.
+- Logout link only visible to logged in users. Logout button in profile directs to logout page.
 
 --------------------
 **Navigation - links**
 
 - Tested all navigation links to ensure they all work, including mobile navigation.
-- Profile link only visible to logged in users.
-- Logout link only visible to logged in users. Logout button in profile directs to logout page.
 - Login/Register links only visible to users not logged in.
 - Sign in link directs to log in page on register page. Sign up link directs to register page on login page.
 
-**Payment - adding, editing, removing**
+**Payment**
 
 - Error: order number in email different to order number in checkout, also 2 orders in admin
 - - Fixed: checkout view post_code to postcode form data. (Indicates webhook working correctly as order was generated as it wasn't found to match in the database)
 
 - Tried checking out again, received email confirmation with order number matching checkout success. Also only 1 order in admin.
+- Webhooks checked throughout site build by disabling form submit action.
 
+**Database updates**
 
+- Continously checked, throughout site build and at the end that:
+- - ratings for products were updated on adding a new review.
+- - like count for blog post was updated on liking/unliking posts
+- - comment count for blog posts was updated on adding/deleting comments
+- - review count in product detail page updated on adding/deleting reviews
+- - price of products updated after both individual discount and discount category functions
+- - category on home page displays sale notification on category card if category is on sale
+- - subscribers are removed from database on visiting unsubscribe URL
+- - profile account info is updated on save info checkbox and profile update
 
+**Other**
+
+- Tested that only certain links are visible to certain users.
+- Tested that links to products/reviews/comments etc that don't exist are redirected back home with an info message.
+- Tested on various browsers.
 
 ----------
-Testing deployed version
+Testing using deployed version

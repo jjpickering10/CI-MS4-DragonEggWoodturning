@@ -4,7 +4,7 @@ _Use CTRL+click or CMD+click to open links throughout the README in a new tab_
 
 ***Disclaimer: This website is for educational purposes only***
 
-![]()
+![DragonEggWoodturning](/docs/img/amiresponsive-dragonegg.png)
 
 ## Overview
 
@@ -123,7 +123,7 @@ As an admin user, I want to be able to:
 
 # Datebase Schema
 
-![Database Schema]()
+![Database Schema](/docs/img/database-image.png)
 
 
 ### **Skeleton**
@@ -355,6 +355,15 @@ Chrome Dev Tools
 
 ### Feature To Improve
 
+- Add more blog photos to a blog post
+- Add category, woodtype functionality
+- Add favourites functionality
+- Profile notifications when theres a comment/like on a post or review on a product
+- Deleting profile
+- Share on social media
+- Log in with social media
+
+
 ---
 
 ### Known issues
@@ -475,6 +484,8 @@ Chrome Dev Tools
 ## Credits
 
 ### Code Snippets
+
+- Used Code Institute walkthrough project Boutique Ado for general help.
 
 ### Images and videos
 
