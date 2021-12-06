@@ -133,19 +133,19 @@
 {{ block.super }}
 <script src="{% static 'js/glider.min.js' %}"></script>
 <script>
- const headerSection = document.querySelector('.header-about-section')
+const headerSection = document.querySelector('.header-about-section');
 
- headerSection.classList.add('hide')
+headerSection.classList.add('hide');
 
- new Glider(document.querySelector('.glider'), {
-        slidesToScroll: 1,
-        slidesToShow: 3,
-        draggable: true,
-        dots: '.dots',
-        arrows: {
-            prev: '.glider-prev',
-            next: '.glider-next'
-        }
-    });
+new Glider(document.querySelector('.glider'), {
+    slidesToScroll: 1,
+    slidesToShow: 3,
+    draggable: true,
+    dots: '.dots',
+    arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next'
+    }
+});
 </script>
 {% endblock %}

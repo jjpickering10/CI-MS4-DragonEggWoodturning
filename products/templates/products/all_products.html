@@ -133,57 +133,60 @@
 {% block extra_js %}
 {{ block.super }}
 <script>
- const categories = document.querySelectorAll('.category-names')
- const label = document.querySelectorAll('.product-label')
- const productContainer = document.querySelector('.product-container')
- const productHeadingTitle = document.querySelector('.product-heading-title')
+ 
+ const categories = document.querySelectorAll('.category-names');
+ const label = document.querySelectorAll('.product-label');
+ const productContainer = document.querySelector('.product-container');
+ const productHeadingTitle = document.querySelector('.product-heading-title');
 
 // Add dynamic watermark
  function addWatermark() {
-    const watermark = document.createElement('p')
+    const watermark = document.createElement('p');
     if (label.length > 0) {
-      const text = document.createTextNode(label[0].textContent)
-      watermark.append(text)
-      watermark.classList.add('watermark')
-      productContainer.append(watermark)
+      const text = document.createTextNode(label[0].textContent);
+      watermark.append(text);
+      watermark.classList.add('watermark');
+      productContainer.append(watermark);
     } else {
-      const text = document.createTextNode('shop')
-      watermark.append(text)
-      watermark.classList.add('watermark')
-      productContainer.append(watermark)
+      const text = document.createTextNode('shop');
+      watermark.append(text);
+      watermark.classList.add('watermark');
+      productContainer.append(watermark);
     }
  }
- addWatermark()
+ addWatermark();
 // Display check for current category
 if (label.length > 0) {
  categories.forEach(category => {
    if (label[0].textContent === category.textContent) {
-     category.children[0].children[1].classList.remove('hide')
-     category.style.fontWeight = 500
-     productHeadingTitle.textContent = category.textContent
+     category.children[0].children[1].classList.remove('hide');
+     category.style.fontWeight = 500;
+     productHeadingTitle.textContent = category.textContent;
    }
- })} else {
-  productHeadingTitle.textContent = 'Shop'
- }
+ });
+} else {
+  productHeadingTitle.textContent = 'Shop';
+}
 
  //  Sorting
-    const sortKey = document.getElementById('sort-key')
-    const url = new URL(window.location.href)
+const sortKey = document.getElementById('sort-key');
+const url = new URL(window.location.href);
 
-    sortKey.addEventListener('change', (e) => {
-    const selected = e.srcElement.value
-    if (selected != 'reset') {
-      const sort = selected.split("_")[0]
-      const direction = selected.split("_")[1]
+sortKey.addEventListener('change', (e) => {
+  const selected = e.srcElement.value;
+  if (selected != 'reset') {
+    const sort = selected.split("_")[0];
+    const direction = selected.split("_")[1];
 
-      url.searchParams.set('sort', sort)
-      url.searchParams.set('direction', direction)
-      window.location.replace(url)
-    } else {
-        url.searchParams.delete("sort")
-        url.searchParams.delete("direction")
-        window.location.replace(url)
-    }
-   })
+    url.searchParams.set('sort', sort);
+    url.searchParams.set('direction', direction);
+    window.location.replace(url);
+  } else {
+      url.searchParams.delete("sort");
+      url.searchParams.delete("direction");
+      window.location.replace(url);
+  }
+});
+
 </script>
 {% endblock %}

@@ -81,6 +81,34 @@ After fixing errors. No errors found.
 
 ![](/docs/img/css-validation.png)
 
+***JavaScript Validity***
+
+JS Validity
+
+All JavaScript code validated using [JSHint](https://jshint.com/)
+
+Any errors were fixed.
+
+Errors included:
+
+- Unused variables.
+- - Resolved: Removed.
+
+- Semi colons.
+- - Resolved: added in semi colons just for consistency.
+
+- Undefined variables
+- - Ignored: Used for gsap, materialize, gliderjs, stripe from other scripts.
+
+- 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+- - Ignored
+
+- 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+- - Ignored
+
+- Do not use 'new' for side effects.
+- - Ignored: required for gliderjs
+
 
 **Payment - adding, editing, removing**
 

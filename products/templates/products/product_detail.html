@@ -196,43 +196,43 @@
 {% block extra_js %}
 {{ block.super }}
 
-<script type="text/javascript">
+<script>
 // Taken from https://www.w3schools.com/howto/howto_js_rangeslider.asp
 // Quantity input range functions
-  const slider = document.getElementById("product-range");
+const slider = document.getElementById("product-range");
   const output = document.getElementById("product-value");
   output.innerHTML = slider.value;
 
-  const plus = document.querySelector('.fa-plus')
-  const minus = document.querySelector('.fa-minus')
+  const plus = document.querySelector('.fa-plus');
+  const minus = document.querySelector('.fa-minus');
 
   plus.addEventListener('click', () => {
-    slider.valueAsNumber +=1
-    slider.value = slider.valueAsNumber
+    slider.valueAsNumber +=1;
+    slider.value = slider.valueAsNumber;
     output.innerHTML = slider.value;
-  })
+  });
   minus.addEventListener('click', () => {
-    slider.valueAsNumber -=1
-    slider.value = slider.valueAsNumber
+    slider.valueAsNumber -=1;
+    slider.value = slider.valueAsNumber;
     output.innerHTML = slider.value;
-  })
+  });
 
   // Image gallery slider
 
-  const productImageSlider = document.querySelector('.product-image-slider')
+  const productImageSlider = document.querySelector('.product-image-slider');
   const progressBar = document.querySelector('.progress-bar');
 
   productImageSlider.addEventListener('scroll', () => {
-    progressBar.style.width  = `${scrollPercentage()}%`
-  })
+    progressBar.style.width  = `${scrollPercentage()}%`;
+  });
 
   productImageSlider.addEventListener('wheel', (e) =>{
-  e.preventDefault()
+  e.preventDefault();
   productImageSlider.scrollLeft += e.deltaY * 0.5;
-  })
+  });
 
   function scrollPercentage() {
    return ((productImageSlider.scrollLeft / (productImageSlider.scrollWidth - productImageSlider.clientWidth) ) * 100);
   }
-  </script>
+</script>
 {% endblock %}

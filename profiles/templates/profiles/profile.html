@@ -278,49 +278,49 @@
 
 {% block extra_js %}
 <script>
- const links = document.querySelectorAll('.profile-links')
- const sections = document.querySelectorAll('.profile-segment')
- let dataLink
+ 
+ const links = document.querySelectorAll('.profile-links');
+ const sections = document.querySelectorAll('.profile-segment');
+ let dataLink;
 
  // Display check for current section
 
  function checkSections(dataLink) {
    sections.forEach(section => {
-    section.classList.add('hide')
+    section.classList.add('hide');
     if (dataLink === section.dataset.link) {
-      section.classList.remove('hide')
-      let randomEase = Math.random() <= 0.5 ? 'expo.out' : 'elastic.out(1, 0.75)'
+      section.classList.remove('hide');
+      let randomEase = Math.random() <= 0.5 ? 'expo.out' : 'elastic.out(1, 0.75)';
       gsap.from(section, {
         translateX: '50%',
         opacity: 0,
         duration: 1,
         ease: randomEase
-      })
+      });
     }
-   })
+   });
  }
 
  links.forEach(link => {
   link.addEventListener('click', ()=> {
     links.forEach(oldlink => {
-      oldlink.classList.remove('active')
-    })
-    link.classList.add('active')
-    dataLink = link.dataset.link
-    checkSections(dataLink)
-  })
- })
+      oldlink.classList.remove('active');
+    });
+    link.classList.add('active');
+    dataLink = link.dataset.link;
+    checkSections(dataLink);
+  });
+ });
 
 //  Modals
 
-const modalTriggers = document.querySelectorAll('.modal-trigger')
+const modalTriggers = document.querySelectorAll('.modal-trigger');
 
 modalTriggers.forEach(modal => {
   modal.addEventListener('click', () => {
-    const nearest = modal.closest('.profile-segment')
-    nearest.style.transform = 'none'
-  })
-})
-
+    const nearest = modal.closest('.profile-segment');
+    nearest.style.transform = 'none';
+  });
+});
 </script>
 {% endblock %}

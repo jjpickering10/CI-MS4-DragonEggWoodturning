@@ -109,22 +109,22 @@ Inspired by nature
     outputs.forEach(output => {
       if (slider.dataset.item_id === output.dataset.item_id) {
         output.innerHTML = slider.value;
-        const plus = output.previousSibling
-        const minus = output.nextSibling
+        const plus = output.previousSibling;
+        const minus = output.nextSibling;
 
         plus.addEventListener('click', () => {
-          slider.valueAsNumber += 1
-          slider.value = slider.valueAsNumber
+          slider.valueAsNumber += 1;
+          slider.value = slider.valueAsNumber;
           output.innerHTML = slider.value;
-        })
+        });
 
         minus.addEventListener('click', () => {
-          slider.valueAsNumber -= 1
-          slider.value = slider.valueAsNumber
+          slider.valueAsNumber -= 1;
+          slider.value = slider.valueAsNumber;
           output.innerHTML = slider.value;
-        })
+        });
       }
-    })
-  })
+    });
+  });
 </script>
 {% endblock %}

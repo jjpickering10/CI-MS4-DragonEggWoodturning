@@ -1,5 +1,5 @@
 if (window.scrollY != 0) {
-  window.location.assign(window.location.href)
+  window.location.assign(window.location.href);
 }
 // Canvas particle system on loading page --- Learned Canvas drawing from https://www.youtube.com/c/Frankslaboratory 
 
@@ -85,7 +85,7 @@ animate();
 
 // ---------------------------------------------------------------------
 // Main Landing Page elements
-const documentElementsGsap = [document.querySelector('.main-section'), document.querySelector('.header-about-section')]
+const documentElementsGsap = [document.querySelector('.main-section'), document.querySelector('.header-about-section')];
 const landingSegmentsGsap = [
   document.querySelector('.home-landing-title'),
   document.querySelector('.home-landing-title h1'),
@@ -93,42 +93,39 @@ const landingSegmentsGsap = [
   document.querySelector('.home-landing-title .landing-buttons'),
   document.querySelectorAll('.home-landing-title .landing-buttons a'),
   document.querySelector('.home-landing-image')
-]
+];
 
 // Categories Landing Page
-const categoryContainerGsap = document.querySelector('.category-container')
-const categoryHeaderGsap = document.querySelector('#home-products h2')
-const categoriesGsap = gsap.utils.toArray('.category-container .category-card')
+const categoryContainerGsap = document.querySelector('.category-container');
+const categoryHeaderGsap = document.querySelector('#home-products h2');
+const categoriesGsap = gsap.utils.toArray('.category-container .category-card');
 // Reviews Whole Site
-const reviewContainerGsap = document.querySelector('.glider')
-const reviewHeaderGsap = document.querySelector('#home-reviews h2')
+const reviewContainerGsap = document.querySelector('.glider');
+const reviewHeaderGsap = document.querySelector('#home-reviews h2');
 // Site information Whole Site
-const siteInfoContainerGsap = document.querySelector('.site-information-container')
-const siteInfoSegmentsGsap = document.querySelectorAll('.site-info-content')
-const siteInfoSegmentHeaders = document.querySelectorAll('.site-info-content h3')
-const siteInfoSegmentText = document.querySelectorAll('.site-info-content p')
+const siteInfoContainerGsap = document.querySelector('.site-information-container');
+const siteInfoSegmentsGsap = document.querySelectorAll('.site-info-content');
 // Home about whole site
-const homeAboutContainerGsap = document.querySelector('.home-about-section')
-const homeAboutSegmentsGsap = [document.querySelector('.home-about-info h2'), document.querySelector('.home-about-info p'), document.querySelector('.home-about-info a')]
+const homeAboutContainerGsap = document.querySelector('.home-about-section');
+const homeAboutSegmentsGsap = [document.querySelector('.home-about-info h2'), document.querySelector('.home-about-info p'), document.querySelector('.home-about-info a')];
 
 const timeline = gsap.timeline({
   defaults: {
     duration: 1
   }
-})
-const segmentTimeline = gsap.timeline()
+});
 
 // Materialize JS
 
 M.AutoInit();
 
-var toastMessage = document.querySelector('.message-container')
-var toastClose = document.querySelector('.toast-action')
+var toastMessage = document.querySelector('.message-container');
+var toastClose = document.querySelector('.toast-action');
 if (toastMessage) {
   M.toast({
     html: toastMessage,
     displayLength: 5000
-  })
+  });
 }
 
 if (toastClose) {
@@ -136,7 +133,7 @@ if (toastClose) {
     var toastElement = document.querySelector('.toast');
     var toastInstance = M.Toast.getInstance(toastElement);
     toastInstance.dismiss();
-  })
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -148,17 +145,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Gallery mouse move
 
-const galleryContainer = document.querySelector('.home-gallery')
-const galleryImages = document.querySelector('.gallery-images-section')
-const galleryImagesIndividual = document.querySelectorAll('.gallery-column img')
+const galleryContainer = document.querySelector('.home-gallery');
+const galleryImages = document.querySelector('.gallery-images-section');
+const galleryImagesIndividual = document.querySelectorAll('.gallery-column img');
 
 galleryContainer.addEventListener('mousemove', (e) => {
-  let x = e.clientX - galleryContainer.getBoundingClientRect().left
-  galleryImages.style.transform = `translate(-${x}px)`
+  let x = e.clientX - galleryContainer.getBoundingClientRect().left;
+  galleryImages.style.transform = `translate(-${x}px)`;
   galleryImagesIndividual.forEach(image => {
-    image.style.transform = `rotateY(${(x*0.01) - 10}deg)`
-  })
-})
+    image.style.transform = `rotateY(${(x*0.01) - 10}deg)`;
+  });
+});
 
 // Loading
 
@@ -179,24 +176,24 @@ window.addEventListener('load', () => {
       duration: 2,
       ease: "power1.out"
 
-    }, '-=1')
+    }, '-=1');
   if (landingSegmentsGsap[0] != null) {
     timeline.to(landingSegmentsGsap, {
       opacity: 1,
       ease: "power1.out",
       stagger: 0.25
-    })
+    });
     timeline.to(landingSegmentsGsap[5], {
       x: '15px',
       duration: 1.5,
       ease: "back.out(2)",
-    }, '-=1')
+    }, '-=1');
     timeline.to(landingSegmentsGsap[4], {
       x: '0',
       duration: 0.25,
       ease: "power4.out",
       stagger: 0.1
-    }, '-=2')
+    }, '-=2');
   }
   timeline.to(documentElementsGsap[1], {
     opacity: 1,
@@ -204,14 +201,14 @@ window.addEventListener('load', () => {
 
     ease: "elastic.out(1, 0.75)",
     onComplete: postLoad
-  })
-})
+  });
+});
 
 // Once loading animation is complete
 function postLoad() {
-  document.body.classList.remove('post-load')
-  document.querySelector('.loading').style.display = 'none'
-  document.querySelector('.canvas-loading').style.display = 'none'
+  document.body.classList.remove('post-load');
+  document.querySelector('.loading').style.display = 'none';
+  document.querySelector('.canvas-loading').style.display = 'none';
   // Scroll animations
   if (categoryHeaderGsap) {
     gsap.from(categoryHeaderGsap, {
@@ -222,7 +219,7 @@ function postLoad() {
       translateX: '50px',
       opacity: 0,
       duration: 0.5,
-    })
+    });
 
     gsap.from(categoriesGsap, {
       scrollTrigger: {
@@ -233,7 +230,7 @@ function postLoad() {
       opacity: 0,
       duration: 1,
       stagger: 0.25
-    })
+    });
   }
   if (reviewHeaderGsap) {
     gsap.from(reviewHeaderGsap, {
@@ -244,7 +241,7 @@ function postLoad() {
       translateX: '-50px',
       opacity: 0,
       duration: 1,
-    })
+    });
     gsap.from(reviewContainerGsap, {
       scrollTrigger: {
         trigger: reviewHeaderGsap,
@@ -253,7 +250,7 @@ function postLoad() {
       translateY: `-100px`,
       opacity: 0,
       duration: 1,
-    })
+    });
   }
   if (siteInfoContainerGsap) {
     gsap.from(siteInfoContainerGsap, {
@@ -262,10 +259,10 @@ function postLoad() {
         toggleActions: 'restart pause resume restart'
       },
       duration: 2,
-    })
+    });
     siteInfoSegmentsGsap.forEach((segment, i) => {
-      const segmentChildren = gsap.utils.toArray(segment.children)
-      const direction = (i == 0 || i == 2) ? '-' : ''
+      const segmentChildren = gsap.utils.toArray(segment.children);
+      const direction = (i == 0 || i == 2) ? '-' : '';
       gsap.from(segment, {
         scrollTrigger: {
           trigger: segment,
@@ -274,7 +271,7 @@ function postLoad() {
         translateX: `${direction}200px`,
         opacity: 0,
         duration: 1,
-      })
+      });
       gsap.from(segmentChildren, {
         scrollTrigger: {
           trigger: segment,
@@ -284,8 +281,8 @@ function postLoad() {
         opacity: 0,
         duration: 1,
         stagger: 0.25
-      })
-    })
+      });
+    });
 
   }
   if (homeAboutContainerGsap) {
@@ -295,7 +292,7 @@ function postLoad() {
         toggleActions: 'restart pause resume restart'
       },
       duration: 1,
-    })
+    });
 
     gsap.from(homeAboutSegmentsGsap, {
       scrollTrigger: {
@@ -307,7 +304,7 @@ function postLoad() {
       duration: 0.75,
       stagger: 0.25
 
-    })
+    });
 
   }
 }
