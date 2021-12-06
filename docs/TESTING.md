@@ -2,21 +2,62 @@
 
 **Responsiveness - mobile, tablet, laptop**
 
+Site tested on multiple screen sizes.
+
+Used [responsitor](https://www.responsinator.com/) to check multiple phones/tablets.
+
+Site on different screen sizes can be seen [here](https://www.responsinator.com/?url=https%3A%2F%2Fdragon-egg-woodturning.herokuapp.com%2F)
+
+
 **Navigation - links**
+
+- Tested all navigation links to ensure they all work, including mobile navigation.
+- Profile link only visible to logged in users.
+- Logout link only visible to logged in users. Logout button in profile directs to logout page.
+- Logo links directly back to home page.
+- Home link throughout site in header section links back to home page.
+- Blog page links direct to specific blog post page.
+- Products page links direct to specific product detail page.
+- About section link on home page as you scroll down links to about page.
+- Category cards on home page links to products page with selected categories filtered, as expected.
+- Login/Register links only visible to users not logged in.
+- Sign in link directs to log in page on register page. Sign up link directs to register page on login page.
 
 **Footer**
 
-**Searching - Products, Blogs**
+- Tested all footer links to ensure they all work.
+- Social Media links all open in new tab.
+
+**Searching/filtering/sorting - Products, Blogs**
+
+- Searched known post in blog page, page refreshes with correct blogs from search.
+- Searched various incorrect words, page refreshes with '0 blogs found' heading.
+- Link back to all blogs directs to blog page.
+- Searched known product in products page, page refreshes with correct products from search.
+- Searched various incorrect products, page refreshes with '0 products found' heading.
+- Category links all refresh and display correct products once clicked, including checkmark next to category name.
+- Wood filtering button displays sidenav and on click, page refreshes an am shown correct products filtered with wood type.
+- Checked all sort features, page refreshes and correctly orders the products with the chosen sort method.
 
 **Crud - posts, comments, reviews, products**
 
 **Login/Register/Logout**
 
+
 **Contact Forms**
+
+- Tried sending contact form with empty fields, was asked to fill in fields.
+- Send form with correct fields. Received success message and redirected to home page.
+- Received email from DragonEggWoodturning email as an auto reply.
+- Default email address received email with message sent from contact form.
 
 **Newsletter Forms**
 
 **404 and 500**
+
+- Incorrect URL directs to 404 page as expected.
+- Go home and shop now links all direct to correct page.
+- 500 page assumed to be correct.
 
 **Code Validation - HTML, CSS, JavaScript, Python**
 
