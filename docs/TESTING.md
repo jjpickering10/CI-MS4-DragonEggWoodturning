@@ -20,7 +20,7 @@
 
 **Code Validation - HTML, CSS, JavaScript, Python**
 
-HTML Validity
+***HTML Validity***
 
 All pages put through [W3C Markup Validator](https://validator.w3.org/nu/) using 'View Page Source' on webpage due to Jinja language.
 
@@ -60,6 +60,27 @@ Errors throughout checking included:
 - - Resolved: Added in extra columns and displayed as 'none' if unrequired.
 
 The same errors came up through multiple pages and all errors/warnings were fixed if necessary.
+
+***CSS Validity***
+
+CSS validated using [W3C CSS Validation](https://jigsaw.w3.org/css-validator/)
+
+Errors included.
+
+`Value Error : font-style 1.7em is not a font-style value : 1.7em` - resolved: removed.
+
+`1829		Property animate doesn't exist : 0.2s` - resolved: removed.
+
+`1853		Property animate doesn't exist : 0.2s` - resolved: removed.
+
+`1872		Property animate doesn't exist : 0.2s` - resolved: removed.
+
+`2795		Value Error : color Parse Error var()` - resolved: removed.
+
+After fixing errors. No errors found.
+
+![](/docs/img/css-validation.png)
+
 
 **Payment - adding, editing, removing**
 

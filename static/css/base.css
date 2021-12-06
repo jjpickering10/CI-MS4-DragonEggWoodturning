@@ -618,7 +618,6 @@ body main {
   }
 }
 .home-container #home-landing .home-landing-title .landing-buttons a {
-  font-style: 1.7em;
   padding: 0.5em 1em;
   cursor: pointer;
   border-radius: 0;
@@ -1826,7 +1825,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   width: 100%;
   height: 5px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 0px 0px 0px #361C15;
   background: #361C15;
   border-radius: 0px;
@@ -1850,7 +1848,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   width: 100%;
   height: 5px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 0px 0px 0px #361C15;
   background: #361C15;
   border-radius: 0px;
@@ -1869,7 +1866,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   width: 100%;
   height: 5px;
   cursor: pointer;
-  animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -2792,7 +2788,6 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .blog-post-container .blog-post-comments-form form textarea {
   padding: 1rem;
   height: auto;
-  color: var();
   background: white;
 }
 .blog-post-container .blog-post-comments-form form .global-button {
