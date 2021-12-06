@@ -367,7 +367,7 @@ body main {
 #home-newsletter .newsletter-form form {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   background: var(--secondary-brown);
   padding: 1rem;
   box-shadow: 10px 10px 0 0 var(--white);
@@ -377,7 +377,7 @@ body main {
 }
 #home-newsletter .newsletter-form form input[type=email]:not(.browser-default) {
   border: none;
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
   padding: 0 1rem;
   background: var(--white);
 }
@@ -3085,4 +3085,19 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
 .modal-overlay {
   background: var(--primary-brown);
   opacity: 0.9 !important;
+}
+
+.global-table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  background: none !important;
+}
+.global-table tr {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.global-table th, .global-table td {
+  padding: 0;
+  border-radius: 0;
 }/*# sourceMappingURL=base.css.map */

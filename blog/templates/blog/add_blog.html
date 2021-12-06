@@ -14,7 +14,9 @@
   <h2>Add a new blog post:</h2>
     <form action="{% url 'add_blog' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ blog_form }}
+        <table class="global-table">
+          {{ blog_form }}
+        </table>
         <button class="global-button" type="submit">Add Blog</button>
     </form>
 </div>

@@ -15,7 +15,9 @@
   <div class="add_product_image_container">
     <form action="{% url 'edit_product_images' product.id %}" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ image_form }}
+      <table class="global-table">
+        {{ image_form }}
+      </table>
       <button class="global-button" type="submit">Add Images</button>
     </form>
   </div>
@@ -24,9 +26,9 @@
         <div>
           <img class="materialboxed" src="{{ image.image.url }}" alt="product-{{ image.product.name }}">
             <!-- Modal Trigger -->
-            <a class="modal-trigger" href="#{{ image.id }}-{{ image.product.name }}">Delete <i class="fas fa-trash"></i></a>
+            <a class="modal-trigger" href="#{{ image.id }}-{{ image.product.sku }}">Delete <i class="fas fa-trash"></i></a>
             <!-- Modal Structure -->
-            <div id="{{ image.id }}-{{ image.product.name }}" class="modal">
+            <div id="{{ image.id }}-{{ image.product.sku }}" class="modal">
               <div class="modal-content">
                 <p>Image for - {{ image.product.name }}</p>
                 <p>Are you sure you want to delete?</p>

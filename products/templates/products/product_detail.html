@@ -21,7 +21,7 @@
             {% endfor %}
           </div>
           {% else %}
-            <img src="{{ MEDIA_URL }}noimage.png">
+            <img src="{{ MEDIA_URL }}noimage.png" alt="no-image-placeholder">
           {% endif %}
       </div>
       {% if product.image_set.all|length > 1 %}
@@ -52,7 +52,9 @@
           {% if request.user.is_superuser %}
           <form action="{% url 'add_discount' product.id %}" method="POST">
             {% csrf_token %}
-            {{ discount_form }}
+            <table class="global-table">
+              {{ discount_form }}
+            </table>
             <button class="global-button" type="submit">Add discount</button>
           </form>
           {% endif %}
@@ -91,7 +93,9 @@
       {% endif %}
       <form action="{% url 'product_detail' product.id %}" method="POST">
         {% csrf_token %}
-        {{ review_form }}
+        <table class="global-table">
+          {{ review_form }}
+        </table>
         <button class="global-button" type="submit">Post Review</button>
       </form>
     </div>

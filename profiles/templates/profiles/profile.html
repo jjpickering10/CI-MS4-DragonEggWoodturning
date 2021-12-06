@@ -113,6 +113,9 @@
               <th>Product</th>
               <th>Date</th>
               <th>Rating</th>
+              <th>Edit</th>
+              <th>Delete</th>
+              <th style="display: none;">Confirm Delete</th>
             </tr>
           </thead>
           {% for review in reviews %}
@@ -123,9 +126,9 @@
               <td class="product-review-rating">{{ review.rating }} <i class="fas fa-star"></i></td>
               <td><a href="{% url 'edit_review' review.id %}">Edit <i class="far fa-edit"></i></a></td>
               <!-- Modal Trigger -->
-              <td><a class="modal-trigger" href="#{{ review.id }}-{{ review.product }}">Delete <i class="fas fa-trash"></i></a></td>
+              <td><a class="modal-trigger" href="#{{ review.id }}-{{ review.product.sku }}">Delete <i class="fas fa-trash"></i></a></td>
               <!-- Modal Structure -->
-              <div id="{{ review.id }}-{{ review.product }}" class="modal">
+              <td id="{{ review.id }}-{{ review.product.sku }}" class="modal">
                 <div class="modal-content">
                   <p>{{ review.rating }} stars review - {{ review.product }}</p>
                   <p>Are you sure you want to delete?</p>
@@ -134,7 +137,7 @@
                   <a href="#!" class="modal-close global-button">Cancel</a>
                   <a href="{% url 'delete_review' review.id %}" class="global-button">Delete <i class="fas fa-trash"></i></a>
                 </div>
-              </div>
+              </td>
             </tr>
           </tbody>
           {% endfor %}
@@ -145,7 +148,9 @@
         <h2 class="profile-section-header">Send newsletter to subscribers:</h2>
         <form action="{% url 'send_newsletter' %}" method="POST">
           {% csrf_token %}
-          {{ newsletter_form }}
+          <table class="global-table">
+            {{ newsletter_form }}
+          </table>
           <button class="global-button" type="submit">Send newsletter</button>
         </form>
       </div>
@@ -160,7 +165,9 @@
             </h5>
             <form action="{% url 'category_discount' category.id %}" method="POST">
               {% csrf_token %}
-              {{ discount_form }}
+              <table class="global-table">
+                {{ discount_form }}
+              </table>
               <button class="global-button" type="submit">Add discounts</button>
             </form>
           </div>
@@ -171,8 +178,10 @@
         <h3>Add New Product</h3>
         <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
-          {{ product_form }}
-          {{ image_form }}
+          <table class="global-table">
+            {{ product_form }}
+            {{ image_form }}
+          </table>
           <button class="global-button" type="submit">Add Product</button>
         </form>
         <h3>Current Products</h3>
@@ -182,6 +191,10 @@
         <thead>
           <tr>
             <th>Product</th>
+            <th>Edit</th>
+            <th>Edit Images</th>
+            <th>Delete</th>
+            <th style="display: none;">Confirm Delete</th>
           </tr>
         </thead>
   
@@ -192,9 +205,9 @@
             <td><a href="{% url 'edit_product' product.id %}">Edit <i class="far fa-edit"></i></a></td>
             <td><a href="{% url 'edit_product_images' product.id %}">Edit Images <i class="far fa-edit"></i></a></td>
             <!-- Modal Trigger -->
-            <td><a class="modal-trigger" href="#{{ product.id }}-{{ product.name }}">Delete <i class="fas fa-trash"></i></a></td>
+            <td><a class="modal-trigger" href="#{{ product.id }}-{{ product.sku }}">Delete <i class="fas fa-trash"></i></a></td>
             <!-- Modal Structure -->
-            <div id="{{ product.id }}-{{ product.name }}" class="modal">
+            <td id="{{ product.id }}-{{ product.sku }}" class="modal">
               <div class="modal-content">
                 <p>{{ product.name }}</p>
                 <p>Are you sure you want to delete?</p>
@@ -203,7 +216,7 @@
                 <a href="#!" class="modal-close global-button">Cancel</a>
                 <a href="{% url 'delete_product' product.id %}" class="global-button">Delete <i class="fas fa-trash"></i></a>
               </div>
-            </div>
+            </td>
           </tr>
         </tbody>
         {% endfor %}
@@ -216,7 +229,9 @@
         <h3>Add New Blog</h3>
         <form action="{% url 'add_blog' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
-          {{ blog_form }}
+          <table class="global-table">
+            {{ blog_form }}
+          </table>
           <button class="global-button" type="submit">Add Blog</button>
         </form>
         <h3>Current Blogs</h3>
@@ -225,6 +240,9 @@
             <tr>
               <th>Blog title</th>
               <th>Date</th>
+              <th>Edit</th>
+              <th>Delete</th>
+              <th style="display: none;">Confirm Delete</th>
             </tr>
           </thead>
           
@@ -236,9 +254,9 @@
             <td>{{ blog.date }}</td>
             <td><a href="{% url 'edit_blog' blog.id %}">Edit <i class="far fa-edit"></i></a></td>
             <!-- Modal Trigger -->
-            <td><a class="modal-trigger" href="#{{ blog.id }}-{{ blog.title }}">Delete <i class="fas fa-trash"></i></a></td>
+            <td><a class="modal-trigger" href="#blog-{{ blog.id }}">Delete <i class="fas fa-trash"></i></a></td>
             <!-- Modal Structure -->
-            <div id="{{ blog.id }}-{{ blog.title }}" class="modal">
+            <td id="blog-{{ blog.id }}" class="modal">
               <div class="modal-content">
                 <p>{{ blog.title }}</p>
                 <p>Are you sure you want to delete?</p>
@@ -247,7 +265,7 @@
                 <a href="#!" class="modal-close global-button">Cancel</a>
                 <a href="{% url 'delete_blog' blog.id %}" class=" global-button">Delete <i class="fas fa-trash"></i></a>
               </div>
-            </div>
+            </td>
           </tr>
         </tbody>
         {% endfor %}

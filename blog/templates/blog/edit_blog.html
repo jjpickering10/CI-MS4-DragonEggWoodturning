@@ -16,7 +16,9 @@
 
     <form action="{% url 'edit_blog' post.id %}" method="POST">
         {% csrf_token %}
-        {{ blog_form }}
+        <table class="global-table">
+          {{ blog_form }}
+        </table>
         <button class="global-button" type="submit">Edit Post</button>
     </form>
 </div>

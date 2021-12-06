@@ -13,12 +13,12 @@
 <section id="wood-filter-side-filter">
   <div id="slide-out" class="sidenav">
       <div class="background">
-        <img src="{{ MEDIA_URL }}wood-type-1.PNG">
+        <img src="{{ MEDIA_URL }}wood-type-1.PNG" alt="various-wood-types">
       </div>
       <div>
         <h4>Wood Type</h4>
         {% for wood in wood_types %}
-        <p class="wood-type-link"><a href="{% url 'all_products' %}?wood={{ wood.id }}"><i class="far fa-square"></i>{{ wood.friendly_name }}</p></a>
+        <p class="wood-type-link"><a href="{% url 'all_products' %}?wood={{ wood.id }}"><i class="far fa-square"></i>{{ wood.friendly_name }}</a></p>
         {% endfor %}
       </div>
   </div>
@@ -91,7 +91,7 @@
             {% if product.image_set.all|length > 0 %}
               <img src="{{ product.image_set.first.image.url }}" alt="product-{{ product.name }}">
             {% else %}
-              <img src="{{ MEDIA_URL }}noimage.png">
+              <img src="{{ MEDIA_URL }}noimage.png" alt="no-image-placeholder">
             {% endif %}
         </div>
         <div class="product-card-content">

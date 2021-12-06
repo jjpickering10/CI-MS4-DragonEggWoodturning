@@ -39,7 +39,7 @@
             {% if post.image %}
                 <img class="materialboxed" src="{{ post.image.url }}" alt="image-for-{{ post.title }}">
             {% else %}
-                <img src="{{ MEDIA_URL }}noimage.png">
+                <img src="{{ MEDIA_URL }}noimage.png" alt="no-image-placeholder">
             {% endif %}
         </div>
 
@@ -48,9 +48,9 @@
             <div class="blog-post-admin">
                 <a href="{% url 'edit_blog' post.id %}">Edit</a>
                 <!-- Modal Trigger -->
-                <a class="modal-trigger" href="#{{ post.id }}-{{ post.title }}">Delete</a>
+                <a class="modal-trigger" href="#post-{{ post.id }}">Delete</a>
                 <!-- Modal Structure -->
-                <div id="{{ post.id }}-{{ post.title }}" class="modal">
+                <div id="post-{{ post.id }}" class="modal">
                     <div class="modal-content">
                         <p>{{ post.title }}</p>
                         <p>Are you sure you want to delete?</p>
@@ -66,7 +66,9 @@
     <div class="blog-post-comments-form">
         <form action="{% url 'blog_post' post.id %}" method="POST">
             {% csrf_token %}
-            {{ comment_form }}
+            <table class="global-table">
+                {{ comment_form }}
+            </table>
             <button class="global-button" type="submit">Post Comment</button>
         </form>
     </div>
@@ -81,9 +83,9 @@
                     <div class="blog-post-comment-edit">
                         <a href="{% url 'edit_comment' comment.id %}">Edit</a>
                         <!-- Modal Trigger -->
-                        <a class="modal-trigger" href="#{{ comment.id }}-{{ comment.post.title }}">Delete</a>
+                        <a class="modal-trigger" href="#comment-{{ comment.id }}-{{ comment.post.id }}">Delete</a>
                         <!-- Modal Structure -->
-                        <div id="{{ comment.id }}-{{ comment.post.title }}" class="modal">
+                        <div id="comment-{{ comment.id }}-{{ comment.post.id }}" class="modal">
                             <div class="modal-content">
                                 <p>Comment on: {{ post.title }}</p>
                                 <p>Are you sure you want to delete?</p>

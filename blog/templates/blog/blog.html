@@ -39,7 +39,7 @@
                 {% if post.image %}
                     <img src="{{ post.image.url }}" alt="image-for-{{ post.title }}">
                 {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.png">
+                    <img src="{{ MEDIA_URL }}noimage.png" alt="no-image-placeholder">
                 {% endif %}
             </div>
             <div class="blog-content">
