@@ -57,7 +57,7 @@ As a registered user, I want to be able to:
 
 - **log in**, so that I can
 - - *view previous buying history and save my details*
-- **store my details**, so that I can
+- **store my details/view profile**, so that I can
 - - *prevent having to enter my details everytime*
 - **update details**, so that I can
 - - *save new details if any need to be changed*
@@ -336,6 +336,8 @@ Chrome Dev Tools
 ---
 
 ## Testing
+
+- Can be found [here](/docs/TESTING.md)
 
 ### Project Barriers and Solutions
 
