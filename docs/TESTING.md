@@ -332,6 +332,9 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 - Error: Tried to comment on post. Received ValueError
 - - Fixed: edited blog_post view to ensure only authenticated users can post.
 
+- Error: Tried to edit comment. Received Error.
+- - Fixed: removed bug in edit comment view.
+
 - Continuously tested adding, editing, deleting of posts, comments, reviews, likes, products etc. throughout build, both in development and production.
 
 **Subscribe and Unsubscribe**
