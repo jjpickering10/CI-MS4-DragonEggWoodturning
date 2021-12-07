@@ -232,11 +232,13 @@ def category_discount(request, category_id):
         category.on_sale = True
         category.on_sale_amount = int(discount)
         messages.success(
-            request, f'{discount} for all {category.name} products added')
+            request, f'{discount}% for all {category.friendly_name} products \
+                added')
     else:
         category.on_sale = False
         category.on_sale_amount = None
-        messages.success(request, f'No discount for {category.name} products')
+        messages.success(request, f'No discount for {category.friendly_name} \
+            products')
     category.save()
     return redirect(reverse('profile'))
 
