@@ -190,10 +190,10 @@ window.addEventListener('load', () => {
     }, '-=1');
     timeline.to(landingSegmentsGsap[4], {
       x: '0',
-      duration: 0.25,
+      duration: 0.5,
       ease: "power4.out",
-      stagger: 0.1
-    }, '-=2');
+      stagger: 0.25
+    }, '-=2.5');
   }
   timeline.to(documentElementsGsap[1], {
     opacity: 1,

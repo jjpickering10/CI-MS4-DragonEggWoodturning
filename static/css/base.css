@@ -1556,7 +1556,7 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   align-items: center;
 }
 .product-container .product-item-container .product-card .product-card-content .product-price .product-rating h4, .product-detail-container .product-item-container .product-card .product-card-content .product-price .product-rating h4 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
