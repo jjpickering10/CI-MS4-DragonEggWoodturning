@@ -2160,6 +2160,41 @@ nav ul .shop-now-link a:hover, nav ul .shop-now-link a:focus, #mobile-demo ul .s
   padding: 1.5rem;
   max-width: 375px;
 }
+.checkout-container .stripe-loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-brown);
+  z-index: 999999999999999;
+  opacity: 0.95;
+  transition: 1s;
+  display: none;
+}
+.checkout-container .stripe-loading-container .progress {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  background-color: var(--primary-orange);
+  margin: 5rem 0 2rem 0;
+}
+.checkout-container .stripe-loading-container .progress .indeterminate {
+  background-color: var(--white-shadow);
+}
+.checkout-container .stripe-loading-container .waiting {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  box-shadow: 0 0 5px 0 var(--white-shadow);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  background: var(--primary-brown);
+}
 
 .checkout-nav {
   margin: 2rem auto;

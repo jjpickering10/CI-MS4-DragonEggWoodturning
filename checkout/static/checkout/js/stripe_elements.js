@@ -50,6 +50,7 @@ card.addEventListener('change', function (e) {
 // Handle form submission
 var submitButton = document.getElementById('submit-button');
 var form = document.getElementById('payment-form');
+var loadingStripeOverlay = document.querySelector('.stripe-loading-container')
 
 form.addEventListener('submit', function(ev) {
   ev.preventDefault();
@@ -57,6 +58,7 @@ form.addEventListener('submit', function(ev) {
       'disabled': true
   });
   submitButton.setAttribute('disabled', true);
+  loadingStripeOverlay.style.display = 'block'
   // If the client secret was rendered server-side as a data-secret attribute
   // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
 
@@ -121,6 +123,7 @@ form.addEventListener('submit', function(ev) {
           card.update({
               'disabled': false
           });
+          loadingStripeOverlay.style.display = 'none'
           submitButton.removeAttribute('disabled');
       } else {
         // The payment has been processed!
