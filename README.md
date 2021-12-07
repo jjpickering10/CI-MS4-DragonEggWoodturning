@@ -1,4 +1,4 @@
-# [**DragonEggWoodturning**](https://dragon-egg-woodturning.herokuapp.com)
+# [**Dragon Egg Woodturning**](https://dragon-egg-woodturning.herokuapp.com)
 
 _Use CTRL+click or CMD+click to open links throughout the README in a new tab_
 
@@ -8,15 +8,19 @@ _Use CTRL+click or CMD+click to open links throughout the README in a new tab_
 
 ## Overview
 
-Prior to starting the Code Institute Software Development course, I had a little experience with basic understanding of web development. I used this basic knowledge to make a website with Shopify for my father to sell his woodturning products. Fast forward to now and my learning has come full circle as I now can create the store entirely on my own thanks to Code Institute.
+Prior to starting the Code Institute Software Development course, I had a little experience with basic understanding of web development. I used this basic knowledge to make a website with Shopify for my father to sell his woodturning products. Fast forward to now and my learning has come full circle as I now can create the store entirely on my own thanks to Code Institute. This is why I chose to do this for my final MS4 project.
 
-Link to website: [Here](https://dragon-egg-woodturning.herokuapp.com/)
+[Link to live website here](https://dragon-egg-woodturning.herokuapp.com/)
 
+<p style="font-size: 10px; font-style: italic;">*** If you would like to view the original shopify website, you can do so at https://dragoneggwoodturning.co.uk/ but be aware, depending on when you try to view this site, it may have been taken down as my father no longer wants it live ***</p>
 ---
 
 ## Description
 
 Dragon Egg Woodturning is an e-commerce store selling hand made woodturning gifts ranging from walking sticks to unusual items built with a variety of different wood types.
+- Anonymous users are able to navigate the site, buy products, review products and subscribe to the newsletter.
+- Logged in users can also like blog posts, comment on blog posts and have a personal profile with their information, orders and reviews available.
+- Admin/Site Owner can add/edit/delete new products, add/edit/delete new blogs, add discounts to products/categories and send out newsletters to subscribers.
 
 ---
 
@@ -125,6 +129,66 @@ As an admin user, I want to be able to:
 
 ![Database Schema](/docs/img/database-image.png)
 
+# Apps/Models
+
+- Bag app:
+- - Contains `contexts.py` file to provide bag use throughout site.
+---
+- Blog app:
+- - Post model
+- - - stores information about the blog post, including likes, which is a manytomany field of registered users who have liked the post.
+- - - like count updated in like post view.
+- - Comment model
+- - - stores information about each comment with foreign keys to Post and User
+---
+- Checkout app:
+- - Order model
+- - - Stores information about each order
+- - - Generates unique order number
+- - - Updates total based on OrderLineItems
+- - OrderLineItem model
+- - - Stores information for the order.
+- - - Calculates price of each line item.
+---
+- Home app:
+- - Returns index, about and contact pages.
+- - Sends emails in contact view.
+---
+- Newsletter app:
+- - Available across site with use of `contexts.py` file.
+- - Subscribers model
+- - - Stores information about each subscriber
+- - - Generates unique unsubscribe link for each subscriber
+- - - Sends welcome email via signal.
+- - Newsletter model
+- - - Stores information about each newsletter
+- - - Sends newsletter to each subscriber with their own individual unsubscribe link via signal.
+---
+- Products app:
+- - Category model
+- - - Contains information about each category
+- - - Has on sale and on sale amount features that are calculated in discounts view
+- - WoodType model
+- - - Contains information about each wood type. 
+- - Product model
+- - - Contains information about each product.
+- - - Has discounted and discounted amount features that are updated with discounts view 
+- - - Has a final price feature that is updated with product save. Price is altered if discounted.
+- - - Has a rating feature that is updated with signals when review is added/saved/deleted.
+- - - Checks if category is on sale so new added product has correct discount added, done via signal.
+- - Image model
+- - - Contains information about images.
+- - - Has a foreign key to the Product.
+- - Review model
+- - - Contains information about the review
+- - - Has a foreign key to the Product
+- - - Rating choices are from 1-5
+---
+- Profiles app:
+- - UserProfile model
+- - - Contains information about the user
+- - - Has a foreign key to User model
+
 
 ### **Skeleton**
 
@@ -178,6 +242,9 @@ Animations:
 Design: 
 
  - Dark theme with CSS 3D imagery in some parts.
+ - Bright orange contrasts really well with dark brown background.
+ - Use of box shadows add visual pop to the site in places.
+ - Color scheme was generated from [ColorSpace](https://mycolor.space/)
 
 ---
 
@@ -210,6 +277,7 @@ Design:
 - Has a search feature to search blogs based on title and body of the blogs.
 - Full blog page displays comments and a liked thumb along with the blog post itself.
 - Logged in users can like and unlike a post. Which is displayed by filling out the thumb icon if they have liked it.
+- Like count for blog post is updated with each like/unlike.
 - Logged in users can comment on a post. They can edit and delete their comment also.
 
 **Products page**
@@ -221,18 +289,21 @@ Design:
 - Each product has a rating, which is calculated in the backend when someone adds/deletes a review via signals.
 
 **Product detail page**
-- If the product has more than 1 image, a scroll feature is displayed.
+- If the product has more than 1 image, a scroll feature is displayed, with a scroll progress feature.
+- Images can be viewed full screen on click.
 - Users have a quantity selector for up or down, from 1 to 10 items. If a user adds more than 10 items, a message is displayed to say no more than 10 items of each allowed.
 - Adding an item displays a notification in the navbar shopping cart icon.
 - Admin users have a feature to add a discount to an individual product, ranging from 5% to 50% off.
 - If discounted, the original product price has a line through with the updated price shown next to it.
 - Each product page has a review section, with users able to post reviews and their rating. Anonymous users are warned that they can not edit or delete reviews.
 - The rating in each review is used to calculate product rating in the backend.
+- Page watermarks are generated with javascript based on category/woodtype filtering.
 
 **Shopping cart page**
 - Displays empty bag message if no items in shopping bag.
 - If items in shopping bag, a notification on the shopping bag icon is displayed, detailing total items in shopping bag.
 - Users can edit their bag in the shopping cart page. They can also remove items.
+- Has a free delivery threshold that lets users know about free delivery if they spend a certain amount.
 
 **Checkout page**
 - Shows checkout form with option to save account information if buyer is a logged in user.
@@ -355,18 +426,29 @@ Chrome Dev Tools
 
 ### Feature To Improve
 
+**I intended on implementing most of the features below but due to time constraints I wasn't able to**
+
 - Add more blog photos to a blog post
-- Add category, woodtype functionality
+- Add/edit/remove category, woodtype functionality
 - Add favourites functionality
 - Profile notifications when theres a comment/like on a post or review on a product
 - Deleting profile
 - Share on social media
 - Log in with social media
+- Adding a points system where repeat buyers can accumulate points and use those points for discounts.
+- Add pagination to products page.
+- Add a view comments and view reviews feature for when comments and reviews sections get too long.
+- Have a product total amount so a product can be listed as 'currently sold out'.
+- Have the site able to have users sell their own products on the store.
+- - This wasn't in the original plan but I think would be something interesting to do in the future.
 
 
 ---
 
 ### Known issues
+
+- Site is a bit slow, but loading animation helps ease the UX experience.
+
 ---
 
 ## Deployment
@@ -406,7 +488,6 @@ Chrome Dev Tools
 | `os.environ['STRIPE_PUBLIC_KEY']` = `'<your value>'` |
 | `os.environ['STRIPE_SECRET_KEY']` = `'<your value>'  ` |
 | `os.environ['STRIPE_WH_SECRET']` = `'<your value>'` |
-| `os.environ['DATABASE_URL']` = `'<your value>'` |
 | `os.environ['AWS_ACCESS_KEY_ID']` = `'<your value>'` |
 | `os.environ['AWS_S3_REGION_NAME']` = `'<your value>'` |
 | `os.environ['AWS_SECRET_ACCESS_KEY']` = `'<your value>'` |
@@ -463,7 +544,9 @@ Chrome Dev Tools
 
 - Postgres requires dj_database_url and psycopg2, which is installed with `requirements.txt` file.
 
-- Under settings, reveal config vars. Configure config variables from `env.py` file excluding development variable. Add in `USE AWS = True`
+- Under settings, reveal config vars. Configure config variables from `env.py` file excluding development variable.
+- - Add in `USE AWS = True`
+- - Add in `DATABASE_URL = <your value>`
 
 - Deploy tab and select github option
 
