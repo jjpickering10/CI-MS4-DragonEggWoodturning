@@ -178,9 +178,6 @@ def edit_comment(request, comment_id):
 
     comment = Comment.objects.get(id=comment_id)
 
-    if not comment.exists():
-        return redirect(reverse('home'))
-
     if not request.user == comment.user:
         messages.warning(request, "You don't have permission to do that")
         return redirect(reverse('home'))

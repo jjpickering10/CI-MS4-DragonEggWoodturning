@@ -332,9 +332,13 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 - Error: Tried to comment on post. Received ValueError
 - - Fixed: edited blog_post view to ensure only authenticated users can post.
 
+- Continuously tested adding, editing, deleting of posts, comments, reviews, likes, products etc. throughout build, both in development and production.
+
 **Subscribe and Unsubscribe**
 
 - Tried subscribing with same email. Was shown error message saying email already subscribed.
+- Tested unsubscribe links to make sure they work.
+- Tested visiting old unsubscribe link to make sure correct message was shown saying 'already unsubscribed'.
 
 **Login/Register/Logout**
 
@@ -378,6 +382,7 @@ Site on different screen sizes can be seen [here](https://www.responsinator.com/
 - - was fixed.
 
 - Default email address received email with message sent from contact form.
+- Tested auto reply email was sent to email in the contact form.
 
 **Profile**
 

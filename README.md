@@ -424,13 +424,15 @@ Chrome Dev Tools
 
 - Adding a new product set the original price. But with the category on sale feature, it meant that if a new product was added to a category, it wouldnt match the category discount. I fixed this by adding in a signal to check if product category was on sale and then calculating the correct price from that.
 
-### Feature To Improve
+### Features To Improve
 
 **I intended on implementing most of the features below but due to time constraints I wasn't able to**
 
 - Add more blog photos to a blog post
 - Add/edit/remove category, woodtype functionality
 - Add favourites functionality
+- Add 3-5 current discounted products, and top 3 blogs to landing page as you scroll down, similar to review section.
+- Add feature to display most liked, most commented on blogs.
 - Profile notifications when theres a comment/like on a post or review on a product
 - Deleting profile
 - Share on social media
@@ -448,6 +450,8 @@ Chrome Dev Tools
 ### Known issues
 
 - Site is a bit slow, but loading animation helps ease the UX experience.
+- Didn't have time to implement a scroll to the top button on the products page. So there is a bit of scrolling in the all products view.
+- Same goes for the comment and review section.
 
 ---
 
@@ -491,6 +495,7 @@ Chrome Dev Tools
 | `os.environ['AWS_ACCESS_KEY_ID']` = `'<your value>'` |
 | `os.environ['AWS_S3_REGION_NAME']` = `'<your value>'` |
 | `os.environ['AWS_SECRET_ACCESS_KEY']` = `'<your value>'` |
+| `os.environ['AWS_STORAGE_BUCKET_NAME']` = `'<your value>'` |
 | `os.environ['EMAIL_HOST_PASS']` = `'<your value>'` |
 | `os.environ['EMAIL_HOST_USER']` = `'<your value>'` |
 | `os.environ['DEFAULT_FROM_EMAIL']` = `'<your value>'` |
@@ -569,6 +574,9 @@ Chrome Dev Tools
 ### Code Snippets
 
 - Used Code Institute walkthrough project Boutique Ado for general help.
+- Used help to get for attribute after Django removed it after adding fieldsets in [here](https://www.skillsugar.com/how-to-get-form-input-id-label-name-in-django-template)
+- Canvas particle system on loading page --- Learned Canvas drawing from [youtuber here](https://www.youtube.com/c/Frankslaboratory)
+
 
 ### Images and videos
 
