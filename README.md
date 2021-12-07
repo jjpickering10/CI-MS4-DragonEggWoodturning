@@ -127,7 +127,7 @@ As an admin user, I want to be able to:
 
 # Datebase Schema
 
-![Database Schema](/docs/img/database-image.png)
+![Database Schema](/docs/img/database_image.png)
 
 # Apps/Models
 
