@@ -153,7 +153,7 @@ As an anonymous user, I want to be able to:
 - Expected: **register**, so that I can - *save my buying history and details for any other purchases*
 - - Tried registering with incorrect fields, non-matching passwords and emails. Displayed error messages detailing errors.
 - - Registered with correct details. Received message detailing success sign up and redirected to verify email page detailing that a verification link has been sent to my email.
-- Received email with verification link. Clicked link and confirmed email. Success message displayed and am redirected to login page.
+- - Received email with verification link. Clicked link and confirmed email. Success message displayed and am redirected to login page.
 - - - Result: Achieved.
 
 ---

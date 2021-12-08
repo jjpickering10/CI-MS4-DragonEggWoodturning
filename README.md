@@ -253,7 +253,7 @@ Design:
 - Loading animation includes html canvas element with mouse move drawing of particles for nice UX experience as page loads. Techniques used I learned from a really good youtuber [here](https://www.youtube.com/c/Frankslaboratory)
 
 **Landing page**
-- Distinct image and highlighted section letting the user now exactly what the site is about
+- Distinct image and highlighted section letting the user know exactly what the site is about
 - Call to action buttons
 - Scrolling down, category selection grid, detailing categories of products. If category is on sale, an icon is displayed with sale amount shown.
 - Scrolling down, review section, which takes 10 reviews, and randomises the order in which they are displayed. Glider JS used to create the scrollable carousel.
@@ -296,6 +296,7 @@ Design:
 - Admin users have a feature to add a discount to an individual product, ranging from 5% to 50% off.
 - If discounted, the original product price has a line through with the updated price shown next to it.
 - Each product page has a review section, with users able to post reviews and their rating. Anonymous users are warned that they can not edit or delete reviews.
+- Each review shows filled star icons equal to their rating.
 - The rating in each review is used to calculate product rating in the backend.
 - Page watermarks are generated with javascript based on category/woodtype filtering.
 
